@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metabolic modeling and analysis for bioprocess engineering · 화학공학 노트</title>
+<meta name="description" content="생물 시스템은 DNA 서열에 의해 구조와 기능이 암호화된다. 세포 내부는 대사, 조절, 신호전달 경로가 얽힌 매우 복잡한 네트워크이다. 이를 어떻게 이해할까? → Modeling. 모델은 시스템의 본질을 단순화하여 표현한 것이다. 시스템의 거동을 예측하기 위해 사용된다.모델 종류로는 수학적/기계론적(Mechanistic) 모델과 통계적/경험적(Empirical) 모델 두 가지가 있다. 모델링 식의 타입에는 다음의 3가지가 있다.Connectivity inference (연결만 확인)Constraint-based (실현 가능한 해)M">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html" aria-current="page">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/biochemistry.html">Biochemistry</a></nav>
+  <header class="post-head">
+    <h1>Metabolic modeling and analysis for bioprocess engineering</h1>
+    <p class="meta">
+      <time datetime="2025-10-01">2025.10.01</time>
+ · 수정 2025.11.14    </p>
+  </header>
+
+
+  <div class="body">
+    <p>생물 시스템은 DNA 서열에 의해 구조와 기능이 암호화된다. 세포 내부는 대사, 조절, 신호전달 경로가 얽힌 매우 복잡한 네트워크이다. 이를 어떻게 이해할까? → <b>Modeling</b>.</p>
+<p> </p>
+<p>모델은 시스템의 본질을 단순화하여 표현한 것이다. 시스템의 거동을 예측하기 위해 사용된다.</p>
+<p data-end="654" data-start="646">모델 종류로는 수학적/기계론적(Mechanistic) 모델과 통계적/경험적(Empirical) 모델 두 가지가 있다.</p>
+<p data-end="654" data-start="646"> </p>
+<p data-end="932" data-start="911"><b>모델링 식의 타입</b>에는 다음의 3가지가 있다.</p>
+<p data-end="932" data-start="911">Connectivity inference (연결만 확인)</p>
+<p data-end="932" data-start="911">Constraint-based (실현 가능한 해)</p>
+<p data-end="932" data-start="911">Mechanistic/kinetic (미분방정식 기반)</p>
+<p data-end="932" data-start="911"> </p>
+<p data-end="932" data-start="911">각 모든 단계의 시작은 네트워크 구축이다. 간단한 예시로 세포 대사를 살펴보자.</p>
+<p><figure class="figure"><img alt="" height="638" src="../images/194/01.png" width="1297"/></figure>
+</p>
+<p data-end="932" data-start="911">이건 catabolism( ATP 생산) 과 Anabolism (ATP 사용해서 에너지 생성)의 두 가지로 구성된다. 각 과정에서 생성물과 부산물을 알면 밸런스를 세울 수 있다.</p>
+<p data-end="932" data-start="911"> </p>
+<p data-end="932" data-start="911"><span><span>A</span><span>cc</span><span>u</span><span>m</span><span>u</span><span>l</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span><span>=</span></span><span><span>I</span><span>n</span><span>−</span></span><span><span>O</span><span>u</span><span>t</span><span>+</span></span><span><span>G</span><span>e</span><span>n</span><span>er</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span><span>−</span></span><span><span>C</span><span>o</span><span>n</span><span>s</span><span>u</span><span>m</span><span>pt</span><span>i</span><span>o</span><span>n</span></span></p>
+<p><figure class="figure"><img alt="" height="216" src="../images/194/02.png" width="417"/></figure>
+</p>
+<p>Stoichiometric Matrix <span><span>S에 대해서 알아보자. </span></span>행(Row)은 각 대사체 물질들이고 열은 각 반응 (reactions)들이다.</p>
+<p> </p>
+<h3 id="s1"><b>복잡한 예제 1)</b></h3>
+<p>예를 들어 포도당이 들어왔을 때 TCA 회로를 거치는 것을 모델링해보자.</p>
+<table border="1">
+<tbody>
+<tr>
+<td><span>-해당과정 (Glycolysis)<br/>R1: Glucose + 2 ADP + 2 Pi + 2 NAD⁺ → 2 Pyruvate + 2 ATP + 2 NADH + 2 H₂O<br/><br/>-Pyruvate → Acetyl-CoA 변환<br/>R2: Pyruvate + NAD⁺ + CoA → Acetyl-CoA + CO₂ + NADH<br/><br/>-TCA 회로 (요약)<br/>R3: Acetyl-CoA + OAA → Citrate<br/>R4: Citrate → Isocitrate<br/>R5: Isocitrate + NAD⁺ → α-KG + CO₂ + NADH<br/>R6: α-KG + NAD⁺ + CoA → Succinyl-CoA + CO₂ + NADH<br/>R7: Succinyl-CoA + GDP + Pi → Succinate + GTP + CoA<br/>R8: Succinate + FAD → Fumarate + FADH₂<br/>R9: Fumarate + H₂O → Malate<br/>R10: Malate + NAD⁺ → OAA + NADH</span><br/><span> </span></td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p>표로 1열에 물질을, 행에 반응으로 없어지는 양을 표기하면 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="473" src="../images/194/03.png" width="1040"/></figure>
+</p>
+<p> </p>
+<p>이제 글루코스가 1이 들어왔다고 가정해보자. 그러면 2의 피루브산이 만들어진다. 이때 R2 반응의 전환율이 90%라고 가정할 경우 실제 소모량은 1.8이다. 이를 토대로 다시 재구성해보면 다음과 같다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="495" src="../images/194/04.png" width="1152"/></figure>
+</p>
+<p>근데 이것을 다음처럼, 원래 표와 v에 대한표, 즉 S와 V로 따로 나타낼 것이다. 따라서 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="529" src="../images/194/05.png" width="1345"/></figure>
+</p>
+<p>이제 이 둘을 곱해주면 다음 식이 완성된다.</p>
+<p><figure class="figure"><img alt="" height="216" src="../images/194/02.png" width="417"/></figure>
+<figure class="figure"><img alt="" height="476" src="../images/194/06.png" width="370"/></figure>
+</p>
+<p><span>즉 S는 각 반응의 반응계수만 따로따로 적은 항(서로 맞춰줄 필요는 없음) 이고 v는 각 반응의 속도를 의미하며 둘이 곱해주면 최종생성/소모량이 나온다.</span></p>
+<p> </p>
+<p><span>어려울 수도 있어 간단한 접근으로 다른 예시를 들어보면 다음과 같다.</span></p>
+<p><figure class="figure"><img alt="" height="257" src="../images/194/07.png" width="640"/></figure>
+</p>
+<p><span>이런 간단한 물을 만드는 반응이 있을 때, S와 v는 각각 다음과 같다.</span></p>
+<p> </p>
+<p><span>반응1: 외부 산소가 유입됨 O2 out = O2 in</span><span></span></p>
+<p><span>반응2: O2 <span>in</span> + 2H2  <span>in</span> &lt;=&gt; 2H2O out</span><span></span></p>
+<p><span>반응3: 외부 수소가 유입됨 H2 OUT &lt;=&gt; H2 IN</span></p>
+<p><span>반응4: H2O in &lt;=&gt; H2O out</span></p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="194" src="../images/194/08.png" width="573"/></figure>
+</p>
+<p> </p>
+<p><span>이제 v를 정할건데, 반응이 산소 3몰씩 반응하고 만약 시스템 내부의 축적이 없다면 다음과 같다.</span></p>
+<p><figure class="figure"><img alt="" height="290" src="../images/194/09.png" width="394"/></figure>
+</p>
+<p>이를 Stationary analysis라고 한다. 정상상태에서 농도가 일정하다고 하고 플럭스(속도식)을 구하는 것이다. 이를 FBA라고 한다.</p>
+<p> </p>
+<p>(만약 물이 나가지 않는다면 다음과 같다.)</p>
+<p><figure class="figure"><img alt="" height="294" src="../images/194/10.png" width="402"/></figure>
+</p>
+<p> </p>
+<p>다음에 정상상태와 동적 모델의 비교를 나타내었다. 정상상태 가정은 동적 변화를 못 담는 한계가 있지만, 현실적으로는 가장 널리 쓰이고 앞으로도 계속 쓸 수밖에 없다. 그래서 metabolic modeling에서는 대부분 FBA(정상상태 기반)를 기본 도구로 삼고, 특별한 경우에만 kinetic model을 쓴다.</p>
+<p><figure class="figure"><img alt="" height="343" src="../images/194/11.png" width="745"/></figure>
+</p>
+<p> </p>
+
+<h3 id="s2"><b>예제 2)</b></h3>
+<p>이제 간단한 static (정상상태) 예제를 풀어보자.</p>
+<p><figure class="figure"><img alt="" height="542" src="../images/194/12.png" width="1091"/></figure>
+</p>
+<p>A,B,C,D가 6가지 반응을 통해 생성된다. 이때 양론계수는 S로 정해지고 반응속도 v는 실험적으로 측정해야 한다. 관계식을 세우면 위 사진과 같다.</p>
+<p> </p>
+<p>여기서 문제는, 얼마나 많은 반응속도를 측정해야하는가? 이다. 반응이 r1~6까지 있는데 다 측정하면 좋겠지만, 일부만 측정될 수도 있다. </p>
+<p> </p>
+<p>이때 v1 v2 v3 v4 v5 v6 는 미지수이고 각 줄(반응물 수)은 반응식이다. 미지수-반응식=2개이므로 2개의 미지수가 더 알려지면 이 식은 정의가 된다. </p>
+<p> </p>
+<p><span>만약 v1=10이고 v3=4일때 문제를 풀어보도록하자.</span></p>
+<p><figure class="figure"><img alt="" height="384" src="../images/194/13.png" width="636"/></figure>
+</p>
+<p>전체 표 S와 V가 있고 측정이 된 Vm에 해당하는 SM, 측정이 안된 SC와 vc가 있다. 우리가 원하는 것은 vc이다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="349" src="../images/194/14.png" width="639"/></figure>
+</p>
+<p>SV=[SMSC] [VM VC] = SmVm+ScVc =0이고</p>
+<p>ScVc=  (-SmVm)</p>
+<p>전치를 걸어주고 역행렬을 곱해주면 Vc를 구할 수 있다. 이 공식은 외워야한다. 이제 이거를 엑셀을 이용해서 구할 것이다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="469" src="../images/194/15.png" width="482"/></figure>
+</p>
+<p>그냥 vc 식을 구해서 적어주면 된다.</p>
+<p> </p>
+
+<p>이러한 모델링을 하는 방법을 알아보자.</p>
+<p><span>1. 경계를 정의한다.</span></p>
+<p><span>2. 대사 네트워크를 세우고 화학량론 행렬 S로 표현하기</span></p>
+<p><figure class="figure"><img alt="" height="256" src="../images/194/16.png" width="454"/></figure>
+</p>
+<p> </p>
+<p>행(Row) = 대사체 (metabolites)</p>
+<p>열(Column) = 반응 (reactions)</p>
+<p> </p>
+
+<p>이때 해가 무수히 많으면 ( v1, v2 등이 더 많으면 <b>최적화 문제</b>로 바꿔야 한다.)</p>
+<p><b>Linear algebra vs Linear programming:</b><br/>-Linear algebra (선형대수): 방정식 개수 ≥ 미지수 개수 → 해가 하나로 정해지는 determined system.<br/>-Linear programming (선형계획법): 방정식 개수 &lt; 미지수 개수 → underdetermined system → 해가 무수히 많음.</p>
+<p> </p>
+<p><b>Optimization (최적화):</b><br/>그 중 어떤 해가 실제 세포가 선택하는 해인가?를 정하기 위해 목적함수(Objective function)를 둔다.<br/>목적: 더 나은 해, 더 이익, 최고의 해, 적은 비용으로 더 많은 성과<br/>즉, 주어진 제약 조건 안에서 의사결정 변수(decision variables)를 조정해 목적함수를 최적화.</p>
+<p><figure class="figure"><img alt="" height="716" src="../images/194/17.png" width="1345"/></figure>
+</p>
+<p><br/><b>최적화 문제를 수학적으로 정의하는 방법</b><br/>1. Defining<br/>System boundaries (시스템 경계 정의)<br/>Performance criterion (목표 정의: growth, ATP, 산물 생산 등)<br/>Independent variables (의사결정 변수)<br/>System model (S 행렬, 제약조건 등)<br/><br/>2.Design variables (설계 변수)<br/>우리가 바꿀 수 있는 변수들 (여기서는 flux)</p>
+<p> </p>
+<p>3. Objective (목적 함수)<br/>최소화/최대화할 양<br/>보통 f(x)로 표현 (예: 세포 성장률, ATP 생산량)<br/>“Cost function”이라고도 부름<br/><br/>4.Constraints (제약조건)<br/>-Inequality constraint (부등식 제약):  g(x)≥0<br/>(예: flux는 음수가 될 수 없다, 기질 흡수 속도는 최대 -10 mmol/h)<br/><br/>-Equality constraint (등식 제약): h(x)=0<br/>(예: 질량수지 Sv=0)<br/><br/>Linear objective + linear constraints → Linear Programming (LP)<br/>👉 메시지: FBA 같은 분석은 결국 “Linear Programming 문제”로 풀 수 있다.</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/191.html"><span>← 이전 글</span><strong>논문 소개: A Methodology for Identifying Current and Future Skills Gaps (2)</strong></a>
+    <a class="next" href="../posts/195.html"><span>다음 글 →</span><strong>Metabolic modeling and analysis for bioprocess engineering (2) SOLVER 예제편</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

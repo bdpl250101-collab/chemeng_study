@@ -1,0 +1,35 @@
+{% extends "base.html.j2" %}
+{% block content %}
+<section class="hero">
+  <h1>{{ site.title }}</h1>
+  <p class="tagline">{{ site.tagline }}</p>
+  <p class="hero-sub">{{ site.description }}. 과목을 고르거나 위 검색창에 키워드를 넣어 보세요.</p>
+</section>
+
+<section class="cards" aria-label="과목">
+  {% for c in cats %}
+  <a class="card" href="{{ c.url }}">
+    <h2>{{ c.name }}</h2>
+    <p class="card-count">{{ c.count }}편</p>
+    <ul class="card-latest">
+      {% for p in c.posts[:3] %}
+      <li>{{ p.title }}</li>
+      {% endfor %}
+    </ul>
+    <p class="card-date">최근 {{ c.latest|kdate }}</p>
+  </a>
+  {% endfor %}
+</section>
+
+<section class="recent">
+  <h2>최근 글</h2>
+  <ol class="post-list">
+    {% for p in recent %}
+    <li>
+      <a href="{{ p.url }}">{{ p.title }}</a>
+      <span class="meta"><span class="chip">{{ p.category }}</span> {{ p.date|kdate }}</span>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+{% endblock %}

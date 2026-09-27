@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ch 10: 촉매반응과 촉매반응기 2 · 화학공학 노트</title>
+<meta name="description" content="촉매반응단계 제 5장에서 본 것과 같이 화학반응 기술자는 반응속도 자료를 분석하여 반응속도식을 유도할 수 있어야 한다. 그러나 실험자료가 주어지더라도, 불균일 촉매반응의 속도식은 거의 멱수법칙 모델을 따르지 않기 때문에 속도자료로부터 식을 끌어내기가 상당히 어렵다. 오늘은 촉매 속도자료가 주어졌을 때, 어느 단계가 속도결정단계인지 판단하는 방법론을 배울 것이다. 촉매반응은 보통 7단계로 나뉘는데, 이는 다음과 같다. 1.촉매입자의 외부표면으로 반응물 A의 접근 (확산)2.촉매의 구멍으로 A가 들어감 (확산)3.내부에 있는 표면에 A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html" aria-current="page">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/reaction.html">화학반응공학</a></nav>
+  <header class="post-head">
+    <h1>ch 10: 촉매반응과 촉매반응기 2</h1>
+    <p class="meta">
+      <time datetime="2025-05-24">2025.05.24</time>
+    </p>
+  </header>
+
+  <nav class="toc" aria-label="목차">
+    <p class="toc-title">목차</p>
+    <ol>
+      <li class="lv3"><a href="#s1">1. 흡착과 흡착등온선</a></li>
+      <li class="lv3"><a href="#s2">흡착등온선의 기본 개념</a></li>
+      <li class="lv3"><a href="#s3">주요 흡착등온선 모델</a></li>
+      <li class="lv3"><a href="#s4">흡착등온선의 유형</a></li>
+      <li class="lv3"><a href="#s5">요약</a></li>
+      <li class="lv3"><a href="#s6">1. 랭뮤어 등온선 의 적용 조건</a></li>
+      <li class="lv3"><a href="#s7">2. 랭뮤어 등온선을 따르지 않는 경우</a></li>
+      <li class="lv3"><a href="#s8">3. 다른 흡착등온선 모델</a></li>
+      <li class="lv3"><a href="#s9">4. 실제 흡착 과정에서의 랭뮤어 모델 적용</a></li>
+      <li class="lv3"><a href="#s10">결론</a></li>
+      <li class="lv3"><a href="#s11">2.표면반응</a></li>
+      <li class="lv3"><a href="#s12">3.탈착</a></li>
+    </ol>
+  </nav>
+
+  <div class="body">
+    <p><b>촉매반응단계</b></p>
+<p> </p>
+<p>제 5장에서 본 것과 같이 화학반응 기술자는 반응속도 자료를 분석하여 반응속도식을 유도할 수 있어야 한다. 그러나 실험자료가 주어지더라도, 불균일 촉매반응의 속도식은 거의 멱수법칙 모델을 따르지 않기 때문에 <u>속도자료로부터 식을 끌어내기가 상당히 어렵다</u>. </p>
+<p> </p>
+<p><b>오늘은 촉매 속도자료가 주어졌을 때, 어느 단계가 속도결정단계인지 판단하는 방법론을 배울 것이다.</b></p>
+<p> </p>
+<hr/>
+
+<p>촉매반응은 보통 7단계로 나뉘는데, 이는 다음과 같다.</p>
+<p> </p>
+<p>1.촉매입자의 외부표면으로 반응물 A의 접근 (확산)</p>
+<p>2.촉매의 구멍으로 A가 들어감 (확산)</p>
+<p><b>3.내부에 있는 표면에 A가 흡착 </b></p>
+<p><b>4.촉매 표면에서 반응 A-&gt;B </b></p>
+<p><b>5.표면에서 B가 탈착 </b></p>
+<p>6.내부에서 입구로 확산</p>
+<p>7.입구에서 밖으로 확산.</p>
+<p> </p>
+<p><span>대부분의 상황에서는 <b>3 4 5단계가 속도결정단계</b>이다. 촉매 반응을 다루는 책이나 논문에서도 이 단계(흡착, 표면 반응, 탈착)가 속도결정단계가 되는 경우가 많다고 언급된다.</span></p>
+<p> </p>
+<p><span>따라서 1 2 6 7 단계를 생략하고 3 4 5단계가 속도제한단계가 되는 경우를 살펴보겠다.</span></p>
+<p> </p>
+<h3 id="s1"><span>1. 흡착과 흡착등온선</span></h3>
+<p>3단계는 A가 흡착되는 것인데, 이 흡착에 대한 기초적인 지식을 먼저 다룬다. 먼저 기본적인 흡착 반응식과 활성점 수지는 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="72" src="../images/80/01.png" width="280"/></figure>
+<figure class="figure"><img alt="" height="80" src="../images/80/02.png" width="359"/><figcaption>활성점 수지: 전체 자리=빈자리+A가 점유한 자리+B가 점유한 자리</figcaption>
+</figure>
+</p>
+<p>이제 촉매 표면에서 비반응기체의 흡착을 고려해보자. 흡착자료는 주로 흡착등온선의 형태로 주어진다.</p>
+<p> </p>
+<p>흡착등온선은 온도를 일정하게 하고 압력을 변화시킬 때 고체 위에 흡착된 기체의 양을 나타낸다.</p>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+<p>흡착등온선(adsorption isotherm)은 <b>기체나 용질이 일정한 온도에서 고체 표면에 흡착되는 정도</b>를 나타내는 곡선입니다. <b>등온</b>(isotherm)이라는 단어는 <b>온도가 일정하게 유지된 상태</b>에서 흡착이 일어나는 과정을 설명한다는 의미입니다. 흡착등온선은 <b>흡착된 물질의 양</b>과 <b>기체의 압력</b> 또는 <b>용질의 농도</b> 사이의 관계를 나타냅니다.</p>
+<h3 id="s2">흡착등온선의 기본 개념</h3>
+<ul>
+<li><b>흡착</b>은 기체나 액체가 고체 표면에 부착되는 현상입니다.</li>
+<li><b>흡착등온선</b>은 <b>고체 표면에 흡착된 물질의 양</b>(일반적으로 표면 덮임률 <span><span>θ\theta</span><span aria-hidden="true"><span><span>θ</span></span></span></span> 또는 흡착된 물질의 농도)과 <b>기체의 분압</b> 또는 <b>용질 농도</b> 사이의 관계를 그래프로 표현한 것입니다.</li>
+<li>흡착이 <span>온도에 의존하기 때문에, 흡착등온선은 주어진 <b>온도에서의 흡착</b>을 설명합니다.</span></li>
+</ul>
+<h3 id="s3">주요 흡착등온선 모델</h3>
+<ol>
+<li><b>랭뮤어 흡착등온선</b>:
+<ul>
+<li>랭뮤어 흡착 모델은 단분자층 흡착(monolayer adsorption)을 가정합니다.</li>
+<li>고체 표면의 흡착 사이트에 분자가 1:1로 흡착되는 경우를 설명합니다.</li>
+<li>랭뮤어 등온식:  </li>
+</ul>
+</li>
+</ol>
+<figure class="figure"><img alt="" height="73" src="../images/80/03.png" width="154"/></figure>
+<p><span><span aria-hidden="true"><span><span>θ</span></span></span></span>는 표면 덮임률, <span><span>K</span></span>는 흡착 평형 상수, <span><span>P</span></span>는 기체의 분압입니다.</p>
+<figure class="figure"><img alt="" height="72" src="../images/80/04.png" width="115"/></figure>
+<ol>
+<li>
+<ul>
+<li>이 모델은 <b>흡착 사이트가 동일하며</b> 흡착된 분자들끼리 서로 영향을 주지 않는다고 가정합니다.</li>
+</ul>
+</li>
+<li><b>프룬드리히 흡착등온선</b>:
+<ul>
+<li>비균일 표면이나 다층 흡착을 설명하는 모델입니다.</li>
+<li>흡착이 고체 표면의 서로 다른 에너지 상태에 의해 영향을 받는 경우를 설명합니다.</li>
+<li>프룬드리히 등온식: <span><span><span>q=KFC1/nq = K_F C^{1/n}</span><span aria-hidden="true"><span><span>q</span><span>=</span></span><span><span><span>K</span><span><span><span><span><span><span><span>F</span></span></span></span><span>​</span></span><span><span></span></span></span></span></span><span><span>C</span><span><span><span><span><span><span><span><span>1/</span><span>n</span></span></span></span></span></span></span></span></span></span></span></span></span> 여기서 <span><span>qq</span><span aria-hidden="true"><span><span>q</span></span></span></span>는 흡착된 물질의 양, <span><span>CC</span><span aria-hidden="true"><span><span>C</span></span></span></span>는 평형 농도, <span><span>KFK_F</span><span aria-hidden="true"><span><span><span>K</span><span><span><span><span><span><span><span>F</span></span></span></span><span>​</span></span><span><span></span></span></span></span></span></span></span></span>와 <span><span>nn</span><span aria-hidden="true"><span><span>n</span></span></span></span>은 경험적 상수입니다.</li>
+</ul>
+</li>
+<li><b>베팅(BET) 흡착등온선</b>:
+<ul>
+<li>다층 흡착(multilayer adsorption)을 설명하는 모델입니다.</li>
+<li>기체 분자가 한 층만 흡착되지 않고, 여러 층으로 흡착될 수 있는 경우에 사용됩니다.</li>
+<li>BET 식은 보통 <b>기체가 고체 표면에 다층으로 흡착되는 경우</b>에 이용됩니다.</li>
+</ul>
+</li>
+</ol>
+<h3 id="s4">흡착등온선의 유형</h3>
+<p>국제순수·응용화학연합(IUPAC)은 흡착등온선을 <b>5가지 기본 형태</b>로 구분합니다:</p>
+<ol>
+<li><b>형태 I</b>: 랭뮤어 등온선에 해당하며, 표면이 단분자층으로 포화되는 경우를 나타냅니다.</li>
+<li><b>형태 II</b>: 다층 흡착이 가능하며, 중간 농도에서 흡착량이 급격히 증가합니다.</li>
+<li><b>형태 III</b>: 흡착이 느리게 시작되고, 점차 농도가 증가하며 흡착이 증가하는 경우로 약한 흡착력이 나타납니다.</li>
+<li><b>형태 IV</b>: 다층 흡착 후에 포화가 나타나는 경우로 다공성 물질에서 자주 나타납니다.</li>
+<li><b>형태 V</b>: 흡착력이 약한 물질에 대해 다층 흡착이 일어나고, 이후 포화되는 경우입니다.</li>
+</ol>
+<h3 id="s5">요약</h3>
+<p>흡착등온선은 특정 온도에서 고체 표면에 기체나 용질이 흡착되는 양을 나타내는 곡선입니다. 다양한 흡착 메커니즘(단층, 다층, 비균일 표면 등)을 설명하는 여러 모델이 존재하며, 주로 <b>랭뮤어</b>와 <b>프룬드리히</b>가 대표적인 흡착등온선 모델입니다.</p>
+</div>
+</div>
+<p>먼저 모델계를 제안하고 그 모델에서 얻어진 흡착등온선을 실험자료로 도시한 흡착등온선과 비교한다. 만약 일치하면 모델을 잘 제시한 것이다.</p>
+<p> </p>
+<p>예를 들어 일산화탄소의 흡착에 대한 모델을 세워보자. 흡착에는 2가지 방향이 존재한다. <b>해리흡착/비해리흡착</b></p>
+<p> </p>
+<p>-비해리흡착은 분자가 그대로 붙는 것이고 해리흡착은 분자가 둘로 쪼개어져 붙는 것이다.</p>
+<p><figure class="figure">
+<div><img alt="" height="321" src="../images/80/05.png" width="697"/><img alt="" height="296" src="../images/80/06.png" width="708"/></div>
+<figcaption>비해리흡착/ 해리흡착의 메커니즘</figcaption>
+</figure>
+</p>
+<p> </p>
+<p>먼저 <b>비해리흡착</b>에 대해 생각해보자. 일산화탄소 분자가 표면에 흡착되는 속도는 이들 분자가 충돌하는 횟수에 비례한다. 따라서 압력에 비례하고, 또 빈자리가 많을 수록 많이 흡착될 것이다. 반면 탈착의 경우 이미 붙은 애들이 떨어지는 것이므로 붙은 애들 농도CCOS가 많을 수록 탈착이 많이 될 것이다. </p>
+<p><figure class="figure"><img alt="" height="99" src="../images/80/07.png" width="444"/></figure>
+</p>
+<p>따라서 식은 이렇게 된다. 이제 CCOS를 나타내보도록 하자.</p>
+<p> </p>
+<p>먼저 <b>평형상태</b>에 놓였을 때, 흡착된 양 CCOS를 찾아보자. 이때는 평형이므로 왼쪽의 속도식이 0이된다.</p>
+<p><figure class="figure"><img alt="" height="71" src="../images/80/08.png" width="293"/></figure>
+</p>
+<p>다음으로 활성점 수지를 적용해보면</p>
+<p><figure class="figure"><img alt="" height="73" src="../images/80/09.png" width="265"/></figure>
+<figure class="figure"><img alt="" height="85" src="../images/80/10.png" width="619"/></figure>
+</p>
+<p>이를 정리하면</p>
+<p><figure class="figure"><img alt="" height="105" src="../images/80/11.png" width="295"/></figure>
+<figure class="figure"><img alt="" height="70" src="../images/80/12.png" width="142"/><figcaption>양변을 Ct로 나눌경우 이렇게 된다.</figcaption>
+</figure>
+</p>
+<p>이런 형태의 랭뮤어 등온식이 나오게 된다. 이는 A+S -&gt; AS 반응(비해리 단분자 흡착)에 적용되는 등온식이다.</p>
+<p> </p>
+
+
+<p>그럼 해리흡착인 경우에는 어떻게 될까?</p>
+<p><figure class="figure"><img alt="" height="78" src="../images/80/13.png" width="465"/></figure>
+</p>
+<p>해리흡착의 경우 빈자리가 2개가 필요하므로, 인접한 빈자리 2개의 농도가 반영되어 Cv^2이 된다. 또한 탈착시에 오른쪽 농도항이 반영된다. 따라서 속도식은 다음과 같다. (k속도상수, CO의 압력 반영, 빈자리 2개 반영)</p>
+<p><figure class="figure"><img alt="" height="75" src="../images/80/14.png" width="455"/></figure>
+<figure class="figure"><img alt="" height="123" src="../images/80/15.png" width="442"/></figure>
+</p>
+<p>이제 평형상태에서 CCS=COS를 찾아보자. 위 속도식에서 좌변이 0이다. 또 CCS=COS이므로</p>
+<p><figure class="figure"><img alt="" height="59" src="../images/80/16.png" width="327"/></figure>
+</p>
+<p>이렇게 정리가 될 수 있다. 이제 활성점수지를 참고해보자.</p>
+<p><figure class="figure"><img alt="" height="98" src="../images/80/17.png" width="1136"/></figure>
+</p>
+<p>활성점 수지에 바로 위식을 대입하면 이렇게 된다.</p>
+<p>따라서 Cv는</p>
+<p><figure class="figure"><img alt="" height="85" src="../images/80/18.png" width="402"/></figure>
+</p>
+<p>최종적으로 이를 대입하면</p>
+<p><figure class="figure"><img alt="" height="114" src="../images/80/19.png" width="352"/></figure>
+</p>
+<p>이렇게 유도될 수 있다.</p>
+<p> </p>
+<p>또 1개 이상의 물질이 존재할 경우에는 등온식이 다음처럼 유도된다. A와 B가 존재하는 경우</p>
+<p><figure class="figure"><img alt="" height="112" src="../images/80/20.png" width="361"/></figure>
+</p>
+<p> </p>
+<p>TMI:<span>흡착은 보통 랭뮤어등온선을 따르는걸까?</span></p>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+<p><span>흡착은 </span><b>항상 랭뮤어 등온선을 따르는 것은 아닙니다.</b><span> 하지만 </span><b>단분자층 흡착</b><span>(monolayer adsorption)이 일어나는 경우에는 랭뮤어 등온식이 잘 적용됩니다. 실제로는 다양한 흡착 메커니즘이 존재하며, 흡착 상황에 따라 랭뮤어 모델 외에도 다른 모델이 적용될 수 있습니다.</span></p>
+<div>
+<div data-message-author-role="assistant" data-message-id="e12376e4-931c-4e70-8718-9dab74ce2392" data-message-model-slug="gpt-4o">
+<h3 id="s6">1. <b>랭뮤어 등온선</b>의 적용 조건</h3>
+<p>랭뮤어 등온선은 흡착이 다음과 같은 가정에 기반하여 일어날 때 유효합니다:</p>
+<ul>
+<li><b>단분자층 흡착</b>: 표면에 기체 또는 용질이 단일층으로 흡착되며, 더 이상의 흡착은 일어나지 않는다고 가정합니다.</li>
+<li><b>흡착 사이트의 동일성</b>: 모든 흡착 사이트가 동일한 에너지를 가지고 있으며, 모든 사이트가 독립적입니다.</li>
+<li><b>비상호작용</b>: 흡착된 분자들 간에 상호작용이 없다고 가정합니다.</li>
+</ul>
+<p>이러한 조건이 충족되는 경우, 랭뮤어 흡착등온식이 잘 맞습니다:</p>
+<span><span><span>θ=KP1+KP\theta = \frac{K P}{1 + K P}</span><span aria-hidden="true"><span><span>θ</span><span>=</span></span><span><span><span><span><span><span><span><span><span>1</span><span>+</span><span>K</span><span>P</span></span></span><span></span><span><span><span>K</span><span>P</span></span></span></span><span>​</span></span><span><span></span></span></span></span></span></span></span></span></span>
+<p>여기서 <span><span>θ\theta</span><span aria-hidden="true"><span><span>θ</span></span></span></span>는 표면 덮임률, <span><span>KK</span><span aria-hidden="true"><span><span>K</span></span></span></span>는 흡착 평형 상수, <span><span>PP</span><span aria-hidden="true"><span><span>P</span></span></span></span>는 기체의 평형 분압입니다.</p>
+<h3 id="s7">2. <b>랭뮤어 등온선을 따르지 않는 경우</b></h3>
+<p>흡착이 다음과 같은 경우에는 랭뮤어 등온선을 따르지 않을 수 있습니다:</p>
+<ul>
+<li><b>다층 흡착</b>: 표면에 여러 층으로 흡착이 일어나는 경우 (이때 BET 모델이 더 적합할 수 있습니다).</li>
+<li><b>비균질 표면</b>: 표면에 있는 흡착 사이트가 서로 다른 에너지를 가지는 경우 (이때 프룬드리히 등온선이 더 적합할 수 있습니다).</li>
+<li><b>흡착된 분자 간 상호작용</b>: 흡착된 분자들끼리 서로 상호작용하거나 영향을 미치는 경우.</li>
+</ul>
+<p>이러한 상황에서는 랭뮤어 모델이 적합하지 않으며, 다른 흡착 모델을 사용하는 것이 더 정확합니다.</p>
+<h3 id="s8">3. <b>다른 흡착등온선 모델</b></h3>
+<p>랭뮤어 외에도 다양한 흡착 상황을 설명하는 여러 모델이 있습니다:</p>
+<ul>
+<li><b>프룬드리히 등온선</b>: 비균질 표면에서 흡착이 일어날 때 적용됩니다.<span><span><span>q=KFC1/nq = K_F C^{1/n}</span><span aria-hidden="true"><span><span>q</span><span>=</span></span><span><span><span>K</span><span><span><span><span><span><span><span>F</span></span></span></span><span>​</span></span><span><span></span></span></span></span></span><span><span>C</span><span><span><span><span><span><span><span><span>1/</span><span>n</span></span></span></span></span></span></span></span></span></span></span></span></span>여기서 <span><span>qq</span><span aria-hidden="true"><span><span>q</span></span></span></span>는 흡착된 물질의 양, <span><span>CC</span><span aria-hidden="true"><span><span>C</span></span></span></span>는 평형 농도, <span><span>KFK_F</span><span aria-hidden="true"><span><span><span>K</span><span><span><span><span><span><span><span>F</span></span></span></span><span>​</span></span><span><span></span></span></span></span></span></span></span></span>는 프룬드리히 상수, <span><span>nn</span><span aria-hidden="true"><span><span>n</span></span></span></span>은 흡착 세기를 나타냅니다.</li>
+<li><b>BET 등온선</b>: 다층 흡착을 설명할 때 사용됩니다.<span><span><span>Pv(P0−P)=1vmC+(C−1)PvmCP0\frac{P}{v(P_0 - P)} = \frac{1}{v_m C} + \frac{(C - 1)P}{v_m C P_0}</span><span aria-hidden="true"><span><span><span><span><span><span><span><span><span>v</span><span>(</span><span><span>P</span><span><span><span><span><span><span><span>0</span></span></span></span><span>​</span></span><span><span></span></span></span></span></span><span>−</span><span>P</span><span>)</span></span></span><span></span><span><span><span>P</span></span></span></span><span>​</span></span><span><span></span></span></span></span></span><span>=</span></span><span><span><span><span><span><span><span><span><span><span>v</span><span><span><span><span><span><span><span>m</span></span></span></span><span>​</span></span><span><span></span></span></span></span></span><span>C</span></span></span><span></span><span><span><span>1</span></span></span></span><span>​</span></span><span><span></span></span></span></span></span><span>+</span></span><span><span><span><span><span><span><span><span><span><span>v</span><span><span><span><span><span><span><span>m</span></span></span></span><span>​</span></span><span><span></span></span></span></span></span><span>C</span><span><span>P</span><span><span><span><span><span><span><span>0</span></span></span></span><span>​</span></span><span><span></span></span></span></span></span></span></span><span></span><span><span><span>(</span><span>C</span><span>−</span><span>1</span><span>)</span><span>P</span></span></span></span><span>​</span></span><span><span></span></span></span></span></span></span></span></span></span>여기서 <span><span>PP</span><span aria-hidden="true"><span><span>P</span></span></span></span>는 기체의 압력, <span><span>vv</span><span aria-hidden="true"><span><span>v</span></span></span></span>는 흡착된 기체의 부피, <span><span>vmv_m</span><span aria-hidden="true"><span><span><span>v</span><span><span><span><span><span><span><span>m</span></span></span></span><span>​</span></span><span><span></span></span></span></span></span></span></span></span>는 단분자층에 흡착된 최대 기체의 부피, <span><span>CC</span><span aria-hidden="true"><span><span>C</span></span></span></span>는 흡착 평형 상수입니다.</li>
+</ul>
+<h3 id="s9">4. <b>실제 흡착 과정에서의 랭뮤어 모델 적용</b></h3>
+<p>실제 실험에서 흡착이 랭뮤어 등온선을 따르는 경우는 <b>단분자층 흡착이 일어나는 단순한 시스템</b>에서 자주 관찰됩니다. 그러나 실제로는 표면이 균일하지 않거나 다층 흡착이 일어날 수 있기 때문에, 다른 모델들이 더 잘 맞는 경우도 많습니다. 이를 결정하기 위해서는 <b>실험 데이터</b>와 <b>흡착 시스템의 특성</b>을 잘 분석해야 합니다.</p>
+<h3 id="s10">결론</h3>
+<p>랭뮤어 등온선은 <b>단분자층 흡착</b>에 적합한 모델이지만, 모든 흡착 현상이 랭뮤어 모델을 따르는 것은 아닙니다. 흡착 메커니즘에 따라 <b>프룬드리히, BET</b> 등의 다른 흡착 모델이 더 적합할 수 있습니다. <b>실험적 조건과 표면 특성</b>에 따라 적절한 흡착 모델을 선택하는 것이 중요합니다.</p>
+</div>
+</div>
+</div>
+</div>
+<p> </p>
+<p>여기서 본질을 잊지말자. 흡착이라는 현상에 대해 공부하면서 흡착등온선을 배웠지만, 중요한 건 흡착의 속도이다. 흡착 반응 탈착 중 무엇이 속도 결정단계가 될 것인지를 배우는 단원이기 때문이다.</p>
+<p> </p>
+
+<p><b>랭뮤어 흡착 등온선 식</b></p>
+<p><figure class="figure">
+<div><img alt="" height="91" src="../images/80/21.png" width="219"/><img alt="" height="89" src="../images/80/22.png" width="258"/><img alt="" height="85" src="../images/80/23.png" width="255"/></div>
+</figure>
+<figure class="figure">
+<div><img alt="" height="66" src="../images/80/24.png" width="141"/><img alt="" height="82" src="../images/80/25.png" width="193"/><img alt="" height="180" src="../images/80/26.png" width="271"/></div>
+<figcaption>순서대로 비해리흡착 , AB의 해리흡착, A,B의 경쟁적 흡착 랭뮤어 등온식</figcaption>
+</figure>
+</p>
+<p> </p>
+<p><figure class="figure">
+<div><img alt="" height="132" src="../images/80/27.png" width="367"/><img alt="" height="81" src="../images/80/28.png" width="338"/></div>
+</figure>
+<figure class="figure">
+<div><img alt="" height="108" src="../images/80/29.png" width="373"/><img alt="" height="84" src="../images/80/30.png" width="585"/></div>
+</figure>
+</p>
+<p>비해리흡착, 해리흡착에서 속도식은 위와 같이 주어진다.</p>
+<p> </p>
+
+<h3 id="s11">2.표면반응 </h3>
+<p>흡착 이후 표면에서 반응을 하는 것에는 많은 모델이 존재한다. 많은 모델이 존재하는 이유는 표면반응의 특성이 매우 다양하기 때문이야. 반응의 종류, 촉매의 성질, 반응 조건에 따라 반응 메커니즘이 달라지기 때문에, 하나의 모델로 모든 표면반응을 설명하는 것은 어렵지.</p>
+<p> </p>
+<p>표면 반응 모델 중에서 가장 널리 쓰이고 많은 경우를 차지하는 모델을 2개 꼽자면 <b>랭뮤어-힌셀우드 모델</b>과 <b>Mars-van Krevelen 모델</b>이야.</p>
+<ol>
+<li><b>랭뮤어-힌셀우드 모델</b>: 가장 보편적으로 사용되는 모델로, 모든 반응물들이 촉매 표면에 흡착한 후 반응한다고 가정해. 대부분의 일반적인 촉매 반응에서 유용하게 적용될 수 있어.</li>
+<li><b>Mars-van Krevelen 모델</b>: 주로 산화-환원 반응에 쓰이며, 특히 <b>촉매 표면에서의 산소와 관련된 반응</b>에 적합해. 촉매 표면에서 산소가 직접 반응물과 반응하고, 이후 촉매가 산소와 재반응해 다시 활성화되는 방식이므로, 산화 촉매를 사용하는 반응에서 널리 사용돼.</li>
+</ol>
+<p>이 두 모델은 다양한 반응과 촉매에 잘 맞아 여러 분야에서 자주 활용되고 있어.</p>
+<p> </p>
+<p><b>Eley-Rideal 모델</b>도 중요한 모델이지만, 이 모델은 <b>특정 반응물만 표면에 흡착된 상태에서 반응하는 경우</b>에만 적용돼. 즉, 반응물 중 하나는 표면에 흡착되지 않은 상태로, 기체 상태에서 직접 반응하거든. 그래서 Eley-Rideal 모델은 특정 상황에서만 맞는 모델이라, 모든 반응에 적용하기는 제한적이야.</p>
+<p> </p>
+<p>여기서는 랭뮤어-힌셀우드 모델(단일활성점+이중활성점)과 <b>Eley-Rideal 모델</b>을 배워볼거야.</p>
+<p> </p>
+<p><b>-단일활성점</b> : 표면반응은 일단 반응물이 흡착된 후 반응이 이루어지는 단일 활성점 메커니즘이 될 수 있다.</p>
+<p><figure class="figure">
+<div><img alt="" height="71" src="../images/80/31.png" width="257"/><img alt="" height="103" src="../images/80/32.png" width="435"/></div>
+</figure>
+</p>
+<p> </p>
+<p><b>-이중활성점</b> : 반응물이 흡착된 후 다른 활성점과 작용하여 반응하는 것이다.</p>
+<p><figure class="figure">
+<div><img alt="" height="66" src="../images/80/33.png" width="394"/><img alt="" height="125" src="../images/80/34.png" width="435"/></div>
+</figure>
+</p>
+<p>또 다른 예시로 이런것도 가능하다.</p>
+<p><figure class="figure">
+<div><img alt="" height="82" src="../images/80/35.png" width="491"/><img alt="" height="114" src="../images/80/36.png" width="512"/></div>
+</figure>
+</p>
+<p>만약 활성점의 특성이 다른 경우</p>
+<p><figure class="figure">
+<div><img alt="" height="69" src="../images/80/37.png" width="589"/><img alt="" height="113" src="../images/80/38.png" width="643"/></div>
+</figure>
+</p>
+<p>이렇게 3가지 외에도 많은 이중활성점 모델이 있다.</p>
+<p> </p>
+<p><b>-엘레이-리디얼 모델</b>: 하나가 흡착한 상태에서 기상의 물질과 반응하는 것이다. 반응물 중 하나는 표면에 흡착되지 않은 상태로, 기체 상태에서 직접 반응한다.</p>
+<p><figure class="figure">
+<div><img alt="" height="62" src="../images/80/39.png" width="463"/><img alt="" height="98" src="../images/80/40.png" width="568"/></div>
+</figure>
+</p>
+<p> </p>
+
+<p>즉, 보다시피 표면반응이 어떤 메커니즘으로 진행되느냐에 따라 정말 많은 속도식이 존재할 수 있다. 따라서 이를 전부 외우기보다는 그때그때 내가 분석하고자 하는 반응이 따를 것으로 예상되는 메커니즘을 선택하여 속도식을 제작하는 것이 좋을 것이다.</p>
+<p> </p>
+
+<h3 id="s12">3.탈착</h3>
+<p>단분자 탈착의 경우 메커니즘과 그 속도식은 다음과 같다.</p>
+<p><figure class="figure">
+<div><img alt="" height="62" src="../images/80/41.png" width="303"/><img alt="" height="69" src="../images/80/42.png" width="464"/></div>
+</figure>
+</p>
+<p> </p>
+
+
+
+<p>이제 흡착, 반응, 탈착의 속도식에 대한 분석이 끝났다. 이제부터는 촉매반응의 속도 결정 단계를 알아보기 위한 랭뮤어 힌셸우드 접근법을 알아볼 것이다.</p>
+<p> </p>
+
+<p><b>속도제한단계</b></p>
+<p> </p>
+<p>불균일 반응이 정상단계에서 진행될 때, 연속적인 세 반응단계들(흡착, 표면반응, 탈착)의 각 반응속도는 각각 서로 같다.</p>
+<p><figure class="figure"><img alt="" height="79" src="../images/80/43.png" width="307"/></figure>
+</p>
+<p>이때, 가장 느린 단계가 속도를 결정하게 된다. 따라서 이 특정단계를 더 빠르게 만들 수만 있다면 전체반응은 좀 더 빠른 속도로 진행하게 될 것이다.</p>
+<p> </p>
+<p>어떻게 가장 느린 단계를 결정할 수 있을 것인가? 아쉽게도 속도자료를 측정할 경우 전체 속도에 대한 정보만을 얻을 수 있기에 따로 분석이 필요하며 이때 사용되는 것이 <b>랭뮤어 힌셀우드 접근법</b>이다.</p>
+<p> </p>
+<hr/>
+<p>1.반응 메커니즘을 선택한다 </p>
+<p><figure class="figure"><img alt="" height="163" src="../images/80/44.png" width="633"/><figcaption>반응:이중활성점</figcaption>
+</figure>
+</p>
+<p>2. 속도제한단계를 가정한다. 이때, 확산이 속도제한 단계가 아닌 <b>모든 불균일반응의 75%이상이 표면반응이 속도제한단계</b>이므로, 표면반응을 RDS로 가정해야한다. 이때 속도식은 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="109" src="../images/80/45.png" width="410"/></figure>
+</p>
+<p>3.흡착된 성분의 농도표현 Ci.s을 모두 구하여 소거한다!! 이때 속도제한단계가 아닌 단계(여기서는 흡착,탈착)를 이용한다.</p>
+<p><figure class="figure"><img alt="" height="201" src="../images/80/46.png" width="605"/></figure>
+</p>
+<p>설명: 표면반응이 속도제한단계이므로, 다른 단계들의 속도상수는 상대적으로 크다고 볼 수 있다. 따라서 속도를 속도상수로 나눠주게 되면 그 값은 0에 근접한다고 가정할 수 있다. 이를 통해 <b>흡착된 성분의 농도표현을 구할 수 있다.</b></p>
+<p> </p>
+<p>4.<b>활성점 수지</b>를 적어 <b>Cv항을 소거</b>한다.</p>
+<p><figure class="figure"><img alt="" height="67" src="../images/80/47.png" width="342"/></figure>
+</p>
+<p>5. 모두 소거하여 유도된 속도식을 적는다</p>
+<p><figure class="figure"><img alt="" height="109" src="../images/80/45.png" width="410"/><figcaption>여기에서 Cv와 Ci.s를 소거한다.</figcaption>
+</figure>
+<figure class="figure"><img alt="" height="145" src="../images/80/48.png" width="480"/></figure>
+</p>
+<p>6.5단계에서 유도된 속도식을 실험자료와 비교한다. 만약 일치하지 않는다면 다음을 수행한다</p>
+<p> a:또 다른 속도제한 단계를 가정하여 3~6단계를 다시 거친다</p>
+<p> b:a의 모든 경우에서 일치하지 않는다면 새로운 메커니즘을 선택한다.</p>
+<p> </p>
+<p>만약 반응메커니즘 2를 제시하였을 때 일치한다면 그것이 맞는 메커니즘이다.</p>
+<p> </p>
+<p>7.만약 2개 이상의 모델이 일치한다면 통계처리(예로 오차항의 비교)를 통해 가장 적절한 메커니즘을 선택한다.</p>
+<hr/>
+<p> </p>
+<p>여기서 메커니즘과 속도자료가 일치된다고 해서 그 메커니즘이 맞는 것은 아니다. <b>정확한 분석은 분광학적 실험을 통해 알아낸다.</b></p>
+<p> </p>
+<p>이제 촉매반응의 나머지 짜투리 정보들에 대해 알아보자</p>
+<p> </p>
+<p><b>1)속도식의 온도 의존성</b></p>
+<p>온도가 올라가면 흡착속도는 빠르지만 흡착량은 줄어들고, 온도가 낮아지면 흡착속도는 느리지만 흡착량은 늘어난다.<span> </span>이는<span> </span><b>흡착이 대개 발열 반응</b>이라는 점과 관련이 있다.</p>
+<ul>
+<li><b>높은 온도에서의 흡착</b>:
+<ul>
+<li>온도가 높을수록<span> </span><b>탈착이 빠르게 일어나</b><span> </span>표면에 머무르는 반응물의 양이 적어, 결과적으로 표면의<span> </span><b>평형 흡착량이 낮아지는</b><span> </span>경향이 있어요. 예를 들어, 흡착량이<span> </span><span><span>1</span></span> 정도에 그친다고 보면 돼요.</li>
+<li>하지만<span> </span><b>흡착과 탈착의 속도 자체는 빠르기 때문에</b>, 흡착 및 탈착이 계속 일어나면서 흡착-탈착 평형에 빨리 도달할 수 있어요.</li>
+</ul>
+</li>
+<li><b>낮은 온도에서의 흡착</b>:
+<ul>
+<li>온도가 낮을수록<span> </span><b>흡착이 유리한 방향으로 이동</b>하기 때문에 표면에 더 많은 분자가 흡착될 수 있어요. 예를 들어, 흡착량이<span> </span><span><span>100</span></span>에 이를 수 있는 거죠.</li>
+<li>하지만<span> </span><b>흡착 속도는 느려지기 때문에</b><span> </span>평형에 도달하는 데 더 오랜 시간이 걸릴 수 있어요. 즉, 흡착량이 많지만, 그 양에 도달하는 속도가 상대적으로 느리다는 뜻이에요.</li>
+</ul>
+</li>
+</ul>
+<p>정리:</p>
+<p><figure class="figure"><img alt="" height="1080" src="../images/80/49.png" width="1920"/></figure>
+</p>
+<p> </p>
+<p>여기서 나온 단계들을 따라 우리는 실험결과가 주어졌을 때,</p>
+<p>1)실험결과와 일치하는 대수속도식의 전개 (<b>ch5</b>)</p>
+<p> </p>
+<p>2)실험자료에서 속도식 파라미터(k, K등) 을 구하기 (<b>ch5</b>:미분법(확실치 x), 적분법(0,1,2차에만), <b>비선형회귀분석법</b>)</p>
+<p> </p>
+<p>(평형 상수 <span><span>K</span></span>는 주로 화학 반응이 평형 상태에 도달했을 때의 농도 비율로 구해. 다음과 같은 형태로 표현돼:</p>
+<p><span><span><span>K=[생성물]/[반응물]</span><span aria-hidden="true"><span><span><span><span><span><span>​ </span></span></span></span></span></span></span></span></span></p>
+<p><span><span><span aria-hidden="true"><span><span><span><span><span><span></span></span></span></span></span></span></span></span></span>반응물과 생성물의 농도를 반응이 평형에 도달했을 때 측정하여 계산해.)</p>
+<p> </p>
+<p>3)실험자료와 일치하는 메커니즘 및 속도제한단계의 추정 (<b>Ch10</b>)</p>
+<p> </p>
+<p>4)특정전화율을 얻는데 필요한 촉매반응기의 설계 (<b>ch1~4</b>) 를 할 수 있다.</p>
+<p> </p>
+
+<p>그러나 공학에서 마주치는 대부분의 과제들은 이미 속도식이 주어진 경우에 반응기 설계를 하는 경우가 대부분이므로, 우리가 직접 속도식을 분석하거나 메커니즘을 알아볼 기회는 적다. 따라서 알고만 있으면 좋을 것이다.</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/79.html"><span>← 이전 글</span><strong>ch10. 촉매반응과 촉매반응기 (1)</strong></a>
+    <a class="next" href="../posts/83.html"><span>다음 글 →</span><strong>ch6.복합반응</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

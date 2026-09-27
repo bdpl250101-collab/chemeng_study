@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>화공인공지능: AI의 핵심 원리인 머신러닝 구현 - 특정 조건에서 TIM의 kth , kin 을 예측할 수 있는 사이트 만들기 · 화학공학 노트</title>
+<meta name="description" content="Bi-Directional Assembly of Boron Nitride μ-Platelets by Micro-Molding for Advanced Thermal Interface Materials 논문을 토대로, AI의 핵심 원리인 머신러닝을 구현해보기로 했다. 목표- 논문에 제시된 물리방정식과 머신 러닝을 결합해, 특정 조건에서 TIM의 kth , kin 을 예측할 수 있도록 구현하기 도구 - Hugging Face Spaces (머신러닝 라이브러리를 제공하는 플랫폼)논문은 FSI/FEA 시뮬레이션과 실험을 통해, 유효 열전도 ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html" aria-current="page">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/study.html">화학공학 스터디</a></nav>
+  <header class="post-head">
+    <h1>화공인공지능: AI의 핵심 원리인 머신러닝 구현 - 특정 조건에서 TIM의 kth , kin 을 예측할 수 있는 사이트 만들기</h1>
+    <p class="meta">
+      <time datetime="2025-10-31">2025.10.31</time>
+    </p>
+  </header>
+
+
+  <div class="body">
+    <p><span>Bi-Directional Assembly of Boron Nitride μ-Platelets by Micro-Molding for Advanced Thermal Interface Materials 논문을 토대로, AI의 핵심 원리인 머신러닝을 구현해보기로 했다.</span></p>
+<p> </p>
+<p><span>목표- 논문에 제시된 물리방정식과 머신 러닝을 결합해, 특정 조건에서 TIM의 <span>kth</span> , <span>kin</span> </span><span>을 예측할 수 있도록 구현하기</span></p>
+<p> </p>
+<p><span>도구 - Hugging Face Spaces (머신러닝 라이브러리를 제공하는 플랫폼)</span></p>
+<p><figure class="figure"><img alt="" height="65" src="../images/212/01.png" width="277"/></figure>
+</p>
+<p><span>논문은 FSI/FEA 시뮬레이션과 실험을 통해, 유효 열전도 &lt;k&gt;가 </span><span>충전율 </span><span><span></span></span><span><span></span></span><span>, 평면방향 고유전도 </span><span><span></span></span><span><span></span></span><span>, 정렬각</span><span>의 곱에 비례한다는 식을 제시한다. 이때 근사에 가까운 식을 보정하기 위해 GeomBoost(Dp/Dc,AR)항을 추가로 넣어주었다. 이를 통해</span></p>
+<p> </p>
+<p><span>kth= </span><span>ϕ</span><span>×k∥×sinθ × GeomBoost(Dp/Dc,AR)</span></p>
+<p> </p>
+<p><span>kin= </span><span>ϕ</span><span>×k∥​×cosθ × GeomBoost(Dp/Dc,AR)</span></p>
+<p> </p>
+<p><span>위와 같은 식을 제작할 수 있었다. 이후 논문이 다룬 입자/패턴 기하와 정렬, 충전율에 대응하도록 입력 변수를 Dp_um, Dc_um, phi, theta_deg, AR(=지름/두께)의 5개로 정하였다. 이후 5개의 입력 변수와 그에 따른 kth, kin 값이 포함된 학습 데이터 셋을 주면 이를 스스로 학습하여 GeomBoost(Dp/Dc,AR)항이 스스로 오차를 줄이도록 조정하는 코드를 작성하였다. </span></p>
+<p> </p>
+<p><span>이를 허깅페이스에 입력하여 UI와 함께 구현할 수 있었다. 다음 링크를 통해 앱을 사용할 수 있다.</span></p>
+<p> </p>
+<p><span></span><a href="https://huggingface.co/spaces/audio123142/chemicML12345">https://huggingface.co/spaces/audio123142/chemicML12345</a></p>
+<p> </p>
+<p><span>다음은 앱의 사용에 관한 간단한 설명이다.</span></p>
+<p><figure class="figure"><img alt="" height="481" src="../images/212/02.png" width="934"/></figure>
+</p>
+<p><span>먼저 왼쪽에  5개의 입력변수를 넣을 수 있는 창이 있다. 이쪽에 Dp_um, Dc_um, phi, theta_deg, AR 변수를 각각 설정해 넣을 수 있으며 그 결과는 오른쪽에 뜨게 된다.</span></p>
+<p><figure class="figure"><img alt="" height="79" src="../images/212/03.png" width="633"/></figure>
+</p>
+<p><span>앞서 언급한 논문에서 다음과 같은 조건일 때, </span><span>kth=6.9, kin=7.4</span><span>임이 조사되었다.</span></p>
+<div>
+<table border="1">
+<tbody>
+<tr>
+<td><span><span>Dp (platelet diameter, μm)</span></span></td>
+<td><span><span>Dc (cylindrical protrusion diameter, μm)</span></span></td>
+<td><span><span>ϕ</span><span> (filler volume fraction)</span></span></td>
+<td><span><span>θ (alignment angle in protrusion, degrees)</span></span></td>
+<td><span><span>AR (diameter / thickness)</span></span></td>
+</tr>
+<tr>
+<td><span><span>42</span></span></td>
+<td><span><span>100</span></span></td>
+<td><span><span>0.26</span></span></td>
+<td><span><span>56</span></span></td>
+<td><span><span>22</span></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><span>이를 입력하면 결과는 다음과 같다.</span><span><span></span></span></p>
+<p><figure class="figure"><img alt="" height="389" src="../images/212/04.png" width="901"/></figure>
+</p>
+<p><span><span></span></span><span>kth=6.529, kin=4.538로 실제 값에 비해 적게 나온 것을 볼 수 있다. 이는 아직 학습이 되지 않았기 때문이다.</span></p>
+<p><figure class="figure"><img alt="" height="518" src="../images/212/05.png" width="1136"/></figure>
+</p>
+<p><span>아래쪽 Retrain 부분을 통해 모델을 학습시킬 수 있다. 이때 학습용 csv가 필요하다.</span></p>
+<p><figure class="figure"><img alt="" height="200" src="../images/212/06.png" width="706"/></figure>
+</p>
+<p><span>이런식으로 5개의 입력 변수와 그에 따른 결과값이 입력된 데이터파일을 업로드하면, 이를 보고 모델 식을 수정하는 학습을 자동으로 하게 된다. 아래쪽의 체크박스는 학습을 위한 합성데이터를 생성할건지의 여부이다. 합성 데이터는 실제 데이터를 모방하여 컴퓨터 알고리즘이나 인공지능으로 생성한 가상의 데이터로, AI학습에 널리 사용된다. 1500개의 데이터를 0.1의 노이즈(가상의 데이터에 현실감을 부여)로 생성하여 학습량을 늘릴 수 있다.</span></p>
+<p><figure class="figure"><img alt="" height="146" src="../images/212/07.png" width="503"/></figure>
+</p>
+<p><span>데이터 파일을 올리고 학습을 누르면 성공했다는 메시지가 뜬다.</span></p>
+<p><figure class="figure"><img alt="" height="232" src="../images/212/08.png" width="611"/></figure>
+</p>
+<p><span>이후 똑 같은 조건에서 재 예측 결과 kth가 6.705로 6.9에 가까워짐을 알 수 있다. 이를 통해</span><span> 데이터 셋을 제공하면 학습하여 모델을 수정하는 머신러닝을 구현하였다.</span><span><span></span></span></p>
+<p><figure class="figure"><img alt="" height="238" src="../images/212/09.png" width="862"/></figure>
+</p>
+<p><span>마지막으로 한번에 하나의 예측만 가능한 단점을 해소하기 위해 batch 예측 칸을 만들어, 여러 개의 데이터 셋이 담긴 파일을 업로드하면 각 조건에 따른 k값을 다 예측해주는 기능도 추가하였다.</span></p>
+<p><b></b><br/><br/></p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/207.html"><span>← 이전 글</span><strong>기업 세미나 : 코스맥스</strong></a>
+    <a class="next" href="../posts/242.html"><span>다음 글 →</span><strong>반응기 설계 프로젝트 (차세대 지속가능항공유(SAF) 생산공정 설계)</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

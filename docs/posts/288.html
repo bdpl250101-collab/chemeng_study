@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7-4. Distillation of Binary Mixtures-&gt;solve the problem · 화학공학 노트</title>
+<meta name="description" content="일단 피드는 F=500이고 여기서 벤젠이 주요 LK이다. 따라서 ZF=0.4, XD=0.95, XB=0.05이다.(a): 물질수지를 세워도 되고, 다음 공식을 써도 된다.D=194.44, B=305.56이다.(c)q-line의 기울기는 다음 공식을 통해 구한다.이때 q=1이므로 기울기가 무한대를 향해는 수직선이다.(d) 시작점은 xd,xd이고 끝점은 xb,xb이다.이때, 파셜리보일러는 단 하나로 센다.(a) q=L/F이므로 0.70이다(b)(c)기울기는 -2.333이다. (d) partially vaporized feed에 해당한다">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html" aria-current="page">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/separation.html">분리공정</a></nav>
+  <header class="post-head">
+    <h1>7-4. Distillation of Binary Mixtures-&gt;solve the problem</h1>
+    <p class="meta">
+      <time datetime="2026-05-25">2026.05.25</time>
+    </p>
+  </header>
+
+
+  <div class="body">
+    <p><figure class="figure"><img alt="" height="1015" src="../images/288/01.png" width="560"/></figure>
+<figure class="figure"><img alt="" height="301" src="../images/288/02.png" width="624"/></figure>
+</p>
+<p>일단 피드는 F=500이고 여기서 벤젠이 주요 LK이다. 따라서 ZF=0.4, XD=0.95, XB=0.05이다.</p>
+<p>(a): 물질수지를 세워도 되고, 다음 공식을 써도 된다.</p>
+<p><figure class="figure"><img alt="" height="97" src="../images/288/03.png" width="154"/></figure>
+</p>
+<p>D=194.44, B=305.56이다.</p>
+<p>(c)q-line의 기울기는 다음 공식을 통해 구한다.</p>
+<p><figure class="figure"><img alt="" height="51" src="../images/288/04.png" width="162"/></figure>
+</p>
+<p>이때 q=1이므로  기울기가 무한대를 향해는 수직선이다.</p>
+<p><figure class="figure"><img alt="" height="48" src="../images/288/05.png" width="135"/></figure>
+</p>
+<p>(d) 시작점은 xd,xd이고 끝점은 xb,xb이다.</p>
+<p>이때, 파셜리보일러는 단 하나로 센다.</p>
+<p><figure class="figure"><img alt="" height="242" src="../images/288/06.png" width="626"/></figure>
+</p>
+<p>(a) q=L/F이므로 0.70이다</p>
+<p>(b)</p>
+<p><figure class="figure"><img alt="" height="318" src="../images/288/07.png" width="262"/></figure>
+</p>
+<p>(c)기울기는 -2.333이다. </p>
+<p>(d) partially vaporized feed에 해당한다.</p>
+<p><figure class="figure"><img alt="" height="217" src="../images/288/08.png" width="627"/></figure>
+</p>
+<p>평형선 식은 y=ax/1+(a-1)x 이다. 따라서</p>
+<p><figure class="figure"><img alt="" height="219" src="../images/288/09.png" width="187"/></figure>
+</p>
+<p>이제 이 식에 x=0.2,0.4,0.6,0.8을 대입하면 된다.</p>
+<table border="1" data-end="2697" data-start="2604">
+<tbody data-end="2697" data-start="2634">
+<tr data-end="2649" data-start="2634">
+<td data-col-size="sm" data-end="2640" data-start="2634">0.2</td>
+<td data-col-size="sm" data-end="2649" data-start="2640">0.412</td>
+</tr>
+<tr data-end="2665" data-start="2650">
+<td data-col-size="sm" data-end="2656" data-start="2650">0.4</td>
+<td data-col-size="sm" data-end="2665" data-start="2656">0.651</td>
+</tr>
+<tr data-end="2681" data-start="2666">
+<td data-col-size="sm" data-end="2672" data-start="2666">0.6</td>
+<td data-col-size="sm" data-end="2681" data-start="2672">0.808</td>
+</tr>
+<tr data-end="2697" data-start="2682">
+<td data-col-size="sm" data-end="2688" data-start="2682">0.8</td>
+<td data-col-size="sm" data-end="2697" data-start="2688">0.918</td>
+</tr>
+</tbody>
+</table>
+<p>만약 상대휘발도가 1에 가까워지면 그건 분리의 driving force가 없으며 y=x에 가까워진다. 이는 증류로 못가름을 의미한다.</p>
+<p><figure class="figure"><img alt="" height="266" src="../images/288/10.png" width="644"/></figure>
+</p>
+<p>A+B혼합물에서 A가 LK이다. Fenske식을 이용해 최소평형단을 구해야 한다.</p>
+<p><figure class="figure"><img alt="" height="89" src="../images/288/11.png" width="213"/></figure>
+<figure class="figure"><img alt="" height="121" src="../images/288/12.png" width="235"/></figure>
+</p>
+<p>=3.12가 된다. 따라서 총 4스테이지 정도가 있다. 이때 파셜 콘덴서와 리보일러는 단수에 포함이 되므로 실제 단은 1~2단이다.</p>
+<p><figure class="figure"><img alt="" height="273" src="../images/288/13.png" width="657"/></figure>
+</p>
+<p>2단 믹스처가 증류탑에 공급되는데 목표 조성이 다 정해졌다.</p>
+<p>a: q=L/F=1이며 따라서 수직선의 형태를 가진다. 이때 X=0.5이다.</p>
+<p>b:</p>
+<p><figure class="figure"><img alt="" height="116" src="../images/288/14.png" width="169"/></figure>
+<figure class="figure"><img alt="" height="295" src="../images/288/15.png" width="191"/></figure>
+</p>
+<p>c:0.524</p>
+<p>d:1.10</p>
+<p> </p>
+
+<p><figure class="figure"><img alt="" height="342" src="../images/288/16.png" width="622"/></figure>
+</p>
+<p>일단 상부조작선에서 기울기는 R/R+1이므로 R이 증가할 수록 1에 가까워지며, R이 감소할 수록 수평=0에 가까워진다. 즉 R이 증가할 수록 기울기 자체는 증가한다고 볼 수 있다. R이 커지면 조작선이 대각선에 가까워진다.</p>
+<p> </p>
+<p>(b)이론단수는 감소한다.</p>
+<p>(c) 듀티의 경우 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="89" src="../images/288/17.png" width="542"/></figure>
+</p>
+<p>따라서 일단 R이 증가하면 콘덴서 듀티는 증가하는 것이 맞다. 문제는 리보일러인데, 환류를 많이 해준다는 것은 Reboiler도 내부 vapor flow를 더 많이 만들어야하므로 듀티는 둘다 증가한다.</p>
+<p>(d): 최소환류시 단수가 무한정이기 때문에 안되며, 환류를 전환류로 해버리면 듀티가 너무 커져서 비효율적이다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="265" src="../images/288/18.png" width="664"/></figure>
+</p>
+<p> </p>
+<p>(a) 이론단수가 9.5이고 효율이 80%이다. 이때 머프리 효율은 리보일러에는 안쓰므로 총 트레이 수는 8.5이며</p>
+<p><figure class="figure"><img alt="" height="141" src="../images/288/19.png" width="223"/></figure>
+<figure class="figure"><img alt="" height="44" src="../images/288/20.png" width="313"/></figure>
+</p>
+<p> </p>
+<p>이때 머프리 식은 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="62" src="../images/288/21.png" width="159"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="63" src="../images/288/22.png" width="525"/></figure>
+</p>
+<p>근데 사실 이 문제는 애매하다.. 만약 머프리 효율이 80%라면 실제 조작선-&gt;평형선 루트의 80%만 간다는 뜻이다.</p>
+<p><figure class="figure"><img alt="" height="356" src="../images/288/23.png" width="660"/></figure>
+</p>
+<p>이런식으로 조-&gt;평 라인이 바뀌는 것이다.</p>
+<p><figure class="figure"><img alt="" height="547" src="../images/288/24.png" width="667"/></figure>
+</p>
+<p>피드가 20000이 증류탑에 공급된다. 이때 조성 조건이 주어졌다. 토탈콘덴서와 파셜리보일러가 사용되었다. 피드 온도와 압력조건도 주어졌다. 이때 엔탈피 데이터가 주어졌다.</p>
+<p>(a) D,B구하기:</p>
+<p><figure class="figure"><img alt="" height="100" src="../images/288/25.png" width="188"/></figure>
+</p>
+<p>(b)일단 토탈 콘덴서이므로,</p>
+<p><figure class="figure"><img alt="" height="90" src="../images/288/26.png" width="555"/></figure>
+</p>
+<p>QC= D(R+1)잠열의 형태이다. 8766.52*4.5*(400-286)</p>
+<p><figure class="figure"><img alt="" height="49" src="../images/288/27.png" width="206"/></figure>
+</p>
+<p>일단 이렇게 되고, 이때 QR은 BVB*잠열이다. B는 아직 모른다.. 따라서 에너지 수지에서 구하는 수밖에 없다.</p>
+<p><figure class="figure"><img alt="" height="44" src="../images/288/28.png" width="280"/></figure>
+<figure class="figure"><img alt="" height="44" src="../images/288/29.png" width="498"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="45" src="../images/288/30.png" width="211"/></figure>
+</p>
+<p>주의! 다음 공식을 꼭 기억해두자.</p>
+<p><figure class="figure"><img alt="" height="173" src="../images/288/31.png" width="441"/></figure>
+</p>
+<p> </p>
+<p>(d): 피드 20000이 공급되기 때문에, 다 합치면 D+B=20000이다. 하지만 V와 L은 다르다.  L=RD이며 따라서</p>
+<p><figure class="figure"><img alt="" height="360" src="../images/288/32.png" width="272"/></figure>
+</p>
+<p> </p>
+<p>이 문제는 매우 중요하다. 다음 그림을 기억해두자.</p>
+<p><figure class="figure"><img alt="" height="315" src="../images/288/33.png" width="265"/></figure>
+</p>
+<p>R,D 와 V,L은 다른것이다.</p>
+<p><figure class="figure"><img alt="" height="343" src="../images/288/34.png" width="671"/></figure>
+</p>
+<p>증류탑 설계인데, 콘덴서에 쓸 수 있는 온도가 49도라고 한다. 이때 냉각 가능 압력을 계산했더니 180프사이였다. 컬럼에는 토탈콘덴서와 파셜리보일러 설치 예정이고 트레이 수는 30개이며 개당 0,1 프사이의 압력강하가 발생한다. 콘덴서 토탈 프레슈어 드랍은 2프사이이다.</p>
+<p> </p>
+<p>(a) 일단 리플럭스 드럼이 180프사이인데, 이는 콘덴서를 지난 액체가 모이는 곳이다. 이때 콘덴서에서 2만큼의 압력강하가 있기 때문에 콘덴서에 들어가기 전 탑 트레이의 압력은 다음과 같아야 한다.</p>
+<p><figure class="figure"><img alt="" height="45" src="../images/288/35.png" width="169"/></figure>
+</p>
+<p>이제 아래로 내려갈 수록 압력이 증가하게 된다. 30단이 있기에 맨 밑에서는 182+0.1*30=185프사이의 압력이 있다. 적절한지는 뭐 가격으로 판단하는데 이건 가격에 대한 정보가 없다보니 될거같긴하다. 만약 49도에서 필요한 압력이 330이면 좀 적절하지 않을 수 있으며 이때는 일부만 액화하는 파셜콘덴서를 사용해야한다.</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/287.html"><span>← 이전 글</span><strong>7.1-7.3: Equipment and Design Considerations</strong></a>
+    <a class="next" href="../posts/289.html"><span>다음 글 →</span><strong>7.5: Multiple Feeds, Sidestreams, and Open Steam</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

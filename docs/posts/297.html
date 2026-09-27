@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>증류탑에서 Condenser and Reboiler Heat Duties · 화학공학 노트</title>
+<meta name="description" content="증류탑의 경우 McCabe–Thiele로는 단수와 조작선을 구하고, 그다음 실제 열량은 에너지수지로 구한다. 증류탑에서 Condenser and Reboiler Heat Duties가 얼만큼 필요한지 계산하는 것이 필요하다. Duty = 열부하 = 장치가 공급하거나 제거해야 하는 열량/시간으로, 보통 J/s로 쓴다. 증류탑에는 2가지의 듀티가 있다.Condenser(Q_C)위로 나온 vapor를 응축열 제거Reboiler(Q_R)아래 liquid 일부를 끓임열 공급QC=얼마나 많이 식혀야 하냐QR=얼마나 많이 끓여야 하냐 기본적인 ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html" aria-current="page">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/separation.html">분리공정</a></nav>
+  <header class="post-head">
+    <h1>증류탑에서 Condenser and Reboiler Heat Duties</h1>
+    <p class="meta">
+      <time datetime="2026-06-13">2026.06.13</time>
+ · 수정 2026.06.14    </p>
+  </header>
+
+
+  <div class="body">
+    <p>증류탑의 경우 McCabe–Thiele로는 단수와 조작선을 구하고, 그다음 실제 열량은 에너지수지로 구한다. 증류탑에서 Condenser and Reboiler Heat Duties가 얼만큼 필요한지 계산하는 것이 필요하다.</p>
+<p> </p>
+<p>Duty = 열부하 = 장치가 공급하거나 제거해야 하는 열량/시간으로, 보통 J/s로 쓴다. </p>
+<p> </p>
+<p>증류탑에는 2가지의 듀티가 있다.</p>
+<table border="1">
+<tbody>
+<tr>
+<td>Condenser</td>
+<td>(Q_C)</td>
+<td>위로 나온 vapor를 응축</td>
+<td>열 제거</td>
+</tr>
+<tr>
+<td>Reboiler</td>
+<td>(Q_R)</td>
+<td>아래 liquid 일부를 끓임</td>
+<td>열 공급</td>
+</tr>
+</tbody>
+</table>
+<p><span><span><span>Q</span><span><span><span><span><span><span><span>C</span></span></span></span></span><span><span></span></span></span></span></span><span>=</span></span><span><span><span>얼마나</span><span> </span><span>많이</span><span> </span><span>식혀야</span><span> </span><span>하냐</span></span></span></p>
+<p><span><span><span>Q</span><span><span><span><span><span><span><span>R</span></span></span></span></span><span><span></span></span></span></span></span><span>=</span></span><span><span><span>얼마나</span><span> </span><span>많이</span><span> </span><span>끓여야</span><span> </span><span>하냐</span></span></span></p>
+<p> </p>
+<p><span><span><span>기본적인 에너지 수지는 다음과 같다.</span></span></span></p>
+<p><figure class="figure"><img alt="" height="47" src="../images/297/01.png" width="344"/></figure>
+</p>
+<table border="1">
+<tbody>
+<tr>
+<td>(Fh_F)</td>
+<td>feed가 가지고 들어오는 엔탈피</td>
+</tr>
+<tr>
+<td>(Q_R)</td>
+<td>reboiler가 공급하는 열</td>
+</tr>
+<tr>
+<td>(Dh_D)</td>
+<td>distillate가 가지고 나가는 엔탈피</td>
+</tr>
+<tr>
+<td>(Bh_B)</td>
+<td>bottoms가 가지고 나가는 엔탈피</td>
+</tr>
+<tr>
+<td>(Q_C)</td>
+<td>condenser에서 제거하는 열</td>
+</tr>
+<tr>
+<td>(Q_loss</td>
+<td>외부로 손실되는 열</td>
+</tr>
+</tbody>
+</table>
+<p><span><span><span>이때 보통 Qloss는 무시한다. 그러면 피드 엔탈피+공급열=증류엔탈피+액체엔탈피+냉각기 열이라는 공식이 성립한다.</span></span></span></p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="44" src="../images/297/02.png" width="269"/></figure>
+</p>
+<p>이때 중요한 것은 QR과 QC이며 이것이 듀티이다. 이때 보일러는 보통 파셜리보일러를 쓰는데, 콘덴서는 파셜인지 전체 콘덴서인지에 따라 듀티가 달라진다.</p>
+<p> </p>
+<p>Total condenser duty: </p>
+<p><figure class="figure"><img alt="" height="42" src="../images/297/03.png" width="196"/></figure>
+</p>
+<p>Partial condenser duty</p>
+<p><figure class="figure"><img alt="" height="40" src="../images/297/04.png" width="147"/></figure>
+</p>
+<p>Partial reboiler duty</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="184" src="../images/297/05.png" width="418"/></figure>
+<figure class="figure"><img alt="" height="40" src="../images/297/06.png" width="166"/></figure>
+</p>
+<p>이때, 한 가지 중요한 케이스가 있다. Bubble-point feed + total condenser이면 <span><span>QC</span></span>와 <span><span>QR</span></span>가 거의 같아진다는 것이다.</p>
+<p> </p>
+<p>QC=D(R+1)H 이고 QR=BVBH인데 bubble-point feed + total condenser 조건에서는 다음 관계가 성립한다.</p>
+<p><figure class="figure"><img alt="" height="39" src="../images/297/07.png" width="226"/></figure>
+</p>
+<p><span><span><span>reboiler</span><span>에서</span><span> </span><span>만들어야</span><span> </span><span>하는</span><span> vapor </span><span>양</span></span><span>=</span></span><span><span><span>condenser</span><span>에서</span><span> </span><span>응축해야</span><span> </span><span>하는</span><span> vapor </span><span>양</span></span></span></p>
+<p> </p>
+<p><span><span><span>반면 공급 피드가 partially vaporized feed라면? 그때는 QC=QR이 성립하지 않는다. 오히려 QC가 더 크다. 왜냐면 피드에 기체가 있음으로서 이를 더 냉각해야 되기 때문이다. 그래서 다음과 같은 관계가 성립하게 된다.</span></span></span></p>
+<p><figure class="figure"><img alt="" height="72" src="../images/297/08.png" width="224"/></figure>
+</p>
+<p>Dew-point vapor feed라면? 이 경우는 QR&lt;QC가 여전히 성립한다. 왜냐면 피드가 전부 기체이기 때문이다. 피드가 싹다 액체(버블점)이어야 QC=QR이다.</p>
+<p> </p>
+<p>그럼 반대로 과냉각액체이면? 그 경우에는 QR&gt;QC이다. 더 가열해야 되기 때문이다.. 반대로 과열증기면 QR&lt;QC이다.</p>
+<p> </p>
+<p>보통 Feed preheat가 reboiler duty를 줄인다고 알려져있다. 이는 피드를 가열하면 QR이 줄어든다는 뜻인데, 당연하다. 피드를 미리 가열하면 VF가 증가하면서 QR=QC(1-VF/(D(R+1))에서 VF가 상승하면서 QR이 줄어든다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="137" src="../images/297/09.png" width="360"/></figure>
+</p>
+<p>이때 열은 스팀으로 공급하므로, 위 식을 통해 스팀 필요량을 계산할 수 있다. 또한 냉각수 유량 계산은 Q=CMT로 한다.</p>
+<p><figure class="figure"><img alt="" height="56" src="../images/297/10.png" width="177"/></figure>
+</p>
+<p>+ reflux를 많이 하면 분리는 좋아져서 필요한 단수는 줄 수 있지만, condenser와 reboiler duty는 증가한다.</p>
+<p> </p>
+<table border="1">
+<tbody>
+<tr>
+<td>Bubble-point liquid feed + total condenser</td>
+<td>(Q_R= Q_C)</td>
+<td>feed가 vapor flow를 안 바꿈</td>
+</tr>
+<tr>
+<td>Partially vaporized feed</td>
+<td>(Q_R&lt;Q_C)</td>
+<td>feed vapor가 일부 vapor를 제공</td>
+</tr>
+<tr>
+<td>Dew-point vapor feed</td>
+<td>(Q_R&lt;Q_C)</td>
+<td>feed 전체가 vapor로 기여</td>
+</tr>
+<tr>
+<td>Subcooled liquid feed</td>
+<td>(Q_R&gt;Q_C)</td>
+<td>차가운 feed가 vapor 일부를 응축</td>
+</tr>
+<tr>
+<td>Superheated vapor feed</td>
+<td>(Q_R&lt;Q_C)</td>
+<td>뜨거운 feed가 liquid 일부를 vaporize</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>따라서 최종 정리하면 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="454" src="../images/297/11.png" width="421"/></figure>
+</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/296.html"><span>← 이전 글</span><strong>ch6. Absorption and Stripping of Dilute Mixtures 문제풀이</strong></a>
+    <a class="next" href="../posts/298.html"><span>다음 글 →</span><strong>증류에 있어서 Multiple Feeds, Sidestreams,and Open Steam</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

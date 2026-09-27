@@ -1,0 +1,14 @@
+{
+ "id": 38,
+ "title": "화공열역학 챕터1~8",
+ "date": "2024-01-24",
+ "modified": "2025-06-09",
+ "category": "화학공학 일지/화공열역학",
+ "tags": [],
+ "summary": "-실린더 내에서 피스톤의 움직임에 의해 발생하는 기체의 압축 또는 팽창에 의한 일을 구하는 식 dw=-pdv는 아무런 쓸모가 X-그러나 가역조건에서는 적분으로 계산이 가능하다. 이는 실제로는 불가능하지만, 가역조건을 가정하여 계산 후 효율을 곱하는 것으로 근사값을 추정한다.",
+ "source_url": "https://audio268.tistory.com/38",
+ "images_ok": 15,
+ "images_failed": 0,
+ "chars": 158,
+ "html": "<p><figure class=\"figure\"><img alt=\"\" height=\"1498\" src=\"../images/38/01.webp\" width=\"1033\"/></figure>\n</p>\n<p>-실린더 내에서 피스톤의 움직임에 의해 발생하는 기체의 압축 또는 팽창에 의한 일을 구하는 식 dw=-pdv는 아무런 쓸모가 X<br/><br/>-그러나 가역조건에서는 적분으로 계산이 가능하다. 이는 실제로는 불가능하지만, 가역조건을 가정하여 계산 후 효율을 곱하는 것으로 근사값을 추정한다.<br/><br/><br/></p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"1454\" src=\"../images/38/02.webp\" width=\"1000\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"1123\" src=\"../images/38/03.jpg\" width=\"793\"/></figure>\n</p>\n<p> </p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"1123\" src=\"../images/38/04.jpg\" width=\"793\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"1123\" src=\"../images/38/05.jpg\" width=\"793\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"1123\" src=\"../images/38/06.jpg\" width=\"793\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"1123\" src=\"../images/38/07.jpg\" width=\"793\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"1123\" src=\"../images/38/08.jpg\" width=\"793\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"1123\" src=\"../images/38/09.jpg\" width=\"793\"/><figcaption>ch6</figcaption>\n</figure>\n<figure class=\"figure\"><img alt=\"\" height=\"1123\" src=\"../images/38/10.jpg\" width=\"793\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"1123\" src=\"../images/38/11.jpg\" width=\"793\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"793\" src=\"../images/38/12.jpg\" width=\"1123\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"793\" src=\"../images/38/13.jpg\" width=\"1123\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"793\" src=\"../images/38/14.jpg\" width=\"1123\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"306\" src=\"../images/38/15.png\" width=\"862\"/></figure>\n</p>\n<p> </p>"
+}

@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>화학공정계산 (murphy) 4장:반응기 · 화학공학 노트</title>
+<meta name="description" content="4장:반응기 흐름도 작성과 반응기 공정 조건들의 선택 화학반응 선택을 위한 발견적 학습법 1.생성물 내에 반응물 원자들이 많이 포함되도록 한다. 2.위험도가 적은 것을 택한다. 3.원료는 고순도로 택한다. 4.반응단계를 짧은 것으로 정한다. 5.가능하면 촉매를 써라 6.요구되는 온도와 압력이 상온과 같은게 좋다. 반응기 설계 변수 P, T, V, 체류시간, 반응물 공급비, 반응기의 종류, 촉매 반응기 흐름 조성과 시스템 성능 규격 이론적으로는 반응기는 부반응이 없고 100%전환된다. 그러나 실제로는 부반응이 생기며, 전환이 100%">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html" aria-current="page">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/process-calc.html">화학공정계산</a></nav>
+  <header class="post-head">
+    <h1>화학공정계산 (murphy) 4장:반응기</h1>
+    <p class="meta">
+      <time datetime="2024-01-18">2024.01.18</time>
+ · 수정 2024.04.30    </p>
+  </header>
+
+
+  <div class="body">
+    <p><b>4장:반응기 흐름도 작성과 반응기 공정 조건들의 선택</b></p>
+<p><b>화학반응 선택을 위한 발견적 학습법</b></p>
+<p>1.생성물 내에 반응물 원자들이 많이 포함되도록 한다.</p>
+<p>2.위험도가 적은 것을 택한다.</p>
+<p>3.원료는 고순도로 택한다.</p>
+<p>4.반응단계를 짧은 것으로 정한다.</p>
+<p>5.가능하면 촉매를 써라</p>
+<p>6.요구되는 온도와 압력이 상온과 같은게 좋다.</p>
+<p> </p>
+<p><b>반응기 설계 변수</b></p>
+<p>P, T, V, 체류시간, 반응물 공급비, 반응기의 종류, 촉매</p>
+<p> </p>
+<p><b>반응기 흐름 조성과 시스템 성능 규격</b></p>
+<p>이론적으로는 반응기는 부반응이 없고 100%전환된다. 그러나 실제로는 부반응이 생기며, 전환이 100%되지 않는다.</p>
+<p><figure class="figure"><img alt="" height="228" src="../images/28/01.png" width="723"/></figure>
+</p>
+<p>왼쪽과 오른쪽의 자유도를 비교해보자.</p>
+<p><figure class="figure"><img alt="" height="436" src="../images/28/02.png" width="656"/></figure>
+</p>
+<p>이론적인 반응기는 규정이 되지만 실제 반응기는 아직 모르는 변수가 많다. 이는 선택도, 전화율, 수율을 규정지어 DOF값을 0으로 만들 수 있다.</p>
+<p> </p>
+
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+<p>선택도</p>
+<figure class="figure"><img alt="" height="80" src="../images/28/03.png" width="332"/><figcaption>순간 선택도:원하는 생성물의 생성속도/&amp;nbsp; 원하지 않는 생성물의 생성속도</figcaption>
+</figure>
+<figure class="figure"><img alt="" height="76" src="../images/28/04.png" width="483"/><figcaption>총괄선택도:출구에서 몰 유량의 비율</figcaption>
+</figure>
+<p>수율:</p>
+<figure class="figure"><img alt="" height="176" src="../images/28/05.png" width="146"/></figure>
+<p>총괄 수율은 반응한 물질 몰 수 대비 생성된 몰 수</p>
+<p> </p>
+<p>전화율 X는 이미 정의했다.</p>
+<p> </p>
+</div>
+</div>
+<p>만약 전화율이 낮으면 순환을 시켜 총괄 전화율을 높일 수 있다. 또 불순물이 있으면 퍼지를 통해 제거할 수 있으며 퍼지로 내보내는 불순물은 들어오는 양하고 똑같아야 한다.</p>
+<p> </p>
+<p><b>반응기는 왜 완전하지 못한가? 화학평형과 반응속도</b></p>
+<p>평형에 의해 반응이 100%진행되지 않기 때문이다. 평형을 나타내는 지표는 평형상수 Ka.</p>
+<p>다음 반응에서 평형상수는 다음과 같다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="42" src="../images/28/06.png" width="197"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="142" src="../images/28/07.png" width="528"/></figure>
+<figure class="figure"><img alt="" height="221" src="../images/28/08.png" width="317"/></figure>
+</p>
+<p><span>다음은 온도와 평형상수의 관계이다.<span> </span></span></p>
+<p><figure class="figure"><img alt="" height="206" src="../images/28/09.png" width="466"/></figure>
+</p>
+<p>이를 그래프로 나타내면 원하는 평형 정도를 맞추기 위한 온도를 선택할 수 있을 것이다.</p>
+<p><figure class="figure"><img alt="" height="362" src="../images/28/10.png" width="588"/></figure>
+</p>
+<p>경험법칙에 의해 Ka가 1 이상인 반응경로를 선정하는 게 권장된다. 일반적으로 온도는 올라갈 수록 전화율이 올라가겠지만 안전성과 비용문제로 500도 까지가 적당하다.</p>
+<p> </p>
+<p>최종적인 예제를 살펴보자.</p>
+<p> </p>
+<p><b>EX) 반응경로 선택시에 화학평형의 고찰:디메틸카보네이트 합성 경로 찾기</b></p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="322" src="../images/28/11.png" width="590"/></figure>
+</p>
+<p>DMC를 만드는 경로는 4가지가 존재한다.</p>
+<p><figure class="figure"><img alt="" height="419" src="../images/28/12.png" width="758"/></figure>
+</p>
+<p>이 중에서 어떤 경로가 좋은지 평가하는 기준은 다음과 같다.</p>
+<p>1)비용 2)원자 경제성 3)화학평형 근거</p>
+<p>100도에서 500도 사이에서 반응을 시킨다고 가정할 때, 최고의 반응을 꼽아보라.</p>
+<p> </p>
+<p>SOLUTION</p>
+<p> </p>
+<p>일단 비용적인 부분에 근거하기 위해 각 물질의 정보를 찾아야 할 것이다. 원자경제성 평가를 위해 몰질량과 가격이 포함되는 것이 좋을 것이다.</p>
+<p><figure class="figure"><img alt="" height="395" src="../images/28/13.png" width="566"/></figure>
+</p>
+<p>반응이 100%일어난다고 가정하고 각각 계산한 원료의 가격과 원자경제성은 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="435" src="../images/28/14.png" width="732"/></figure>
+</p>
+<p>일단 반응 4는 원료값이 너무 많이 든다. 손해이므로 빼자.</p>
+<p>반응 1 2 3은 그나마 괜찮다. 하지만 반응1에서 유독가스인 CO가 발생되므로 반응 2 3만이 남게 된다.</p>
+<p> </p>
+<p>하지만 이건 반응이 100%발생하는 걸 가정한 것이다. 따라서 화학평형상수 값이 1 이상인 반응을 찾는게 좋을 것이다.</p>
+<p><figure class="figure"><img alt="" height="206" src="../images/28/15.png" width="466"/></figure>
+<figure class="figure"><img alt="" height="199" src="../images/28/16.png" width="423"/></figure>
+</p>
+<p>각각을 계산해보면 위와 같다. 이를 그래프로 나타내보자.</p>
+<p><figure class="figure"><img alt="" height="519" src="../images/28/17.png" width="851"/></figure>
+</p>
+<p>ln K값이 그래도 양수가 나오는건 반응 1과 반응 2이다. 따라서 이 중 안정도가 높은 반응 2를 택한다. 또한 반응은 100도에서 일으키는게 더 좋다는 결과가 나와버린다.</p>
+<p> </p>
+<p>이제 평형 이외에 또 다른 문제점: 부반응, 반응속도, 분리의 용이성이 의사결정의 항목에 들어간다.</p>
+<p> </p>
+<p><b>화학반응평형과 반응기의 성능</b></p>
+<p>평형상수로 다음의 두 작업을 할 수 있다.</p>
+<p><figure class="figure"><img alt="" height="1080" src="../images/28/18.png" width="1477"/></figure>
+</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/26.html"><span>← 이전 글</span><strong>화학공정계산 (murphy) 1~3장</strong></a>
+    <a class="next" href="../posts/32.html"><span>다음 글 →</span><strong>화학공정계산 (murphy) 5장:분리기</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

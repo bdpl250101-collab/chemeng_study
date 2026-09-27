@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ch3: 순수한 유체의 부피 특성 · 화학공학 노트</title>
+<meta name="description" content="1. 각 물질들은 온도,압력에 따라 부피가 달라지며 이 세 변수는 밀접한 관계를 가진다. 이는 물질의 P-V 선도, P-T선도 등을 통해서도 서로 연관성이 있음을 알 수 있다. 2. 이 관계를 기술하기 위한 여러가지 식이 나와있으며 대상물질이 가스인지 액체인지에 따라 다음과 같이 분류된다.중요한 것은 다음과 같다. 이것에 대해 각각 알아보도록 하겠다.기체: (a)이상기체 방정식/ (b)비리얼 식/ (c)3차 방정식/ (d)리-케슬러 테이블액체: (g) 등온압축률과 부피팽창률 기체(a)이상기체 방정식: 이상기체 상태의 기체가 각 과정">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html" aria-current="page">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/thermodynamics.html">화공열역학</a></nav>
+  <header class="post-head">
+    <h1>ch3: 순수한 유체의 부피 특성</h1>
+    <p class="meta">
+      <time datetime="2025-06-14">2025.06.14</time>
+    </p>
+  </header>
+
+
+  <div class="body">
+    <p><figure class="figure"><img alt="" height="1454" src="../images/114/01.webp" width="1000"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="1123" src="../images/114/02.jpg" width="793"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="1123" src="../images/114/03.jpg" width="793"/></figure>
+</p>
+<p>1. 각 물질들은 온도,압력에 따라 부피가 달라지며 이 세 변수는 밀접한 관계를 가진다. 이는 물질의 P-V 선도, P-T선도 등을 통해서도 서로 연관성이 있음을 알 수 있다.</p>
+<p> </p>
+<p>2. 이 관계를 기술하기 위한 여러가지 식이 나와있으며 대상물질이 가스인지 액체인지에 따라 다음과 같이 분류된다.</p>
+<p><figure class="figure"><img alt="" height="384" src="../images/114/04.jpg" width="552"/></figure>
+</p>
+<p>중요한 것은 다음과 같다. 이것에 대해 각각 알아보도록 하겠다.</p>
+<p>기체: (a)이상기체 방정식/ (b)비리얼 식/ (c)3차 방정식/ (d)리-케슬러 테이블</p>
+<p>액체: (g) 등온압축률과 부피팽창률</p>
+<p> </p>
+<p>기체</p>
+<p><b><span>(a)이상기체 방정식</span></b>: 이상기체 상태의 기체가 각 과정을 거칠 때, Q W U H를 구하는 문제가 주로 출제된다.</p>
+<p><figure class="figure"><img alt="" height="373" src="../images/114/05.png" width="1348"/></figure>
+</p>
+<p>단열일때, 다음 식이 성립한다.</p>
+<p><figure class="figure"><img alt="" height="208" src="../images/114/06.png" width="351"/></figure>
+</p>
+<p><b><span> (b)비리얼 식</span></b></p>
+<p><figure class="figure"><img alt="" height="106" src="../images/114/07.png" width="325"/></figure>
+</p>
+<p>Z값을 위와 같이 정의하여 다음처럼 V값을 구할 수 있다.</p>
+<p><figure class="figure"><img alt="" height="102" src="../images/114/08.png" width="301"/></figure>
+</p>
+<p>여기서 iteration을 어떻게 하냐면, 우선 i=1 일 때 부피를 <b>이상 기체 상태의 부피로 시작</b>해서 V2를 구한다. 그리고 이 V2를 다시 우변에 대입해서 V3을 구하고... 이 과정을 V가 어느 값에 수렴할 때 까지 반복한다. 발산한다면 뭔가  잘못된 것이고, 진동한다면 평균값을 답으로 낸다. 이것이 비리얼식으로 구한 최종부피이고, 이를 통해 Z값 (실제 V/ 이상V 비율) 또한 구할 수 있다.</p>
+<p> </p>
+<p>예시) 이상기체로 구한 Va로 실제 부피 Vc를 구하기.</p>
+<p><figure class="figure"><img alt="" height="322" src="../images/114/09.png" width="423"/></figure>
+</p>
+<p><b><span>(c)3차 방정식</span></b></p>
+<p><span>상태방정식은 기체뿐만 아니라, 액체 상태까지도 PVT 거동을 표현해줄 수 있다. 비리얼 식은 고압이나 액체에 가까운 상태에서는 정확하지 않다는 단점이 있다. 이로 인해 산업에서는 상태방정식으로 PVT거동을 주로 묘사한다. 상태방정식 또한 보정을 위한 상수가 필요하다. RK가 유명하다.</span></p>
+<p> </p>
+<p><b><span>(d)대응 상태와 이심인자</span></b></p>
+<p><figure class="figure"><img alt="" height="670" src="../images/114/10.png" width="1235"/></figure>
+</p>
+<p>대응상태 이론으로 Z를 구해버린 다음, 이걸로 주어진 P-T에서 V를 구할 수도 있다.</p>
+<p> </p>
+
+<p>액체</p>
+<p>(g) 등온압축률과 부피팽창률: B와 k는 변수이지만, 상수로 근사할 수 있으며 이때 P-T변화에 따른 액체의 부피 변화는 다음으로 나타낼 수 있다.</p>
+<p><figure class="figure"><img alt="" height="209" src="../images/114/11.png" width="436"/></figure>
+</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/113.html"><span>← 이전 글</span><strong>ch2: 열역학 제 1법칙</strong></a>
+    <a class="next" href="../posts/115.html"><span>다음 글 →</span><strong>ch5: 열역학 제 2법칙</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

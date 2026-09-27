@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1. 공정의 모델링 · 화학공학 노트</title>
+<meta name="description" content="모델링이란 공정의 정적/동적 상태를 수식을 통해 표현하는 것이다. 이때 수식은 열역학적 물성치, 모멘텀 수지식, 또는 전달현상 관계식을 기반으로 물질수지와 에너지수지를 수립하여 나타내게 된다. 이때 정상상태와 동적상태가 있을 수 있는데, 이 경우 물질수지와 에너지 수지가 각각 다르다.이러한 모델링의 가정은 다음과 같다.모델링은 이론보다 적용이 중요하므로, 이제 저장탱크를 가열하는 시스템을 모델링해보자. 탱크에 열을 가해주는 상황을 모델링하면 다음과 같다.즉 열을 가해주면 내부에 축적되고, 나오는 유량의 온도변화에도 기여한다. 이제 ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html" aria-current="page">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/process-control.html">공정제어</a></nav>
+  <header class="post-head">
+    <h1>1. 공정의 모델링</h1>
+    <p class="meta">
+      <time datetime="2025-05-24">2025.05.24</time>
+ · 수정 2025.09.07    </p>
+  </header>
+
+
+  <div class="body">
+    <p>모델링이란 공정의 정적/동적 상태를 수식을 통해 표현하는 것이다. 이때 수식은 열역학적 물성치, 모멘텀 수지식, 또는 전달현상 관계식을 기반으로 물질수지와 에너지수지를 수립하여 나타내게 된다. 이때 정상상태와 동적상태가 있을 수 있는데, 이 경우 물질수지와 에너지 수지가 각각 다르다.</p>
+<p><figure class="figure"><img alt="" height="452" src="../images/109/01.png" width="717"/></figure>
+</p>
+<p>이러한 모델링의 가정은 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="680" src="../images/109/02.png" width="1218"/></figure>
+</p>
+<p>모델링은 이론보다 적용이 중요하므로, 이제 저장탱크를 가열하는 시스템을 모델링해보자. 탱크에 열을 가해주는 상황을 모델링하면 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="748" src="../images/109/03.png" width="1263"/></figure>
+</p>
+<p>즉 열을 가해주면 내부에 축적되고, 나오는 유량의 온도변화에도 기여한다.</p>
+<p> </p>
+<p>이제 액체저장탱크에서 유입과 유출이 있을 때, 탱크의 높이와 유량사이의 관계를 모델링해보자.</p>
+<p><figure class="figure"><img alt="" height="479" src="../images/109/04.png" width="1294"/></figure>
+</p>
+<p>이제 q를 h의 함수로 나타내야 한다.</p>
+<p>이때 문제 조건에 따라 유출액 q는 다음과 같이 나타내진다.</p>
+<p>1)펌프를 통해 물이 유입 유출되는 경우, 펌핑유량 qs가 주어진다.</p>
+<p>2)만약 흐름에 저항이 있어서, h(높이)에 비례하여 나가는 유량이 달라지는 경우가 있다. 이 경우 저항에 따라 h/R로 유출이 결정된다.</p>
+<p>3) <span>그냥 나간다고 하면<span> mgh=1/2mv^2 따라서 q=Av=A루트(2gh)에서 q가 h의 루트에 비례할 수 있다.</span></span></p>
+<p><figure class="figure"><img alt="" height="270" src="../images/109/05.png" width="1042"/></figure>
+</p>
+<p>이때 3번에서 C루트h를 어떻게 풀 것인가? 이는 선형화로 푼다. 루트h를 단순한 1차식으로 근사시킨다. 선형화는 선형근사를 의미한다. </p>
+<p><figure class="figure"><img alt="" height="95" src="../images/109/06.png" width="470"/></figure>
+</p>
+<p>이를 적용하면 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="116" src="../images/109/07.png" width="1148"/></figure>
+</p>
+<p> </p>
+<p>마지막으로 액체저장탱크에서 유입과 유출이 있을 때, 탱크의 농도변화도 어떻게 되는지 모델링해보자.</p>
+<p><figure class="figure"><img alt="" height="243" src="../images/109/08.png" width="771"/></figure>
+</p>
+<p>탱크에 들어오고 나가는 유량이 똑같을 때, 들어오는 농도CAi와 나가는 농도 CA가 존재한다. 이때 부피는 안변하겠지? 여기서 농도에 대한 수지식을 세우면 다음과 같다.(물질 수지)</p>
+<p> </p>
+<p>탱크내 성분 A의 변화=성분A 유입량 - 성분A 유출량</p>
+<p><figure class="figure"><img alt="" height="278" src="../images/109/09.png" width="637"/></figure>
+</p>
+<p>정리하면 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="922" src="../images/109/10.png" width="1368"/></figure>
+</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/108.html"><span>← 이전 글</span><strong>0. 공정제어의 기초 개념</strong></a>
+    <a class="next" href="../posts/111.html"><span>다음 글 →</span><strong>2. 전달함수와 라플라스변환</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

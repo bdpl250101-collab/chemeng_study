@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>화학반응공학 몰수지 속도식 화학양론 결합문제 · 화학공학 노트</title>
+<meta name="description" content="Q1) A-&gt;B이고 기초 액상반응이며 부피유량이 10dm^3/min이고 반응속도 상수는 0.23min-1 일때 출구농도가 입구농도의 10%가 되는데 필요한 CSTR. PFR 반응기의 부피를 구하여라. SOLUTION)먼저 CSTR에서 부피를 구하는 식을 만들기 위해 몰 수지, 속도식, 화학양론을 결합한다.몰수지: V=FA0(X2-X1)/(-ra)속도식: -ra=0.23/min * CA화학양론:CA=CA0(1-X)부피유량이 10dm^3/min 대입시출구농도가 입구농도의 10%가 되었다는 말은 전화율이 90%라는 것과 같아.X=0.9 ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html" aria-current="page">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/reaction.html">화학반응공학</a></nav>
+  <header class="post-head">
+    <h1>화학반응공학 몰수지 속도식 화학양론 결합문제</h1>
+    <p class="meta">
+      <time datetime="2024-11-24">2024.11.24</time>
+ · 오블완, 티스토리챌린지    </p>
+  </header>
+
+
+  <div class="body">
+    <p><span>Q1) A-&gt;B이고 기초 액상반응이며 부피유량이 10dm^3/min이고 반응속도 상수는 0.23min-1 일때 출구농도가 입구농도의 10%가 되는데 필요한 CSTR. PFR 반응기의 부피를 구하여라.</span></p>
+<p> </p>
+<p>SOLUTION)</p>
+<p>먼저 CSTR에서 부피를 구하는 식을 만들기 위해 몰 수지, 속도식, 화학양론을 결합한다.</p>
+<p><b>몰수지: V=FA0(X2-X1)/(-ra)</b></p>
+<p><b>속도식: -ra=0.23/min * CA</b></p>
+<p><b>화학양론:CA=CA0(1-X)</b></p>
+<p>부피유량이 10dm^3/min 대입시</p>
+<p><figure class="figure"><img alt="" height="203" src="../images/92/01.png" width="1098"/></figure>
+</p>
+<p>출구농도가 입구농도의 10%가 되었다는 말은 전화율이 90%라는 것과 같아.</p>
+<p>X=0.9 대입시 391.3 dm^3이 답이 되지</p>
+<p> </p>
+<p>이제 PFR을 알아보자</p>
+<p>몰 수지, 속도식, 화학양론을 결합하면</p>
+<p>몰수지<b>:V=FA0∫dX/-ra</b> from x in to x out</p>
+<p><b>속도식: -ra=0.23/min * CA</b></p>
+<p><b>화학양론:CA=CA0(1-X)</b></p>
+<p><figure class="figure"><img alt="" height="296" src="../images/92/02.png" width="1028"/></figure>
+</p>
+<p>주어진 식 대입시</p>
+<p><figure class="figure"><img alt="" height="199" src="../images/92/03.png" width="184"/></figure>
+</p>
+<p>정답은 100.11dm^3이다.</p>
+<p> </p>
+<p>Q2) 2A-&gt;B로 가는 반응기 부피의 변화가 없는 비가역 기초 반응이 회분식 반응기에서 수행될 때 A의 활성화 에너지가 20kcal/mol일 경우 초기조건 CA0 = CB0 = 1M , 77도, 200dm^3의 회분식 반응기에서 90%의 전화율을 얻는데 걸리는 시간을 구하여라. 단 25도에서 반응속도는 0.07mol/dm^3min이다.</p>
+<p> </p>
+<p>핵심POINT) 반응기 부피의 변화가 없다는 것은 부피체적의 변화가 없다는 것이다.</p>
+<p>CA=NA/V =NA0(1-X)/V인데 V=V0이므로 CA0(1-X)가 성립한다. 그러나 부피체적의 변화가 있는 기상반응의 경우에는 V=V0(1+ex)(p0/p)(T/T0) 이므로 CA =NA0(1-X)/V 에 대입하여 새로운 공식을 이끌어 내야 한다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="141" src="../images/92/04.png" width="380"/></figure>
+</p>
+<p> </p>
+<p>Q3)1차 가역반응 A&lt;-&gt;B에 대하여 주어진 온도에서 평형전화율 Xe=0.6이다. 회분식 반응기 실험에서 10분 후 전환율은 XA=0.4가 나왔다고 했을 때, 반응속도식을 구하여라.</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/88.html"><span>← 이전 글</span><strong>AlChE 전국 경시대회 문제: DBP와 MBP</strong></a>
+    <a class="next" href="../posts/23.html"><span>다음 글 →</span><strong>화학반응공학 ch1~3. 몰 수지식과 설계방정식, 전화율, 속도법칙</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

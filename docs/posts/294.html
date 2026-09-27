@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>11. Enhanced Distillation and Supercritical Extraction 개요 · 화학공학 노트</title>
+<meta name="description" content="목차:11.0Enhanced distillation 개요11.1Use of Triangular Graphs11.1.1Distillation Regions and Boundaries11.1.2Residue-Curve Maps11.1.3Approximate Residue-Curve Maps11.1.4Distillation-Curve Maps11.1.5Feasible Product-Composition Regions / Bow-tie region11.2Extractive Distillation11.3Salt Distillation11.4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html" aria-current="page">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/misc.html">카테고리 없음</a></nav>
+  <header class="post-head">
+    <h1>11. Enhanced Distillation and Supercritical Extraction 개요</h1>
+    <p class="meta">
+      <time datetime="2026-06-11">2026.06.11</time>
+ · 수정 2026.06.14    </p>
+  </header>
+
+
+  <div class="body">
+    <p>목차:</p>
+<table border="1">
+<tbody>
+<tr>
+<td><b>11.0</b></td>
+<td>Enhanced distillation 개요</td>
+</tr>
+<tr>
+<td><b>11.1</b></td>
+<td>Use of Triangular Graphs</td>
+</tr>
+<tr>
+<td><b>11.1.1</b></td>
+<td>Distillation Regions and Boundaries</td>
+</tr>
+<tr>
+<td><b>11.1.2</b></td>
+<td>Residue-Curve Maps</td>
+</tr>
+<tr>
+<td><b>11.1.3</b></td>
+<td>Approximate Residue-Curve Maps</td>
+</tr>
+<tr>
+<td><b>11.1.4</b></td>
+<td>Distillation-Curve Maps</td>
+</tr>
+<tr>
+<td><b>11.1.5</b></td>
+<td>Feasible Product-Composition Regions / Bow-tie region</td>
+</tr>
+<tr>
+<td><b>11.2</b></td>
+<td>Extractive Distillation</td>
+</tr>
+<tr>
+<td><b>11.3</b></td>
+<td>Salt Distillation</td>
+</tr>
+<tr>
+<td><b>11.4</b></td>
+<td>Pressure-Swing Distillation</td>
+</tr>
+<tr>
+<td><b>11.5</b></td>
+<td>Homogeneous Azeotropic Distillation</td>
+</tr>
+<tr>
+<td><b>11.6</b></td>
+<td>Heterogeneous Azeotropic Distillation</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p>11장은 일반 증류로 안 되는 공비혼합물,근접비점 혼합물을, 압력,용매,상분리,entrainer를 이용해서 억지로 분리 가능하게 만드는 법을 배우는 챕터다. 이를 enhanced distillation이라고 하며 extractive distillation, pressure-swing distillation, homogeneous/heterogeneous azeotropic distillation이 존재한다.</p>
+<p> </p>
+<p>먼저 기초개념인 K, a, 공비점에 대해 알아야 한다.</p>
+<p>1) K-value : 기액 평형에서 성분 i에 대해서는 다음이 성립한다.</p>
+<p><figure class="figure"><img alt="" height="98" src="../images/294/01.png" width="109"/></figure>
+</p>
+<p>전체 조성 조건은 다음을 만족해야 한다.</p>
+<p><figure class="figure"><img alt="" height="114" src="../images/294/02.png" width="118"/></figure>
+</p>
+<p>또한 버블점에서는 다음이 무조건 성립한다.</p>
+<p><figure class="figure"><img alt="" height="64" src="../images/294/03.png" width="137"/></figure>
+</p>
+<p>이들은 나중에 residue-curve map이라는 것을 유도하는데 사용된다.</p>
+<p> </p>
+<p>2) 상대휘발도 <span><span>α</span></span></p>
+<p><figure class="figure"><img alt="" height="171" src="../images/294/04.png" width="190"/></figure>
+<figure class="figure"><img alt="" height="74" src="../images/294/05.png" width="189"/></figure>
+</p>
+<p>x-y 평형선 그릴 때 쓰는 기본식이다.</p>
+<p> </p>
+<p>3) 공비점 azeotrope</p>
+<p>공비점은 액상과 기상의 조성이 같은 점이다. 여기에서는 끓여도 기상 조성이 액상 조성과 같으니까, 단을 아무리 많이 쌓아도 그 조성을 넘어가기 어렵다.</p>
+<p> </p>
+<p>이를 종합하면, <span><span aria-hidden="true"><span><span>α</span></span></span></span>가 1에 가까우면 두 성분의 휘발도가 거의 같아서 단수가 너무 많이 필요하고, 일반 증류로 공비 조성을 못 넘으니까 압력을 바꾸거나, solvent/entrainer를 넣거나, 상분리를 이용한다는 취지로 11장이 도입된다.</p>
+<p>----------------------------------------</p>
+<p>Enhanced Distillation 개요</p>
+<p>일반 증류는 휘발도 차이로 분리한다. 그런데 두 성분의 끓는점이 너무 비슷하거나, 공비점을 만들면 일반 증류만으로는 고순도 제품을 얻기 어렵다. 그래서 다음과 같은 해결 방법이 존재한다.</p>
+<table border="1">
+<tbody>
+<tr>
+<td>Extractive distillation</td>
+<td>고비점 solvent를 넣어서 액상 activity coefficient를 바꿈</td>
+</tr>
+<tr>
+<td>Salt distillation</td>
+<td>비휘발성 염을 넣어서 상대휘발도 바꿈</td>
+</tr>
+<tr>
+<td>Pressure-swing distillation</td>
+<td>압력을 바꿔서 공비 조성을 이동시킴</td>
+</tr>
+<tr>
+<td>Homogeneous azeotropic distillation</td>
+<td>entrainer를 넣어 균일상 공비를 만들어 분리</td>
+</tr>
+<tr>
+<td>Heterogeneous azeotropic distillation</td>
+<td>entrainer를 넣어 상분리되는 공비를 만들고 decanter 사용</td>
+</tr>
+<tr>
+<td>Reactive distillation</td>
+<td>반응과 증류를 동시에 수행</td>
+</tr>
+</tbody>
+</table>
+<p>각각을 살펴볼건데, 먼저 일단 Extractive distillation을 잠깐만 다뤄보자.</p>
+<p> </p>
+<p>1)Extractive distillation: 증류는 결국 누가 더 기상으로 잘 올라가느냐를 보는 것인데, 액상 활동도 계수를 바꾸면 증류를 개선할 수 있다. 활동도 계수는 성분 i가 얼마나 불안정하게 존재하는지를 보정하는 값이다. 이상용액이면 1이지만 불안정할 경우 1보다 크고 기상으로 잘 날아간다. 반면 안정하면 1보다 작으며 액상에 더 오래 존재한다. 증류에서 핵심은 K인데, 이상기체에 가까운 경우 다음과 같이 볼 수 있다.</p>
+<p><figure class="figure"><img alt="" height="66" src="../images/294/06.png" width="120"/></figure>
+</p>
+<p>즉, 성분 <span><span aria-hidden="true"><span><span>i</span></span></span></span>의 기상 이동성은 증기압과 전체압력과 활동도계수에 의해 결정된다. 이때 활동도 계수는 솔번트를 넣으면 바꿀 수 있다는 특징이 있다. 그래서 extractive distillation에서는 solvent를 넣어서 액상 activity coefficient를 바꾼다. 그 결과 key component의 상대휘발도 <span><span aria-hidden="true"><span><span>α</span></span></span></span>가 유리해진다.</p>
+<p> </p>
+<p>직관적으로 말하면 원래 A랑 B가 너무 비슷하게 날아가서 분리가 안 된다고 해보자. 일반 증류에서는 둘이 같이 올라간다.<br/>A↑,B↑<br/>그래서 탑 제품도 A+B, 바닥 제품도 A+B가 된다. 그런데 solvent S를 넣으면 S가 B를 액체에 붙잡는다.<br/>B−S interaction strong<br/>그러면 B는 액상에 남고, A는 위로 더 잘 올라간다.<br/>A↑,B↓<br/>그 결과 탑에서는 A-rich, 바닥에서는 B+S-rich가 된다. 그 다음 두 번째 컬럼에서 B와 S를 분리하고, S는 recycle하면 된다.</p>
+<p> </p>
+<p>Use of Triangular Graphs</p>
+<p>solvent나 entrainer를 넣는 경우(위에서 말한 Extractive distillation처럼) A-B-S 삼성분계가 된다. 세 성분 조성을 한 그림에 나타내려면 삼각도표가 필요하다.</p>
+<p><figure class="figure"><img alt="" height="279" src="../images/294/07.png" width="288"/></figure>
+</p>
+<p>삼각도표에서 물질수지선을 살펴볼 것이다.</p>
+<p><figure class="figure"><img alt="" height="127" src="../images/294/08.png" width="237"/></figure>
+</p>
+<p>이 식을 정리하면 </p>
+<p><figure class="figure"><img alt="" height="67" src="../images/294/09.png" width="201"/></figure>
+</p>
+<p>즉, feed 조성 z는 distillate 조성과 bottoms 조성의 가중평균이다. 그래서 삼각도표에서 D, F, B는 한 직선 위에 있어야 한다. 삼각도표에서의 F, D, B는 “점”, 즉 조성을 의미한다. 좀 어려운 말로 feed, distillate, bottoms product composition은 삼각도표 안에서 straight total-material-balance line 위에 있어야 한다. </p>
+<p><figure class="figure"><img alt="" height="116" src="../images/294/10.png" width="270"/></figure>
+</p>
+<p>즉 삼각도표에서 feed 조성점 <span><span aria-hidden="true"><span><span>F</span></span></span></span>는 distillate 조성점 <span><span>D</span></span>와 bottoms 조성점 <span><span>B</span></span>를 잇는 선 위에 있어야 한다.</p>
+<p> </p>
+<p>이제 Lever rule에 대해 알아보자. 삼각도표에서 D-F-B가 한 직선 위에 있을 때, 양의 비는 거리비로 계산할 수 있다. feed 점이 D에 가까우면 D 쪽 양이 적고, B에 가까우면 B 쪽 양이 적다.</p>
+<p> </p>
+<p data-end="2619" data-start="2589">그래서 삼각도에서는 “분리가 가능하냐?”를 볼 때 항상</p>
+<ol data-end="2725" data-start="2621">
+<li data-end="2664" data-start="2621">residue curve 또는 distillation curve를 보고,</li>
+<li data-end="2694" data-start="2665">distillation boundary를 보고,</li>
+<li data-end="2725" data-start="2695">F-D-B가 한 직선 위에 놓일 수 있는지 본다.</li>
+</ol>
+<p>이때 residue curve가 무엇인가?</p>
+<p data-end="3785" data-start="3709">아주 단순한 batch still을 생각하자. 냄비에 A+B+C 액체가 있고 계속 끓인다. 증기는 계속 빠져나가고, reflux는 없다.</p>
+<p data-end="3858" data-start="3787">그러면 더 휘발성 큰 성분은 먼저 날아간다. 냄비 안에 남는 액체, 즉 residue는 점점 무거운 성분 쪽으로 조성이 바뀐다.</p>
+<p data-end="3924" data-start="3860">이때 시간에 따라 냄비 안 액체 조성 <span><span>x</span></span>가 삼각도 안에서 움직이는 경로가 <b>residue curve</b>다.</p>
+<p><figure class="figure"><img alt="" height="61" src="../images/294/11.png" width="123"/></figure>
+</p>
+<p>간단히 open distillation에서 남아 있는 liquid 조성을 시간에 따라 plot한 것이라고 보면 된다. residue curve의 화살표는 보통</p>
+<p><span><span><span>낮은 끓는점 쪽→높은 끓는점 쪽</span></span></span>으로 간다. residue curve map은 “이 혼합물을 증류하면 조성이 어느 방향으로 움직이는가?”를 보여주는 지도다.</p>
+<p> </p>
+<p>다음으로 Distillation boundary가 뭐냐?</p>
+<p>Residue curve map을 그리면 어떤 경우에는 삼각형 안이 몇 개의 영역으로 갈라진다. 이 영역을 나누는 선이 <b>distillation boundary</b>다. 이는 같은 증류 section 안에서는 조성 경로가 이 선을 넘어가기 어렵다는 것을 의미한다.</p>
+<p>--------------------------------------</p>
+<p>Extractive distillation, 추출증류</p>
+<p data-end="6950" data-start="6916">A+B가 잘 안 분리된다. 그러면 solvent S를 넣는다.그러면 액상 활동도계수 <span><span>γi</span></span>가 바뀌고, 그 결과 상대휘발도 <span><span>αAB</span></span>가 커진다. </p>
+<p data-end="6950" data-start="6916"> </p>
+<p data-end="6950" data-start="6916">구조:</p>
+<p data-end="6950" data-start="6916">A+B feed + solvent S <br/>        ↓ <br/>Extractive distillation column <br/>        ├─ top: A-rich product <br/>        └─ bottom: B+S <br/>                    ↓ <br/>             solvent recovery column <br/>                    ├─ top: B product <br/>                    └─ bottom: S recycle</p>
+<p> </p>
+<p data-end="8131" data-start="8114">즉 컬럼이 보통 2개 필요하다.</p>
+<ol data-end="8212" data-start="8133">
+<li data-end="8167" data-start="8133">첫 번째 컬럼: A와 B를 solvent의 도움으로 분리</li>
+<li data-end="8212" data-start="8168">두 번째 컬럼: B와 solvent를 분리해서 solvent recycle</li>
+</ol>
+<p>예시로서 ethanol-water는 공비가 있어서 일반 증류로 무수 에탄올을 만들기 어렵다. 여기에 ethylene glycol을 넣으면 ethylene glycol이 물과 강하게 상호작용한다. 물은 ethylene glycol 쪽에 더 잡힌다. 물의 휘발도가 낮아진다. ethanol이 상대적으로 더 잘 날아간다. top에서 ethanol을 얻기 쉬워진다. bottom에는 water + ethylene glycol이 남는다. 다음 컬럼에서 water와 ethylene glycol을 분리한다.</p>
+<p> </p>
+<p><b> Azeotropic distillation, 공비증류 </b></p>
+<p>extractive distillation과 azeotropic distillation는 둘 다 제3성분을 넣는다는 점은 비슷하다. 각각의 차이점은 다음과 같다.</p>
+<table border="1">
+<tbody>
+<tr>
+<td>제3성분 이름</td>
+<td>solvent, extractive agent</td>
+<td>entrainer</td>
+</tr>
+<tr>
+<td>보통 끓는점</td>
+<td>높음</td>
+<td>낮거나 중간일 수도 있음</td>
+</tr>
+<tr>
+<td>feed 성분과 공비 형성</td>
+<td>원칙적으로 안 하는 게 좋음</td>
+<td>공비를 형성해도 됨</td>
+</tr>
+<tr>
+<td>목적</td>
+<td>상대휘발도 변화</td>
+<td>새로운 공비/상분리/region 변화 이용</td>
+</tr>
+<tr>
+<td>난이도</td>
+<td>비교적 단순</td>
+<td>더 복잡</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p>azeotropic distillation에서는 solvent를 특별히 entrainer라고 부르고, entrainer는 원료 성분과 azeotrope를 형성해도 된다. 반대로 extractive distillation은 높은 끓는점 solvent를 써서 나중에 회수하기 쉽게 만드는 쪽이다.</p>
+<p> </p>
+<p>--------------------------------------</p>
+<p>11.4 Pressure-Swing Distillation</p>
+<p>압력을 바꾸면 공비 조성이 바뀌는 혼합물을, 서로 다른 압력의 두 컬럼으로 분리하는 방법을 의미한다.</p>
+<p data-end="13909" data-start="13904">공비점에서 <span><span><span>xi=yi </span></span></span>이고, 그 공비 조성은 압력의 함수다. <span><span><span>xaz=f(P). 만약 압력을 바꿨을 때 공비 조성이 많이 이동하면, 두 개의 압력에서 각각 증류를 수행해서 공비 장벽을 우회할 수 있다.</span></span></span></p>
+<p data-end="13909" data-start="13904"> </p>
+<p data-end="13909" data-start="13904">예를 들어 ethanol-benzene을 보자. ethanol-benzene은 760 torr에서 <b>44.8 mol% ethanol</b>의 minimum-boiling azeotrope를 만들고, 압력을 200 torr로 낮추면 공비 조성이 <b>36 mol% ethanol</b>으로 이동한다. 그래서 ethanol-benzene은 pressure-swing distillation 후보가 된다.</p>
+<p><figure class="figure"><img alt="" height="74" src="../images/294/12.png" width="245"/></figure>
+</p>
+<p>같은 ethanol-benzene 혼합물인데, 압력을 바꾸면 증류로 넘을 수 없는 벽의 위치가 바뀐다.</p>
+<p> </p>
+<p>Pressure-swing이 가능한 조건은 어떤 이성분 공비혼합물에 대해<br/>1.어떤 압력에서 공비가 사라지거나,<br/>2. 적당한 압력 변화 범위에서 공비 조성이 약 5 mol% 이상 변하면, pressure-swing distillation을 고려할 수 있다.</p>
+<p> </p>
+<p>Minimum-boiling azeotrope에서 기본 원리:</p>
+<p>공비 조성이 가장 잘 날아가는 조성이라는 뜻이다. 그래서 증류탑 위쪽 distillate는 공비점 쪽으로 간다. A-B가 minimum-boiling azeotrope를 만든다고 하자. 이때 두 압력에서 공비 조성을 바꿀 수 있다.</p>
+<p><figure class="figure"><img alt="" height="43" src="../images/294/13.png" width="160"/></figure>
+</p>
+<p>그러면 컬럼을 두개 쓴다.</p>
+<p> </p>
+<p><b>Column 1: 낮은 압력 P1</b><br/>Feed + recycle이 들어간다. Column 1에서 bottom으로 거의 순수 A를 얻는다.<br/>B1≈A<br/>Column 1 distillate는 공비 근처 조성으로 나간다.<br/>D1≈xaz(P1)<br/>이 D1은 Column 2 feed가 된다.</p>
+<p> </p>
+<p><b>Column 2: 높은 압력 P2</b></p>
+<p>Column 2에서 bottom으로 거의 순수 B를 얻는다.</p>
+<p>B2≈B<br/>Column 2 distillate는 다시 공비 근처 조성으로 나가고, 이걸 Column 1로 recycle한다.<br/>D2→Recycle to Column 1</p>
+<p> </p>
+<p>즉 minimum-boiling azeotrope에서는 <b>distillate가 공비점으로 끌려가고, bottoms에서 한쪽 순성분을 얻는다</b>고 보면 된다.</p>
+<p> </p>
+<p>이게 무슨말인지 모를 것 같아서 숫자로 예시를 들어보겠다. A를 ethanol이라고 하자. ethanol-benzene의 공비 조성은 압력에 따라 이렇게 바뀐다.</p>
+<p><figure class="figure"><img alt="" height="84" src="../images/294/14.png" width="248"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="50" src="../images/294/15.png" width="567"/></figure>
+</p>
+<p>여기서 0.36은 낮은 압력에서의 공비점이고, 0.448은 높은 압력에서의 공비점 에탄올 조성이다.</p>
+<p><figure class="figure"><img alt="" height="57" src="../images/294/16.png" width="203"/></figure>
+</p>
+<p>이 구간에 있는 조성은 압력에 따라 의미가 달라진다. 낮은 압력에서는 </p>
+<p><figure class="figure"><img alt="" height="31" src="../images/294/17.png" width="121"/></figure>
+</p>
+<p>이므로 ethanol-rich side다. 따라서 bottoms로 ethanol을 얻을 수 있다.</p>
+<p> </p>
+<p>높은 압력에서는</p>
+<p><figure class="figure"><img alt="" height="35" src="../images/294/18.png" width="134"/></figure>
+</p>
+<p>이므로 benzene-rich side. 따라서 bottoms로 benzene을 얻을 수 있다.</p>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+<p>minimum-boiling azeotrope에서는 distillate가 공비점 쪽으로 빠져나가.</p>
+<p> </p>
+<p><b><span>1. </span>숫자선의 뜻부터 다시</b></p>
+<p><span>x</span>축을 이렇게 잡은 거야<span>.</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/19.png" width="62"/></figure>
+<p><span></span><span><br/></span></p>
+<p>이면 <b>순수<span> benzene</span></b><span>.</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/20.png" width="62"/></figure>
+<p><span></span><span><br/></span></p>
+<p>이면 <b>순수<span> ethanol</span></b><span>.</span></p>
+<p>그래서 숫자선은 이렇게 생김<span>.</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/21.png" width="140"/></figure>
+<p> </p>
+<p>여기서 어떤<span> stream</span>이</p>
+<figure class="figure"><img alt="" height="17" src="../images/294/22.png" width="82"/></figure>
+<p><span></span><span><br/></span></p>
+<p>이면 그<span> stream</span>은</p>
+<ul>
+<li><span>ethanol 40 mol% </span></li>
+<li><span>benzene 60 mol% </span></li>
+</ul>
+<p>이라는 뜻이야<span>.</span></p>
+<p> </p>
+<p><b><span>2. </span>공비점은<span> “</span>벽<span>”</span>이라고 생각하면 됨</b></p>
+<p>일반 증류에서<span> minimum-boiling azeotrope</span>가 있으면<span>, distillate</span>가 공비점 쪽으로 간다<span>.</span></p>
+<p>즉 컬럼 위로 나가는<span> stream</span>은 대략 공비 조성으로 간다<span>.</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/23.png" width="50"/></figure>
+<p><span>교재도<span> minimum-boiling pressure-swing </span>구조에서<span> distillate</span>가 각 압력의<span> azeotrope </span>쪽으로 접근하고<span>, bottoms</span>에서 한쪽 순성분을 얻는다고 설명한다<span>. </span></span></p>
+<p> </p>
+<p><b><span>3. </span>낮은 압력에서는 공비점이<span> 0.36</span>임</b></p>
+<p>낮은 압력에서<span> ethanol-benzene </span>공비점이</p>
+<figure class="figure"><img alt="" height="18" src="../images/294/24.png" width="97"/></figure>
+<p><span></span><span><br/></span></p>
+<p>이라고 하자<span>.</span></p>
+<figure class="figure"><img alt="" height="459" src="../images/294/25.png" width="634"/></figure>
+<p><b><span>4. </span>왜<span> bottom</span>이<span> ethanol </span>쪽으로 가냐<span>?</span></b></p>
+<p><span>minimum-boiling azeotrope</span>에서는<span> distillate</span>가 공비점 쪽으로 빠져나가<span>.</span></p>
+<p>낮은 압력에서는<span> distillate</span>가 대략</p>
+<figure class="figure"><img alt="" height="18" src="../images/294/26.png" width="92"/></figure>
+<p><span></span><span><br/></span></p>
+<p>으로 나간다고 보면 돼<span>.</span></p>
+<p><span>feed</span>는</p>
+<figure class="figure"><img alt="" height="18" src="../images/294/27.png" width="91"/></figure>
+<p><span></span><span><br/></span></p>
+<p>이었지<span>.</span></p>
+<p>그러면 위로 나가는<span> distillate</span>는<span> feed</span>보다<span> ethanol</span>이 적어<span>.</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/28.png" width="74"/></figure>
+<p><span></span><span><br/></span></p>
+<p>즉 위로 빠져나가는 놈은 상대적으로 <b><span>benzene</span>이 더 많은<span> stream</span></b>이야<span>.</span></p>
+<p>그러면 남는<span> bottom</span>에는<span> ethanol</span>이 더 농축된다<span>.</span></p>
+<p>숫자로 해보자<span>.</span></p>
+<p>처음에<span> feed 100 mol</span>이 있고<span>,</span></p>
+<figure class="figure"><img alt="" height="18" src="../images/294/29.png" width="91"/></figure>
+<p><span></span><span><br/></span></p>
+<p>이면<span> ethanol</span>은<span> 40 mol, benzene</span>은<span> 60 mol</span>이야<span>.</span></p>
+<p>여기서<span> distillate 50 mol</span>이 공비 조성<span> 0.36</span>으로 빠져나간다고 하자<span>.</span></p>
+<p><span>distillate </span>속<span> ethanol </span>양<span>:</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/30.png" width="96"/></figure>
+<p><span></span><span><br/><br/></span></p>
+<p>그러면<span> bottom</span>에 남은<span> ethanol:</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/31.png" width="86"/></figure>
+<p><span></span><span><br/><br/></span></p>
+<p><span>bottom </span>총량<span>:</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/32.png" width="94"/></figure>
+<p>따라서<span> bottom ethanol </span>조성<span>:</span></p>
+<figure class="figure"><img alt="" height="33" src="../images/294/33.png" width="127"/></figure>
+<p><span></span><span><br/><br/></span></p>
+<p>처음<span> feed</span>는<span> 0.40</span>이었는데<span> bottom</span>은<span> 0.44</span>가 됐지<span>?</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/34.png" width="75"/></figure>
+<p><span></span><span><br/></span></p>
+<p>즉<span> bottom</span>이<span> ethanol </span>쪽으로 이동함<span>.</span></p>
+<p>계속 증류하면 더 오른쪽으로 가서 최종적으로<span> pure ethanol </span>쪽으로 간다<span>.</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/35.png" width="84"/></figure>
+<p><span></span><span><br/></span></p>
+<p><b><span>5. </span>높은 압력에서는 공비점이<span> 0.448</span>임</b></p>
+<p>이제 같은<span> stream</span>을 높은 압력 컬럼에 넣는다고 해보자<span>.</span></p>
+<p>높은 압력에서 공비점은</p>
+<figure class="figure"><img alt="" height="18" src="../images/294/36.png" width="105"/></figure>
+<p><span></span><span><br/><br/></span></p>
+<p>이다<span>.</span></p>
+<p>숫자선은 이렇게 됨<span>.</span></p>
+<figure class="figure"><img alt="" height="18" src="../images/294/37.png" width="252"/></figure>
+<p><span></span><br/><br/></p>
+<p>아까 같은<span> stream</span>이</p>
+<figure class="figure"><img alt="" height="17" src="../images/294/38.png" width="82"/></figure>
+<p><span></span><span><br/></span></p>
+<p>이면 이번에는 공비점보다 왼쪽에 있음<span>.</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/39.png" width="82"/></figure>
+<p><span></span><span><br/><br/></span></p>
+<p>그래서 높은 압력에서는 이<span> stream</span>이 <b><span>benzene-rich side</span></b>에 있다고 말하는 거야<span>.</span></p>
+<p>이것도<span> “benzene</span>이<span> 50%</span>보다 많아서<span>”</span>가 아니라<span>, </span><b>공비점 기준으로<span> benzene </span>쪽에 있다</b>는 뜻이야<span>.</span></p>
+<p><span> </span></p>
+<p><b><span>6. </span>왜 높은 압력에서는<span> bottom</span>이<span> benzene </span>쪽으로 가냐<span>?</span></b></p>
+<p>높은 압력에서<span> distillate</span>는 공비점 쪽으로 간다<span>.</span></p>
+<figure class="figure"><img alt="" height="18" src="../images/294/40.png" width="100"/></figure>
+<p><span></span><span><br/><br/></span></p>
+<p><span>feed</span>는</p>
+<figure class="figure"><img alt="" height="18" src="../images/294/41.png" width="91"/></figure>
+<p><span></span><span><br/><br/></span></p>
+<p>이었지<span>.</span></p>
+<p>이번에는<span> distillate</span>가<span> feed</span>보다<span> ethanol</span>이 많아<span>.</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/42.png" width="82"/></figure>
+<p><span></span><span><br/><br/></span></p>
+<p>즉 위로 빠져나가는<span> distillate</span>가<span> ethanol</span>을 더 많이 가져간다<span>.</span></p>
+<p>그러면 남는<span> bottom</span>은<span> ethanol</span>이 줄고<span>, benzene</span>이 많아진다<span>.</span></p>
+<p>숫자로 해보자<span>.</span></p>
+<p>처음<span> feed 100 mol, ethanol 40 mol.</span></p>
+<p><span>distillate 50 mol</span>이 공비 조성<span> 0.448</span>로 빠져나감<span>.</span></p>
+<p><span>distillate </span>속<span> ethanol:</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/43.png" width="115"/></figure>
+<p><span></span><span><br/><br/></span></p>
+<p><span>bottom</span>에 남은<span> ethanol:</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/44.png" width="107"/></figure>
+<p><span></span><span><br/><br/></span></p>
+<p><span>bottom </span>총량<span>:</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/45.png" width="94"/></figure>
+<p><span></span><span><br/><br/></span></p>
+<p><span>bottom ethanol </span>조성<span>:</span></p>
+<figure class="figure"><img alt="" height="33" src="../images/294/46.png" width="146"/></figure>
+<p><span></span><span><br/><br/></span></p>
+<p>처음<span> feed</span>는<span> 0.40</span>이었는데<span> bottom</span>은<span> 0.352</span>가 됐어<span>.</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/47.png" width="83"/></figure>
+<p><span></span><span><br/><br/></span></p>
+<p>즉<span> bottom</span>이 왼쪽<span>, benzene </span>쪽으로 이동함<span>.</span></p>
+<p>계속 증류하면<span> pure benzene </span>쪽으로 간다<span>.</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/48.png" width="90"/></figure>
+<p> </p>
+<p><b><span>7. </span>같은<span> 0.40 </span>조성이 왜 압력에 따라 다르게 행동하냐<span>?</span></b></p>
+<p>핵심은 이거야<span>.</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/49.png" width="82"/></figure>
+<p><span></span><span><br/><br/></span></p>
+<p>이라는 같은 조성을 보자<span>.</span></p>
+<figure class="figure"><img alt="" height="382" src="../images/294/50.png" width="579"/></figure>
+<p> </p>
+<p>그래서 공비점보다 왼쪽<span>.<br/></span>따라서<span> bottom</span>은<span> benzene </span>쪽으로 감<span>.</span></p>
+<p>표로 보면 이거야<span>.</span></p>
+<table border="1">
+<tbody>
+<tr>
+<td><span><b>압력<span></span></b></span></td>
+<td><span><b>공비점 </b><span></span><b><span></span></b></span></td>
+<td><span><b>같은<span> feed </span></b><span></span><b>의 위치<span></span></b></span></td>
+<td><span><b><span>bottom </span>방향<span></span></b></span></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td><span>낮은 압력<span></span></span></td>
+<td><span><span>0.36</span></span></td>
+<td><span>공비점보다 오른쪽<span></span></span></td>
+<td><span><span>ethanol </span>쪽<span></span></span></td>
+</tr>
+<tr>
+<td><span>높은 압력<span></span></span></td>
+<td><span><span>0.448</span></span></td>
+<td><span>공비점보다 왼쪽<span></span></span></td>
+<td><span><span>benzene </span>쪽<span></span></span></td>
+</tr>
+</tbody>
+</table>
+<p>이게<span> pressure-swing</span>의 전부야<span>.</span></p>
+<p><b><span>8. </span>그래서 두 컬럼을 왜 연결하냐<span>?</span></b></p>
+<p>낮은 압력 컬럼에서는<span> bottom</span>으로<span> ethanol</span>을 뽑을 수 있다<span>.</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/51.png" width="215"/></figure>
+<p><span></span><br/><br/></p>
+<p>그런데<span> Column 1</span>의<span> distillate</span>는 순수 제품이 아니라 낮은 압력 공비점 근처다<span>.</span></p>
+<figure class="figure"><img alt="" height="17" src="../images/294/52.png" width="62"/></figure>
+<p><span></span><span><br/><br/></span></p>
+<p>이걸 높은 압력<span> Column 2</span>에 넣으면<span>, </span>높은 압력 공비점은<span> 0.448</span>이니까</p>
+<figure class="figure"><img alt="" height="17" src="../images/294/53.png" width="82"/></figure>
+<p><span></span><span><br/><br/></span></p>
+<p>즉<span> Column 2 </span>입장에서는<span> benzene </span>쪽<span> feed</span>가 된다<span>.</span></p>
+<p>그래서<span> Column 2 bottom</span>으로<span> benzene</span>을 뽑을 수 있다<span>.</span></p>
+<figure class="figure"><img alt="" height="18" src="../images/294/54.png" width="228"/></figure>
+<p> </p>
+<p><span>Column 2 distillate</span>는 다시 높은 압력 공비점 근처라서 순수 제품이 아니고<span>, Column 1</span>로<span> recycle</span>한다<span>. </span>교재도<span> lower pressure column</span>의<span> distillate</span>를<span> second column</span>으로 보내고<span>, second column distillate</span>를<span> first column</span>으로<span> recycle</span>하는 구조를<span> Figure 11.23(b)</span>에서 제시한다<span>. </span></p>
+<div> </div>
+<p> </p>
+</div>
+</div>
+
+<p>즉 <b>압력을 다르게 한 두 개의 증류탑</b>을 쓰면, 한 압력에서는 A를 bottom으로 빼고, 다른 압력에서는 B를 bottom으로 뺄 수 있다. 이게 <b>pressure-swing distillation</b>이다. 이제 다음 그림을 보면서 pressure-swing distillation 관련 개념을 해석해보자.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="751" src="../images/294/55.png" width="1129"/></figure>
+</p>
+<p>Figure 11.22(a)는 압력을 바꾸면 공비점의 온도가 바뀐다를 보여주는 그림이야. 근데 pressure-swing에서 진짜 중요한 건 온도보다 조성 변화다. 그게 오른쪽 그래프다.</p>
+<p> </p>
+<p>오른쪽은 <span><span>System pressure </span></span><span><span>vs.</span></span><span><span>Mole fraction of ethanol in azeotrope 그래프이다. 압력을 바꿨을 때, 공비점에서 ethanol 몰분율이 어떻게 바뀌는지를 보여준다. 그림을 해석해보면 에탄올-물 곡선은 위쪽에 있다. 0.85~0.95 근처에서 압력을 바꾸면 움직이는데, 크게 조성이 바뀌진 않는다. 반면 에탄올 벤젠계는 매우 급격하게 움직인다.</span></span> 이 압력에 따른 공비 조성 이동 때문에 ethanol-benzene이 pressure-swing distillation 후보가 된다.</p>
+<p> </p>
+<p>다음으로 Figure 11.23(a): minimum-boiling azeotrope에서의 T-y-x 곡선을 살펴보자. 이 그림은 <b>minimum-boiling azeotrope</b>를 가진 이성분계의 <span><span>T−y−x</span></span>곡선을 두 압력에서 그린 것이다.</p>
+<p> </p>
+<p>왜 곡선이 골짜기 모양인가? minimum-boiling azeotrope는 말 그대로 <b>최소 끓는점 공비점</b>이다. 그래서 <span><span>T−x−y</span></span>선에서 공비점이 가장 낮은 온도의 골짜기처럼 나타난다.곡선의 최저점이 공비점이다.공비점에서는<span><span><span>xA=yA</span></span></span>이다. 즉 액상 조성과 기상 조성이 같아진다. 이제 기호를 해석해보자.</p>
+<p><figure class="figure"><img alt="" height="428" src="../images/294/56.png" width="536"/></figure>
+<figure class="figure"><img alt="" height="74" src="../images/294/57.png" width="140"/></figure>
+<figure class="figure">
+<div><img alt="" height="480" src="../images/294/58.png" width="648"/><img alt="" height="552" src="../images/294/59.png" width="669"/></div>
+</figure>
+</p>
+<p><b>Column 1에서 무슨 일이 일어나는가?</b></p>
+<p>Column 1은 낮은 압력 <span><span>P1</span></span>에서 작동한다. 그림에서 <span><span>F1</span></span>은 낮은 압력 <span><span>P1</span></span>곡선 위에서, 공비점 <span><span>D1</span></span>보다 오른쪽에 있다.</p>
+<p data-end="3276" data-start="3275">즉<span><span><span>xF1,A&gt;xaz,1</span></span></span>이다.여기서 <span><span>xaz,1</span></span>은 낮은 압력 <span><span>P1</span></span>에서의 공비 조성이다.minimum-boiling azeotrope에서는 distillate가 공비점 쪽으로 간다. 그러므로 Column 1의 위쪽 제품은 <span><span><span>D1≈xaz,1</span></span></span>이 된다.</p>
+<p data-end="3512" data-start="3466">반대로 bottom은 공비점에서 멀어져서 오른쪽 끝, 즉 pure A 쪽으로 간다.<span><span><span>B1≈Pure A</span></span></span></p>
+<p data-end="3598" data-start="3547">그래서 그림에서 Column 1 bottom이 <span><span>B1</span></span>, pure A로 표시되어 있다.</p>
+<p data-end="3801" data-start="3600">교재도 Figure 11.23(b) sequence를 적용할 때 첫 번째 컬럼의 feed 조성이 해당 압력의 공비 조성보다 크면, distillate는 그 압력의 minimum-boiling azeotrope로 접근하고 bottoms는 ethanol-rich product가 된다고 설명한다.</p>
+<p data-end="3836" data-start="3808"> </p>
+<p data-end="3836" data-start="3808"><b>Column 2에서 무슨 일이 일어나는가?</b></p>
+<p data-end="3880" data-start="3838">Column 1 distillate <span><span>D1</span></span>은 Column 2로 간다.그래서 <span><span><span>F2=D1</span></span></span>이다. 그런데 Column 2는 높은 압력 <span><span>P2</span></span>에서 작동한다.</p>
+<p data-end="3989" data-start="3959"><span><span>D1</span></span>의 조성은 낮은 압력의 공비 조성 근처다.</p>
+<p><span><span><span>xD1,A≈xaz,1</span></span></span></p>
+<p data-end="4057" data-start="4024">그런데 높은 압력에서는 공비 조성이 오른쪽으로 이동해 있다.</p>
+<p><span><span><span>xaz,2&gt;xaz,1</span></span></span></p>
+<p>따라서 Column 2 입장에서 보면<span><span><span>xF2,A&lt;xaz,2</span></span></span>이다.</p>
+<p data-end="4191" data-start="4140">즉 Column 2 feed는 높은 압력 공비점보다 왼쪽, 즉 B-rich side에 있다.</p>
+<p data-end="4247" data-start="4193">minimum-boiling azeotrope에서는 또 distillate가 공비점 쪽으로 간다.</p>
+<p><span><span><span>D2≈xaz,2</span></span></span></p>
+<p data-end="4309" data-start="4277">그리고 bottom은 왼쪽 끝, pure B 쪽으로 간다.</p>
+<p><span><span><span>B2≈Pure B</span></span></span></p>
+<p data-end="4395" data-start="4344">그래서 그림에서 Column 2 bottom이 <span><span>B2</span></span>, pure B로 표시되어 있다.</p>
+<p data-end="4605" data-start="4397"> </p>
+<p data-end="4605" data-start="4397">즉 두 번째 컬럼의 feed는 두 번째 컬럼 압력에서의 공비 조성보다 ethanol 함량이 작기 때문에, distillate는 그 압력의 공비 조성으로 접근하고 bottoms는 99 mol% benzene이 되며, distillate는 첫 번째 컬럼으로 recycle된다</p>
+<p data-end="4638" data-start="4612"> </p>
+<p data-end="4638" data-start="4612"><b>왜 <span><span>D2</span></span>를 recycle하나?</b></p>
+<p data-end="4690" data-start="4640">Column 2의 distillate <span><span>D2</span></span>는 순수 A도 아니고 순수 B도 아니다.</p>
+<p data-end="4716" data-start="4692">그냥 높은 압력에서의 공비점 근처 조성이다.</p>
+<p><span><span><span>D2≈xaz,2</span></span></span></p>
+<p data-end="4765" data-start="4746">따라서 최종 제품으로 팔 수 없다.</p>
+<p data-end="4806" data-start="4767">그런데 이 <span><span>D2=</span></span>를 Column 1으로 되돌리면 의미가 생긴다.</p>
+<p data-end="4863" data-start="4808">Column 1은 낮은 압력 <span><span>P1</span></span>에서 작동하고, 낮은 압력의 공비 조성은 더 왼쪽에 있다.</p>
+<p><span><span><span>xaz,1&lt;xD2,A</span></span></span></p>
+<p data-end="5017" data-start="4892">그래서 <span><span>D2</span></span>는 Column 1 입장에서 보면 ethanol-rich side에 있다. Fresh feed <span><span>F</span></span>와 섞어서 <span><span>F1</span></span>을 만들면 Column 1에서 다시 pure A bottom을 뽑을 수 있다. 즉 recycle은 쓰레기 stream이 아니라, <b>다른 압력으로 보내면 다시 분리 가능한 feed</b>가 되는 stream이다.<br/><br/></p>
+<table border="1">
+<tbody>
+<tr>
+<td><span><b>방법<span></span></b></span></td>
+<td><span><b>제<span>3</span>성분 사용<span>?</span></b></span></td>
+<td><span><b>제<span>3</span>성분 이름<span></span></b></span></td>
+<td><span><b>핵심 원리<span></span></b></span></td>
+<td><span><b>장점<span></span></b></span></td>
+<td><span><b>어려운 점<span></span></b></span></td>
+</tr>
+<tr>
+<td><span><span>Extractive distillation</span></span></td>
+<td><span>사용<span></span></span></td>
+<td><span><span>solvent / extractive agent</span></span></td>
+<td><span><span>activity coefficient<span> </span></span>변화<span><span> </span>→<span> </span></span>상대휘발도 증가<span></span></span></td>
+<td><span>구조 비교적 단순<span></span></span></td>
+<td><span><span>solvent<span> </span></span>회수 필요<span></span></span></td>
+</tr>
+<tr>
+<td><span><span>Azeotropic distillation</span></span></td>
+<td><span>사용<span></span></span></td>
+<td><span><span>entrainer</span></span></td>
+<td><span>새로운 공비 또는<span><span> </span>distillation region<span> </span></span>변화 이용<span></span></span></td>
+<td><span>공비 혼합물 우회 가능<span></span></span></td>
+<td><span><span>residue map, recycle, boundary<span> </span></span>때문에 복잡<span></span></span></td>
+</tr>
+<tr>
+<td><span><span>Heterogeneous azeotropic</span></span></td>
+<td><span>사용<span></span></span></td>
+<td><span><span>entrainer</span></span></td>
+<td><span>응축 후 두 액상으로 상분리<span></span></span></td>
+<td><span><span>decanter</span>로<span><span> </span>region<span> </span></span>이동 가능<span></span></span></td>
+<td><span><span>decanter, binodal/tie-line<span> </span></span>필요<span></span></span></td>
+</tr>
+<tr>
+<td><span><span>Pressure-swing</span></span></td>
+<td><span>미사용<span></span></span></td>
+<td><span>없음<span></span></span></td>
+<td><span>압력 변화로 공비 조성 이동<span></span></span></td>
+<td><span><span>solvent<span> </span></span>오염 없음<span></span></span></td>
+<td><span>압력 변화 비용<span>,<span> </span></span>두 압력 컬럼 필요<span></span></span></td>
+</tr>
+<tr>
+<td><span><span>Salt distillation</span></span></td>
+<td><span>사용<span></span></span></td>
+<td><span><span>salt</span></span></td>
+<td><span>비휘발성<span><span> </span>salt</span>가<span> </span><span></span>변화<span></span></span></td>
+<td><span><span>solvent vapor loss<span> </span></span>감소 가능<span></span></span></td>
+<td><span>부식<span>,<span> </span></span>침전<span>,<span> </span></span>운전 문제<span></span></span></td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/274.html"><span>← 이전 글</span><strong>분리공정 예제풀이</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7.5: Multiple Feeds, Sidestreams, and Open Steam · 화학공학 노트</title>
+<meta name="description" content="기본 McCabe–Thiele에서는 operating line이 2개임을 배워왔다. 예를 들면 다음과 같다.기본 distillation column은 보통 이렇게 생겼다.피드가 하나만 있으면 컬럼 내부 유량은 R과 S 두 영역으로만 나뉜다. 위쪽 rectifying section에서는 내부 액체 유량과 증기 유량이이 L,V, 아래쪽에서는 피드가 들어온 영향으로 Lˉ,Vˉ 로 나뉜다. 이로 인해 조작선도 2개가 된다.이때 중요한 것! operating line의 기울기 = 그 구간의 내부 액체 유량 / 내부 증기 유량이라는 것이다. ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html" aria-current="page">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/separation.html">분리공정</a></nav>
+  <header class="post-head">
+    <h1>7.5: Multiple Feeds, Sidestreams, and Open Steam</h1>
+    <p class="meta">
+      <time datetime="2026-05-25">2026.05.25</time>
+ · 수정 2026.05.31    </p>
+  </header>
+
+
+  <div class="body">
+    <p>기본 McCabe–Thiele에서는 operating line이 2개임을 배워왔다. 예를 들면 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="300" src="../images/289/01.png" width="320"/></figure>
+</p>
+<p>기본 distillation column은 보통 이렇게 생겼다.</p>
+<p><figure class="figure"><img alt="" height="326" src="../images/289/02.png" width="227"/></figure>
+</p>
+<p>피드가 하나만 있으면 컬럼 내부 유량은 R과 S 두 영역으로만 나뉜다. 위쪽 rectifying section에서는 내부 액체 유량과 증기 유량이이 <span>L</span><span>,</span><span>V, 아래쪽에서는 피드가 들어온 영향으로 <span><span><span><span><span><span>L</span></span><span><span><span>ˉ</span></span></span></span></span></span></span><span>,</span><span><span><span><span><span><span>V</span></span><span><span><span>ˉ 로 나뉜다. 이로 인해 조작선도 2개가 된다.</span></span></span></span></span></span></span></span></p>
+<p><figure class="figure"><img alt="" height="202" src="../images/289/03.png" width="467"/></figure>
+</p>
+<p>이때 중요한 것! operating line의 기울기 = 그 구간의 내부 액체 유량 / 내부 증기 유량이라는 것이다.</p>
+<p> </p>
+<p>이제부터는 feed가 2개이거나, 중간에 side stream이 빠져나간다거나, reboiler 대신 open steam을 넣어서 내부 유량이 변동되는 경우를 살펴볼 것이다. 이때는 조작선이 더 많아진다.</p>
+<p><figure class="figure"><img alt="" height="359" src="../images/289/04.png" width="699"/></figure>
+</p>
+<p>예를 들면 중간에서 liquid side stream이 빠져나가면, 그 아래로 내려가는 액체 유량이 줄어든다. 다음을 생각해보자.</p>
+<p><figure class="figure"><img alt="" height="231" src="../images/289/05.png" width="456"/></figure>
+</p>
+<p>즉, <b>같은 rectifying section 안에서도 side stream 위아래가 다른 operating line을 갖게</b>된다. 따라서 외부 stream이 들어오거나 나가는 지점을 기준으로 column을 여러 구간으로 자르고, 각 구간마다 물질수지를 새로 세워 operating line을 만들어야 한다.</p>
+<p> </p>
+<p><b> Multiple feeds: feed가 여러 개 들어오는 경우 </b></p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="408" src="../images/289/06.png" width="369"/></figure>
+</p>
+<p>위 상황을 생각해보자.  feed가 여러 개 있고, sidestream도 있을 수 있는 구조이다. 이때, 들어오는 구간을 나누고 각 구간마다 다른 조작선을 그려야 한다. 예를 들어 feed가 위쪽에 하나, 아래쪽에 하나 있다고해보자.</p>
+<p><figure class="figure"><img alt="" height="456" src="../images/289/07.png" width="167"/></figure>
+</p>
+<p>그러면 operating line도 구간 1, 구간 2, 구간 3에 대해 각각 생겨야 한다. 왜냐하면 feed가 들어오면 내부 흐름이 바뀌기 때문이다.</p>
+<p>saturated liquid feed가 들어오면 그 feed는 아래로 내려가는 liquid에 더해진다.</p>
+<p><figure class="figure"><img alt="" height="124" src="../images/289/08.png" width="197"/></figure>
+</p>
+<p>그래서 feed 아래쪽 operating line의 기울기 L/V가 커진다. 쉽게 말하면 액체 feed가 들어오면 아래쪽으로 내려가는 액체가 많아진다. 그래서 <span><span>L/V</span></span>가 커지고 operating line이 더 가팔라진다. 반대로 feed가 vapor이면 그 feed는 위로 올라가는 vapor에 더해지고</p>
+<p><figure class="figure"><img alt="" height="117" src="../images/289/09.png" width="200"/></figure>
+</p>
+<p>그래서 <span><span>L/V</span></span>가 작아지고 operating line이 완만해진다.</p>
+<p> </p>
+<p>그럼 문제는 L이 들어오면 가팔라지고 V가 들어오면 완만해지는 거는 알겠는데 혼합이면 어떻게되나?</p>
+<p> </p>
+<p>feed가 liquid + vapor 혼합이면, <span><span>q</span></span>를 써서 나눈다.</p>
+<p><figure class="figure"><img alt="" height="78" src="../images/289/10.png" width="313"/></figure>
+<figure class="figure"><img alt="" height="161" src="../images/289/11.png" width="520"/></figure>
+</p>
+<p>즉, feed가 여러 개 있으면 feed 하나하나가 내부 <span><span>L,V</span></span>를 바꾸고, 그 결과 operating line이 계속 바뀐다.</p>
+<p> </p>
+<p><b> Sidestream: column 중간에서 product를 빼는 경우</b></p>
+<p>distillate는 top에서 빠져나가고, bottoms는 bottom에서 빠져나가는데, sidestream은 그 중간 어딘가에서 빠져나간다.  물질수지를 만족하는 범위에서 sidestream 유량 <span><span>LS</span></span>와 조성 <span><span>xS</span></span>를 지정할 수 있다.</p>
+<p> </p>
+<p>liquid sidestream이 빠지면 그 아래 operating line의 기울기가 작아진다.</p>
+<p><figure class="figure"><img alt="" height="200" src="../images/289/12.png" width="498"/></figure>
+</p>
+<p>다음 예제를 통해 한번 감을 잡아보자. Example 7.5는 <b>liquid sidestream이 rectifying section에서 빠지는 경우</b>를 다룬다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="310" src="../images/289/13.png" width="655"/></figure>
+</p>
+<p>컬럼이 파셜리보일러와 토탈콘덴서로 구성되어있다. 피드는 포화액체이다. 이때 R영역에서 리퀴드 사이드스트림을 가진다. (멀티플피드가 아니므로 빠져나가는 것이다)</p>
+<p><figure class="figure"><img alt="" height="562" src="../images/289/14.png" width="481"/></figure>
+</p>
+<p>a: 두 조작선을 유도하라.</p>
+<p>일단 사이드스트림보다 위쪽을 보도록 하자. 여기는 그냥 일반 조작선과 같다.</p>
+<p><figure class="figure"><img alt="" height="66" src="../images/289/15.png" width="158"/></figure>
+</p>
+<p>이때 사이드 스트림 아래쪽과 피드라인 사이를 보면 이미 L이 좀 빠져나갔다. 따라서 다음과 같다,</p>
+<p><figure class="figure"><img alt="" height="48" src="../images/289/16.png" width="272"/></figure>
+<figure class="figure"><img alt="" height="57" src="../images/289/17.png" width="211"/></figure>
+</p>
+<p>이게 <b>sidestream 아래쪽, feed 위쪽 operating line</b> 이다. 이때 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="40" src="../images/289/18.png" width="119"/></figure>
+</p>
+<p>이때 두 선이 만나는 위치는</p>
+<p><figure class="figure"><img alt="" height="33" src="../images/289/19.png" width="84"/></figure>
+</p>
+<p>이말은 sidestream 조성 <span><span>xS</span></span>를 정해놓으면, 실제로 column 안에서 그 조성이 나오는 tray가 있어야 한다. 그건 column 내부에서 액체 조성이 그 값을 가지는 트레이에서 뺸다는 것이다.</p>
+<p><figure class="figure"><img alt="" height="483" src="../images/289/20.png" width="631"/></figure>
+</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/288.html"><span>← 이전 글</span><strong>7-4. Distillation of Binary Mixtures-&gt;solve the problem</strong></a>
+    <a class="next" href="../posts/290.html"><span>다음 글 →</span><strong>8장.Liquid–Liquid Extraction with Ternary Systems-INTRO</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

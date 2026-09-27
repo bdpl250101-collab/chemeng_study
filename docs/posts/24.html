@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>흡수에 의한 분리 · 화학공학 노트</title>
+<meta name="description" content="공기에 오염물이 섞여있을 때, 이를 액체에 통과시켜 오염물을 제거하는 것이 흡착 분리이다. 이번 챕터에서는 공기에 벤젠(오염물)이 섞여 있을 때, 이를 오일에 통과시켜 분리하는 예제를 통해 흡수에 의한 분리를 알아본다. ex) 100kg/min 의 공기에 1kg/min의 벤젠이 섞인 물질이 오일층을 통과한다. 이때 오일 중 벤젠의 평형 농도는 1kg 벤젠/100kg 오일이다. 그림은 다음과 같다. 먼저 다음과 같은 그림을 그린다. y축은 공기중 벤젠의 비율, x축은 오일 중 벤젠의 비율이다. 맨 처음 조건에서는 공기중에 벤젠이 존재">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html" aria-current="page">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/study.html">화학공학 스터디</a></nav>
+  <header class="post-head">
+    <h1>흡수에 의한 분리</h1>
+    <p class="meta">
+      <time datetime="2024-01-06">2024.01.06</time>
+ · 수정 2024.04.30    </p>
+  </header>
+
+
+  <div class="body">
+    <p>공기에 오염물이 섞여있을 때, 이를 액체에 통과시켜 오염물을 제거하는 것이 흡착 분리이다.</p>
+<p>이번 챕터에서는 공기에 벤젠(오염물)이 섞여 있을 때, 이를 오일에 통과시켜 분리하는 예제를 통해 흡수에 의한 분리를 알아본다. </p>
+<p> </p>
+<p>ex) 100kg/min 의 공기에 1kg/min의 벤젠이 섞인 물질이 오일층을 통과한다. 이때 오일 중 벤젠의 평형 농도는 1kg 벤젠/100kg 오일이다. </p>
+<p> </p>
+<p>그림은 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="243" src="../images/24/01.png" width="476"/></figure>
+</p>
+<p>먼저 다음과 같은 그림을 그린다.  y축은 공기중 벤젠의 비율, x축은 오일 중 벤젠의 비율이다.</p>
+<p> </p>
+<p>맨 처음 조건에서는 공기중에 벤젠이 존재하고 오일에는 벤젠이 없을 것이다.</p>
+<p><figure class="figure"><img alt="" height="270" src="../images/24/02.png" width="508"/></figure>
+</p>
+<p>이때, 질량보존 법칙에 의해 다음 식이 성립한다.</p>
+<p><figure class="figure"><img alt="" height="77" src="../images/24/03.png" width="755"/></figure>
+<figure class="figure"><img alt="" height="421" src="../images/24/04.png" width="945"/></figure>
+</p>
+<p>맨 마지막 식이 의미하는 것은 평형선에서 점과 시작점에서 점 사이의 기울기는 오일과 공기의 질량비라는 것이다. 즉 한번 흡수가 일어날 때 기울기는 오일과 공기의 질량비만큼이다.</p>
+<p> </p>
+<p>개방계에서는 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="96" src="../images/24/05.png" width="390"/></figure>
+</p>
+<p> </p>
+<p>2단 흡수기 장치에서는 다음과 같을 것이다.</p>
+<p><figure class="figure"><img alt="" height="385" src="../images/24/06.png" width="500"/></figure>
+<figure class="figure"><img alt="" height="269" src="../images/24/07.png" width="509"/></figure>
+</p>
+<p>그런데 이 시스템의 문제점은 매 스테이지마다 깨끗한 새 오일을 공급해줘야 한다는 것이다. 이는 비용문제를 초래한다. 맨 밑에서 공급되는 공기는 오염물 농도가 많을 것이다. 그러나 위쪽 단으로 갈 수록 공기는 깨끗해지며 따라서 위쪽 단의 오일의 불순물 농도도 작을 것이다. 따라서 위쪽 단의 오일을 밑으로 순환시켜 재사용하는 기기를 생각해보면 좋을 것이다.</p>
+<p><figure class="figure"><img alt="" height="321" src="../images/24/08.png" width="574"/></figure>
+<figure class="figure"><img alt="" height="321" src="../images/24/09.png" width="574"/></figure>
+</p>
+<p>문제는 이렇게 될 경우, 공급하는 공기의 유량 V와 그 중 벤젠 무게비인 y0와 깨끗한 오일의 공급유량 L, 벤젠 무게비인 x5는 알지만 <b>x4,x3,x2,x1 그리고 y1,y2,y3,y4를 아직 알 수가 없다.</b></p>
+<p><figure class="figure"><img alt="" height="108" src="../images/24/10.png" width="923"/></figure>
+</p>
+<p>이때 이는 <b>조작선</b>을 도입하여 해석할 수 있음이 알려져있다.</p>
+<p><figure class="figure"><img alt="" height="499" src="../images/24/11.png" width="1290"/></figure>
+<figure class="figure"><img alt="" height="572" src="../images/24/12.png" width="847"/></figure>
+</p>
+<p>조작선의 방정식은 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="90" src="../images/24/13.png" width="770"/></figure>
+</p>
+<p>즉 <b>yn=(L/V)X n+1 + 마지막 y값</b>이 조작선의 식이다.</p>
+<p> </p>
+
+<p><figure class="figure"><img alt="" height="362" src="../images/24/14.png" width="847"/></figure>
+</p>
+<p>이렇게 선을 그으면 y4라는 특정 최종 농도를 달성하는데 필요한 초기 물질의 농도값을 알 수 있다. 예컨데</p>
+<p><figure class="figure"><img alt="" height="439" src="../images/24/15.png" width="718"/></figure>
+</p>
+<p> </p>
+<p>선의 끝에 x1,y0에 해당하는 비율을 가진 물질을 넣으면 흡수의 결과로 y4 비율을 가진 기체가 나온다는 것이다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="295" src="../images/24/16.png" width="546"/></figure>
+</p>
+<p>만약 실제 input 기체의 벤젠 비율이 더 적다면, 조작선의 기울기를 조작하여 이를 맞출 수 있다. 이는 Foil/Fair의 비에 달려있으므로 oil의 유량값을 줄이면 기울기가 줄어들 것이다. </p>
+<p> </p>
+
+
+
+<p>요약!!</p>
+<p><figure class="figure"><img alt="" height="731" src="../images/24/17.png" width="1643"/></figure>
+</p>
+<p>조작선과 평형선이 만나는 점을 pinch point라고 한다.</p>
+<p><figure class="figure"><img alt="" height="398" src="../images/24/18.png" width="983"/></figure>
+</p>
+<p>조작선의 기울기가 크다는 것은 L/V 값이 크다는 것으로, 즉 오일이 많이 필요하다는 것이다. 이 경우 재료 값이 많이 들지만 그만큼 한번 운전할 때 흡수되는 불순물의 비율이 커지게 되므로 조금만 운전해도 처리가 잘 되어 운전비는 적어진다. 반면 L을 적게 할 경우 기울기가 줄어들면서 효율이 줄어들어 많은 단을 사용해야한다. </p>
+<p><figure class="figure">
+<div><img alt="" height="439" src="../images/24/15.png" width="718"/><img alt="" height="384" src="../images/24/19.png" width="574"/></div>
+</figure>
+</p>
+<p>따라서 운전비와 재료비는 반비례하는 관계이다.</p>
+<p><figure class="figure"><img alt="" height="387" src="../images/24/20.png" width="667"/></figure>
+</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/22.html"><span>← 이전 글</span><strong>mccabe 단위조작 2</strong></a>
+    <a class="next" href="../posts/25.html"><span>다음 글 →</span><strong>증류탑 완벽히 이해하기</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

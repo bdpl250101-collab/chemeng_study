@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0. 공정제어의 기초 개념 · 화학공학 노트</title>
+<meta name="description" content="공정은 장치의 운전 조건 조작을 통해 입력 물질을 화학적, 물리적으로 변화시켜 원하는 출력 물질을 얻는 것이다. 예를 들어 세탁기의 경우 더러운 빨래, 세제, 물을 입력하고 공정인 혼합, 반응, 분리를 시키면 출력으로 깨끗한 빨래+물+세제가 나온다. 이때 운전 조건으로는 냉수가 있다. 밥을 짓는 것을 생각해보면 쌀,물을 입력하고 가열, 상변화, 반응인 공정을 거쳐 밥,수증기를 출력한다. 이때 고온 고압의 운전조건을 제공한다. 즉 공정에는 입력,공정,출력,운전조건이 필요하다. 공정을 이해하는 것은 장치를 이해하는 것이라고 봐도 된다.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html" aria-current="page">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/process-control.html">공정제어</a></nav>
+  <header class="post-head">
+    <h1>0. 공정제어의 기초 개념</h1>
+    <p class="meta">
+      <time datetime="2025-05-18">2025.05.18</time>
+ · 수정 2025.06.05    </p>
+  </header>
+
+
+  <div class="body">
+    <p>공정은 장치의 운전 조건 조작을 통해 입력 물질을 화학적, 물리적으로 변화시켜 원하는 출력 물질을 얻는 것이다. 예를 들어 세탁기의 경우 더러운 빨래, 세제, 물을 입력하고 공정인 혼합, 반응, 분리를 시키면 출력으로 깨끗한 빨래+물+세제가 나온다. 이때 운전 조건으로는 냉수가 있다. 밥을 짓는 것을 생각해보면 쌀,물을 입력하고 가열, 상변화, 반응인 공정을 거쳐 밥,수증기를 출력한다. 이때 고온 고압의 운전조건을 제공한다. 즉 공정에는 입력,공정,출력,운전조건이 필요하다. 공정을 이해하는 것은 장치를 이해하는 것이라고 봐도 된다.</p>
+<p> </p>
+<p>화학공정은 장치를 조작하여 화학물질의 반응, 혼합 또는 분리하여 화학 물질의 변화 또는 생성 과정을 포함하는 산업적인 공정을 의미한다. 화학공정에서 변화를 주는 운전조건은 온도, 압력, 유량, 조성이 있다. <b>공정제어란 이러한 화학공정의 운전 조건의 변화를 조절 및 유지하는 동작</b>이다.</p>
+<p> </p>
+<p>예를 들어 수도꼭지 유량 제어를 살펴보자. 수도 꼭지의 열고 닫음을 통해 흐르는 물의 양은 조절된다. 공정 제어의 가장 기본적인 조작 요소는 이러한 제어밸브이다. 이 밸브(액츄에이터라고도 함)를 열고 닫음에 따라 유량의 공급량이 달라지며 공정이 제어된다. 이 밸브는 장치로 연결되어 원격제어가 가능하도록 설정한다. 그 외에도 액위(level)제어, 압력 제어(밥솥에서 수증기 방출을 통해 내부압 조절하는 것), 온도 제어 등이 존재한다.</p>
+<p> </p>
+<p>이러한 조건을 제어하는 것으로 제어기라는 게 존재한다. 샤워기를 예로 들어 살펴보자. 사워기 물의 온도는 수도 꼭지 방향에 따라 냉수와 온도의 압력이 달라지고, 이에 따라 온수 냉수 공급 유량이 달라지며 이것이 혼합되어 물의 온도가 결정된다. 따라서 입력 변수는 수도 꼭지 방향이며 출력 변수는 샤워기 물의 온도이다. 이때 외란변수라고, 내가 제어하고자 하는 물의 온도에 영향을 주지만 내가 조작할 수는 없는 외부 교란요소가 존재한다. 싱크대에서 물을 사용하거나, 보일러 온수의 온도가 갑자기 올라가면 내 조작에 영향을 줄 수 있다. 샤워하는 동안 설거지를 하면 물의 온도가 떨어지는 것과 같다. 제어기에는 제어변수, 설정치, 외란변수가, 존재한다. 에어컨의 경우 제어변수는 온도이고, 설정치는 내가 원하는 값, 외란변수는 실외온도이다. </p>
+<p> </p>
+<p>또 하나로 알면 좋은 것은 제어에서 나올 수 있는 응답의 종류이다. 내가 어떤 입력을 줬을 때, 제어하고자 하는 변수가 어떻게 변하는 지를 동특성이라고 한다. 예를 들어 물을 끓이려고 열을 가해주면, 냄비의 온도가 처음에는 25도에서 100도까지 올라간다. 이때 걸리는 시간이 5분이었다고 가정하면 이 냄비 가열 공정의 시간 동특성은 5분이다. 만약 물을 2배로 넣었을 때 10분이 걸린다면 시간 동특성은 10분이 된다. 이처럼 공정마다 동특성이 다르다. 이 동특성을 이해하기 위해 입력을 주는데, 이 입력에는 계단 응답, 충격 응답, 주파수 응답이 존재한다. 계단식으로 입력을 주는 것을 계단 응답이라고 하는데, 예를 들면 가스레인지에서 온도를 켜놓고 방치했다가 불을 더 세게 올리면 계단식으로 응답이 가해질 것이다. 충격 응답은 凸 모양처럼 주는 응답이다. 주파수 응답은 사인파처럼 준다고 보면 된다. 주파수 응답을 진동응답이라고 부르기도 한다.</p>
+<p> </p>
+<p>또 감쇠라는 것이 있는데, 충격을 주고 그것이 원상태로 돌아오는 과정이 감쇠라고 볼 수 있다. 이 감쇠에는 감쇠계수가 존재한다. 자동차를 보면 방지턱이 있을때, 그것을 넘어가면 충격이 가해진다. 이것을 완화하는 데 스프링이 있는데, 이 스프링은 충격을 흡수하면서 진동이 생긴다. 이 진동을 줄여주는 걸 댐퍼라고 하며 이 진동을 빠르게 감쇠(진동완화)시키는 것이 댐퍼다.</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+<span></span>    <a class="next" href="../posts/109.html"><span>다음 글 →</span><strong>1. 공정의 모델링</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

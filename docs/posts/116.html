@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ch6: 유체의 열역학적 성질 · 화학공학 노트</title>
+<meta name="description" content="1) 온도와 압력항으로 나타낸 엔탈피와 엔트로피먼저 열역학적 함수 사이엔 다음과 같은 관계가 성립한다.열역학 상태 함수 중 가장 쉽게 측정 가능한 것이 온도와 압력이므로, 먼저 엔탈피와 엔트로피가 온도와 압력으로 어떻게 나타나는지 알아보려고 한다. 유도는 생략하고 , 엔트로피와 엔탈피를 온도와 압력의 함수로 나타내면 위와 같다. 액체인 경우 다음 식이 성립한다. 2)잔류성질이번에는 엔탈피, 엔트로피의 변화량 dH, dS가 아닌 실제 H, S 값 그 자체를 구하는 방법을 배운다. 마찬가지로 맨 앞에 제시된 열역학적 함수간의 관계를 통">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html" aria-current="page">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/thermodynamics.html">화공열역학</a></nav>
+  <header class="post-head">
+    <h1>ch6: 유체의 열역학적 성질</h1>
+    <p class="meta">
+      <time datetime="2025-06-14">2025.06.14</time>
+    </p>
+  </header>
+
+
+  <div class="body">
+    <p>1) 온도와 압력항으로 나타낸 엔탈피와 엔트로피</p>
+<p>먼저 열역학적 함수 사이엔 다음과 같은 관계가 성립한다.</p>
+<p><figure class="figure"><img alt="" height="332" src="../images/116/01.png" width="442"/></figure>
+</p>
+<p><span>열역학 상태 함수 중</span><span><b> 가장 쉽게 측정 가능한 것이 온도와 압력</b></span><span>이므로, 먼저 엔탈피와 엔트로피가 온도와 압력으로 어떻게 나타나는지 알아보려고 한다.</span></p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="194" src="../images/116/02.png" width="371"/></figure>
+</p>
+<p>유도는 생략하고 , 엔트로피와 엔탈피를 온도와 압력의 함수로 나타내면 위와 같다. 액체인 경우 다음 식이 성립한다.</p>
+<p><figure class="figure"><img alt="" height="179" src="../images/116/03.png" width="387"/></figure>
+</p>
+<p> </p>
+<p><span>2)</span>잔류성질</p>
+<p>이번에는 엔탈피<span>, </span>엔트로피의 변화량<span> dH, dS</span>가 아닌 실제<span> H, S </span>값 그 자체를 구하는 방법을 배운다<span>. </span>마찬가지로 맨 앞에 제시된 열역학적 함수간의 관계를 통해 유도하는데<span>, </span>유도과정은 매우 복잡하여 외울 수 없다<span>. </span>유도된 결과만 보면 된다<span>.</span></p>
+<p> </p>
+<p><span>실제 물성은 이상기체일때의 물성+잔류 성질로 계산한다.</span></p>
+<p><figure class="figure"><img alt="" height="601" src="../images/116/04.png" width="994"/></figure>
+</p>
+<p>이렇게 두 성질을 계산하여 더해주기만 하면 실제 물성을 계산할 수 있다. 잔류성질은 옆에 박스친 3가지 방법 중에서 하나로 구한다. 왠만해서는 2번째 방법인 pr과 Tr을 이용한 방법으로 구한다.</p>
+<p> </p>
+
+<p>이걸로 어떤 기체가 변화할때, 엔탈피와 엔트로피 차이를 구하는 방법을 알아보자.</p>
+<p><figure class="figure"><img alt="" height="564" src="../images/116/05.jpg" width="568"/></figure>
+</p>
+<p><span><b>Step ① 상태 1의 실제 기체 물성을 상태 1의 이상 기체 상태 물성으로 변환</b></span></p>
+<p><span><b>Step ② 이상 기체의 상태 1에서 2로 가는 과정의 물성 차이 계산</b></span></p>
+<p><span><b>Step ③ 상태 2의 이상 기체 상태 물성을 상태 2의 실제 기체 물성으로 변환</b></span></p>
+<p> </p>
+<p><span>따라서 우리는 실제 기체가 거친 실제 과정에 대한 직접적인 계산이 아니라, </span><span><b>위와 같이 상태 1에서 2로 가는 과정은 이상 기체에게 맡기고, 처음과 나중 상태에서 실제 기체와 이상 기체 상태의 물성 차이를 더하고 빼줌으로써 동일한 계산 결과를 얻어낸다. </b></span><span>즉 이상 기체 상태는, </span><span><b>임의의 과정에 대한 물성 변화 계산의 기준을 제공</b></span><span>한다는 점에서 반응열 계산의 </span><span><b>표준 반응열과 동일한 역할</b></span><span>을 한다고 보면 된다. 3장에서 왜 이상 기체에 대한 과정만 배웠는지 이제 이해가 될 것이다.</span></p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="249" src="../images/116/06.png" width="685"/></figure>
+</p>
+<p>따라서 실제 기체가 특정 과정을 거칠때 엔탈피와 엔트로피는 위 로직으로 계산할 수 있다. 이때 잔류성질은 위에 표시된 방법으로 구한다.</p>
+<p> </p>
+<p>3) 이상계</p>
+<p><figure class="figure"><img alt="" height="387" src="../images/116/07.png" width="652"/></figure>
+</p>
+<p>상변화시 부피 변화는 위 식으로 계산할 수 있다.</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/115.html"><span>← 이전 글</span><strong>ch5: 열역학 제 2법칙</strong></a>
+    <a class="next" href="../posts/118.html"><span>다음 글 →</span><strong>ch7.흐름 공정에의 열역학의 적용</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

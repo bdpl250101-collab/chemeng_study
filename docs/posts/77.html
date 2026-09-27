@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ch5. 속도자료의 수집과 분석 · 화학공학 노트</title>
+<meta name="description" content="4장에서 우리는 반응기의 설계식과 속도법칙, 화학양론관계를 결합하여 임의의 등온 반응계 크기를 결정하는 알고리즘을 배웠다. 그러나 여기에는 가정이 존재하는데, 바로 속도식이 주어져야 한다는 점이다. 한 가지 희망적인 것은 대부분의 화학공정에서 사용하는 반응들은 이미 반응 속도식이 문헌이나 실험을 통해 잘 정립되어 있는 경우가 많다는 것이다. 특히 산업에서 사용하는 공정에서는 상업적으로 중요한 반응(예: 암모니아 합성, 석유 정제 등)의 속도식이 이미 구해져 있어, 이를 기반으로 공정을 설계한다. 다음이 아니고서야 우리가 이 속도자료">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html" aria-current="page">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/reaction.html">화학반응공학</a></nav>
+  <header class="post-head">
+    <h1>ch5. 속도자료의 수집과 분석</h1>
+    <p class="meta">
+      <time datetime="2025-05-24">2025.05.24</time>
+    </p>
+  </header>
+
+
+  <div class="body">
+    <p>4장에서 우리는 반응기의 설계식과 속도법칙, 화학양론관계를 결합하여 임의의 등온 반응계 크기를 결정하는 알고리즘을 배웠다. 그러나 여기에는 가정이 존재하는데, 바로 속도식이 주어져야 한다는 점이다. </p>
+<p> </p>
+<p>한 가지 희망적인 것은<b> 대부분의 화학공정에서</b> 사용하는 반응들은 이미 반응 속도식이 <b>문헌이나 실험</b>을 통해 잘 정립되어 있는 경우가 많다는 것이다. 특히 산업에서 사용하는 공정에서는 상업적으로 중요한 반응(예: 암모니아 합성, 석유 정제 등)의 속도식이 이미 구해져 있어, 이를 기반으로 공정을 설계한다.</p>
+<p> </p>
+<p>다음이 아니고서야 우리가 이 속도자료를 분석하거나 수집할 일은 적다고 볼 수 있다.</p>
+<p> </p>
+<ul>
+<li><b>연구소나 R&amp;D 부서</b>: 새로운 촉매나 반응 경로를 연구하는 곳에서는 직접 반응 속도를 측정하고 속도식을 구할 일이 많습니다.</li>
+<li><b>신규 공정 개발</b>: 기존의 공정을 개선하거나 새로운 공정을 도입할 때 반응 속도를 실험적으로 구해야 할 수 있습니다.</li>
+</ul>
+
+<p>하지만 추후를 대비하여 어떻게 속도자료를 분석하는지 맛만 보도록 하자.</p>
+<p> </p>
+<p>속도 자료해석 알고리즘</p>
+<p><b>1.속도식을 가정하여라.</b></p>
+<p><figure class="figure"><img alt="" height="210" src="../images/77/01.png" width="597"/><figcaption>균일반응이면 멱수법칙, 불균일이면 랭뮤어 힌셜우드</figcaption>
+</figure>
+</p>
+<p> </p>
+
+<p><b>2.반응기를 선택하고 합당한 몰수지식을 세워라.</b></p>
+<p>-보통 실험은 회분식 또는 미분충전층반응기에서 진행한다. <b>회분식 반응기</b>는 시간에 따른 농도 변화를 추적하는 데 유리하고, <b>미분 충전층 반응기</b>는 초기 반응 속도를 정확히 측정하는 데 적합하다.</p>
+<p><figure class="figure"><img alt="" height="223" src="../images/77/02.png" width="714"/></figure>
+</p>
+<p> </p>
+<p>3. 과량법을 통해 속도식을 단순화 하여라.</p>
+<p><figure class="figure"><img alt="" height="52" src="../images/77/03.png" width="197"/></figure>
+</p>
+<p>이런 속도식을 가정했을때, 일단 B를 엄청나게 넣으면 B의 농도는 변하지않는 상수가 된다.</p>
+<p><figure class="figure"><img alt="" height="46" src="../images/77/04.png" width="160"/></figure>
+<figure class="figure"><img alt="" height="54" src="../images/77/05.png" width="214"/></figure>
+</p>
+<p>이제 CA만이 변수인 식이 만들어졌다. 이걸 분석하여 a를 구할 수 있다. 이후 A를 과량으로 넣어서 B만 변수로 만들어 b도 구한다.</p>
+<p> </p>
+<p>4. 시간 t에 따른 농도 CA에 관한 데이터를 구한다.</p>
+<p><figure class="figure"><img alt="" height="99" src="../images/77/06.png" width="604"/></figure>
+</p>
+<p> </p>
+<p>5.이제 분석한다 BY(미분법, 적분법)</p>
+<p>-일단 속도자료를 해석하는 법에는 미분법이 있고 적분법이 있다. 먼저 미분법부터 알아보자.</p>
+<p> 5-1)미분법 </p>
+<p><figure class="figure"><img alt="" height="78" src="../images/77/07.png" width="166"/></figure>
+</p>
+<p>batch에서 몰수지식을 쓰면 위와같다. 이때 우변은 과량법을 써서 CA에 관한 식으로 만든 것이다. 여기에 로그를 취하면</p>
+<p><figure class="figure"><img alt="" height="112" src="../images/77/08.png" width="325"/></figure>
+</p>
+<p>ln(-dCA/dt)를 lnCA의 함수로 도시한 그래프의 기울기가 a임을 알 수 있다.</p>
+<p> </p>
+<p>이제 dCA/dt를 구해야한다.</p>
+<p>간단히 엑셀을 켜서 t와 CA에 관한 그래프를 만든 다음 그 그래프의 수식을 구하는 것이다. 이후 이를 t에 대해 미분하면 dCA/dt가 나온다.</p>
+<p><figure class="figure"><img alt="" height="194" src="../images/77/09.png" width="203"/></figure>
+</p>
+<p>이후 한 점을 선택하여(p) 그 점에서의 농도와 시간값으로 kA값도 구할 수 있다.</p>
+<p><figure class="figure"><img alt="" height="81" src="../images/77/10.png" width="206"/></figure>
+</p>
+<p> </p>
+<p>5-2)적분법</p>
+<p><figure class="figure">
+<div><img alt="" height="57" src="../images/77/11.png" width="177"/><img alt="" height="92" src="../images/77/12.png" width="148"/><img alt="" height="89" src="../images/77/13.png" width="187"/></div>
+<figcaption>순서대로 0차, 1차, 2차</figcaption>
+</figure>
+</p>
+<p>대부분의 반응이 0차, 1차, 2차라는 점에 착안한 기법이다. 일단 t와 CA 데이터를 본 다음 0차 1차 2차 중 하나를 찍는다. 그리고 거기에 해당하는 관계식을 작성해봤을 때 직선이 나오면 가정한 차수는 맞는 것이다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="392" src="../images/77/14.png" width="361"/></figure>
+</p>
+<p>만약 가정한 차수가 0차 1차 2차도 아니라면 어쩔 수 없이 비선형 회귀분석을 해야하며 이는 기기의 도움을 받아야 한다..</p>
+<p> </p>
+<p>정리)</p>
+<p><figure class="figure"><img alt="" height="1632" src="../images/77/15.webp" width="918"/></figure>
+<figure class="figure"><img alt="" height="1632" src="../images/77/16.webp" width="918"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="1080" src="../images/77/17.png" width="738"/></figure>
+</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/75.html"><span>← 이전 글</span><strong>화학반응공학 ch4: 등온반응기의 설계 (1) : 등온 등압조건에서 비가역 1차 2차 반응</strong></a>
+    <a class="next" href="../posts/78.html"><span>다음 글 →</span><strong>ch7: 반응 메커니즘, 생화학 경로, 생물반응과 생물반응기</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

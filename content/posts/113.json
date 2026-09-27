@@ -1,0 +1,14 @@
+{
+ "id": 113,
+ "title": "ch2: 열역학 제 1법칙",
+ "date": "2025-06-14",
+ "modified": "2025-06-14",
+ "category": "화학공학 일지/화공열역학",
+ "tags": [],
+ "summary": "열역학 제 1법칙 : 에너지는 여러 형태로 존재할 수 있고 그 총량은 일정하다. 즉 에너지의 한 형태로서, 열과 일은 소모되면 어디선가 다른 형태의 에너지로 전환된다.닫힌계에서는 보통 운동과 위치E를 무시하고 △U=Q+W로 나타낸다.열린계의 경우 정상상태이고 단일 입출구라면 위와 같은 에너지수지를 가진다. 이때 Q의 계산은 등적, 등압 과정에서 각각 다음과 같다. 일의 계산은 가역인 경우를 상정하여 다음과 같이 계산한다.",
+ "source_url": "https://audio268.tistory.com/113",
+ "images_ok": 6,
+ "images_failed": 0,
+ "chars": 258,
+ "html": "<p><figure class=\"figure\"><img alt=\"\" height=\"1498\" src=\"../images/113/01.webp\" width=\"1033\"/></figure>\n</p>\n<p><span>열역학 제 1법칙 : 에너지는 여러 형태로 존재할 수 있고 그 총량은 일정하다. 즉 에너지의 한 형태로서, 열과 일은 소모되면 어디선가 다른 형태의 에너지로 전환된다.</span><span><b></b></span></p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"75\" src=\"../images/113/02.png\" width=\"328\"/></figure>\n</p>\n<p>닫힌계에서는 보통 운동과 위치E를 무시하고 △U=Q+W로 나타낸다.</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"97\" src=\"../images/113/03.png\" width=\"343\"/></figure>\n</p>\n<p>열린계의 경우 정상상태이고 단일 입출구라면 위와 같은 에너지수지를 가진다.</p>\n<p> </p>\n<p>이때 Q의 계산은 등적, 등압 과정에서 각각 다음과 같다.</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"98\" src=\"../images/113/04.png\" width=\"287\"/><figcaption>등적과정에서 Q</figcaption>\n</figure>\n</p>\n<p> </p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"92\" src=\"../images/113/05.png\" width=\"278\"/><figcaption>등압 과정에서 Q</figcaption>\n</figure>\n</p>\n<p>일의 계산은 가역인 경우를 상정하여 다음과 같이 계산한다.</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"124\" src=\"../images/113/06.png\" width=\"412\"/></figure>\n</p>\n<p> </p>"
+}

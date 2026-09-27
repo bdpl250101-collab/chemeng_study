@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7. 2차계 · 화학공학 노트</title>
+<meta name="description" content="여기서는 2차계, 또는 2차 지연이라고 불리는 기본적인 계를 소개한다. 2차계는 입력변수 x에 대한 출력변수 y와의 관계를 시간에 대한 2차 미분방정식으로 표현한다. 이러한 2차계는 전 포스팅에서 보았다시피 두 개의 1차계가 직렬로 연결되었을 때 나타날 수 있다. 몇몇 계들은 처음부터 2차계이지만 이들은 화학공학 분야에서는 흔히 볼 수 없다. 대부분의 2차계들은 1차계에 제어기를 설치할 때 나오는 것이다. 2차계의 일반적인 전달함수는 다음과 같은 표준형태를 가지는 것이 알려져있다.1차계의 전달함수와 비교해보자.2차계는 동특성을 나타">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html" aria-current="page">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/advanced-control.html">최신공정제어</a></nav>
+  <header class="post-head">
+    <h1>7. 2차계</h1>
+    <p class="meta">
+      <time datetime="2025-07-06">2025.07.06</time>
+ · 수정 2025.07.20    </p>
+  </header>
+
+
+  <div class="body">
+    <p>여기서는 2차계, 또는 2차 지연이라고 불리는 기본적인 계를 소개한다. 2차계는 입력변수 x에 대한 출력변수 y와의 관계를 시간에 대한 2차 미분방정식으로 표현한다. 이러한 2차계는 전 포스팅에서 보았다시피 두 개의 1차계가 직렬로 연결되었을 때 나타날 수 있다. 몇몇 계들은 처음부터 2차계이지만 이들은 화학공학 분야에서는 흔히 볼 수 없다. 대부분의 2차계들은 1차계에 제어기를 설치할 때 나오는 것이다. </p>
+<p> </p>
+<p>2차계의 일반적인 전달함수는 다음과 같은 표준형태를 가지는 것이 알려져있다.</p>
+<p><figure class="figure"><img alt="" height="109" src="../images/127/01.png" width="355"/></figure>
+</p>
+<p>1차계의 전달함수와 비교해보자.</p>
+<p><figure class="figure"><img alt="" height="114" src="../images/127/02.png" width="296"/></figure>
+</p>
+<p><span><span>2차계는 동특성을 나타내기 위해 <span>τ외에 <span>ξ도 필요하다는 차이가 있다. 이제 계단함수, 임펄스, 진동등의 보편적인 입력함수에 대한 2차계의 응답을 논의해보자.</span></span></span></span></p>
+<p> </p>
+<p><span><span>1. 계단응답</span></span></p>
+<p><span><span>계단응답을 줄 경우 Y(S)는 다음과 같이 나온다.</span></span></p>
+<p><figure class="figure"><img alt="" height="103" src="../images/127/03.png" width="379"/></figure>
+</p>
+<p>이 식에서 분모항을 인수분해하면 다음처럼 나타낼 수 있게 된다.</p>
+<p><figure class="figure"><img alt="" height="208" src="../images/127/04.png" width="297"/></figure>
+<figure class="figure"><img alt="" height="115" src="../images/127/05.png" width="410"/></figure>
+</p>
+<p>이렇게 인수분해하는 이유는 역변환을 쉽게하기 위해서이다. 이때 두근 sa와 sb는 매개변수 <span>ξ의 값에 따라 실수일 수도 있고, 복소수일 수도 있다. 이러한 근의 성질은 결국 Y(t)의 형태에 영향을 미칠 것이다. 이 문제는 3가지 경우로 구분되는데, 각 경우를 살펴보자.</span></p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="278" src="../images/127/06.png" width="1234"/></figure>
+</p>
+<p>1) <span>ξ&lt;1이라 근이 복소수일 경우</span></p>
+<p><span>역변환하면 다음과 같은 응답함수를 얻는다.</span></p>
+<p><figure class="figure"><img alt="" height="159" src="../images/127/07.png" width="934"/></figure>
+</p>
+<p>유도는 생략하도록 한다. 식을 외울 필요는 없지만, 여기에 사인 함수가 존재하므로 값이 진동하는 것을 알 수 있다. 이를 과소감쇠되었다고 한다. </p>
+<p> </p>
+<p><span>2)<span> </span></span><span>ξ=1이라 근이 중근일 경우</span></p>
+<p><span><span>응답함수는 다음처럼 간략화된다.</span></span></p>
+<p><figure class="figure"><img alt="" height="107" src="../images/127/08.png" width="377"/></figure>
+</p>
+<p>이 경우 critical damped 임계감쇠되었다고 하며 진동이 없고 가장 빠르게 Y=1로 수렴하는 이상적인 형태를 띈다.</p>
+<p> </p>
+<p><span>1)<span> </span></span><span>ξ&gt;1이라 근이 실근일 경우</span></p>
+<p><figure class="figure"><img alt="" height="117" src="../images/127/09.png" width="818"/></figure>
+</p>
+<p>이 응답또한 진동을 나타내지 않지만, <span>ξ가 크면 점점 느려지는 수렴양상을 보인다. 이를 과도감쇠되었다고 한다. 모든 응답곡선은 궁극적으로는 Y=1(크기 1의 계단변화가 나타났으므로) 에 수렴하게 될 것이다.</span></p>
+<p> </p>
+<p><span>이들을 한 그래프에 나타내면 다음과 같다.</span></p>
+<p><figure class="figure"><img alt="" height="706" src="../images/127/10.png" width="573"/></figure>
+</p>
+<p> </p>
+<p>2.과소감쇠계의 표현에 사용되는 용어</p>
+<p>여기서 가장 흔하게 나타나는 응답은 보통 과소감쇠되어 진동이 발생하는 경우이다. 따라서 많은 용어들이 과소감쇠 응답을 기술하기 위해 정의되었는데, 이들을 살펴보도록 하자. 이들은 2차계의 특성인 <span>τ,</span><span><span> </span></span><span>ξ에 영향을 받는다.</span></p>
+<p><figure class="figure"><img alt="" height="361" src="../images/127/11.png" width="670"/></figure>
+</p>
+<p>2-1)오버슈트: 응답이 계단변화가 도입된 후 얻게될 궁극적인 값을 얼마나 초과하게 되는가를 나타내는 척도로서, 위 그림에서는 A/B의 비로 나타낸다. 즉 응답이 최종 1로 수렴한다고 치면 처음 계단변화 도입시 4.3까지 치솟았다면 오버슈트는 4.3이다.</p>
+<p> </p>
+<p>오버슈트는 다음식으로 계산할 수 있으며 <span>ξ가 커짐에 따라 오버슈트는 감소한다.</span></p>
+<p><figure class="figure"><img alt="" height="145" src="../images/127/12.png" width="417"/></figure>
+</p>
+<p>2-2) 쇠퇴비: 연속적인 피크들 사이의 크기의 비율이다. 위 그림에서 C/A로 주어진다. 쇠퇴비는 <span>ξ에 관계되며 다음식으로 표현된다.</span></p>
+<p><figure class="figure"><img alt="" height="133" src="../images/127/13.png" width="690"/></figure>
+</p>
+<p>오버슈트의 제곱값임을 유의하라. 그래프로 오버슈트와 쇠퇴비와 <span><span> </span></span><span>ξ의 관계를 나타내면 다음과 같다.</span></p>
+<p><figure class="figure"><img alt="" height="426" src="../images/127/14.png" width="420"/></figure>
+</p>
+<p><span>오버슈트와 쇠퇴비와<span> </span></span><span><span> </span></span><span>ξ는 서로 반비례한다.</span></p>
+<p> </p>
+<p><span>2-3)상승시간: 응답이 궁극적인 값에 처음 도달하는데 걸리는 시간 tr</span></p>
+<p> </p>
+<p><span>2-4)응답시간: 응답이 최종 값으로부터 오차 5%이내로 도달하여 머무르는데 걸리는 시간</span></p>
+<p> </p>
+<p><span>2-5)진동주기 , 고유 진동주기: 추후 설명</span></p>
+<p> </p>
+<p><span>요약하자면 <span>τ는 2차계의 응답의 주기 또는 속도를 나타내는 척도이며</span><span><span> </span></span><span>ξ는 감쇠의 정도, 또는 진동의 특성을 나타낸다.</span></span></p>
+<p> </p>
+
+
+<p><span>3.임펄스 응답을 주는 경우</span></p>
+<p><figure class="figure"><img alt="" height="78" src="../images/127/15.png" width="246"/></figure>
+</p>
+<p>단위 임펄스 응답을 줄 경우 응답은 이렇게 나오는데, 이를 역변환 할 것이다. 계단함수와 마찬가지로 분모를 인수분해할 때 근들이 실수인가 복소수인가에 따라 응답이 달라지게 된다.</p>
+<p> </p>
+<p>또는, 단위계단 함수를 미분하면 임펄스함수가 나온다는 알려진 정의를 참조해도 될 것이다.</p>
+<p> </p>
+<p>3-1) <span>ξ&lt;1일때, 근이 복소수일때 임펄스 응답</span></p>
+<p><figure class="figure"><img alt="" height="92" src="../images/127/16.png" width="392"/></figure>
+</p>
+<p>3-2) <span>ξ=1일때 임펄스 응답(임계감쇠)</span></p>
+<p><figure class="figure"><img alt="" height="71" src="../images/127/17.png" width="171"/></figure>
+</p>
+<p>3-3) <span>ξ&gt;1일때 임펄스 응답</span></p>
+<p><figure class="figure"><img alt="" height="108" src="../images/127/18.png" width="485"/></figure>
+</p>
+<p>이들을 모두 그래프에 나타내보았다.</p>
+<p><figure class="figure"><img alt="" height="472" src="../images/127/19.png" width="404"/></figure>
+</p>
+<p>임펄스는 순간 값이 뛰었다가, 0으로 복귀하는 경향이 있으며 이때 과소감쇠의 경우 진동을 하게 된다.</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/126.html"><span>← 이전 글</span><strong>6. 직렬로 연결된 1차계들의 응답</strong></a>
+    <a class="next" href="../posts/128.html"><span>다음 글 →</span><strong>8. 제어계</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

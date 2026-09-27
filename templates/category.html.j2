@@ -1,0 +1,21 @@
+{% extends "base.html.j2" %}
+{% block description %}{{ cat.name }} 관련 글 {{ cat.count }}편{% endblock %}
+{% block content %}
+<nav class="crumb"><a href="{{ root }}index.html">홈</a> › {{ cat.name }}</nav>
+<h1>{{ cat.name }} <span class="h-count">{{ cat.count }}편</span></h1>
+
+<div class="list-tools">
+  <button type="button" class="sort" data-sort="desc" aria-pressed="true">최신순</button>
+  <button type="button" class="sort" data-sort="asc" aria-pressed="false">오래된순 (진도순)</button>
+</div>
+
+<ol class="post-list detailed" id="cat-posts">
+  {% for p in cat.posts %}
+  <li data-date="{{ p.date }}">
+    <a class="title" href="{{ root }}{{ p.url }}">{{ p.title }}</a>
+    <span class="meta">{{ p.date|kdate }}{% if p.tags %} · {{ p.tags|join(', ') }}{% endif %}</span>
+    <p class="excerpt">{{ p.excerpt }}</p>
+  </li>
+  {% endfor %}
+</ol>
+{% endblock %}

@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>8장.Liquid–Liquid Extraction with Ternary Systems-INTRO · 화학공학 노트</title>
+<meta name="description" content="8장은 Feed 안에 있는 solute A를 solvent S 쪽으로 옮기고, 남은 carrier-rich phase를 raffinate로 빼는 액-액 추출을 삼각형 조성도에서 계산하는 장이다. ternary system은 3성분계라는 뜻으로 3가지 물질이 존재한다.(A)solute빼내고 싶은 물질(C)carriersolute를 원래 품고 있던 원래 액체(S)solventsolute를 뽑아내기 위해 넣는 용매 이때 액-액 추출이 일어나면 솔루트가 캐리어에서 솔번트로 이동하면서 다음 두 상이 형성된다: Extract와 Raffinat">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html" aria-current="page">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/separation.html">분리공정</a></nav>
+  <header class="post-head">
+    <h1>8장.Liquid–Liquid Extraction with Ternary Systems-INTRO</h1>
+    <p class="meta">
+      <time datetime="2026-05-26">2026.05.26</time>
+    </p>
+  </header>
+
+
+  <div class="body">
+    <p>8장은 Feed 안에 있는 solute A를 solvent S 쪽으로 옮기고, 남은 carrier-rich phase를 raffinate로 빼는 액-액 추출을 삼각형 조성도에서 계산하는 장이다.</p>
+<p> </p>
+<p><b>ternary system</b>은 3성분계라는 뜻으로 3가지 물질이 존재한다.</p>
+<table border="1">
+<tbody>
+<tr>
+<td>(A)</td>
+<td>solute</td>
+<td>빼내고 싶은 물질</td>
+</tr>
+<tr>
+<td>(C)</td>
+<td>carrier</td>
+<td>solute를 원래 품고 있던 원래 액체</td>
+</tr>
+<tr>
+<td>(S)</td>
+<td>solvent</td>
+<td>solute를 뽑아내기 위해 넣는 용매</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p>이때 액-액 추출이 일어나면 솔루트가 캐리어에서 솔번트로 이동하면서 다음 두 상이 형성된다: Extract와 Raffinate</p>
+<p>extract = 뽑아낸 쪽<br/>raffinate = 뽑히고 남은 쪽</p>
+<p> </p>
+<p>이때 추출은 증류를 쓸 수 없을 때 대안으로 사용한다. 하지만 liquid phase의 열역학 계산이 어렵다는 문제점이 존재한다. 증류는 vapor-liquid equilibrium이라 EOS나 물성식으로 어느 정도 계산이 가능하지만, liquid-liquid extraction은 <b>activity coefficient <span><span>γ</span></span></b><span><span>를 알아야 되는 문제가 있다. activity coefficient를 계산하려면 성분쌍마다 <b>binary interaction parameter, BIP</b>가 필요하고, 이 값들이 잘 주어져 있지 않아서 simulation도 어렵다. 즉 추출은 시뮬레이션도 어렵기에 예측이 잘 안되는 문제가 있는 것이다.</span></span></p>
+<p> </p>
+<p><span><span>일단 용매의 성능을 나타내는 공식은 다음이 있다.'</span></span></p>
+<p><figure class="figure"><img alt="" height="80" src="../images/290/01.png" width="204"/></figure>
+<figure class="figure"><img alt="" height="125" src="../images/290/02.png" width="210"/></figure>
+</p>
+<p>이건 분배계수라고 불린다. 이때 K밑에 붙는 첨자인 A,C,S는 각각 솔루트, 캐리어, 용매를 의미한다. I는 라피네이트이고 II는 추출상이다. 즉 추출상에서 A의 농도/라피네이트에서 A의 농도 비가 분배계수 K이다. 이는 활동도 계수 비로도 환산할 수 있다. 좋은 용매라면 KAD가 1보다 커야 한다.</p>
+<p> </p>
+<p>이때 중요한건 Relative selectivity이다. solute <span><span aria-hidden="true"><span><span>A</span></span></span></span>만 solvent로 가고, carrier <span><span aria-hidden="true"><span><span>C</span></span></span></span>는 따라가지 않아야 하기 때문에</p>
+<p><figure class="figure"><img alt="" height="75" src="../images/290/03.png" width="276"/></figure>
+</p>
+<p>이 값이 크면 좋은 용매라고 볼 수 있다.</p>
+<p>----</p>
+<p>장치: Mixer–Settler와 multistage extraction</p>
+<p>extraction stage 장치가 있다고 할 때, 한단은 <span><span><span>mixer</span></span><span>+</span></span><span><span><span>settler로 구성된다.</span></span></span></p>
+<p><span><span><span>mixer에서는 피드와 용매를 섞어준다.</span></span></span></p>
+<p><span><span><span>settler에서는 섞인 액체를 가만히 두어 두 상으로 갈라준다.</span></span></span></p>
+<p> </p>
+<p><span><span><span>이때 이러한 한단만 있으면 완전분리가 안되므로 multistage를 쓴다. solvent가 아래에서 들어가고 feed가 위에서 들어가는 countercurrent 구조가 일반적이다.</span></span></span></p>
+<p> </p>
+<p><b> 삼각형 조성도: 이 장의 핵심 도구</b></p>
+<p>8장은 x-y 그래프보다 <b>triangular diagram</b>이 핵심이다.</p>
+<p><figure class="figure"><img alt="" height="118" src="../images/290/04.png" width="179"/></figure>
+</p>
+<p>이때 두 성분만 알아도 나머지 한 성분은 알 수가 있다.</p>
+<p><figure class="figure"><img alt="" height="417" src="../images/290/05.png" width="512"/></figure>
+</p>
+<p>이렇게 도표가 있을때, 삼각형 안에 한 점을 찍어보자. 예를 들어 어떤 점이 A=0.2, C=0.5, S=0.3인 지점에 찍혔다고 해보자. 그럼 그 점은 solute 20%, carrier 50%, solvent 30%인 혼합물이다. 이때 내부에 어떤 영역이 존재하는데, 이는 두 상으로 갈라짐을 의미하는 것이다. Extraction이 되려면 혼합점이 <b>two-phase region</b> 안에 있어야한다. 그래야 <span><span><span aria-hidden="true"><span><span><span>한</span><span> </span><span>액상</span></span><span>→</span></span><span><span><span>extract phase</span></span><span>+</span></span><span><span><span>raffinate phase 으로 갈라지기 때문이다. 이때 tie line = 서로 평형인 extract 조성과 raffinate 조성을 이어주는 선을 통해서 두 상으로 갈라진다.</span></span></span></span></span></span></p>
+<p> </p>
+<p>Equilibrium curve에서 추출상 추잔상을 아는 방법은 어디에 S가 많냐를 보는 것이다. 왼쪽이 C가 많으므로 추잔상이며 오른쪽은 솔번트가 많으므로 추출상이다.</p>
+<p> </p>
+<p>Plait point라고 해서, extract phase와 raffinate phase가 같아지는 지점도 존재한다.</p>
+<p> </p>
+<p><b> Hunter–Nash method</b></p>
+<p>삼각형 조성도에서 단수 계산하는 방법이다. Type I/Type II ternary system의 equilibrium-stage 계산법으로 가장 중요한 파트이다. 쉽게말하면 증류처럼 액-액 추출에서 tie line/조작선을 번갈아 타면서 단수 세는 것이다.</p>
+<p> </p>
+<p>(참고: Type II는 서로 잘 안 섞이는 쌍이 두 개 있는 경우인데, Type II에서는 solvent <span><span>S</span></span>가 carrier <span><span>C</span></span>와도 잘 안 섞이고, solute <span><span>A</span></span>와도 완전히 잘 섞이지 않는 경우가 포함된다.)</p>
+<p><figure class="figure"><img alt="" height="353" src="../images/290/06.png" width="613"/></figure>
+<figure class="figure"><img alt="" height="299" src="../images/290/07.png" width="1113"/></figure>
+</p>
+<p>위 그림을 살펴보자. 먼저 F가 들어가고 1단에서 E1과 R1으로 분리된다. 이후 R1은 추출이 안된 상이므로 다시 2단으로 들어가고, E2와 R2로 분리된다. 이를 쭉 거치다보면 맨 위로 도달하며 최종적으로 마지막 N단에서는 S가 들어가고 최종 추잔상 RN이 나온다.이때 (<span><span>y</span><span><span><span><span><span><span><span>i</span></span></span></span></span><span><span></span></span></span></span></span><span><span>)</span><span><span><span><span><span><span><span>n은 <span>extract<span> </span></span><span><span>En안의 i 질량분율이고 (xi)n은 <span>raffinate<span> </span></span><span><span>Rn안의 i 질량분율이다.</span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p> </p>
+<p><span><span><span><span><span><span><span><span><span><span><span><span>이때 가장 먼저 해야하는 것은, feed와 solvent를 섞은 전체 조성점을 잡는 것이다.</span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><figure class="figure"><img alt="" height="221" src="../images/290/08.png" width="296"/></figure>
+</p>
+<p> </p>
+<p>예를 들어 다음 조성이 있다고 해보자.</p>
+<p><figure class="figure"><img alt="" height="387" src="../images/290/09.png" width="139"/></figure>
+</p>
+<p>그러면 F와 S를 섞은 믹싱점에서 A,C,S는 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="541" src="../images/290/10.png" width="339"/></figure>
+</p>
+<p>즉 단순히 섞었을때 A,C,S분율이 얼마인지 계산하면 된다.</p>
+<p> </p>
+<p>이제 믹싱점에서 레버룰을 쓸건데, 이때 삼각형에서 <span><span>F</span></span>와 <span><span>S</span></span>를 직선으로 연결하면 <span><span>M</span></span>은 그 선 위에 존재한다.</p>
+<p><figure class="figure"><img alt="" height="458" src="../images/290/11.png" width="710"/></figure>
+</p>
+<p>여기서 레버룰을 이용해서 두 점을 구하게 된다. E1과 RN의 비율과 각각의 조성에 대한 정보를 알 수 있다. 이때 보통 문제에서 최종 조성 RN이 목표값으로 주어지며 그러면 삼각형 도표에서 RN을 찍고 M과 연결한다. 그러면 E1도 구할 수 있다. ( 그 선이 equilibrium curve의 extract side와 만나는 점이 <span><span>E1). 예를 들어 현재 예시에서는 다음과 같다. 레버룰로 서로의 비율을 구하고, 각각의 조성도 읽을 수 있다.</span></span></p>
+<p><figure class="figure"><img alt="" height="155" src="../images/290/12.png" width="365"/></figure>
+<figure class="figure"><img alt="" height="83" src="../images/290/13.png" width="363"/></figure>
+</p>
+<p>현재까지는 이러한 공식을 사용하였다.</p>
+<p> </p>
+
+<p><b>Difference point <span><span>P</span></span></b></p>
+<p><span><span>이제 여기서부터 헷갈릴 수 있으므로 정신을 잡아야 한다. difference point <span><span>P라는 점을 정의할 것이다.</span></span></span></span></p>
+<p><figure class="figure"><img alt="" height="46" src="../images/290/14.png" width="318"/></figure>
+</p>
+<p>서로 지나가는 stream 두 개의 차이가 모든 단에서 같은 점 <span><span>P</span></span>로 표현된다는 가정이다.  <span><span aria-hidden="true"><span><span>P</span></span></span></span>는 조작선의 기준점이 된다.</p>
+<p><figure class="figure"><img alt="" height="299" src="../images/290/15.png" width="1113"/></figure>
+</p>
+<p><span><span aria-hidden="true"><span><span>S</span></span></span></span>와 <span><span>RN</span></span>을 연결한 선, <span><span>E1</span></span>과 <span><span>F</span></span>를 연결한 선이 한 점에서 만나고, 그 점이 difference point이며, 이 선들이 operating line으로 작용한다.</p>
+<p><figure class="figure"><img alt="" height="424" src="../images/290/16.png" width="799"/></figure>
+</p>
+<p data-end="10065" data-start="10005">(무슨말인지 알겠는가? S-RN은 위쪽에서의 상황이며 아래쪽에서는 E1-F가 진행된다. 우리는 현재 S와 F의 정보로부터 M을 구하였고, 목표스펙 RN과 M을 연결하여 E1을 구하였다. 이제 E1-F선과 S-RN선을 이어서 둘이 만나는 점이 P선이다.</p>
+<p data-end="10065" data-start="10005"> </p>
+<p data-end="10065" data-start="10005">Tie line은 “평형상태라면 extract와 raffinate 조성이 어떻게 짝지어지는가”를 알려준다.</p>
+<p data-end="10123" data-start="10067">Operating line은 “다음 단으로 넘어갈 때 물질수지상 어떤 조성이 가능한가”를 알려준다.</p>
+<p data-end="10123" data-start="10067">단수계산은 <span><span><span>tie line</span></span><span>→</span></span><span><span><span>operating line</span></span><span>→</span></span><span><span><span>tie line</span></span><span>→</span></span><span><span><span>operating line을 반복하는 것이다.</span></span></span></p>
+<p data-end="10123" data-start="10067"> </p>
+<p data-end="10123" data-start="10067"><span><span><span>즉 이제부터 조작선을 구했으니 조작선과 타이라인으로 단수계산을 할 것이다.</span></span></span></p>
+<p data-end="10123" data-start="10067"> </p>
+<p data-end="10123" data-start="10067"><span><span><span>단수계산 하는법</span></span></span></p>
+<p data-end="10123" data-start="10067"><span><span><span>1:</span></span></span>최종 extract <span><span>E1</span></span>에서 시작한다. E1과 평형인 raffinate는 <span><span>R1이다. </span></span>따라서 <span><span>E1</span></span>에서 tie line을 따라가면 R1이 나온다.</p>
+<p data-end="10123" data-start="10067">2: 이제 R1과 지나가는 스트림은 E2이다. R1, E2,P는 같은 조작선위에  있어야 한다. 따라서 R1-&gt;E2가 가능하다.</p>
+<p data-end="10123" data-start="10067">3. 이를 반복하다가 최종적으로 RN에 도달하면 멈춘다. 사용한  tie line 개수가 equilibrium stage 수이다.</p>
+<p><figure class="figure"><img alt="" height="414" src="../images/290/17.png" width="717"/></figure>
+</p>
+<p data-end="10123" data-start="10067">이때 증류를 생각해보면, RMIN이 있었듯이 여기도 비슷한게 존재한다.</p>
+<p data-end="10123" data-start="10067"> </p>
+<p><figure class="figure"><img alt="" height="62" src="../images/290/18.png" width="82"/></figure>
+</p>
+<p>Minimum solvent 조건인 <span><span>S</span><span>=</span></span><span><span><span>S</span><span><span><span><span><span><span><span><span><span>m</span><span>i</span><span>n에서는 단수 </span></span></span></span></span></span></span><span><span></span></span></span></span></span></span><span><span>N</span><span>→</span></span><span><span>∞가 된다. 삼각형 조성도에서는 operating line과 tie line이 겹치는 지점이 생겨 pinch가 되는 것로 표현된다. 미니멈 솔번트는 다음과 같이 계산한ㄴ다.</span></span></p>
+<p><figure class="figure"><img alt="" height="254" src="../images/290/19.png" width="472"/></figure>
+</p>
+<p> </p>
+<p><span><span>마찬가지로 최대 용매도 있으며 따라서 실제 용매 비율은 다음과 같아야 한다.</span></span></p>
+<p><figure class="figure"><img alt="" height="86" src="../images/290/20.png" width="239"/></figure>
+</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/289.html"><span>← 이전 글</span><strong>7.5: Multiple Feeds, Sidestreams, and Open Steam</strong></a>
+    <a class="next" href="../posts/295.html"><span>다음 글 →</span><strong>Kremser equation</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

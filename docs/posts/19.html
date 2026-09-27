@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mccabe 단위 조작 1 · 화학공학 노트</title>
+<meta name="description" content="화학공학자는 화학 물품을 제조하는 공정을 설계한다. 어떤 주제이든 다음 두 가지 사실에 기초하면 대부분의 프로세스(공정)을 실용적으로 설계할 수 있다.1)개별 프로세스는 무수하지만, 그들은 기본 구성 단계인 단위조작으로 분할할 수 있다.2)프로세스가 다르더라도 각 단위조작은 기법이 공통적이며 과학적 기초 원리가 동일하다. 대부분의 프로세스에서는 고체나 유체를 수송하고, 열이나 에너지를 전달하며 건조, 분쇄, 증류, 증발 등의 조작이 수행된다. 산업에 관계없이 프로세스에 이러한 조작이 응용되므로, 이들을 체계화하면 모든 프로세스를 간">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html" aria-current="page">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/study.html">화학공학 스터디</a></nav>
+  <header class="post-head">
+    <h1>mccabe 단위 조작 1</h1>
+    <p class="meta">
+      <time datetime="2023-10-31">2023.10.31</time>
+ · 수정 2025.06.29    </p>
+  </header>
+
+
+  <div class="body">
+    <p>화학공학자는 화학 물품을 제조하는 공정을 설계한다. </p>
+<p> </p>
+<p>어떤 주제이든 다음 두 가지 사실에 기초하면 대부분의 프로세스(공정)을 실용적으로 설계할 수 있다.</p>
+<p>1)개별 프로세스는 무수하지만, 그들은 기본 구성 단계인 단위조작으로 분할할 수 있다.</p>
+<p>2)프로세스가 다르더라도 각 단위조작은 기법이 공통적이며 과학적 기초 원리가 동일하다.</p>
+<p> </p>
+<p>대부분의 프로세스에서는 고체나 유체를 수송하고, 열이나 에너지를 전달하며 건조, 분쇄, 증류, 증발 등의 조작이 수행된다. 산업에 관계없이 프로세스에 이러한 조작이 응용되므로, 이들을 체계화하면 모든 프로세스를 간편하게 다룰 수 있다는 것이 단위조작의 기본 개념이다.</p>
+<p> </p>
+<p>프로세스 중에서 화학적인 부분은 반응속도론이나 반응공학에서 다룬다. 반응물의 준비. 생성물의 분리 및 정제, 미반응물의 순환, 반응장치에서의 에너지 전달의 제어와 같은 물리적 단계에서는 주로 단위조작이 이용된다.</p>
+<p> </p>
+<p>기본 개념: 단위조작의 토대가 되는 것은 기체 상태식, 물질 수지, 에너지 수지 등이다. 간단히 살펴보자.</p>
+<p>기체상태식: 기체의 온도, 압력, 몰수, 부피는 상관관계가 있다. 이 함수 관계의 구체적 식을 상태방정식이라 한다. 정확한 상태방정식은 기체마다 달라지는데, 이에 근접하기 위한 다양한 상태방정식이 존재한다.</p>
+<p> </p>
+<p>대표적으로 비리얼 식이 존재한다.</p>
+<p><figure class="figure"><img alt="" height="158" src="../images/19/01.png" width="716"/></figure>
+</p>
+<p>이를 간단하게 다음과 같이 나타내기도 한다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="128" src="../images/19/02.png" width="658"/></figure>
+</p>
+<p>이 z값이 1인 기체를 이상기체라고 한다.</p>
+<p> </p>
+<p>물질 수지: 물질 도입량=물질 배출량이면 정상상태이다.</p>
+<p> </p>
+<p>에너지 수지: 에너지 도입량=에너지 배출량+에너지 축적량</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/16.html"><span>← 이전 글</span><strong>열 통합 가스화를 위한 활엽수 바이오매스의 합성가스 특성 시뮬레이션 모델</strong></a>
+    <a class="next" href="../posts/22.html"><span>다음 글 →</span><strong>mccabe 단위조작 2</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PID Controller Design, Tuning, and Troubleshooting · 화학공학 노트</title>
+<meta name="description" content="&#34; 우리는 먼저 주어진 동적 시스템의 폐루프 안정성(closed-loop stability)을 평가해야 합니다. 분모 다항식(denominator polynomial)을 보고 그에 대한 특성방정식을 만들고, 그 근(root)들이 어디에 위치하는지 확인하는 것입니다.극점(pole)들이 왼쪽 반평면(left-hand side)에 있어야 시스템은 안정(stable)합니다. 하지만 “안정하다(stable)”고 해서항상 “좋은 성능(good performance)”을 의미하는 것은 아닙니다. 좋은 성능을 얻기 위해서는 안정성을 어느 정도 희">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html" aria-current="page">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/advanced-control.html">최신공정제어</a></nav>
+  <header class="post-head">
+    <h1>PID Controller Design, Tuning, and Troubleshooting</h1>
+    <p class="meta">
+      <time datetime="2025-11-19">2025.11.19</time>
+    </p>
+  </header>
+
+
+  <div class="body">
+    <p data-end="4271" data-start="4203"><span> " 우리는 먼저<span> </span>주어진 동적 시스템의 폐루프 안정성(closed-loop stability)을 평가해야 합니다.<span> </span>분모 다항식(denominator polynomial)을 보고<span> </span>그에 대한 특성방정식을 만들고,<span> </span>그 근(root)들이 어디에 위치하는지 확인하는 것입니다.</span></p>
+<p data-end="4437" data-start="4375"><span>극점(pole)들이 왼쪽 반평면(left-hand side)에 있어야<span> </span>시스템은 안정(stable)합니다.<span> </span>하지만 “안정하다(stable)”고 해서</span><br/><span>항상 “좋은 성능(good performance)”을 의미하는 것은 아닙니다.<span> </span>좋은 성능을 얻기 위해서는<span> </span>안정성을 어느 정도 희생해야 할 때도 있습니다. " </span></p>
+<p> </p>
+<p>11장에서 안정성에 대해 보면서, 제어기의 파라미터 Kc τ 값을 조정하면 안정성도 향상되고, 공정의 성능도 향상됨을 알 수 있었다. 다시 한번 살펴보면 , 1차+시간 지연(FOPTD) 모델과 PI 제어기로 구성된 간단한 폐루프 시스템에서 Kc와 <span>τ값에 따라 공정의 제어가 다음처럼 바뀐다.</span></p>
+<p><figure class="figure"><img alt="" height="590" src="../images/237/01.png" width="808"/></figure>
+</p>
+<p>먼저 열을 살펴보면 Kc값은 제어기 출력 비례상수로 이게 커지면 커질수록 제어가 잘 되는 것 싶다가 갑자기 폭주하는 현상이 일어난다. 다음으로 τ값을 살펴보면 이게 커지면 제어가 잘되지만 좀 느려지는 것을 볼 수 있다. 그래서 최적은 중간 K와 중간 τ값에서 발생한다.</p>
+<p> </p>
+
+<p><b> 12.1 PERFORMANCE CRITERIA FOR CLOSED-LOOP SYSTEMS</b></p>
+<p>교란 거부, 설정점 추종 빠름, 오프셋 제거, 과도통제 회피, robust</p>
+<p> </p>
+<p>보수적으로 제어하여 안정성을 높일 것인가 아니면 성능을 높일 것인가,</p>
+<p> </p>
+<p><b> 온라인 제어기 튜닝 방법 </b></p>
+<p>두 가지 초기 제어기 튜닝 관계식이 Ziegler- Nichols(1942)와 Cohen- Coon(1953)에 의해 발표. 이러한 잘 알려진 튜닝 관계식은 1/4 decay ratio 를 갖는 폐루프 응답을 제공하기 위해 개발되었다. 1/4 decay ratio를 갖는 응답은 대부분의 공정 제어 응용 분야에서 과도하 게 진동하는 것으로 간주되므로 이러한 튜닝 관계식은 권장되지는 않는다.</p>
+<p> </p>
+<p>1. 프로세스가 정상 상태(적어도 대략적으로)에 도달한 후 적분 및 미분 모드를 제거하여 비례제어만 남김 (set τD = 0 and τI =∞)</p>
+<p>2. 제어 변수가 설정점에서 벗어나도록 작고 순간적인 설정점 변화를 도입한다. 이후 Kc를 점차 증가시킨다. continuous cycling이라고 불리는 계속 출렁이는 지점이 발생 (특성방정식에 s=jw 도입했을 때 Kc값과 일치한다.)할 경우 그때 Kc를 기록한다. ultimate gain, Kcu라고 부른다. 이때 출렁이는 지점의 골과 골사이 거리를 재서 ultimate period, Pu라고 명명한다.</p>
+<p> </p>
+<p>Kc, Pu로 Kc, τD , τI를 다음과 같이 표에서 도출할 수 있다.</p>
+<p><figure class="figure"><img alt="" height="215" src="../images/237/02.png" width="555"/></figure>
+</p>
+<p>ZN 제어기 설정은 다양한 튜닝 방법과 제어 전략을 평가하는 벤치마크로 널리 사용되었다.</p>
+<p> </p>
+
+
+<p data-end="2023" data-start="1958">" 하지만 실제 공장(실제 플랜트)에서 이런 테스트를 그대로 하는 것은<span> </span><b>위험(disky)</b><span> </span>할 수 있습니다.</p>
+<p data-end="2110" data-start="2025">왜냐하면,<br/>일부러 시스템을 한계 안정 상태로 몰고 가야 하고,<br/>조금만 더 이득을 키우면 곧바로 발산(unstable)할 수도 있기 때문입니다.</p>
+<p data-end="2161" data-start="2112">그래서 실제 플랜트에서는 이렇게까지 과감한 테스트를<br/>하기 어려운 경우가 많습니다.</p>
+<p data-end="2191" data-start="2163">그럴 때는<span> </span><b>모델</b>이 있다면 훨씬 좋습니다.</p>
+<p data-end="2311" data-start="2193">모델을 이용해서 시뮬레이션 상에서<br/><span><span>Kcu</span></span>,<span> </span><span><span>Pu</span><span aria-hidden="true"><span><span><span><span><span><span>​</span></span><span></span></span></span></span></span></span></span>를 먼저 얻고,<br/>그걸 기반으로 파라미터를 튜닝한 뒤에<br/>실제 플랜트에는 조금 안전한 쪽으로 줄여서 적용하는 식으로 할 수 있습니다.</p>
+<p data-end="2311" data-start="2193"> </p>
+<p data-end="2311" data-start="2193">다른 방법으로는 계단응답 테스트 방법이 존재한다.</p>
+<p><figure class="figure"><img alt="" height="332" src="../images/237/03.png" width="689"/></figure>
+</p>
+<p data-end="3348" data-start="3301">이 방법을 쓰기 위해서는 반드시<span> </span><b>하나의 계단 응답 데이터</b>가 필요하다. 제어기가 없는 상태인 오픈루프에서 계단 응답을 보고, 거기서 FOPDT 모델을 추정해서 <b>K, τ, θ</b>를 얻고, 그다음에 표에 있는 규칙을 이용해서 <span><span>Kc</span></span><span> </span><span><span>τI</span><span aria-hidden="true"><span><span><span><span><span><span>​</span></span><span></span></span></span></span></span></span></span>,<span><span>τD</span></span><span> </span>같은 PI 또는 PID 파라미터를 계산할 수 있다. decay ratio of ¼.을 얻기 위해 고안된 것으로 다음 표에서 도출할 수 있다.</p>
+<p><figure class="figure"><img alt="" height="397" src="../images/237/04.png" width="562"/></figure>
+</p>
+<p> </p>
+
+
+
+<p>다음으로 적분오차 기준을 살펴보자.</p>
+<p> </p>
+<p data-end="113" data-start="92">1. 적분 오차 기준</p>
+<p data-end="186" data-start="115">제어기가 얼마나 잘 동작하는지 숫자로 평가하려면, 결국 <b>시간에 따라 생기는 오차 e(t)</b> 를 가지고 뭔가를 계산해야 한다.</p>
+<p data-end="186" data-start="115"><span><span>e(t)=ysp(t)−y(t) </span></span> (셋포인트 − 실제값)</p>
+<p data-end="239" data-start="233">이걸 가지고 <span>“전체적으로 이 응답이 좋은 응답인가, 나쁜 응답인가?” </span><span>를 판단하기 위해 </span><b>오차를 시간에 대해 적분한 값</b><span>들을 쓰는데, 그게 바로</span></p>
+<p data-end="239" data-start="233"><span>IAE <br/>ISE <br/>ITAE <br/>IE</span></p>
+<p data-end="417" data-start="354">같은 <b>적분(error) 기준</b>들이다.</p>
+<p data-end="417" data-start="354"> </p>
+<p data-end="448" data-start="424">네 가지 기준 하나씩 직관만 잡아보자.</p>
+<p data-end="491" data-start="450"><b>1. IAE (Integral of Absolute Error)</b></p>
+<p><figure class="figure"><img alt="" height="93" src="../images/237/05.png" width="267"/></figure>
+</p>
+<ul data-end="624" data-start="538">
+<li data-end="573" data-start="538">그래프에서 보면 오차 곡선 아래 “절댓값 면적”이야.</li>
+<li data-end="624" data-start="574">오차가 크든 작든, <b>“얼마나 오래 + 얼마나 크게”</b> 있었는지 전부 더하는 느낌.</li>
+</ul>
+<p data-end="629" data-start="626">직관:전체 기간 동안 <b>누적된 오차의 양</b>. 값이 작을수록<br/>→ 전체적으로 오차 면적이 적다<br/>→ “대체로 잘 따라갔다”라고 볼 수 있어.</p>
+<p data-end="629" data-start="626"> </p>
+<p data-end="858" data-start="818"><b>2. ISE (Integral of Squared Error)</b></p>
+<p><figure class="figure"><img alt="" height="63" src="../images/237/06.png" width="182"/></figure>
+</p>
+<ul data-end="966" data-start="905">
+<li data-end="923" data-start="905">오차를 <b>제곱</b>해서 적분.</li>
+<li data-end="966" data-start="924">큰 오차가 있으면 <span><span>e^2 </span></span>때문에 <b>훨씬 크게 벌점</b>을 받는다.</li>
+</ul>
+<p data-end="971" data-start="968">직관:“<b>큰 오차</b>를 정말 싫어하는 기준”. 그래서 이 기준을 최소화하도록 튜닝하면</p>
+<ul data-end="1151" data-start="1024">
+<li data-end="1051" data-start="1024"><b>초기에 크게 튀는 오차</b>를 빨리 죽이려고</li>
+<li data-end="1075" data-start="1054"><b>공격적인 Kc</b>가 나오기 쉽고</li>
+<li data-end="1151" data-start="1078">overshoot·진동도 상대적으로 커지는 경향이 있다.</li>
+</ul>
+<p> </p>
+<p data-end="1214" data-start="1158"><b>3. ITAE (Integral of Time-weighted Absolute Error)</b></p>
+<p><figure class="figure"><img alt="" height="72" src="../images/237/07.png" width="209"/></figure>
+</p>
+<p data-end="1288" data-start="1265">여기서 중요한 건 앞에 곱해진 <b>t</b>.</p>
+<ul data-end="1368" data-start="1290">
+<li data-end="1327" data-start="1290"><b>처음( t 작을 때 )의 오차</b>는 그렇게 크게 안 신경 씀</li>
+<li data-end="1368" data-start="1328"><b>시간이 많이 지난 뒤( t 큰 구간 )의 오차</b>는 훨씬 큰 벌점</li>
+</ul>
+<p data-end="1373" data-start="1370">직관:</p>
+<ul data-end="1589" data-start="1374">
+<li data-end="1430" data-start="1374">“초반에 조금 튀어도 되니까,<br/><b>오래가는 꼬리(tail)를 빨리 죽여라</b>” 라는 철학.</li>
+<li data-end="1589" data-start="1431">그래서 ITAE를 최소화하는 튜닝은 대체로
+<ul data-end="1589" data-start="1459">
+<li data-end="1477" data-start="1459">overshoot 조금은 허용</li>
+<li data-end="1505" data-start="1480">대신 <b>빠르게 안정된 값으로 붙는</b> 편</li>
+<li data-end="1589" data-start="1508">전체적으로 <b>가장 보수적인(안전한)</b> 튜닝 중 하나로 알려져 있음.</li>
+</ul>
+</li>
+</ul>
+<p> </p>
+
+<p data-end="2190" data-start="2157">3. 이 기준들을 가지고 “최적 튜닝”을 어떻게 만드냐</p>
+<p data-end="2205" data-start="2192">공정을 FOPTD 모델 같은 걸로 잡고​</p>
+<p><figure class="figure"><img alt="" height="69" src="../images/237/08.png" width="163"/></figure>
+</p>
+<p data-end="2205" data-start="2192"><br/>어떤 튜닝 (Kc​,τI​,τD​)를 쓰면, 계단 섭동이나 계단 셋포인트에 대한 e(t) 를 시뮬레이션할 수 있음. <br/>그 e(t)에 대해 IAE, ISE, ITAE 중 하나를 골라서 값 계산 </p>
+<p data-end="2205" data-start="2192">그 값을 최소로 만드는 (Kc​,τI​,τD​)를 수학적으로 or 수치적으로 찾는다. 시행착오법에 가깝다.</p>
+<p data-end="2612" data-start="2501">이걸 공정 파라미터 <span><span>(K,τ,θ)(K, \tau, \theta)</span><span aria-hidden="true"><span><span>(</span><span>K</span><span>,</span><span>τ</span><span>,</span><span>θ</span><span>)</span></span></span></span> 에 대해 일반화하면,<br/>교재의 <b>표 12.4</b> 같은 결과가 나온다:</p>
+<p><figure class="figure"><img alt="" height="620" src="../images/237/09.png" width="641"/></figure>
+</p>
+<p>여기서 Y는</p>
+<p><figure class="figure"><img alt="" height="122" src="../images/237/10.png" width="307"/></figure>
+</p>
+<p>A, B는 “해당 기준(예: ITAE) + 입력 종류(섭동/셋포인트)”에 따라 미리 계산해놓은 상수.</p>
+<p data-end="2852" data-start="2827"><span>즉, <b>“해당 공정의 θ/τ 비만 알면” </b>KcK_c<span aria-hidden="true">Kc​</span>, τI\tau_I<span aria-hidden="true">τI​</span>, τD\tau_D<span aria-hidden="true">τD​</span>를 바로 뽑아 쓸 수 있게 해놓은 거다.</span></p>
+<p data-end="2852" data-start="2827"> </p>
+<p data-end="2925" data-start="2910">이때 <b>셋포인트(step in set point)</b> 기준으로 최적화한 튜닝과 <b>섭동(step in disturbance)</b> 기준으로 최적화한 튜닝이 서로 다르다.</p>
+<p data-end="3024" data-start="2927"> </p>
+
+<p data-end="3037" data-start="3026">그래서 표 12.4도</p>
+<p>“Disturbance”용 세트</p>
+<p>“Set point”용 세트를 따로 구한다.</p>
+<p data-end="3214" data-start="3084">현장에서는 보통 “섭동 억제”가 더 중요해서, 실무 튜닝은 섭동 기준으로 맞추고, 셋포인트 응답은 나중에 β(셋포인트 weighting)나 필터로 만지는 편.</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/235.html"><span>← 이전 글</span><strong>Dynamic Behavior and Stability of Closed-Loop Control Systems</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

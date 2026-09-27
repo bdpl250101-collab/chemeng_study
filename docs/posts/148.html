@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>디지털트윈의 사전적 정의와 운용개념 · 화학공학 노트</title>
+<meta name="description" content="디지털트윈은 물리적 설비를 모방한 제품을 가상공간에 만들고, 이를 연동하여 서로 상호작용이 가능하게끔 만든 것이다. 예를 들어 실제 세계에 쓰레기통이 있다면, 가상세계에도 쓰레기통을 모델링하여 쓰레기통 시뮬레이션 모델을 만든다. 이때 실제 쓰레기통에 쓰레기를 넣으면, 센서로 이를 감지하여 가상세계의 쓰레기통에도 쓰레기가 차게 된다. 이제 디지털 세계의 쓰레기통을 비우는 버튼을 만들고 이를 비운다면, 실제 세계와 연동되어 실제 세계의 쓰레기통도 비워지도록 서로 연결했다고 해보자. 이때 둘은 디지털 트윈 관계라고 볼 수 있다. 디지털 ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html" aria-current="page">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/digital-twin.html">디지털트윈</a></nav>
+  <header class="post-head">
+    <h1>디지털트윈의 사전적 정의와 운용개념</h1>
+    <p class="meta">
+      <time datetime="2025-08-11">2025.08.11</time>
+ · 수정 2025.09.02    </p>
+  </header>
+
+
+  <div class="body">
+    <p>디지털트윈은 물리적 설비를 모방한 제품을 가상공간에 만들고, 이를 연동하여 서로 상호작용이 가능하게끔 만든 것이다. 예를 들어 실제 세계에 쓰레기통이 있다면, 가상세계에도 쓰레기통을 모델링하여 쓰레기통 시뮬레이션 모델을 만든다. 이때 실제 쓰레기통에 쓰레기를 넣으면, 센서로 이를 감지하여 가상세계의 쓰레기통에도 쓰레기가 차게 된다. 이제 디지털 세계의 쓰레기통을 비우는 버튼을 만들고 이를 비운다면, 실제 세계와 연동되어 실제 세계의 쓰레기통도 비워지도록 서로 연결했다고 해보자. 이때 둘은 디지털 트윈 관계라고 볼 수 있다. 디지털 트윈을 통해 제품의 초기 개념, 설계, 생산, 유통, 서비스, 유지보수, 폐기에 이르기까지 전 라이프사이클에 연루되는 데이터들을 체계적으로 관리할 수 있다.</p>
+<p> </p>
+
+<p>디지털 트윈의 운용 개념 및 성숙도 레벨</p>
+<p>1)디지털 트윈의 3가지 축</p>
+<p>디지털 트윈을 어떻게 현실에 적용할 수 있을까? 디지털 트윈의 운용개념이란 해당 제품이 주변 사용자나 환경과의 상호작용 등을 포함한 일련의 사건을 겪는 순서를 개념적으로 표현한 것이다. 이를 통해서 디지털 트윈 개념이 접목된다면 어떤 식으로 운용되어 질 수 있는지 파악하기가 용이해지고, 추후 상세 논의에 있어 많은 부분에서 참고가 될 수 있다. </p>
+<p> </p>
+<p>디지털 트윈의 3축은 각각 데이터, 서비스, 모델로 구성된다. 이 3개는 디지털 트윈을 함에 있어서 반드시 들어가야한다.</p>
+<p> </p>
+<p>-서비스:데이터나 모델에 기반하여 사용자, 설비 등에게 유용한 기능을 수행할 수 있는 소프트웨어 모듈을 의미한다. 현상을 탐지하고 원인을 분석하고 거동변화를 예측하여 대응안 발굴을 내리는 과정을 수행할 수 있다.</p>
+<p> </p>
+<p>설명/기술: 대상 제품의 상태, 현황 등을 기술하는 서비스</p>
+<p>진단: 대상 제품에 대한 이상 현상 탐지 및 원인 분석 지원하는 서비스</p>
+<p>예측: 대상 제품에 대한 미래 시점의 거동 예측을 지원하는 서비스</p>
+<p>처방: 대상 제품에 대한 여러 관점의 개선을 제공하는 서비스</p>
+<p> </p>
+<p>-데이터</p>
+<p>운용단계: 현 상태+과거 상태 이력, 설정 정보, 유지보수 기록, 상태 분석 결과 등</p>
+<p>생산단계: 사람, 설비, 자재, 공정, 환경, 품질 등 생산과정서 발생된 데이터</p>
+<p>설계단계:CAD, CAE, CAM, 스펙, 기타 공정/엔지니어 생성 데이터 등</p>
+<p> </p>
+<p>-모델: 모델에 대해서는 다음 절에서 깊게 다룰 것이다. </p>
+<p> </p>
+<p>여기까지 읽어보면 알겠지만 디지털 트윈의 개념은 모호하므로 구체화하려면 많은 노력이 필요하다. 실제 일을 추진해 나갈 때 소위 단계를 구분하든 아니면 각자 속한 기관의 현실 여건에 맞게 목표를 수정하는 조율 활동이 필요할 것이다. 따라서 이때 활용할 수 있는 성숙도 모델을 소개한다.</p>
+<p> </p>
+<p>1)ICT 미적용: 디지털 화가 전혀 안됨. 그냥 제품</p>
+<p>2)디지털 모델 및 정적 데이터 확보: 제품 3D모델, 기준정보, 스펙 등 정적 데이터 확보, 물리세계에 대한 인지는 사람이 하고 상기 데이터를 참조함</p>
+<p>3)물리시스템, 데이터 연동 및 모니터링: 센서, 제어기 등으로부터 데이터 수집, (2)의 데이터들을 활용하여 물리세계 상태 파악 가능, 그러나 물리세계에 대한 거동 모델은 없음</p>
+<p>4)분석,예측: 물리세계에 대한 거동 모델 구축, 이에 기반한 시뮬레이션, 예측, 진단, 그러나 분석결과가 실시간으로 물리세계에 반영되지 않음</p>
+<p>5)최적화 및 의사결정: 제반 최적화 기법 활용하여 최적 의사결정 도출/ 시뮬레이션 통한 검증도 가능/ 분석 결과가 실시간으로 물리세계 반영 안됨</p>
+<p>6)물리 시스템-디지털 공간 융합: 물리시스템과 디지털 공간 간 양방향 연동 및 동기화가 이뤄짐. 디지털모델 간 동기화, 상호작용도 이뤄짐. 그러나 신뢰성 등의 이유로 상기 항목에 대해 사람의 개입, 감시 필요</p>
+<p>7)자율화: (6)에 더해 사람의 개입이 최소화된 상태로 물리시스템-디지털 공간간 실시간 동기화 수행/ 디지털 모델 간 동기화</p>
+<p> </p>
+<p>해당 성숙도 모델은 ICT 미적용부터 자율화까지 총 7단계로 구성되어 있음을 알 수 있다. 단계별로 본다면, 1)물리 세계 및 디지털 공간 상에서 데이터 수집/구축이 이루어지고 2)이에 기반한 모니터링/예측과 같은 기능을 수행하고 3)이러한 수행 결과가 실제 물리세계에 반영되며 4)사람의 개입 없이 동기화되어 운용되는 흐름으로 발전해 나간다 보면 된다.</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+<span></span>    <a class="next" href="../posts/156.html"><span>다음 글 →</span><strong>Bioprocess digital twins of mammalian cell culture for advanced biomanufacturing</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

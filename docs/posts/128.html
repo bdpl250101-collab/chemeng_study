@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>8. 제어계 · 화학공학 노트</title>
+<meta name="description" content="앞에서 몇 가지 기본적인 계들의 동적 거동을 해석하였다. 이것을 배경으로 하여 제어계에 대한 논의를 할 것이다.먼저 교반탱크 가열기를 예로 들어 살펴보자. 온도 Ti의 액체가 단열된 교반탱크에 유속w로 유입된다. 제어기를 사용하여 탱크 안의 온도를 TR로 유지하고자 한다. 만일 측정된 온도 Tm이 원하는 온도 TR과 다르면 제어기는 그 차이인 오차 ε=TR-Tm 를 감지하고, ε의 크기를 줄일 수 있도록 가열속도 q를 변화시킨다. 만일 제어기가 ε에 비례하는 양만큼 탱크에 대한 가열속도를 변화시킨다면 비례제어가 이루어진다. 계산하기">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html" aria-current="page">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/advanced-control.html">최신공정제어</a></nav>
+  <header class="post-head">
+    <h1>8. 제어계</h1>
+    <p class="meta">
+      <time datetime="2025-07-12">2025.07.12</time>
+ · 수정 2025.07.20    </p>
+  </header>
+
+
+  <div class="body">
+    <p>앞에서 몇 가지 기본적인 계들의 동적 거동을 해석하였다. 이것을 배경으로 하여 제어계에 대한 논의를 할 것이다.</p>
+<p><figure class="figure"><img alt="" height="364" src="../images/128/01.png" width="655"/></figure>
+</p>
+<p>먼저 교반탱크 가열기를 예로 들어 살펴보자. 온도 Ti의 액체가 단열된 교반탱크에 유속w로 유입된다. 제어기를 사용하여 탱크 안의 온도를 TR로 유지하고자 한다. 만일 측정된 온도 Tm이 원하는 온도 TR과 다르면 제어기는 그 차이인 오차  <span>ε=TR-Tm 를 감지하고, <span>ε의 크기를 줄일 수 있도록 가열속도 q를 변화시킨다. 만일 제어기가 <span>ε에 비례하는 양만큼 탱크에 대한 가열속도를 변화시킨다면 비례제어가 이루어진다.</span></span></span><span><span><span></span></span></span></p>
+<p> </p>
+<p><span><span><span>계산하기 위한 목적으로는 위에 서술된 제어계를 블록선도로 나타내는 것이 좋다. 이를 블록선도로 나타내보자.</span></span></span></p>
+<p><figure class="figure"><img alt="" height="329" src="../images/128/02.png" width="769"/></figure>
+</p>
+<p>여기를 보면 설정점 TR이 있고, Tm과의 오차가 제어기에 들어간다. 이후 최종제어요소에 들어가게 되는데, 이때 제어변수의 변화를 유발하는 부하가 같이 유입된다. 여기에서는 유입온도 Ti가 부하이다. 이러한 루프가 있는 공정을 닫힌루프계라고 부른다.</p>
+<p> </p>
+<p>(*서보문제 vs 조절기문제</p>
+<p>잠시 공정에서 발생할 수 있는 두 가지 유형의 문제를 살펴보자</p>
+<p>서보문제:부하는 일정하지만, 설정점이 변화할 때 이를 충족하는 것</p>
+<p>조절기문제:설정점 TR은 일정하지만, 부하가 발생할 때 이를 커버하는 것)</p>
+<p> </p>
+<p>위 그림에서 각 블록은 특정한 구성요소의 입력과 출력사이에 존재하는 함수 관계를 나타낸다. 앞에서 이러한 관계를 전달함수로 나타내었으므로, 제어계를 블록선도로 나타낼 때 선정된 변수들은 편차변수이며 각 블록 안에는 입력변수와 출력 변수를 관련시키는 전달함수가 표시된다.</p>
+<p> </p>
+<p>이 공정에서 전달함수를 구해서 직접 표시해보자. 위 교반가열기의 출구온도는 다음 입출력 관계를 가진다.</p>
+<p><figure class="figure"><img alt="" height="100" src="../images/128/03.png" width="540"/></figure>
+</p>
+<p>이때 유입조건은 Q,Ti이며 이에 따라 유출온도가 변한다. 이때 하나를 무시하고 각각의 전달함수를 구하면 다음과 같다.</p>
+<p> </p>
+<p>1)유입 열량과 유출온도</p>
+<p><figure class="figure"><img alt="" height="114" src="../images/128/04.png" width="265"/></figure>
+</p>
+<p>2)유입 온도와 유출온도</p>
+<p><figure class="figure"><img alt="" height="119" src="../images/128/05.png" width="267"/></figure>
+</p>
+<p> </p>
+<p>이를 블록선도로 다음처럼 나타낼 수 있다.</p>
+<p><figure class="figure"><img alt="" height="254" src="../images/128/06.png" width="377"/></figure>
+</p>
+<p>또는, 공통분모를 묶어 유출온도를 다음처럼 나타낼 경우 다른 표기도 가능하다.</p>
+<p><figure class="figure"><img alt="" height="119" src="../images/128/07.png" width="546"/></figure>
+</p>
+<p>이 경우 블록선도는 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="212" src="../images/128/08.png" width="543"/></figure>
+</p>
+<p>이때 가산접합부라고 불리는 동그라미 부분에서는 +,- 등의 연산이 이루어지며 블록에서는 곱셈이 이루어짐을 알 수 있다.</p>
+<p> </p>
+<p>측정요소: 항온조의 온도 T를 측정하여 Tm을 제어기에 전송하는 온도측정요소가 동적 지연을 나타낼 수 있다. 이러한 온도측정요소가 일차계라고 가정하면 전달함수를 다음처럼 나타낼 수 있다.</p>
+<p><figure class="figure"><img alt="" height="119" src="../images/128/09.png" width="282"/></figure>
+</p>
+<p>이때 변수들은 당연히 편차변수이다. 편차변수라는 뜻에서 '가 붙어있다.</p>
+<p><figure class="figure"><img alt="" height="105" src="../images/128/10.png" width="229"/></figure>
+</p>
+<p>정상상태에 있다면 Tm=T일 것이다. 그러나 실제로는 실제온도인 T를 측정한 값인 Tm이 서로 같지 않을 수도 있다. 일반적으로 산업에서 온도감지장치로 사용되는 열전대는 6~20초의 시간상수를 가지는 일차계이다. </p>
+<p> </p>
+<p>이제 측정요소와 제어기에 대해 알아보았으므로, 편의상 이 블록들을 한 블록으로 합친다. 이렇게하면 온도의 오차와 탱크로의 열 유입 사이의 총괄응답만을 고려하면 된다. 또한 제어기는 비례 제어기라고 가정한다(다음 장에서 제어계에서 널리 사용되는 다른 제어기들과 응답에 관하여 논의할 것이다). 비례 제어기에 대한 관계식은 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="159" src="../images/128/11.png" width="225"/></figure>
+</p>
+<p>이때 Kc는 비례감도이고, A는 오차가 없을 때 열 유입, 또는 편중치라고 불린다. 여기서 A=qs이다. 따라서 다음처럼 나타낼 수 있다.</p>
+<p><figure class="figure"><img alt="" height="156" src="../images/128/12.png" width="207"/></figure>
+</p>
+<p>이를 편차변수에 관하여 라플라스 변환하면 간단한 비례 제어기 전달함수를 얻을 수 있다.</p>
+<p><figure class="figure"><img alt="" height="64" src="../images/128/13.png" width="234"/></figure>
+<figure class="figure"><img alt="" height="168" src="../images/128/14.png" width="424"/></figure>
+</p>
+<p>교반 가열기의 오차정의는 다음처럼 되는 것에 유의하여라</p>
+<p><figure class="figure"><img alt="" height="84" src="../images/128/15.png" width="821"/></figure>
+</p>
+<p>이제 분리된 개별 블록들의 전개를 완료하였으므로, 이를 결합하여 제어계 전체의 블록선도를 얻어보자. </p>
+<p><figure class="figure"><img alt="" height="381" src="../images/128/16.png" width="943"/></figure>
+</p>
+<p>이때 블록선도는 제어루프의 정보의 흐름을 나타낸다. 만약 블록선도에서 하나의 선이 나누어지면, 흐름이 나누어진 것이 아니라 정보가 전송되었다는 뜻이다.</p>
+<p> </p>
+<p>요약: 제어계는 여러가지 구성요소의 전달함수를 포함하는 블록선도로 표현될 수 있다. 블록선도는 단순히 구성요소들의 동적 거동을 나타내는 연립미분 및 대수방정식을 쓰는 체계적인 방법에 불과하다는 것을 강조한다. 블록선도는 이러한 연립방정식들의 변수들 간에 존재하는 함수관계를 분명하게 보여준다. 블록선도로 나타냄으로서 얻게 되는 또 다른 이점은 측정된 변수와 목표변수 사이의 되먹임관계와 이 두 신호들 사이의 차이인 오차가 제어를 유지하기 위하여 어떻게 사용되는가를 분명하게 보여준다는 것이다.</p>
+<p><figure class="figure"><img alt="" height="486" src="../images/128/17.png" width="1169"/></figure>
+</p>
+<p>공정에서는 T를 측정하며 이것이 지연이 발생하여 T≠Tm일 수 있다. Tm은 비교기에서 TR과 비교되어 오차를 형성한 후 제어기에 오차를 보낸다. 제어기는 이 오차에 비례한 신호를 최종제어요소에 보내고, 여기에서 적절한 피드백이 이루어진 다음 부하와 함께 공정을 변화시킨다. 이후 변화된 T는 다시한번 측정되는 루프를 이룬다.</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/127.html"><span>← 이전 글</span><strong>7. 2차계</strong></a>
+    <a class="next" href="../posts/129.html"><span>다음 글 →</span><strong>9. 제어기들과 최종 제어요소들</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

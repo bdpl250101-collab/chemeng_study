@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>화공열역학 챕터1~8 · 화학공학 노트</title>
+<meta name="description" content="-실린더 내에서 피스톤의 움직임에 의해 발생하는 기체의 압축 또는 팽창에 의한 일을 구하는 식 dw=-pdv는 아무런 쓸모가 X-그러나 가역조건에서는 적분으로 계산이 가능하다. 이는 실제로는 불가능하지만, 가역조건을 가정하여 계산 후 효율을 곱하는 것으로 근사값을 추정한다.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html" aria-current="page">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/thermodynamics.html">화공열역학</a></nav>
+  <header class="post-head">
+    <h1>화공열역학 챕터1~8</h1>
+    <p class="meta">
+      <time datetime="2024-01-24">2024.01.24</time>
+ · 수정 2025.06.09    </p>
+  </header>
+
+
+  <div class="body">
+    <p><figure class="figure"><img alt="" height="1498" src="../images/38/01.webp" width="1033"/></figure>
+</p>
+<p>-실린더 내에서 피스톤의 움직임에 의해 발생하는 기체의 압축 또는 팽창에 의한 일을 구하는 식 dw=-pdv는 아무런 쓸모가 X<br/><br/>-그러나 가역조건에서는 적분으로 계산이 가능하다. 이는 실제로는 불가능하지만, 가역조건을 가정하여 계산 후 효율을 곱하는 것으로 근사값을 추정한다.<br/><br/><br/></p>
+<p><figure class="figure"><img alt="" height="1454" src="../images/38/02.webp" width="1000"/></figure>
+<figure class="figure"><img alt="" height="1123" src="../images/38/03.jpg" width="793"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="1123" src="../images/38/04.jpg" width="793"/></figure>
+<figure class="figure"><img alt="" height="1123" src="../images/38/05.jpg" width="793"/></figure>
+<figure class="figure"><img alt="" height="1123" src="../images/38/06.jpg" width="793"/></figure>
+<figure class="figure"><img alt="" height="1123" src="../images/38/07.jpg" width="793"/></figure>
+<figure class="figure"><img alt="" height="1123" src="../images/38/08.jpg" width="793"/></figure>
+<figure class="figure"><img alt="" height="1123" src="../images/38/09.jpg" width="793"/><figcaption>ch6</figcaption>
+</figure>
+<figure class="figure"><img alt="" height="1123" src="../images/38/10.jpg" width="793"/></figure>
+<figure class="figure"><img alt="" height="1123" src="../images/38/11.jpg" width="793"/></figure>
+<figure class="figure"><img alt="" height="793" src="../images/38/12.jpg" width="1123"/></figure>
+<figure class="figure"><img alt="" height="793" src="../images/38/13.jpg" width="1123"/></figure>
+<figure class="figure"><img alt="" height="793" src="../images/38/14.jpg" width="1123"/></figure>
+<figure class="figure"><img alt="" height="306" src="../images/38/15.png" width="862"/></figure>
+</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+<span></span>    <a class="next" href="../posts/107.html"><span>다음 글 →</span><strong>열역학 법칙 용어 정리</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

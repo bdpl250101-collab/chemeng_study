@@ -1,0 +1,14 @@
+{
+ "id": 298,
+ "title": "증류에 있어서 Multiple Feeds, Sidestreams,and Open Steam",
+ "date": "2026-06-13",
+ "modified": "2026-06-14",
+ "category": "화학공학 일지/분리공정",
+ "tags": [],
+ "summary": "Multiple Feeds, Sidestreams,and Open Steam은 외부에서 뭔가 들어오거나 빠지는 상황을 뜻한다. 그 지점 기준으로 L,V가 바뀌고, 그래서 조작선이 하나 더 생긴다. 기본적인 상황을 먼저 잡아보자.일반적인 binary distillation에서 라이트키 몰분율을 다음과 같이 둔다.그리고 일반적인 메카베-띨레 방법에서는 다음 5선이 존재한다.단수 계산은 평형선과 조작선을 왔다 갔다 하면서 계단식으로 한다. 이때 그림처럼 중간 단에서 제품을 하나 더 빼는 사이드 스트림이 있는 경우 물질수지는 다음처럼 된다",
+ "source_url": "https://audio268.tistory.com/298",
+ "images_ok": 9,
+ "images_failed": 0,
+ "chars": 694,
+ "html": "<p>Multiple Feeds, Sidestreams,and Open Steam은 외부에서 뭔가 들어오거나 빠지는 상황을 뜻한다. 그 지점 기준으로 <span><span>L,V</span></span>가 바뀌고, 그래서 조작선이 하나 더 생긴다.</p>\n<p> </p>\n<p>기본적인 상황을 먼저 잡아보자.</p>\n<p>일반적인 binary distillation에서 라이트키 몰분율을 다음과 같이 둔다.</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"71\" src=\"../images/298/01.png\" width=\"328\"/></figure>\n</p>\n<p>그리고 일반적인 메카베-띨레 방법에서는 다음 5선이 존재한다.</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"207\" src=\"../images/298/02.png\" width=\"188\"/></figure>\n</p>\n<p>단수 계산은 평형선과 조작선을 왔다 갔다 하면서 계단식으로 한다.</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"482\" src=\"../images/298/03.png\" width=\"398\"/></figure>\n</p>\n<p> </p>\n<p>이때 그림처럼 중간 단에서 제품을 하나 더 빼는 사이드 스트림이 있는 경우 물질수지는 다음처럼 된다.</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"42\" src=\"../images/298/04.png\" width=\"147\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"36\" src=\"../images/298/05.png\" width=\"228\"/></figure>\n</p>\n<p>이때 중요한 것은, 일반 feed 하나짜리 증류탑은 보통 조작선이 2개이다.</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"106\" src=\"../images/298/06.png\" width=\"261\"/></figure>\n</p>\n<p>그런데 중간에서 액체를 빼면, 그 지점 아래에서는 내려가는 액체 유량이 줄어든다. </p>\n<p> </p>\n<p data-end=\"1698\" data-start=\"1676\">즉 사이드 스트림 위쪽에서는 액체 유량이 <span><span><span>L </span></span></span>인데, 액체 사이드 스트림 <span><span>LS</span></span>를 빼고 나면 아래쪽 액체 유량은 <span><span><span>L′=L−LS</span></span></span>가 된다. 반면 saturated liquid sidestream이면 기상 유량은 그대로라고 두므로 <span><span><span>V′=V</span></span></span>이다.</p>\n<p data-end=\"1698\" data-start=\"1676\"> </p>\n<p data-end=\"1698\" data-start=\"1676\">따라서 원래 조작선 기울기가 L/V였다가 사이드 스트림 아래에서는 L-LS/V로 바뀐다.</p>\n<p data-end=\"1698\" data-start=\"1676\"> </p>\n<p data-end=\"1698\" data-start=\"1676\">그래서 조작선을 다음처럼 구분한다.</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"106\" src=\"../images/298/07.png\" width=\"230\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"155\" src=\"../images/298/08.png\" width=\"360\"/></figure>\n</p>\n<p>이거 두개는 그냥 그리다보면 만나게 되어있다. 이때 만나는 점의 x좌표는 xs이다.</p>\n<p> </p>\n<p>다음 4 식을 알아두도록 하자. 이는 사이드 위쪽, 사이드 아래쪽 조작선에 해당한다.</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"187\" src=\"../images/298/09.png\" width=\"227\"/></figure>\n</p>"
+}

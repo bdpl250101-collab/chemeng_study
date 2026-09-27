@@ -1,0 +1,14 @@
+{
+ "id": 292,
+ "title": "비트리머의 Debonding",
+ "date": "2026-06-17",
+ "modified": "2026-06-17",
+ "category": "화학공학 일지/화학공학 스터디",
+ "tags": [],
+ "summary": "배터리 셀과 cooling plate 사이에 붙어 있는 접착제가 비트리머라면, 수리 및 재활용할 때 열을 줘서 약하게 만들고 떼어낼 수 있는 성질을 가지고 있다. 기존 epoxy/PU 접착제는 한 번 굳으면 거의 영구접착이라서, 떼려면 강한 힘을 주거나 고온 처리를 해야한다. 그래서 셀 단위 수리나 분해가 어렵다. 이때 disulfide epoxy vitrimer를 쓰면 평소에는 단단한 접착제처럼 작동한다. 그런데 특정 온도에서 오래 가열하면 내부 결합이 재배열되면서 응력이 풀린다. 응력이 풀리면 접착력이 약해지고, 그 결과 deb",
+ "source_url": "https://audio268.tistory.com/292",
+ "images_ok": 0,
+ "images_failed": 0,
+ "chars": 1110,
+ "html": "<p>배터리 셀과 cooling plate 사이에 붙어 있는 접착제가 비트리머라면, 수리 및 재활용할 때 열을 줘서 약하게 만들고 떼어낼 수 있는 성질을 가지고 있다.</p>\n<p> </p>\n<p>기존 epoxy/PU 접착제는 한 번 굳으면 거의 영구접착이라서, 떼려면 강한 힘을 주거나 고온 처리를 해야한다. 그래서 셀 단위 수리나 분해가 어렵다. 이때 disulfide epoxy vitrimer를 쓰면 평소에는 단단한 접착제처럼 작동한다. 그런데 특정 온도에서 오래 가열하면 내부 결합이 재배열되면서 응력이 풀린다. 응력이 풀리면 접착력이 약해지고, 그 결과 debonding 가능성이 생긴다.</p>\n<p> </p>\n<p>이를 한 보고서에서는 다음과 같이 설명한다.</p>\n<p> </p>\n<p data-end=\"1174\" data-start=\"1059\">Vitrimer는 가교 구조를 유지하면서도 외부 자극을 받으면 네트워크 재배열이 가능한 동적 열경화성 고분자이다. 이 거동은 disulfide bond에서 나온다. Epoxy network 안에 disulfide bond가 많아지면 고분자 사슬의 유연성이 증가하고, 그 결과 glass transition temperature가 낮아질 수 있다. 또한 disulfide bond는 약 251 kJ/mol의 비교적 낮은 결합 에너지를 가지므로 외부 응력 아래에서 선택적인 bond exchange가 가능하다.</p>\n<p data-end=\"1681\" data-start=\"1461\">Stress relaxation 이후 disulfide bond는 self-healing behavior를 통해 다시 형성될 수 있다. 이 특성은 배터리 재활용성과 직접적으로 관련된다. </p>\n<p data-end=\"1681\" data-start=\"1461\"> </p>\n<p data-end=\"1681\" data-start=\"1461\">Stress relaxation이 뭐냐?  처음에는 배터리 셀과 cooling plate를 강하게 붙잡고 있다. 그런데 50℃에서 오래 가열하면 vitrimer 내부의 disulfide bond가 조금씩 교환되면서 접착제 내부 구조가 재배열되고, 내부 응력이 줄어드는 것을 의미한다.</p>\n<p data-end=\"1681\" data-start=\"1461\"> </p>\n<p data-end=\"1681\" data-start=\"1461\">다만 이때 TCA를 떼는 경우 주의사항이 있다. 배터리를 너무 위험하게 고온으로 올리지 않으면서, 오래 버티면 접착력이 약해질 수 있는 온도로 가열해야 한다는 것이다.</p>\n<p data-end=\"1681\" data-start=\"1461\"> </p>\n<p data-end=\"1681\" data-start=\"1461\">따라서 50℃에서 11시간 가열과 같이 천천히 가열해서 접착제 내부 응력을 완화하는 방안이 필요하다. 물론 이는 실제 debonding 기준이 아니라 stress relaxation 기준이므로 실제 박리가 가능한지도 미지수이다.</p>\n<p data-end=\"1681\" data-start=\"1461\"> </p>"
+}

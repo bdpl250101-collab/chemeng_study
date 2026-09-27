@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>화학공정계산 (murphy) 6장:공정에너지 계산과 에너지 흐름도 설계 · 화학공학 노트</title>
+<meta name="description" content="에너지의 형태는 총 3가지가 존재한다. 에너지=내부에너지+위치에너지+운동에너지 E=U+Ek+Ep 사실 이 세상에 존재하는 모든 에너지는 운동에너지와 위치에너지이다. 내부에너지는 내부 분자의 운동+위치에너지이다. 또한 엔탈피 H라고 하는 유용한 상태량을 정의할 수 있다. H=U+PV 내부에너지와 엔탈피는 압력P, 온도T, 상 Φ , 조성xi의 함수이다. 주어진 P, T, Φ, x에 대해 U^, H^ 값을 어떻게 구하는 지 알아볼 것이다. 1) U^, H^ 값을 구하기 위한 표와 그래프의 사용 먼저 물과 같은 순수 화합물이 있는데, 이">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html" aria-current="page">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/process-calc.html">화학공정계산</a></nav>
+  <header class="post-head">
+    <h1>화학공정계산 (murphy) 6장:공정에너지 계산과 에너지 흐름도 설계</h1>
+    <p class="meta">
+      <time datetime="2024-01-24">2024.01.24</time>
+ · 수정 2024.04.30    </p>
+  </header>
+
+
+  <div class="body">
+    <p><span>에너지의 형태는 총 3가지가 존재한다.</span></p>
+<p><span>에너지=내부에너지+위치에너지+운동에너지</span></p>
+<p> </p>
+<p><span>E=U+Ek+Ep</span></p>
+<p> </p>
+<p><span>사실 이 세상에 존재하는 모든 에너지는 운동에너지와 위치에너지이다. 내부에너지는 내부 분자의 운동+위치에너지이다.</span></p>
+<p> </p>
+<p><span>또한 엔탈피 H라고 하는 유용한 상태량을 정의할 수 있다.</span></p>
+<p> </p>
+<p><span>H=U+PV</span></p>
+<p> </p>
+<p><span>내부에너지와 엔탈피는 압력P, 온도T, 상 <span>Φ</span> , 조성xi의 함수이다.</span></p>
+<p><figure class="figure"><img alt="" height="164" src="../images/36/01.png" width="236"/></figure>
+</p>
+<p><span>주어진 P, T, Φ, x에 대해 U^, H^ 값을 어떻게 구하는 지 알아볼 것이다.</span></p>
+<p> </p>
+<p><span>1) <span>U^, H^ 값을 구하기 위한 <b>표와 그래프의 사용</b></span></span></p>
+<p><span><span>먼저 물과 같은 순수 화합물이 있는데, 이러한 순수 화합물의 경우<span>Φ=액체 or 고체, x=1이고 P,T에 따라 U^와 H^ 값이 달라진다.</span></span></span></p>
+<p> </p>
+<p><span><span><span>이러한 경우 자료를 조사하여 표로 만들어 놓은 게 있다. 이것이 증기표이다.</span></span><span><span></span></span></span></p>
+<p><figure class="figure"><img alt="" height="410" src="../images/36/02.png" width="603"/></figure>
+</p>
+<p><span>이 경우 주어진 온도와 압력에서 데이터를 읽기만 하면 쉽게 내부에너지와 엔탈피를 구할 수 있다.</span></p>
+<p> </p>
+<p><span>2)모델식의 사용</span></p>
+<p><span>그러나 아쉽게도 혼합물의 표나 데이터가 주어진 경우는 매우 드물다. 이러한 경우에, <span>P, T, Φ, x 중 나머지 3 조건이 고정되었다고 가정하고 한 가지 상황이 변할 때 U^와 H^를 계산할 수 있는 모델식이 개발되어 있다.</span></span></p>
+<p> </p>
+<p><span><b><span>2-1)P 변화시 ΔU, <span>ΔH는?</span></span></b><span><span></span></span></span></p>
+<p><span><span>이상기체일 경우</span></span></p>
+<p><figure class="figure"><img alt="" height="98" src="../images/36/03.png" width="187"/></figure>
+</p>
+<p><span>고체나 액체일 경우</span></p>
+<p><figure class="figure"><img alt="" height="99" src="../images/36/04.png" width="316"/></figure>
+</p>
+<p> </p>
+<p><span><b><span>2-2)T 변화시 ΔU, </span><span>ΔH는?</span> </b></span></p>
+<p><span>상변화가 없다는 조건하에 </span></p>
+<p><figure class="figure"><img alt="" height="127" src="../images/36/05.png" width="197"/></figure>
+</p>
+<p><span>이때 Cp는 다항식 형태로 주어지며 표를 통해 구할 수 있다.</span></p>
+<p><figure class="figure"><img alt="" height="134" src="../images/36/06.png" width="517"/></figure>
+<figure class="figure"><img alt="" height="75" src="../images/36/07.png" width="277"/></figure>
+<figure class="figure"><img alt="" height="801" src="../images/36/08.png" width="790"/></figure>
+</p>
+<p> </p>
+<p><span>2-3) Φ변화시 <b><span>ΔU, </span><span>ΔH는? = 잠열</span></b></span></p>
+<p><figure class="figure"><img alt="" height="132" src="../images/36/09.png" width="314"/></figure>
+</p>
+<p><span>clapeyron 방정식이다. 이를 통해 잠열을 계산할 수 있다. 만약 이러한 식을 적용할 자료가 충분치 않다면</span></p>
+<p><figure class="figure"><img alt="" height="84" src="../images/36/10.png" width="335"/></figure>
+</p>
+<p><span>위의 식을 적용해본다.</span></p>
+<p><figure class="figure"><img alt="" height="99" src="../images/36/11.png" width="280"/></figure>
+</p>
+<p><span>한 온도에서 순수한 액체의 증발 잠열을 알고 그 값으로부터 다른 온도에서 증발잠열을 추정할 수 있는 식이다.</span></p>
+<p><figure class="figure"><img alt="" height="143" src="../images/36/12.png" width="389"/></figure>
+</p>
+<p> </p>
+<p><span><span>2-4) x변화시 </span><b><span>ΔU, </span><span>ΔH는? = 조성변화(혼합과 용액, 화학반응)</span></b></span></p>
+<p><span>혼합으로 엔탈피가 변화하는 경우가 있고 화학반응으로 인해 엔탈피가 변화하는 경우가 있다. </span></p>
+<p><figure class="figure"><img alt="" height="68" src="../images/36/13.png" width="406"/></figure>
+<figure class="figure"><img alt="" height="103" src="../images/36/14.png" width="330"/></figure>
+</p>
+<p> </p>
+
+<p><span> P, T, Φ, x 변화에 따른 <span>ΔU, </span><span>ΔH를 계산하는 법</span></span></p>
+<p><span><span>1) <span>P, T, Φ의 편리한 참고 상태를 선택한다.</span></span></span></p>
+<p><span><span><span><span>2)참고 상태에서 </span><span><span>U나 H가 0이 되게 한다.</span></span></span></span></span></p>
+<p><span><span><span><span><span>3)P 변화에 의한 <span>ΔU, </span><span>ΔH를 계산한다.</span></span></span></span></span></span></p>
+<p><span><span><span><span><span><span>4)T 변화에 의한 <span>ΔU, </span><span>ΔH를 계산한다.</span></span></span></span></span></span></span></p>
+<p><span><span><span><span><span><span><span>5)<span>Φ 변화에 의한 <span>ΔU, </span><span>ΔH를 계산한다.</span></span></span></span></span></span></span></span></span></p>
+<p><span><span><span><span><span><span><span><span><span>어떠한 편리한 순서대로 3 4 5를 결합하고 다 더한다.</span></span></span></span></span></span></span></span></span></p>
+<p> </p>
+<p><span><span><span><span><span><span><span><span><span>이때 조심할 것은 조성의 변<span>화(혼합 또는 화학반응)으로 인한 엔탈피 변화이다. <span>P, T, Φ의 경우 다른 조건의 영향을 받지 않지만 조성이 변화하는 경우에는 <span>P=1atm ,T=<span>25</span><span>°C 인 상태에서 엔탈피 변화를 추정할 수 있다. </span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p> </p>
+<p><span><span>따라서 조성의 변화가 수반되는 경우 <span>P=1atm</span><span><span> </span>,T=</span><span>25</span><span>°C으로 가는 경로를 만들고 이후 엔탈피 변화 후 다시 원래 상태로 돌아가는 과정을 거쳐야 한다.</span></span></span></p>
+<p><figure class="figure"><img alt="" height="344" src="../images/36/15.png" width="422"/></figure>
+</p>
+<p>예제)다음 반응이 500도 1기압에서 일어날때 반응 엔탈피는??</p>
+<p><figure class="figure"><img alt="" height="134" src="../images/36/16.png" width="720"/></figure>
+</p>
+<p>풀이:엔탈피 변화는 오직 조성변화에 의해서만 수반된다. 따라서 경로를 다음과 같이 설정한다.</p>
+<p><figure class="figure"><img alt="" height="344" src="../images/36/17.png" width="403"/></figure>
+</p>
+<p> </p>
+
+<p>정리)</p>
+<p><figure class="figure"><img alt="" height="1080" src="../images/36/18.png" width="1587"/></figure>
+</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/32.html"><span>← 이전 글</span><strong>화학공정계산 (murphy) 5장:분리기</strong></a>
+    <a class="next" href="../posts/37.html"><span>다음 글 →</span><strong>화학공정계산 (murphy) 총정리</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

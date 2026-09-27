@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>질량분석법 2 · 화학공학 노트</title>
+<meta name="description" content="이전 거를 잠깐 복습하고 가자.더보기1. 분석 기술과 정보질량분석(MS) → 분자량, 분자식, 조각패턴적외선(IR) → 작용기 종류자외선(UV-Vis) → 공액 π 전자계 유무핵자기공명(NMR) → 탄소-수소 골격2. 질량분석 기본M⁺• (parent ion): 전자 하나 잃은 분자 양이온 라디칼Base peak: 가장 강한 피크 (M⁺•가 아닐 수도 있음)M+1 피크: ¹³C 동위원소 존재로 인해 나타남검출기에서 보이는 건 양이온 조각만 (중성 라디칼은 안 보임)조각나는 원리: 불안정한 M⁺•가 분해 → 하나는 양이온, 다른 하나">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html" aria-current="page">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/organic-chem.html">유기화학</a></nav>
+  <header class="post-head">
+    <h1>질량분석법 2</h1>
+    <p class="meta">
+      <time datetime="2025-09-07">2025.09.07</time>
+ · 수정 2025.09.21    </p>
+  </header>
+
+
+  <div class="body">
+    <p>이전 거를 잠깐 복습하고 가자.</p>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+<h2 data-end="109" data-start="94">1. 분석 기술과 정보</h2>
+<ul data-end="232" data-start="110">
+<li data-end="143" data-start="110"><b>질량분석(MS)</b> → 분자량, 분자식, 조각패턴</li>
+<li data-end="168" data-start="144"><b>적외선(IR)</b> → 작용기 종류</li>
+<li data-end="202" data-start="169"><b>자외선(UV-Vis)</b> → 공액 π 전자계 유무</li>
+<li data-end="232" data-start="203"><b>핵자기공명(NMR)</b> → 탄소-수소 골격</li>
+</ul>
+<hr data-end="237" data-start="234"/>
+<h2 data-end="252" data-start="239">2. 질량분석 기본</h2>
+<ul data-end="477" data-start="253">
+<li data-end="298" data-start="253"><b>M⁺• (parent ion)</b>: 전자 하나 잃은 분자 양이온 라디칼</li>
+<li data-end="342" data-start="299"><b>Base peak</b>: 가장 강한 피크 (M⁺•가 아닐 수도 있음)</li>
+<li data-end="378" data-start="343"><b>M+1 피크</b>: ¹³C 동위원소 존재로 인해 나타남</li>
+<li data-end="421" data-start="379"><b>검출기에서 보이는 건 양이온 조각만</b> (중성 라디칼은 안 보임)</li>
+<li data-end="477" data-start="422"><b>조각나는 원리</b>: 불안정한 M⁺•가 분해 → 하나는 양이온, 다른 하나는 중성(라디칼)</li>
+</ul>
+<hr data-end="482" data-start="479"/>
+<h2 data-end="500" data-start="484">3. 조각나기 일반 규칙</h2>
+<ul data-end="581" data-start="501">
+<li data-end="528" data-start="501"><b>양전하는 가장 안정한 조각에 남는다</b></li>
+<li data-end="581" data-start="529">카보양이온 안정성 순서:<br/><b>벤질, 알릴 &gt; 3차 &gt; 2차 &gt; 1차 &gt; 메틸</b></li>
+</ul>
+<hr data-end="586" data-start="583"/>
+<h2 data-end="607" data-start="588">4. 작용기별 특징적 조각나기</h2>
+<h3 data-end="626" data-start="608">(a) 알코올 (R–OH)</h3>
+<ul data-end="788" data-start="627">
+<li data-end="688" data-start="627"><b>α-분해</b>: OH 옆 결합 끊어짐 → CH₂OH⁺ (m/z 31) or C₃H₇⁺ (m/z 43)</li>
+<li data-end="748" data-start="689"><b>탈수(dehydration)</b>: –H₂O → [M–18]⁺ (알켄 양이온, 예: m/z 70)</li>
+<li data-end="788" data-start="749"><b>추가 조각</b>: m/z 55 (탈수 후 알켄 양이온 안정화)</li>
+</ul>
+<h3 data-end="821" data-start="790">(b) 아민 (R–NH₂, R₂–NH, R₃–N)</h3>
+<ul data-end="909" data-start="822">
+<li data-end="853" data-start="822"><b>α-분해</b>: N 옆 C–C 결합이 잘 끊어짐</li>
+<li data-end="909" data-start="854"><b>질소 규칙</b>: 질소 홀수개 → M⁺• 분자량 홀수, 질소 짝수개 → M⁺• 분자량 짝수</li>
+</ul>
+<h3 data-end="930" data-start="911">(c) 할로젠화물 (R–X)</h3>
+<ul data-end="992" data-start="931">
+<li data-end="961" data-start="931"><b>Cl</b>: M, M+2 피크 (3:1 비율)</li>
+<li data-end="992" data-start="962"><b>Br</b>: M, M+2 피크 (1:1 비율)</li>
+</ul>
+<h3 data-end="1021" data-start="994">(d) 카보닐 화합물 (알데하이드, 케톤)</h3>
+<ul data-end="1163" data-start="1022">
+<li data-end="1077" data-start="1022"><b>α-분해</b>: 카보닐 옆 결합이 끊어져 → 아실 양이온 (R–C≡O⁺, m/z 43 등)</li>
+<li data-end="1163" data-start="1078"><b>McLafferty 재배치</b>: γ-위치 수소 이동 → [M–알켄]⁺ 생성 (짝수 질량이 떨어짐)<br/>→ 카보닐류 질량분석에서 매우 특징적</li>
+</ul>
+</div>
+</div>
+<p>문제 12-3: 다음 분해반응에서 생성되는 하전된 조각의 질량은 무엇인가?</p>
+<p>a)2-pentanone의 알파분해 71/ 43</p>
+<p>b) cyclohexanol의 탈수 82</p>
+<p>c) 4-methyl-2pentanone의 자리옮김</p>
+<p>d) triethylamine의 알파분해 86</p>
+<p> </p>
+<p>12-4) 생물화학에서 질량 분석법: TOF</p>
+<p>생물화학에서는 MALDI, TOF 라고 하는방법을 사용한다. ESI나 MALDI는 조각나기가 생기지 않는 부드러운 이온화 방법이다.</p>
+<p> </p>
+
+<p>12-5) 분광학과 전자기 스펙트럼</p>
+<p>앞서 유기물을 분석하는 방법이 4가지가 있다고 했다.</p>
+<p> </p>
+<p>1.질량분석법:00 사이즈와 화학식</p>
+<p>2.적외선 분광법 : 작용기의 종류</p>
+<p>3.자외선 분광법 : 콘쥬게이션이 되어있는 파이 전자계 유무</p>
+<p>4.핵 자기공명 분광법 : 탄소-수소 골격</p>
+<p> </p>
+<p>이중 1을 지금까지 살펴보았다. 이제 적외선, 자외선 분광법을 살펴볼 건데, 이는 전자기파를 쓰는 것이기 때문에 이에 대해 기초를 알 필요가 있다.0.</p>
+<p> </p>
+<p>가시광선,X선, 마이크로파등은 모드 다른 종류의 전자기 복사선이다. 이들은 모두 함께 electromagnetic spectrum)의 구성성분이다. 그림에 나타난 바와 같이 전자기 스펙트0럼은 임의로 몇 가지의 다른 영역으로 나뉘어 있다. 이들은 파장에 의해 구분된다.</p>
+<p><figure class="figure"><img alt="" height="452" src="../images/164/01.png" width="813"/></figure>
+</p>
+<p>전자기 복사선은 파장과 진동수 및 진폭으로 기술될 수 있다. 파장은 한 파의 정점에서 다음 점까지의 거리이다. 진동수는 헤르츠 단위로 나타내며 진폭은 중심점부터 피크까지 측정되는 파의 높이이다. </p>
+<p> </p>
+<p>미터 단위로 나타낸 파장에 주기를 곱하면 빛의 속도가 된다. (3*10^8m/s)</p>
+<p><figure class="figure"><img alt="" height="188" src="../images/164/02.png" width="497"/></figure>
+</p>
+<p>-파장 람다와 진동수 뉴는 반비례한다.</p>
+<p> </p>
+<p>이제 입자로서의 성질을 볼 것이다. 전자기 입자들은 하나의 묶음으로 볼 수 있는데, 이를 1광자 photon이라고 한다. 1 photon의 에너지를 ∈로 나타낸다.</p>
+<p><figure class="figure"><img alt="" height="87" src="../images/164/03.png" width="220"/></figure>
+</p>
+<p>람다뉴=빛의 속도</p>
+<p>하뉴=photon의 에너지</p>
+<p>1몰에너지=1.20*10^-4kJ/mol</p>
+<p>(이때 h=플랑크상수이다.)</p>
+<p> </p>
+<p>파장이 1인 광자의 1몰의 에너지(E)는 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="77" src="../images/164/04.png" width="643"/></figure>
+</p>
+<p> </p>
+<p>유기 화합물이 전자기 복사선의 빛살에 노출되면, 어떤 파장의 에너지는 흡수되고 다른 파장의 에너지는 통과 또는 투과된다. 만일 시료를 여러가지 다른 파장에 쪼여서 어느것이 흡수되고 어느것이 투과되는지를 조사하면 그 화합물의 흡수 스펙트럼을 측정할 수 있다. 예를 들어 적외선에 노출된 ethanol의 흡수 스펙트럼의 한 예를 보도록 하자.</p>
+<p><figure class="figure"><img alt="" height="507" src="../images/164/05.png" width="1096"/><figcaption>0000</figcaption>
+</figure>
+</p>
+<p>보면 파수(wave number)에 따라 일부가 흡수되고 있다. 복사선 흡수가 일어날 때, 분자는 에너지를 얻게 되기 때문에 그 에너지는 어떠한 방법으로든 분자 전체에 분배되어야 한다. infrared 선의 흡수된 에너지는 분자에 영향을 주며 이를 해석하여 화학구조에 대한 정보를 얻을 수 있다. 예를들어 적외선은 분자를 진동시킨다. 이로인해 굽힘이나 신축 현상이 발생한다.</p>
+<p> </p>
+<p>실제로 사용되는 다양한 전자기 복사선 스펙트럼에 따라 여러가지 종류의 분광법이 있다. </p>
+<p>적외선 분광법 : 작용기의 종류</p>
+<p>자외선 분광법 : 콘쥬게이션이 되어있는 파이 전자계 유무</p>
+<p>핵 자기공명 분광법 : 탄소-수소 골격</p>
+<p> </p>
+<p>*분광분석의 원리: 전자기 복사선이 분자와 충돌하면 분자가 특정 파장의 전자기 복사선을 흡수하는데, 이때 흡수하는 전자기 복사선의 에너지는 분자 내 에너지 준위의 차이와 같음.</p>
+<p> </p>
+<p>먼저, 유기 시료가 적외선 에너지를 흡수할 때 어떤 현상이 일어나는지부터 알아보도록 하자.</p>
+<p> </p>
+
+<p>12-6)적외선 분광법</p>
+<p>IR에서 파장은 주로 마이크로미터 1um=10^-6m로 주어지며 진동수는 HZ대신 파장의 역수인 파수로 나타낸다. 파수하고 진동수는 거의 비슷한데, 빛의 속도가 곱해지냐 마냐가 있다. 파수가 4000에서 400cm^-1 까지가 측정에 쓰인다.</p>
+<p> </p>
+<p>유기분자가 IR으 ㅣ특정파장만 흡수하는 이유는 분자들이 특정 진동수로만 굽히거나 신축할 수 있기 때문이다. 이때 전자기선이 조사되면 진동하는 분자의 진동수와 복사선의 진동수가 일치할 때 그 복사선이 흡수된다. 이 에너지를 흡수하면 진폭이 증가하게 된다. 이때 이 진동수는 결합에 따라 달라지기 때문에, 어떤 진동수(파수)가 흡수되었는지에 따라 어떤 결합이 있는지 알 수 있고, 이는 곧 작용기를 파악해내는 정보를 준다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="61" src="../images/164/06.png" width="839"/></figure>
+</p>
+<p> </p>
+<p>12-7)적외선 스펙트럼의 해석</p>
+<p>대부분의 유기 분자들은 수십가지의 결합이 있어서, 수십 가지의 흡수를 나타내기 때문에 IR 스펙트럼의 완전한 해석은 어렵다. IR의 1500~400 영역은 finger print 영역이라고 해서 특히 복잡하여 하나의 화합물 당 하나의 특정모양이 나타나기 때문에, 여기가 같으면 같은 시료라고 볼 수 있다. </p>
+<p> </p>
+<p>다행히도 IR의 모든 스펙트럼을 해석할 필요는 없다. 몇몇 작용기는 특징적인 IR 흡수 띠를 가지기 때문에, 이를 분석하면 된다. 예를 들어 </p>
+<p>케톤류의 C=O 흡수: 1680~1750</p>
+<p>알코올의 OH : 3400~3650</p>
+<p>알켄의 C=C 흡수: 1640~1680<br/>다음표에 대표적인 흡수를 나타내었다.</p>
+<p><figure class="figure"><img alt="" height="579" src="../images/164/07.png" width="973"/></figure>
+</p>
+<p> </p>
+<p>이제 hexane, 1-hexene, 1-hexyne의 IR 스펙트럼을 보고 이를 적용해보자. </p>
+<p><figure class="figure"><img alt="" height="343" src="../images/164/08.png" width="993"/></figure>
+</p>
+<p>일단 여기는 다 단일 결합 C-H만 있다. 그건 2850~2960 사이기 때문에, 그 피크가 나타남을 알 수 있다. 그러나 이건 너무 흔하기 때문에, 이것만 보고 단일결합임을 유추하는 것은 좋지 않다. 또한 방향족 고리는 1400~1600사이에서 나타나므로 방향족임도 알 수 있다.</p>
+<p><figure class="figure"><img alt="" height="335" src="../images/164/09.png" width="997"/></figure>
+</p>
+<p>이제 헥센이다. 이거는 C=C의 1640~1680, 그리고 =C-H의 3020~3100 그래프가 나타난다.</p>
+<p>1650정도에서 피크가 있으면 알켄이다.</p>
+<p><figure class="figure"><img alt="" height="336" src="../images/164/10.png" width="986"/></figure>
+</p>
+<p>헥사인의 경우는 삼중결합탄소-H의 3300정도의 결합과, 삼중결합의 2100~2260의 피크가 나타난다.</p>
+<p>2150대에서 피크가 보이면 알카인 화합물이다.</p>
+<p> </p>
+<p>다음 그림은 꼭 외우자..</p>
+<p><figure class="figure"><img alt="" height="404" src="../images/164/11.png" width="1178"/></figure>
+</p>
+<p>이렇게 흡수 파장이 다른 이유는, 강한 결합일 수록 강한 에너지와 진동수에서 진동하기 때문이다.</p>
+<p><figure class="figure"><img alt="" height="159" src="../images/164/12.png" width="451"/></figure>
+</p>
+<p>삼중 2150, 이중 1650이 중요</p>
+<p> </p>
+<p>문제1) </p>
+<p><figure class="figure"><img alt="" height="149" src="../images/164/13.png" width="796"/></figure>
+</p>
+<p>일단 두번째 화합물에 더블본드가 있고, 그리고 알코올기도 있기 때문에, 알코올기의 3600쯤 되는 피크가 있는지 본다. 그다음 더블본드 1650이 있는지 본다. 아세톤은 C=O의 결합이 있는데, 이건 1715정도 된다.</p>
+<p> </p>
+<p>문제2)</p>
+<p><figure class="figure"><img alt="" height="172" src="../images/164/14.png" width="793"/></figure>
+</p>
+<p>A는 1710쯤이면 C=O가 있거나, 더블본드?는 아니다. 1650이기 때문이다. 카복실 액시드임을 표에서 알 수 있다.</p>
+<p>B는 1540이면 나이트로기 NO2이다.</p>
+<p>C는 C=O도 포함하고 있고, OH도 포함하고 있다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="163" src="../images/164/15.png" width="797"/></figure>
+</p>
+<p>A)C=O기에 해당하는 1700의 피크가 있는지 본다. 또는 OH의 3400</p>
+<p>B)C=C에 해당하는 1650의 피크가 있는지 본다.</p>
+<p>C) 카복실산과 알코올의 비교로 카복실산은 2500~3100사이에서 나타난다.</p>
+<p> </p>
+<p>12-8) 몇 가지 일반적인 작용기의 적외선 스펙트럼</p>
+<p>알케인, 알켄, 알카인, 방향족 화합물, 알코올, 아민, 카보닐화합물</p>
+<p> </p>
+<p>1)알케인: 알케인의 경우는 C-C, C-H만 있는데, 이건 다른 유기 화합물도 마찬가지라 특징은 없다.</p>
+<p> </p>
+<p>2)알켄: 다음과 같은 특징적인 피크가 있다. 3000~3100과 1650의 더블본드에 주의</p>
+<p><figure class="figure"><img alt="" height="234" src="../images/164/16.png" width="481"/></figure>
+</p>
+<p>3)알카인</p>
+<p><figure class="figure"><img alt="" height="133" src="../images/164/17.png" width="521"/></figure>
+</p>
+<p>2150정도의 삼중결합과, 3300의 수소를 주의</p>
+<p><figure class="figure"><img alt="" height="351" src="../images/164/18.png" width="659"/></figure>
+</p>
+<p>4)방향족 화합물</p>
+<p><figure class="figure"><img alt="" height="230" src="../images/164/19.png" width="760"/></figure>
+</p>
+<p> </p>
+<p>얘는 알켄이랑 거의 비슷함.</p>
+<p> </p>
+<p>5)알코올</p>
+<p><figure class="figure"><img alt="" height="71" src="../images/164/20.png" width="708"/></figure>
+</p>
+<p>얘는 3400~3650에서 매우 넓고 강한 신호가 나오는 것으로 쉽게 구분 가능하다.</p>
+<p> </p>
+<p>6)아민</p>
+<p><figure class="figure"><img alt="" height="82" src="../images/164/21.png" width="751"/></figure>
+</p>
+<p>3300~3500</p>
+<p> </p>
+<p>7)카보닐화합물</p>
+<p>카보닐 화합물은 C=O를 포함하는 물질이다. 이때 C=O외에 나머지 2개의 결합이 H2일 경우도 있지만, 다른게 붙는 경우 더 세분화되어 몇가지 화합물이 존재한다.</p>
+<p> </p>
+
+<ul>
+<li data-end="239" data-start="121"><b>알데하이드 (Aldehyde)</b><span><span><span>R–CHOR–CHO</span><span aria-hidden="true"><span><span>R</span><span>–</span><span>C</span><span>H</span><span>O ,</span></span></span></span></span>카보닐 탄소에 <b>수소(H)</b> 와 <b>알킬/아릴기(R)</b> 가 붙어 있음<br/>→ 예: 아세트알데하이드 (CH₃–CHO)</li>
+<li data-end="341" data-start="241"><b>케톤 (Ketone)</b><span><span><span>R–CO–R′R–<b>CO</b>–R'</span><span aria-hidden="true"><span><span>R</span><span>–</span><span>CO</span><span>–</span><span><span>R</span><span><span><span><span><span><span><span><span>′ ,</span></span></span></span></span></span></span></span></span></span></span></span></span>카보닐 탄소에 <b>알킬/아릴기 2개</b>가 붙어 있음<br/>→ 예: 아세톤 (CH₃–CO–CH₃)</li>
+<li data-end="341" data-start="241"><b>카복실산 (Carboxylic acid)</b>: R–COOH , 카보닐 탄소에 <b>–OH (하이드록시기)</b> 가 붙어 있음</li>
+<li data-end="341" data-start="241"><b>에스터 (Ester)</b>: R–COOR' 카보닐 탄소에 <b>–OR′ (알콕시기)</b> 가 붙어 있음</li>
+<li data-end="341" data-start="241"><b>아마이드 (Amide)</b>: R–CONH₂, R–CONHR', R–CONR'₂ 카보닐 탄소에 <b>–NH₂, –NHR′, –NR′₂ (아민기)</b> 가 붙어 있음</li>
+</ul>
+
+
+
+<p>카보닐 화합물은 1670~1780 범위에서 강한 피크가 일어나는데(보통 1700), 이때 카보닐임을 구분하는 것은 쉬우나 더 중요한 것은, 정확한 피크 위치를 찝어냄으로써 카보닐 중에서 무슨 화합물인지도 알 수 있다는 것이다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="180" src="../images/164/22.png" width="420"/></figure>
+</p>
+<p> </p>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+<p data-end="117" data-start="30">새로운 분자의 구조를 밝히는 일은, 실험실에서 합성한 작은 분자이든 생물체 안에서 발견된 큰 단백질이든, 화학과 생화학의 발전에 있어 핵심적인 과정이다.</p>
+<p data-end="195" data-start="119">유기 분자의 구조는 보통 분광학적 방법으로 결정되는데, 대표적으로 <b>질량분석법(MS)</b> 과 <b>적외선 분광법(IR)</b> 이 있다.</p>
+<ul data-end="304" data-start="196">
+<li data-end="234" data-start="196"><b>질량분석(MS)</b> 은 분자의 분자량과 분자식을 알려준다.</li>
+<li data-end="304" data-start="235"><b>적외선(IR) 분광법</b> 은 분자 안에 어떤 <b>작용기(functional group)</b> 가 있는지를 확인한다.</li>
+</ul>
+<hr data-end="309" data-start="306"/>
+<h3 data-end="345" data-start="311">질량분석 (Mass Spectrometry, MS)</h3>
+<p data-end="455" data-start="346">소분자 질량분석에서는, 분자에 고에너지 전자빔을 충돌시켜 이온화한다.<br/>이온화된 분자는 더 작은 조각으로 분해되고, 이 조각들은 <b>질량 대 전하비(m/z)</b> 에 따라 자기장으로 분리된다.</p>
+<ul data-end="635" data-start="457">
+<li data-end="526" data-start="457">이온화된 원래 분자를 <b>분자 이온(M⁺)</b> 이라고 하며, 이 이온의 질량을 측정하면 시료의 분자량을 알 수 있다.</li>
+<li data-end="601" data-start="527">분자 이온의 <b>조각 패턴(fragmentation pattern)</b> 을 해석하면 미지 시료의 구조적 단서를 얻을 수 있다.</li>
+<li data-end="635" data-start="602">하지만 조각화는 보통 매우 복잡하므로 해석이 어렵다.</li>
+</ul>
+<p data-end="701" data-start="637">생물학적 질량분석에서는, 전자빔 대신 <b>프로톤화(protonation)</b> 를 통해 분자를 양이온으로 만든다.</p>
+<ul data-end="877" data-start="702">
+<li data-end="810" data-start="702">주로 <b>ESI (Electrospray Ionization)</b> 나 <b>MALDI (Matrix-Assisted Laser Desorption Ionization)</b> 기법을 사용한다.</li>
+<li data-end="877" data-start="811">이렇게 생성된 양성자화된 분자는 <b>TOF (Time-of-Flight, 비행시간형) 질량분석기</b>로 분리된다.</li>
+</ul>
+<hr data-end="882" data-start="879"/>
+<h3 data-end="925" data-start="884">적외선 분광법 (Infrared Spectroscopy, IR)</h3>
+<p data-end="973" data-start="926">적외선 분광법은 분자가 <b>전자기파(적외선)</b> 와 상호작용하는 원리를 이용한다.</p>
+<ul data-end="1133" data-start="975">
+<li data-end="1010" data-start="975">유기 분자에 적외선을 쏘면, 특정 파수의 빛이 흡수된다.</li>
+<li data-end="1067" data-start="1011">이 흡수는 <b>결합의 진동(신축·굽힘 운동)</b> 을 더 크게 만들 수 있는 에너지에 해당한다.</li>
+<li data-end="1133" data-start="1068">각각의 작용기마다 고유한 결합 조합이 있으므로, <b>특정 작용기는 특정한 적외선 흡수 스펙트럼</b>을 나타낸다.</li>
+</ul>
+<p data-end="1140" data-start="1135">예시:</p>
+<ul data-end="1231" data-start="1141">
+<li data-end="1186" data-start="1141">말단 알카인(–C≡C–H) 결합 → <b>3300 cm⁻¹</b> 부근에서 흡수</li>
+<li data-end="1231" data-start="1187">알켄 C=C 이중결합 → <b>1640~1680 cm⁻¹</b> 범위에서 흡수</li>
+</ul>
+<p data-end="1306" data-start="1233">👉 따라서, 어떤 파수의 IR 빛을 흡수하고 흡수하지 않는지를 보면, 분자 안에 어떤 <b>작용기</b>가 존재하는지 알 수 있다.</p>
+<hr data-end="1311" data-start="1308"/>
+<p data-end="1320" data-start="1313">✅ 정리:</p>
+<ul data-end="1379" data-start="1321">
+<li data-end="1349" data-start="1321"><b>MS</b> → 분자량, 분자식, 조각 패턴</li>
+<li data-end="1379" data-start="1350"><b>IR</b> → 결합 진동에 따른 작용기 확인</li>
+</ul>
+</div>
+</div>
+<p>문제:</p>
+<p><figure class="figure"><img alt="" height="343" src="../images/164/23.png" width="761"/></figure>
+</p>
+<p> </p>
+<p>일단 있는거는 C-C 삼중결합이 있다. 트리플본드는 2150쯤에서 관측이 될 것이고, C-H는 3300에서 관측된다. 벤젠고리는 더블본드랑 유사한 1650쯤에서 피크가 관찰된다. 그리고 벤젠고리 쪽 CH는 3100쯤에서 나타날 것이다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="178" src="../images/164/24.png" width="570"/></figure>
+</p>
+<p>A)CO가 있으니 카보닐 화합물이고, 여기에 OR기가 붙은 에스터이다. 이경우 1700쯤에서 나타나는데, 에스터는 1715라는 정확한 파수가 나타난다.</p>
+<p>B)일단 탄소 탄소 삼중결합이 있으므로 2150과 3300쯤에서 피크가 나타난다. 그리고 카보닐-알데하이드가 있는데, 알데하이드는 1730이다.</p>
+<p>C)얘는 벤젠고리가 있으니 1450~1600쯤에서 있을 것이고, 3100쯤에서 피크가 하나 더 있다. 또한 카보닐기 중에서 OH가 있는 카복실산이 있으므로 카복실기 알코올 2500~3100이 나타난다. 1700쯤에서도 카보닐기 피크가 있다.</p>
+<p><figure class="figure"><img alt="" height="254" src="../images/164/25.png" width="515"/></figure>
+</p>
+<p> </p>
+<p>탄소탄소 이중결합 1650쯤 나오고, C=O 결합이 있으니 1700쯤에서 있는데 얘는 아마이드니까 1690에서 나타날 것이다. 아마이드 결합은 NC 삼중결합이니까 2210~2260쯤 된다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="579" src="../images/164/07.png" width="973"/></figure>
+</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/162.html"><span>← 이전 글</span><strong>질량분석법</strong></a>
+    <a class="next" href="../posts/171.html"><span>다음 글 →</span><strong>콘쥬게이션 화합물과 자외선 분광법</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

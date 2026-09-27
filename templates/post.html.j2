@@ -1,0 +1,54 @@
+{% extends "base.html.j2" %}
+{% block description %}{{ post.excerpt }}{% endblock %}
+{% block head %}
+{% if post.has_math %}
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [{% if post.math_dollar %}['$', '$'], {% endif %}['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+{% endif %}
+{% endblock %}
+{% block content %}
+<article class="post">
+  <nav class="crumb"><a href="{{ root }}index.html">홈</a> › <a href="{{ root }}category/{{ post.category_slug }}.html">{{ post.category }}</a></nav>
+  <header class="post-head">
+    <h1>{{ post.title }}</h1>
+    <p class="meta">
+      <time datetime="{{ post.date }}">{{ post.date|kdate }}</time>
+      {% if post.modified and post.modified != post.date %} · 수정 {{ post.modified|kdate }}{% endif %}
+      {% if post.tags %} · {{ post.tags|join(', ') }}{% endif %}
+    </p>
+  </header>
+
+  {% if toc|length >= 3 %}
+  <nav class="toc" aria-label="목차">
+    <p class="toc-title">목차</p>
+    <ol>
+      {% for h in toc %}
+      <li class="lv{{ h.level }}"><a href="#{{ h.id }}">{{ h.text }}</a></li>
+      {% endfor %}
+    </ol>
+  </nav>
+  {% endif %}
+
+  <div class="body">
+    {{ body|safe }}
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    {% if post.older %}
+    <a class="prev" href="{{ root }}{{ post.older.url }}"><span>← 이전 글</span><strong>{{ post.older.title }}</strong></a>
+    {% else %}<span></span>{% endif %}
+    {% if post.newer %}
+    <a class="next" href="{{ root }}{{ post.newer.url }}"><span>다음 글 →</span><strong>{{ post.newer.title }}</strong></a>
+    {% endif %}
+  </nav>
+</article>
+{% endblock %}

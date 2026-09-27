@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>안정성 · 화학공학 노트</title>
+<meta name="description" content="제어기가 없는 열린루프에서 입력변수가 변화했을 때, 출력변수가 제한된 범위 내에서 정상상태에 도달할 수 있으면 안정하다고 하다. 이를 자기 조정이 가능한 공정이라고 한다.공정이 안정하다는 것은 입력변수가 변동할 때 출력 변수가 제한된 범위 내에 존재하는 것을 의미한다. 밑의 그림에서 왼쪽은 안정한 공정이고, 오른쪽은 출력변수가 계속 변하므로 불안정한 것이다.` 우리의 관점은 폐루프 제어 시스템을 만들었을 때, 이것이 잘 작동할 것인가이다. 전체 총괄전달함수를 구한 다음, 거기서 분모가 0이 되는 식을 폐루프 제어시스템의 특성방정식이">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html" aria-current="page">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/process-control.html">공정제어</a></nav>
+  <header class="post-head">
+    <h1>안정성</h1>
+    <p class="meta">
+      <time datetime="2025-07-22">2025.07.22</time>
+    </p>
+  </header>
+
+
+  <div class="body">
+    <p>제어기가 없는 열린루프에서 입력변수가 변화했을 때, 출력변수가 제한된 범위 내에서 정상상태에 도달할 수 있으면 안정하다고 하다. 이를 자기 조정이 가능한 공정이라고 한다.</p>
+<p><figure class="figure"><img alt="" height="442" src="../images/135/01.png" width="742"/></figure>
+</p>
+<p>공정이 안정하다는 것은 입력변수가 변동할 때 출력 변수가 제한된 범위 내에 존재하는 것을 의미한다. 밑의 그림에서 왼쪽은 안정한 공정이고, 오른쪽은 출력변수가 계속 변하므로 불안정한 것이다.`</p>
+<p> </p>
+
+<p>우리의 관점은 폐루프 제어 시스템을 만들었을 때, 이것이 잘 작동할 것인가이다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="501" src="../images/135/02.png" width="879"/></figure>
+</p>
+<p> </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>전체 총괄전달함수를 구한 다음, 거기서 분모가 0이 되는 식을 폐루프 제어시스템의 특성방정식이라고 한다. 이게 어디가 중요할까?</p>
+<p><figure class="figure"><img alt="" height="567" src="../images/135/03.png" width="1000"/></figure>
+</p>
+<p>특성방정식을 풀어서 근을 뽑아내면, r1 r2 r3 r4 등등등이 나오게 된다. 이때 그 각각의 근은 허수일 수도 있고 실수일 수도 있다. 이때 그 모든 근의 실수부가 음의 값을 가지면 시스템이 안정하다고 본다.</p>
+<p><figure class="figure"><img alt="" height="562" src="../images/135/04.png" width="982"/></figure>
+</p>
+<p>어떠한 전달함수든 그 분모를 0되게 만드는 s값을 극점이라고 하고, 분자가 0이 되게 하는 s값을 영점이라고 한다. </p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="580" src="../images/135/05.png" width="1013"/></figure>
+</p>
+<p>응답은 극점의 위치에 따라 달라지는데, 극점이 우반면에 있으면 불안정하고, 좌반면에 있으면 안정하다. 이때 안정한 정도는 극점이 원점과 허수축에 얼마나 멀리있는가에 따라 달라지는데, 원점과 허수축에 멀수록 더 안정하고 정상상태에 빠르게 수렴한다.</p>
+<p><figure class="figure"><img alt="" height="573" src="../images/135/06.png" width="1008"/></figure>
+</p>
+<p>영점이 허수축에서 멀리 있으면 시스템에 딱히 영향을 주지 않는다. 그러나 영점이 우반면에 있을 경우 하향 오버슈트(역응답)이 발생하고, 좌반면에 있을 경우에는 영점이 허수축에 가까우면 오버슈트가 심해진다. 영점이 허수축에 가까워질수록 초과나 역응답이 심해지며 멀어질 수록 영점의 영향은 줄어든다.</p>
+<p> </p>
+<p>얘는 그냥 허수축에 가깝냐에 따라 오버슈트 방향과 세기만 결정하지 안정성에는 크게 영향을 주지 않는다.</p>
+<p><figure class="figure"><img alt="" height="567" src="../images/135/07.png" width="996"/></figure>
+</p>
+<p>전달함수에서 밑에 있는 시간상수는 lag(대충 다리라고 외우자)라고 부르고 위는 lead라고 부른다. 이때</p>
+<p>lead&gt;lag면 오버슈트가 나타나고, 0&lt;lead&lt;=lag 면 1차 공정과 유사한 응답이 나타나고, lead가 음수면 역응답이다.</p>
+<p>대충 lead를 머리, lag를 다리라고 생각하면 외우기 편하다. 머리가 크면 오버슈트, 머리가 작으면 1차공정, 머리가 거꾸로되면(음의 값) 역오버슈트</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="278" src="../images/135/08.png" width="995"/></figure>
+</p>
+<p>시스템의 안정성 판별법에 대해 알아보자. </p>
+<p>직접계산법:직접 특성방정식을 풀어서 극점을 구하여 조사하는 방법이 있다. 직접 치환법과 근궤적 선도가 이에 해당한다.</p>
+<p>간접계산법:루쓰-허위츠 판별법, 나이키스트 판별법, 보데선도 판별법</p>
+<p> </p>
+<p>**직접 치환법: 제어시스템의 특성방정식에 있는 s를 iw로 치환하여 실수부=0, 허수부=0으로 놓고 이를 풀어서 한계조건에서의 제어기 이득 KC와 진동수 w를 구하는 방법</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/134.html"><span>← 이전 글</span><strong>진동응답/주파수 응답</strong></a>
+    <a class="next" href="../posts/136.html"><span>다음 글 →</span><strong>안정성 2</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

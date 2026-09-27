@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7.1-7.3: Equipment and Design Considerations · 화학공학 노트</title>
+<meta name="description" content="7장은 증류탑 설계에 관한 내용이다. 증류탑 설계란 원하는 top/bottom 조성 맞추려고, reflux ratio R, 단수, feed 단, condenser&amp;reboiler 조건, 압력·온도·duty를 정하는 문제라고 보면 된다. 증류는 휘발도를 이용해서 잘 날아가는 성분을 위로 분리하는 기법이다. 이런 증류탑을 그릴 수 있다. 탑은 상부 하부로 나뉘며 아래쪽에는 리보일러가 있다. 여기서 액체를 끓여 다시 위로 올리며 이를 boilup이라고 한다. 위에서는 vapor를 다시 콘덴서에서 응축시켜 일부를 탑 안으로 넣는 reflu">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html" aria-current="page">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/separation.html">분리공정</a></nav>
+  <header class="post-head">
+    <h1>7.1-7.3: Equipment and Design Considerations</h1>
+    <p class="meta">
+      <time datetime="2026-05-24">2026.05.24</time>
+    </p>
+  </header>
+
+
+  <div class="body">
+    <p>7장은 증류탑 설계에 관한 내용이다. 증류탑 설계란 원하는 top/bottom 조성 맞추려고, reflux ratio R, 단수, feed 단, condenser&amp;reboiler 조건, 압력·온도·duty를 정하는 문제라고 보면 된다.</p>
+<p> </p>
+<p>증류는 휘발도를 이용해서 잘 날아가는 성분을 위로 분리하는 기법이다. </p>
+<p><figure class="figure"><img alt="" height="499" src="../images/287/01.png" width="427"/></figure>
+</p>
+<p>이런 증류탑을 그릴 수 있다. 탑은 상부 하부로 나뉘며 아래쪽에는 리보일러가 있다. 여기서 액체를 끓여 다시 위로 올리며 이를 boilup이라고 한다. 위에서는 vapor를 다시 콘덴서에서 응축시켜 일부를 탑 안으로 넣는 reflux가 일어난다.</p>
+<p><figure class="figure"><img alt="" height="499" src="../images/287/02.png" width="427"/></figure>
+</p>
+<div><br/>
+<table border="1" data-end="2055" data-start="1647">
+<tbody data-end="2055" data-start="1669">
+<tr data-end="1695" data-start="1669">
+<td data-col-size="sm" data-end="1677" data-start="1669"><span><span>F</span></span></td>
+<td data-col-size="sm" data-end="1695" data-start="1677">feed flow rate</td>
+</tr>
+<tr data-end="1725" data-start="1696">
+<td data-col-size="sm" data-end="1704" data-start="1696"><span><span>D</span></span></td>
+<td data-col-size="sm" data-end="1725" data-start="1704">distillate, 상부 제품</td>
+</tr>
+<tr data-end="1752" data-start="1726">
+<td data-col-size="sm" data-end="1734" data-start="1726"><span><span>B</span></span></td>
+<td data-col-size="sm" data-end="1752" data-start="1734">bottoms, 하부 제품</td>
+</tr>
+<tr data-end="1788" data-start="1753">
+<td data-col-size="sm" data-end="1763" data-start="1753"><span><span>zF</span></span></td>
+<td data-col-size="sm" data-end="1788" data-start="1763">feed 안의 light key 몰분율</td>
+</tr>
+<tr data-end="1830" data-start="1789">
+<td data-col-size="sm" data-end="1799" data-start="1789"><span><span>xD</span></span></td>
+<td data-col-size="sm" data-end="1830" data-start="1799">distillate 안의 light key 몰분율</td>
+</tr>
+<tr data-end="1869" data-start="1831">
+<td data-col-size="sm" data-end="1841" data-start="1831"><span><span>xB</span></span></td>
+<td data-col-size="sm" data-end="1869" data-start="1841">bottoms 안의 light key 몰분율</td>
+</tr>
+<tr data-end="1905" data-start="1870">
+<td data-col-size="sm" data-end="1878" data-start="1870"><span><span>L</span></span></td>
+<td data-col-size="sm" data-end="1905" data-start="1878">reflux liquid flow rate</td>
+</tr>
+<tr data-end="1952" data-start="1906">
+<td data-col-size="sm" data-end="1914" data-start="1906"><span><span>V</span></span></td>
+<td data-col-size="sm" data-end="1952" data-start="1914">rectifying section vapor flow rate</td>
+</tr>
+<tr data-end="2004" data-start="1953">
+<td data-col-size="sm" data-end="1966" data-start="1953"><span><span>Lˉ</span></span></td>
+<td data-col-size="sm" data-end="2004" data-start="1966">stripping section liquid flow rate</td>
+</tr>
+<tr data-end="2055" data-start="2005">
+<td data-col-size="sm" data-end="2018" data-start="2005"><span><span>Vˉ</span></span></td>
+<td data-col-size="sm" data-end="2055" data-start="2018">stripping section vapor flow rate</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p data-end="2126" data-start="2057">위쪽 구간을 <b>rectifying section</b>, 아래쪽 구간은 <b>stripping section</b>이라고 정의한다.</p>
+<p data-end="2126" data-start="2057"> </p>
+
+<p data-end="2126" data-start="2057"><b>이제부터는 증류탑 하나를 설계하기 위해 어떤 결정을 어떤 순서로 해야 하는가</b>를 설명한다.</p>
+<p data-end="2126" data-start="2057">먼저 두 가지 물질수지가 중요하다.</p>
+<p><figure class="figure"><img alt="" height="118" src="../images/287/03.png" width="191"/></figure>
+</p>
+<p>이를 정리하면 다음과 같은 식을 얻게된다.</p>
+<p><figure class="figure"><img alt="" height="93" src="../images/287/04.png" width="152"/></figure>
+</p>
+<p>즉 top/bottom 유량은 감으로 정하는 게 아니라 제품 조성 스펙에서 물질수지로 먼저 결정된다.</p>
+<p> </p>
+<p>다음으로 상대 휘발도와 평형선을 정의한다.</p>
+<p><figure class="figure"><img alt="" height="158" src="../images/287/05.png" width="195"/></figure>
+</p>
+<p>이제 McCabe–Thiele Method의 기본 가정인 CMO를 도입한다.</p>
+<p><figure class="figure"><img alt="" height="83" src="../images/287/06.png" width="184"/></figure>
+</p>
+<p>상부와 하부 조작선을 유도한다.</p>
+<p><figure class="figure"><img alt="" height="62" src="../images/287/07.png" width="195"/></figure>
+<figure class="figure"><img alt="" height="45" src="../images/287/08.png" width="86"/></figure>
+<figure class="figure"><img alt="" height="69" src="../images/287/09.png" width="182"/></figure>
+<figure class="figure"><img alt="" height="60" src="../images/287/10.png" width="90"/></figure>
+</p>
+<p>q-line을 정의한다.</p>
+<p><figure class="figure"><img alt="" height="67" src="../images/287/11.png" width="182"/></figure>
+</p>
+<p>이를 통해 최종적으로 다음 선들이 얻어진다.</p>
+<p><figure class="figure"><img alt="" height="396" src="../images/287/12.png" width="407"/></figure>
+</p>
+<p>이제 TOP(xD,xD) 에서 시작하여</p>
+<ul>
+<li data-end="11986" data-start="11954">수평으로 equilibrium curve까지 이동</li>
+<li data-end="12016" data-start="11987">수직으로 operating line까지 이동</li>
+<li data-end="12052" data-start="12017">다시 수평으로 equilibrium curve까지 이동</li>
+<li data-end="12085" data-start="12053">다시 수직으로 operating line까지 이동</li>
+<li data-end="12108" data-start="12086"><span><span>xB</span></span>에 도달할 때까지 반복</li>
+</ul>
+<p>한 뒤 계단의 수를 센다. feed stage는 rectifying operating line에서 stripping operating line으로 갈아타는 위치이며 내 마음대로 정할 수 있긴 하지만.. q-line과 두 조작선이 만나는 지점 근처를 지나고 나서, 처음으로 조작선을 갈아탈 수 있는 순간에 갈아타는 것이 최적 feed stage이다.</p>
+<p><figure class="figure"><img alt="" height="478" src="../images/287/13.png" width="451"/></figure>
+</p>
+<p> </p>
+<p>이때, 단수 셀 때 콘덴서와 리보일러를 포함하냐마냐가 중요하다. </p>
+<table border="1">
+<tbody>
+<tr>
+<td>total condenser</td>
+<td>보통 제외</td>
+<td>vapor product 없이 전부 액화</td>
+</tr>
+<tr>
+<td>partial condenser</td>
+<td>포함</td>
+<td>vapor-liquid equilibrium 존재</td>
+</tr>
+<tr>
+<td>partial reboiler</td>
+<td>포함</td>
+<td>vapor-liquid equilibrium 존재</td>
+</tr>
+</tbody>
+</table>
+<p>즉 리보일러는 단수로 포함되는 경우가 많고 보통 파셜 콘덴서도 단수로 친다. 그래서 일반적으로 5단이 나오면 리보일러 콘덴서 빼고 3단으로 구성하면 된다.</p>
+<p> </p>
+<p><b> Limiting conditions</b></p>
+<p>이때, 설계를 함에 있어서 매우 중요한 한계조건 2가지가 있다. Total reflux와 Minimum reflux이다.</p>
+<p>전환류-&gt;최소단수, 최소환류-&gt;최대단수이다.</p>
+<p> </p>
+<p>이때 전환류 기준 최소단수를 구하는 식을 다음과 같이 사용할 수 있다.</p>
+<p><figure class="figure"><img alt="" height="82" src="../images/287/14.png" width="211"/></figure>
+</p>
+<p>또는 어차피 전환류면 조작선은 Y=X이므로 조작선과 평형선 사이 단수로 구해버리기도 한다.</p>
+<p><figure class="figure"><img alt="" height="257" src="../images/287/15.png" width="287"/></figure>
+</p>
+<p>다음으로 최대 단수는 의미가 없는게, 어차피 무한대이다.. 따라서 중요한 거는 최소환류 구하기이고, 최소환류 값을 구해서 그거보다 환류를 크게하는 것이다.</p>
+<p> </p>
+<p>이때, 최소환류 값을 구해보자. 이는 q-line과 equilibrium curve가 만나는 점과 <span>(</span><span><span>x</span><span><span><span><span><span><span><span>D</span></span></span></span></span><span><span></span></span></span></span></span><span>,</span><span><span>x</span><span><span><span><span><span><span><span>D</span></span></span></span></span><span><span></span></span></span></span></span><span>)를 이은 직선에서 구할 수 있다. 이 직선의 기울기는 다음과 같다.</span></p>
+<p><figure class="figure"><img alt="" height="69" src="../images/287/16.png" width="164"/></figure>
+</p>
+<p>여기서 최소환류 값을 구할 수 있다.</p>
+<p><figure class="figure"><img alt="" height="312" src="../images/287/17.png" width="360"/></figure>
+</p>
+<p> </p>
+<p><b>설계 파트:</b> 이렇게 최소 단수를 Fenske 식이든 그래프에서 y=x랑 평형선 사이 단수 그려서 구하든 하고, 최소 환류비도 q-line과 평형선의 교점과 xd,xd를 이은 선의 기울기에서 구했다면 실제 조건을 정한다. 먼저 환류비는 Rmin에 1.5 정도 값을 곱해서 쓴다.</p>
+<p> </p>
+<p>이후에 압력도 구할라고 하는데, 먼저 콘덴서 압력과 리보일러 압력이 필요하다. 콘덴서 압력의 경우는 냉각수 온도가 지정되니 그 온도에서 액화 가능한 압력으로 잡는다. = column top pressure .</p>
+<p>이후 탑 바텀으로 갈 수록 압력은 증가하게 되는데, 보통 트레이당 압력강하를 주는 경우가 있다.</p>
+<p><figure class="figure"><img alt="" height="39" src="../images/287/18.png" width="240"/></figure>
+</p>
+<p>이렇게 바텀의 압력을 정하고, 바텀 조성도 목표 값 xB를 정하게 되면 이제 버블점 온도를 계산한다.</p>
+<p><figure class="figure"><img alt="" height="43" src="../images/287/19.png" width="248"/></figure>
+</p>
+<p>이때 온도가 너무 높으면 감압증류를 고려한다.</p>
+<p> </p>
+<p>다음으로 피드인데, 피드 압력이 높으면 밸브를 통해 낮춰준다. 왜냐면 FEED STAGE 압력이랑 피드 압력이 같아야되기 때문이다.</p>
+<p> </p>
+<p>다음으로 McCabe–Thiele로 단수와 조작선을 잡은 뒤, condenser duty와 reboiler duty를 따로 energy balance로 잡아서 필요한 duty를 구해준다. 만약 열손실이 없으면</p>
+<p><figure class="figure"><img alt="" height="50" src="../images/287/20.png" width="282"/></figure>
+</p>
+<p>이렇게 되는데, 여기서 QR과 QC를 어떻게 구하냐가 관건이다,.</p>
+<p>만약 토탈콘덴서면</p>
+<p><figure class="figure"><img alt="" height="49" src="../images/287/21.png" width="168"/></figure>
+</p>
+<p>파셜콘덴서면</p>
+<p><figure class="figure"><img alt="" height="43" src="../images/287/22.png" width="162"/></figure>
+</p>
+<p>파셜리보일러는</p>
+<p><figure class="figure"><img alt="" height="41" src="../images/287/23.png" width="106"/></figure>
+<figure class="figure"><img alt="" height="50" src="../images/287/24.png" width="134"/></figure>
+</p>
+<p>이걸좀 외우도록 하자. 이때 VB=V-/B이다.</p>
+<p> </p>
+<p>이때 매우 중요한 게 feed preheating의 효과이다. feed를 preheat해서 일부 vapor로 만들면 feed vapor가 column 안으로 들어간다. 그러면 reboiler가 만들어야 할 vapor 양이 줄어든다.</p>
+<p><figure class="figure"><img alt="" height="199" src="../images/287/25.png" width="244"/></figure>
+</p>
+<p>일단 이렇게 된다.</p>
+<p> </p>
+<p><b> Murphree vapor efficiency</b></p>
+<p> 실제 tray는 완전한 평형에 도달하지 못한다.</p>
+<p><figure class="figure"><img alt="" height="74" src="../images/287/26.png" width="174"/></figure>
+</p>
+<p>Murphree vapor efficiency는 실제 변화량을 평형까지 갔을 때 가능한 변화량으로 나눈 값이다. 효율이 60%라면 평형선까지 못 가고 중간까지만 간다</p>
+<p><figure class="figure"><img alt="" height="1015" src="../images/287/27.png" width="560"/></figure>
+</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/286.html"><span>← 이전 글</span><strong>7. Distillation of Binary Mixtures</strong></a>
+    <a class="next" href="../posts/288.html"><span>다음 글 →</span><strong>7-4. Distillation of Binary Mixtures-&gt;solve the problem</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>복사 · 화학공학 노트</title>
+<meta name="description" content="1)흑체열복사가 물체에 도달했을 때, 일부분은 흡수되고 일부분은 공간속으로 반사되어지고 일부는 물체를 투과한다. 이때 흡수율+반사율+투과율을 합치면 100%가 되는데, 만약 반사와 투과가 없다면 모든 열에너지는 흡수된다. 이를 흑체라고 한다. 반사가 없기 때문에 검은색으로 보이는 것이다. 2)열적 평형에 대해서열적 평형이라는 건, 주고받는 것이 같다는 뜻이다. 키르히호프의 법칙에서 ∈는 방사(빛을 방출시키는 것)에 관한 인자이다. 예를 들어 철을 생각해보자. 철을 가열하면 색이 빨간색으로 달궈진다. 이는 에너지를 빛으로 방사시키는 ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html" aria-current="page">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/heat-transfer.html">열전달</a></nav>
+  <header class="post-head">
+    <h1>복사</h1>
+    <p class="meta">
+      <time datetime="2025-07-27">2025.07.27</time>
+ · 수정 2025.09.21    </p>
+  </header>
+
+
+  <div class="body">
+    <p>1)흑체</p>
+<p><figure class="figure"><img alt="" height="223" src="../images/140/01.png" width="737"/></figure>
+</p>
+<p>열복사가 물체에 도달했을 때, 일부분은 흡수되고 일부분은 공간속으로 반사되어지고 일부는 물체를 투과한다. 이때 흡수율+반사율+투과율을 합치면 100%가 되는데, 만약 반사와 투과가 없다면 모든 열에너지는 흡수된다. 이를 흑체라고 한다. 반사가 없기 때문에 검은색으로 보이는 것이다.</p>
+<p> </p>
+<p>2)열적 평형에 대해서</p>
+<p><figure class="figure"><img alt="" height="366" src="../images/140/02.png" width="747"/></figure>
+</p>
+<p>열적 평형이라는 건, 주고받는 것이 같다는 뜻이다. 키르히호프의 법칙에서 ∈는 방사(빛을 방출시키는 것)에 관한 인자이다. 예를 들어 철을 생각해보자. 철을 가열하면 색이 빨간색으로 달궈진다. 이는 에너지를 빛으로 방사시키는 것으로 볼 수 있다. 이를 방사력이라고 한다. 특정 물체의 방사력을 흑체의 방사력으로 비교한 것이 방사능이다.</p>
+<p> </p>
+<p>흑체는 방사능이 1이고, 흡수능a도 1이다. 왜냐면 흡수능=방사능이라고 보기 때문이다. 이를 키르히호프의 법칙이라고 한다.</p>
+<p> </p>
+<p>이제 복사의 여러 법칙들을 알아보도록 하자.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="346" src="../images/140/03.png" width="679"/></figure>
+</p>
+<p>-키르히호프 법칙은 이미 알고 있듯이 열적평형 상태에서 흡수능과 방사능은 같다는 것이다. 그래야만 받는 만큼 내보내면서 열평형이 유지된다.</p>
+<p> </p>
+<p>-스테판 볼츠만 법칙은 회백체의 총방사력을 알려주는 식이다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="543" src="../images/140/04.png" width="729"/></figure>
+<figure class="figure"><img alt="" height="556" src="../images/140/05.png" width="720"/></figure>
+</p>
+<p>이제 두 물체 사이에 복사전열이 일어나는 경우를 살펴보도록 하자.</p>
+<p><figure class="figure"><img alt="" height="516" src="../images/140/06.png" width="753"/></figure>
+</p>
+<p>이 때는 두 벽의 엡실론 값을 알아야 계산할 수 있다. 이때 면적의 경우 고온부의 면적을 사용한다.</p>
+<p> </p>
+<p>다음으로 복사전열계수를 살펴보자.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="247" src="../images/140/07.png" width="596"/></figure>
+</p>
+<p> </p>
+<p>이번엔 복사의 예시로 온실효과를 살펴볼 것이다.</p>
+<p><figure class="figure"><img alt="" height="391" src="../images/140/08.png" width="778"/></figure>
+</p>
+<p>지구는 저온이고, 에너지가 작은 적외선 파장을 내보낸다. 그러나 온실기체라고 불리는 가스들은 적외선을 잘 흡수하므로, 열 방출이 잘 안되어 지구온난화가 발생한다.</p>
+<p> </p>
+<p>이것과 비슷한 현상이 유리로 인한 온실효과로,  밖에서 들어오는 에너지가 높은 단파장 복사는 유리가 쉽게 투과시키고, 반면 내부에서 복사되는 장파장은 다시 실내에 갇히게 된다. 이것은 온실효과라고 불린다.</p>
+<p> </p>
+
+<p>이제 전도,대류,복사 실제 메카니즘을 보온병 예시로 총정리하며 마무리해보자.</p>
+<p><figure class="figure"><img alt="" height="384" src="../images/140/09.png" width="777"/></figure>
+</p>
+<p>뜨거운 커피로 가득찬 보온병이 있다고 해보자. 이때 커피는 보온병의 벽면으로 자연대류를 하며 열을 보내고, 이 열은 보온병을 타고 전도가 된 후 보온병의 외부에서 공기로 자연대류하게 된다. </p>
+<p> </p>
+<p>반면 내부 공기는 덮개로 자연대류하고 바깥표면과 덮개 안쪽으로 복사 열교환을 하게 된다. </p>
+<p> </p>
+<p>이런 모든 상황을 고려해보면, 열전달은 전도와 대류와 복사가 함께 일어나 만들어짐을 알 수 있다.</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/139.html"><span>← 이전 글</span><strong>대류</strong></a>
+    <a class="next" href="../posts/141.html"><span>다음 글 →</span><strong>열교환기의 설계</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynamic Response Characteristics of More Complicated Processes(2) · 화학공학 노트</title>
+<meta name="description" content="5장에서는 비교적 간단한 과정의 동역학, 즉 1차 또는 2차 전달 함수 또는 적분기로 모델링할 수 있는 과정의 동역학을 논의했다. 이제 분모에 추가적인 시간 상수를 포함하거나 s를 포함하는 더 복잡한 전달 함수 모델을 고려할 것이다. 전달 함수 모델의 분자와 분모의 형태가 공정의 동적 거동에 어떤 영향을 주는 지 알아볼 것이다. 또한 시간 지연과 복잡한 전달 함수 모델을 더 단순하고 저차 모델로 근사하는 방법을 제시한다. 추가 주제로는 상호작용 과정, 상태 공간 모델, 그리고 다중 입력 및 출력을 갖는 과정이 포함된다. POLES ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html" aria-current="page">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/advanced-control.html">최신공정제어</a></nav>
+  <header class="post-head">
+    <h1>Dynamic Response Characteristics of More Complicated Processes(2)</h1>
+    <p class="meta">
+      <time datetime="2025-11-04">2025.11.04</time>
+    </p>
+  </header>
+
+
+  <div class="body">
+    <p>5장에서는 비교적 간단한 과정의 동역학, 즉 1차 또는 2차 전달 함수 또는 적분기로 모델링할 수 있는 과정의 동역학을 논의했다. 이제 분모에 추가적인 시간 상수를 포함하거나 s를 포함하는 더 복잡한 전달 함수 모델을 고려할 것이다. 전달 함수 모델의 분자와 분모의 형태가 공정의 동적 거동에 어떤 영향을 주는 지 알아볼 것이다.</p>
+<p> </p>
+<p>또한 시간 지연과 복잡한 전달 함수 모델을 더 단순하고 저차 모델로 근사하는 방법을 제시한다. 추가 주제로는 상호작용 과정, 상태 공간 모델, 그리고 다중 입력 및 출력을 갖는 과정이 포함된다.</p>
+<p> </p>
+<p><b>POLES AND ZEROS AND THEIR EFFECT ON PROCESS RESPONSE</b></p>
+<p>5장에서 논의된 단순 프로세스 모델의 중요한 특징은 그들의 응답 특성이 전달 함수의 분모에 따라 결정된다는 것이다. 예를 들어, 다음 전달 함수를 생각해보자.</p>
+<p><figure class="figure"><img alt="" height="100" src="../images/222/01.png" width="481"/></figure>
+</p>
+<p>0 ≤ζ&lt;1사이이다.</p>
+<p>partial fraction expansion과 inverse transformation을 하면, 일단 응답에 관계없이 전달함수 때문에 다음 근은 반드시 나옴을 알 수 있다.</p>
+<p><figure class="figure"><img alt="" height="333" src="../images/222/02.png" width="729"/></figure>
+</p>
+<p>그리고 응답에 의해서 몇가지 근도 나타나긴 하는데, 일단 response modes or natural modes라고 불리는 모델의 동적 특징은 G에서 결정된다.</p>
+<p><figure class="figure"><img alt="" height="100" src="../images/222/01.png" width="481"/></figure>
+</p>
+<p>이때 역변환한 것 말고 G(s) 자체에서 근을 살펴보자. 분모 근의 경우 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="277" src="../images/222/03.png" width="247"/></figure>
+</p>
+<p>이 근들을 poles라고 부른다.</p>
+<p><figure class="figure"><img alt="" height="515" src="../images/222/04.png" width="523"/></figure>
+</p>
+<p>폴을 좌표로 실수축과 허수축에 나타내면 다음과 같다.이때 허수축으로부터 실수 폴이 멀어질수록 응답은 빨라진다. 근데 이건 공정제어에서는 잘 안쓰이고 전기제어 시스템에 자주 사용된다.</p>
+<p> </p>
+<p>이번엔 numerator dynamics를 살펴보자.</p>
+<p><figure class="figure"><img alt="" height="76" src="../images/222/05.png" width="289"/></figure>
+<figure class="figure"><img alt="" height="74" src="../images/222/06.png" width="194"/></figure>
+</p>
+<p>이런식으로 분자에도 s항이 추가되는 경우가 있다.</p>
+<p><figure class="figure"><img alt="" height="80" src="../images/222/07.png" width="357"/></figure>
+<figure class="figure"><img alt="" height="80" src="../images/222/08.png" width="411"/></figure>
+<figure class="figure"><img alt="" height="92" src="../images/222/09.png" width="354"/></figure>
+<figure class="figure"><img alt="" height="77" src="../images/222/10.png" width="279"/></figure>
+<figure class="figure"><img alt="" height="83" src="../images/222/11.png" width="213"/></figure>
+</p>
+<p>이때는 분자에도 s항이 들어오면서 분자의 근이 생기는데, 이를 제로라고 한다.</p>
+<p> </p>
+<p>제로에 대해 논의하기 전에, 전달 함수를 작성할 수 있는 몇 가지 동등한 방법을 살펴보는 것이 좋다.</p>
+<p><figure class="figure"><img alt="" height="159" src="../images/222/12.png" width="475"/></figure>
+</p>
+<p>원래는 이런식으로 전달함수를 정의했다. 그러나 폴-제로를 다루는 다음과 같은 표현법도 있다.</p>
+<p><figure class="figure"><img alt="" height="73" src="../images/222/13.png" width="376"/></figure>
+<figure class="figure"><img alt="" height="73" src="../images/222/14.png" width="447"/><figcaption>제일 많이 씀</figcaption>
+</figure>
+</p>
+<p>여기서 제로는 응답모드에는 영향을 주지 않으나 전개방식에 영향을 준다.</p>
+<p> </p>
+<p><b> Second-Orde rProcesses with Numerator Dynamics</b></p>
+<p>1차 시스템에 제로가 존재하면? y(t) at t=0 에서 계단응답이 적용될 때 jump discontinuity가 발생한다. 따라서 물리적으로 가능하려면 폴이랑 제로가 있을 때 분모 차수가 분자보다 더 커야한다.</p>
+<p><figure class="figure"><img alt="" height="695" src="../images/222/15.png" width="576"/></figure>
+<figure class="figure"><img alt="" height="180" src="../images/222/16.png" width="559"/></figure>
+</p>
+<p>위 전달함수가 주어져있을 때, 스텝인풋 매그니튜드 M을 찾고 τ1=4,τ2=1 and several values of τa의 그래프를 그려보자.</p>
+<p> </p>
+<p>테이블 찾으면 다음이 나온다.</p>
+<p><figure class="figure"><img alt="" height="73" src="../images/222/17.png" width="423"/></figure>
+</p>
+<p>y(t→∞)=KM이므로 single zero의 역할은 최종값에는 영향을 안준다. 그러면 전개에 영향을 줄 것으로 판단된다. 해(식 6-12)에서 응답 모드(지수 항)의 계수에 영향을 주는 걸 볼 수 있다.</p>
+<p><figure class="figure"><img alt="" height="152" src="../images/222/18.png" width="648"/></figure>
+</p>
+<p>이런 3가지 경우에 대해서, 첫번째는 오버슈팅이 발생하고 (2)는 1차계와 비슷하게 행동하고 (3)은 역반응이 발생한다. 그냥 그래프를 그려보니 그렇더라.</p>
+<p><figure class="figure"><img alt="" height="365" src="../images/222/19.png" width="533"/></figure>
+</p>
+<p>ta가 충분히 높으면 오버슈팅을 한다. 이때 중요한 것은 오버슈팅이나 역응답은 영점이 없는 과도감쇠 2차 전달함수에서는 일어나지 않는다는 것이다. </p>
+<p> </p>
+<p>역응답에 대해서 더 자세히 알아보자.</p>
+<p><figure class="figure"><img alt="" height="219" src="../images/222/20.png" width="426"/></figure>
+</p>
+<p>병렬 배열에서 두 개의 1차 전달 함수에 대해 역응답이 발생할 수 있다.</p>
+<p><figure class="figure"><img alt="" height="137" src="../images/222/21.png" width="313"/></figure>
+<figure class="figure"><img alt="" height="150" src="../images/222/22.png" width="352"/></figure>
+<figure class="figure"><img alt="" height="123" src="../images/222/23.png" width="177"/></figure>
+</p>
+<p>이때 τa &lt; 0에서</p>
+<p><figure class="figure"><img alt="" height="58" src="../images/222/24.png" width="163"/></figure>
+<figure class="figure"><img alt="" height="63" src="../images/222/25.png" width="107"/></figure>
+</p>
+<p>서로<span> </span><b>부호가 다른 두 1차</b>가 병렬로 합쳐지면, 처음에는 빠른 쪽이 이겨<span> </span><b>출력이 반대방향</b>으로 움직였다가, 나중에 느리지만 최종 이득이 더 큰 쪽이 이겨<span> </span><b>최종값 방향</b>으로 돌아온다.</p>
+<p><figure class="figure"><img alt="" height="191" src="../images/222/26.png" width="700"/></figure>
+<figure class="figure"><img alt="" height="77" src="../images/222/27.png" width="178"/></figure>
+</p>
+<p>------------------</p>
+<p><b> PROCESSES WITH TIME DELAYS</b></p>
+<p>물질이나 에너지가 프로세스나 플랜트에서 물리적으로 이동할 때 시간 지연이 발생한다. 예를 들어 유체가 파이프를 통해 이동할 때, 걸리는 지연 시간은 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="58" src="../images/222/28.png" width="162"/></figure>
+</p>
+<p>이거는 dead time이라고도 불린다. 시간지연은 다음처럼 표현되기도 한다.</p>
+<p><figure class="figure"><img alt="" height="94" src="../images/222/29.png" width="268"/></figure>
+</p>
+<p>예를 들어 지연이 있는 1차계다?</p>
+<p><figure class="figure"><img alt="" height="86" src="../images/222/30.png" width="180"/></figure>
+</p>
+<p>이렇게 표현이 된다. 이건 first-order plus time-delay 라고도 불린다.</p>
+<p><figure class="figure"><img alt="" height="388" src="../images/222/31.png" width="519"/></figure>
+</p>
+<p>입력이 바뀐 <b>그 즉시</b> 공정 내부에서는 변화가 시작되지만, <b>출력에 나타나는 건 <span><span>θ\theta</span><span aria-hidden="true"><span><span>θ</span></span></span></span>만큼 뒤늦게</b> 보이게 된다. 이로인해 그래프에 지연이 발생한다.</p>
+<p> </p>
+<p><b> Polynomial Approximations to e−𝛉s</b></p>
+<p><figure class="figure"><img alt="" height="83" src="../images/222/32.png" width="223"/></figure>
+</p>
+<p>파데근사라고 불리는 근사로 시간지연을 나타내기도 한다.</p>
+<p> </p>
+<p><b> INTERACTING AND NONINTERACTING PROCESSES </b></p>
+<p><figure class="figure"><img alt="" height="87" src="../images/222/33.png" width="470"/></figure>
+<figure class="figure"><img alt="" height="64" src="../images/222/34.png" width="226"/></figure>
+</p>
+<p>상호작용이 있으면 시스템이 복잡해진다.</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/208.html"><span>← 이전 글</span><strong>Dynamic Response Characteristics of More Complicated Processes</strong></a>
+    <a class="next" href="../posts/227.html"><span>다음 글 →</span><strong>Feedback Controllers</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

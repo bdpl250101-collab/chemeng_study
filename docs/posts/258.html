@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>분리공정 문제 3 - 분리 효율 구하기 · 화학공학 노트</title>
+<meta name="description" content="문제 해석해보면, 콜렘 3이 있는데 이게 5를 6, 7스트림으로 분리한다. 이때 테이블 1.5에는 각 스트림의 조성이 있다. 분리는 700카파에서 70플레이트와 27300KJ/H의 콘덴서 듀티로 운영된다. 제시된 데이터와 주변온도 T0 298.15K를 이용해서, (a) 리보일러 듀티와 (b) 비가역 엔트로피 생성량 (25도의 쿨링워터와 100도의 리보일러 스트림) c: 잃은 일 d:최소일 e:2차 효율을 구하여라. 일단 C3 컬럼을 정리해보면 Feed = stream 5Distillate = stream 6Bottoms = stre">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html" aria-current="page">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/separation.html">분리공정</a></nav>
+  <header class="post-head">
+    <h1>분리공정 문제 3 - 분리 효율 구하기</h1>
+    <p class="meta">
+      <time datetime="2026-03-16">2026.03.16</time>
+ · 수정 2026.04.17    </p>
+  </header>
+
+
+  <div class="body">
+    <p><figure class="figure"><img alt="" height="349" src="../images/258/01.png" width="1207"/></figure>
+</p>
+<p>문제 해석해보면, 콜렘 3이 있는데 이게 5를  6, 7스트림으로 분리한다. 이때 테이블 1.5에는 각 스트림의 조성이 있다. 분리는 700카파에서 70플레이트와 27300KJ/H의 콘덴서 듀티로 운영된다. 제시된 데이터와 주변온도 T0 298.15K를 이용해서, (a) 리보일러 듀티와 (b) 비가역 엔트로피 생성량 (25도의 쿨링워터와 100도의 리보일러 스트림) c: 잃은 일 d:최소일 e:2차 효율을 구하여라.</p>
+<p><figure class="figure"><img alt="" height="396" src="../images/258/02.png" width="450"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="258" src="../images/258/03.png" width="879"/></figure>
+<figure class="figure"><img alt="" height="463" src="../images/258/04.png" width="922"/></figure>
+</p>
+<p>일단 C3 컬럼을 정리해보면 </p>
+<p> </p>
+<ul>
+<li data-end="363" data-section-id="xwwbwe" data-start="346"><span>Feed = </span><span>stream </span><span>5</span></li>
+<li data-end="387" data-section-id="vdna0c" data-start="364"><span>Distillate = </span><span>stream </span><span>6</span></li>
+<li data-end="408" data-section-id="1tmw31e" data-start="388"><span>Bottoms = </span><span>stream </span><span>7</span></li>
+</ul>
+<p><span>이고 각각의 유량은 </span></p>
+<p> </p>
+<ul>
+<li data-end="481" data-section-id="17brz6q" data-start="455"><span>stream </span><span>5: </span><span>445.50 </span><span>lbmol/</span><span>h</span></li>
+<li data-end="508" data-section-id="v5b1on" data-start="482"><span>stream </span><span>6: </span><span>175.50 </span><span>lbmol/</span><span>h</span></li>
+<li data-end="535" data-section-id="juu1b9" data-start="509"><span>stream </span><span>7: </span><span>270.00 </span><span>lbmol/</span><span>h</span></li>
+</ul>
+<p><span>각각의 온도와 압력, 엔탈피, 엔트로피 조건이 나와있기 때문에, 이걸 가지고 수지를 세울 수 있다.</span></p>
+<p><figure class="figure"><img alt="" height="247" src="../images/258/05.png" width="402"/></figure>
+</p>
+<p> </p>
+<p>일단 엔탈피 수지를 세우기 전에, lbmol을 kmol로 바꾸도록 하자.</p>
+<p><figure class="figure"><img alt="" height="315" src="../images/258/06.png" width="519"/></figure>
+</p>
+<p> </p>
+<p>이제 엔탈피 수지를 세우면</p>
+<p><figure class="figure"><img alt="" height="462" src="../images/258/07.png" width="651"/></figure>
+</p>
+<p>즉 427052kj/h만큼이 빠져나가야 한다?</p>
+<p>엔트로피 수지도 세워보면</p>
+<p><figure class="figure"><img alt="" height="430" src="../images/258/08.png" width="663"/></figure>
+</p>
+<p>이때 컬럼을 잘 살펴보면, 5가 들어와서 6 7로 나간다. 이때 열은 리보일러에서 공급되고 콘덴서에서 응축되면서 열이 방출된다. 따라서 열 수지를 다음처럼 세울 수 있다.</p>
+<p><figure class="figure"><img alt="" height="285" src="../images/258/09.png" width="324"/></figure>
+</p>
+<p>이만큼의 열이 리보일러 듀티로 들어감을 알 수 있다.</p>
+<p> </p>
+<p>(B) 비가역 엔트로피 생성량은 일단 엔트로피 수지에 더해서, 정상상태를 가정해본다.</p>
+<p><figure class="figure"><img alt="" height="312" src="../images/258/10.png" width="585"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="91" src="../images/258/11.png" width="352"/></figure>
+<figure class="figure"><img alt="" height="87" src="../images/258/12.png" width="333"/></figure>
+</p>
+<p>이걸 계산하면 된다.</p>
+<p><figure class="figure"><img alt="" height="360" src="../images/258/13.png" width="424"/></figure>
+</p>
+<p>이제 이걸가지고 잃은 일을 계산할거다. 비가역이고 엔트로피 증가했으니, 그만큼 잃은 일이 발생하는데 그건 주위온도와 엔트로피 생성의 곱이다.</p>
+<p><figure class="figure"><img alt="" height="278" src="../images/258/14.png" width="275"/></figure>
+</p>
+<p>그리고 최소 분리일을 알아보자. 이거는 스트림의 엑서지 차이로 보면 된다. 가역인 분리기에서 최소로 필요한 분리일은 스트림의 엑서지 변화량과 같다.</p>
+<p><figure class="figure"><img alt="" height="63" src="../images/258/15.png" width="376"/></figure>
+<figure class="figure"><img alt="" height="252" src="../images/258/16.png" width="445"/></figure>
+</p>
+<p>이제 효율을 볼건데, 2법칙 효율은 최소일/ 실제 필요일로 구한다.</p>
+<p> </p>
+<p>이때 최소일/최소일+로스트워크 = 36.28%</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/257.html"><span>← 이전 글</span><strong>분리공정 문제 2 - 라울, EOS로 K 계산하기</strong></a>
+    <a class="next" href="../posts/263.html"><span>다음 글 →</span><strong>분리공정- flash vaporization과 liquid-liquid extraction</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5. 1차계의 실제적인 예들 · 화학공학 노트</title>
+<meta name="description" content="이번에는 1차 전달함수로 표현될 수 있는 몇 가지 실제적인 계들을 살펴보고, 이후 비선형계의 동적응답을 근사적으로 나타내는 방법도 기회가 되면 알아보려고 한다. 이 근사법을 선형화라고 한다. 1)액위위와 같이 저항R이 걸려있고 일정한 단면적 A의 탱크로 구성된 계를 살펴보자. 저항을 통한 부피유속을 q0라고 할 때 액위h와 출구 유속 q0 사이에 다음과 같은 선형관계가 성립한다고 가정할 것이다.이처럼 유속과 액위h사이에 선형관계가 성립하는 것을 선형저항이라고 부르며 흐름이 층류이면 보통 선형조ㅓ항이다. 하지만 일반적으로 파이프나 밸">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html" aria-current="page">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/advanced-control.html">최신공정제어</a></nav>
+  <header class="post-head">
+    <h1>5. 1차계의 실제적인 예들</h1>
+    <p class="meta">
+      <time datetime="2025-07-03">2025.07.03</time>
+ · 수정 2025.07.20    </p>
+  </header>
+
+
+  <div class="body">
+    <p>이번에는 1차 전달함수로 표현될 수 있는 몇 가지 실제적인 계들을 살펴보고, 이후 비선형계의 동적응답을 근사적으로 나타내는 방법도 기회가 되면 알아보려고 한다. 이 근사법을 선형화라고 한다.</p>
+<p> </p>
+<p>1)액위</p>
+<p><figure class="figure"><img alt="" height="227" src="../images/125/01.png" width="387"/></figure>
+</p>
+<p>위와 같이 저항R이 걸려있고 일정한 단면적 A의 탱크로 구성된 계를 살펴보자. 저항을 통한 부피유속을 q0라고 할 때 액위h와 출구 유속 q0 사이에 다음과 같은 선형관계가 성립한다고 가정할 것이다.</p>
+<p><figure class="figure"><img alt="" height="79" src="../images/125/02.png" width="127"/></figure>
+</p>
+<p>이처럼 유속과 액위h사이에 선형관계가 성립하는 것을 선형저항이라고 부르며 흐름이 층류이면 보통 선형조ㅓ항이다. 하지만 일반적으로 파이프나 밸브를 통한 난류 유속은 루트h에 비례한다. 그리고 간단한 기하학적 형태를 가진 둑을 통한 유속은 Kh^n 꼴로 나타난다.</p>
+<p> </p>
+<p>일정한 밀도를 가진 액체가 q(t)로 탱크로 흐르는데, 이때 h를 유속과 관련시키는 전달함수를 구해보겠다. 먼저 탱크에 물질수지를 적용한다.</p>
+<p><figure class="figure"><img alt="" height="115" src="../images/125/03.png" width="762"/></figure>
+</p>
+<p>앞에서 정의된 변수들을 사용하면 물질수지는 다음 식으로 표현된다.</p>
+<p><figure class="figure"><img alt="" height="160" src="../images/125/04.png" width="340"/></figure>
+</p>
+<p>이제 q0식을 대입하면  식은 다음과 같이 바뀐다.</p>
+<p><figure class="figure"><img alt="" height="118" src="../images/125/05.png" width="302"/></figure>
+</p>
+<p>이제 전달함수를 구하기 위해 편차변수를 도입해보자. 정상상태일 때 값은 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="103" src="../images/125/06.png" width="234"/></figure>
+</p>
+<p>이 둘을 빼면 다음과 같이 정의된다.</p>
+<p><figure class="figure"><img alt="" height="111" src="../images/125/07.png" width="582"/></figure>
+<figure class="figure"><img alt="" height="110" src="../images/125/08.png" width="318"/></figure>
+</p>
+<p>이제 라플라스 변환을 해보자.</p>
+<p><figure class="figure"><img alt="" height="109" src="../images/125/09.png" width="404"/></figure>
+</p>
+<p>이후 전달함수를 구하면 다음과 같은 형태가 된다.</p>
+<p><figure class="figure"><img alt="" height="125" src="../images/125/10.png" width="266"/></figure>
+</p>
+<p>이는 우리가 자주 봐왔던 1차계의 형태이다. 여기서 <span>τ=AR이다. 이것은 입구유속에 따른 높이에 대한 전달함수이다.</span></p>
+<p> </p>
+<p><span>이제 액위계의 입구 유속에 도입될 임펄스 함수를 생각해보자. 임펄스 함수는 아주 짧은 시간 동안 유속을 갑자기 큰 값으로 증가시켜 놓는 방식으로 근사하게 나타낼 수 있다. 즉 탱크 안에 갑자기 액체를 부어넣는 것과 같다. 이에 대한 실제적인 예제를 살펴보자.</span></p>
+<p> </p>
+<p>시간상수 <span>τ=1min 이고 저항R=1/9ft/cfm인 탱크가 10ft^3/min의 입구 유속을 가지고 정상상태 조업되고 있다. 이때 갑자기 0.1분간 9ft^3의 물을 탱크에 더 넣어 유속을 100ft^3/min으로 증가시킨다. 탱크 액위의 응답을 도표로 나타내보아라.</span></p>
+<p> </p>
+<p><span>물이 갑자기 들어온 것이므로 임펄스 응답과 비슷할 것이다. 먼저 공정의 전달함수를 살펴보면 다음과 같다.</span></p>
+<p><figure class="figure"><img alt="" height="132" src="../images/125/11.png" width="248"/></figure>
+</p>
+<p><span>물질수지를 적용하여 쉽게 구할 수 있었다. 이때 입력은 0.1분동안만 잠시 올라가는 것이므로, 두 계단 변화의 차이로 구할 수 있다.</span></p>
+<p><figure class="figure"><img alt="" height="91" src="../images/125/12.png" width="465"/></figure>
+</p>
+<p>이를 라플라스 변환하면 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="111" src="../images/125/13.png" width="360"/></figure>
+</p>
+<p>이제 이걸로 H(S)를 구해보자.</p>
+<p><figure class="figure"><img alt="" height="144" src="../images/125/14.png" width="534"/></figure>
+</p>
+<p>이를 역변환하면 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="103" src="../images/125/15.png" width="1037"/></figure>
+</p>
+<p>또는</p>
+<p><figure class="figure"><img alt="" height="164" src="../images/125/16.png" width="774"/></figure>
+</p>
+<p>이렇게 된다. 또 실제 1차 시스템에 임펄스 함수를 가했을 때, 응답은 다음식으로 나타남을 지난 포스팅에서 공부하였다.</p>
+<p><figure class="figure"><img alt="" height="123" src="../images/125/17.png" width="428"/><figcaption>1차에 임펄스 입력</figcaption>
+</figure>
+</p>
+<p>이 둘을 비교해보자.</p>
+<p><figure class="figure"><img alt="" height="464" src="../images/125/18.png" width="897"/></figure>
+</p>
+<p>이상적인 임펄스와 매우 같음을 알 수 있다. 따라서 이 문제는 크기 9의 임펄스 입력을 줬다고 치환해서 풀어도 좋을 것이다.</p>
+<p> </p>
+<p>그외 혼합공정, 가열공정에서 출구 농도와 출구 온도를 유량과 관계시키는 것 또한 1차 시스템의 예시이다.</p>
+<p><figure class="figure"><img alt="" height="80" src="../images/125/19.png" width="183"/><figcaption>혼합공정</figcaption>
+</figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="87" src="../images/125/20.png" width="353"/><figcaption>가열공정</figcaption>
+</figure>
+</p>
+<p>이는 모델링의 형태가 비슷한데서 온다.</p>
+<p><figure class="figure"><img alt="" height="624" src="../images/125/21.png" width="1107"/></figure>
+</p>
+<p> </p>
+<p>각 예에서의 시간상수는 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="278" src="../images/125/22.png" width="570"/></figure>
+</p>
+<p>이를 적용하여 내용을 요약하면 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="752" src="../images/125/23.png" width="727"/></figure>
+</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/124.html"><span>← 이전 글</span><strong>4. 1차 시스템의 응답</strong></a>
+    <a class="next" href="../posts/126.html"><span>다음 글 →</span><strong>6. 직렬로 연결된 1차계들의 응답</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

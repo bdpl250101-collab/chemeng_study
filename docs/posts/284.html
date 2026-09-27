@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6.1- GRAPHICAL METHOD FOR TRAYED TOWERS &amp; ALGEBRAIC METHOD FOR DETERMINING N · 화학공학 노트</title>
+<meta name="description" content="역류식 트레이형 흡수탑(또는 탈착탑)에서 흡수탑은 상단(흡수제가 유입되는 곳)에서 하단으로, 탈착탑은 하 단(탈착제가 유입되는 곳)에서 상단으로 번호가 매겨져 있다. 이때 각 트레이에서 나오는 증기와 액체는 상평형 상태에 있다. 흡수탑에서는 용질만 한 상에서 다른 상으로 이동한다고 가정한다.이때L&#39;과 V&#39;은 탑 전체에 걸쳐 일정하게 유지된다고 가정한다. 1. Equilibrium Curves어떤 스테이지에서, K-값은 다음과 같다.일반적으로 이 곡선은 직선이 아니지만 원점을 지난다. 만약 용질이 액상에서 화학 반응을 통해 비휘발성 ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html" aria-current="page">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/separation.html">분리공정</a></nav>
+  <header class="post-head">
+    <h1>6.1- GRAPHICAL METHOD FOR TRAYED TOWERS &amp; ALGEBRAIC METHOD FOR DETERMINING N</h1>
+    <p class="meta">
+      <time datetime="2026-05-19">2026.05.19</time>
+    </p>
+  </header>
+
+
+  <div class="body">
+    <p><figure class="figure"><img alt="" height="680" src="../images/284/01.png" width="655"/><figcaption>그림 1</figcaption>
+</figure>
+</p>
+<p>역류식 트레이형 흡수탑(또는 탈착탑)에서 흡수탑은 상단(흡수제가 유입되는 곳)에서 하단으로, 탈착탑은 하 단(탈착제가 유입되는 곳)에서 상단으로 번호가 매겨져 있다. 이때 각 트레이에서 나오는 증기와 액체는 상평형 상태에 있다. 흡수탑에서는 용질만 한 상에서 다른 상으로 이동한다고 가정한다.</p>
+<p><figure class="figure"><img alt="" height="179" src="../images/284/02.png" width="589"/></figure>
+</p>
+<p>이때L'과 V'은 탑 전체에 걸쳐 일정하게 유지된다고 가정한다.</p>
+<p> </p>
+<p>1. Equilibrium Curves</p>
+<p>어떤 스테이지에서, K-값은 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="77" src="../images/284/03.png" width="260"/></figure>
+<figure class="figure"><img alt="" height="42" src="../images/284/04.png" width="347"/></figure>
+</p>
+<p>일반적으로 이 곡선은 직선이 아니지만 원점을 지난다. 만약 용질이 액상에서 화학 반응을 통해 비휘발성 용질로 완전히 비가역적으로 변환된다면, 평형 곡선은 원점을 지나는 기울기가 0인 직선이 될 것이다.</p>
+<p> </p>
+<p>.2 Operating Lines (from Material Balances)</p>
+<p>그림1 의 탑 양 끝단에는 유입 및 유출 흐름이 쌍을 이룬다. 일단 먼저 흡수를 보도록 하자.</p>
+<p><figure class="figure"><img alt="" height="320" src="../images/284/05.png" width="583"/></figure>
+</p>
+<p>(X0, L0 and Y1, V0) 이 탑 상부이고 (YN+1, V0 and XN, L0)이 탑 바텀이다. 이는 탑을 위에서부터 1...N으로 매겨놓고 들어오고 나가는 걸 표시하면 된다.</p>
+<p><figure class="figure"><img alt="" height="327" src="../images/284/06.png" width="596"/></figure>
+</p>
+<p>만약 탈거부면 (XN+1, L0 and YN, V0) at the top and (Y0, V0 and X1, L0) at the bottom.</p>
+<p> </p>
+<p>이제 이를 물질수지를 세워보자. 들어오는 것=나가는 것으로 세운 수지이다.</p>
+<p><figure class="figure"><img alt="" height="289" src="../images/284/07.png" width="453"/></figure>
+</p>
+<p>이때 각각의 두 식 Y를 조작선이라고 부른다. 종점은 탑의 상단과 하단의 조건을 나타낸다. 흡수선은 평형선 위에, 탈거선은 아래에 위치하는 것을 볼 수 있다.  둘다 기울기는 L/V임에 유의하자.</p>
+<p> </p>
+<p>3 Minimum Absorbent Flow Rate (for 무한 Stages)</p>
+<p>다음 그림에는 네 가지 흡수제 유량에 대한 작동선이 나와 있으며, 각 선은 종점을 통과한다.</p>
+<p><figure class="figure"><img alt="" height="245" src="../images/284/08.png" width="229"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="515" src="../images/284/09.png" width="549"/></figure>
+<figure class="figure"><img alt="" height="113" src="../images/284/10.png" width="284"/><figcaption>식 6-7</figcaption>
+</figure>
+</p>
+<p>이때 기울기는 L'/V'이다. L이 작아지면 점점 기울기가 낮아지며 L'min에 도달하면 핀치포인트가 형성된다. </p>
+<p><figure class="figure"><img alt="" height="70" src="../images/284/11.png" width="230"/></figure>
+</p>
+<p> </p>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+
+<figure class="figure"><img alt="" height="57" src="../images/284/12.png" width="88"/></figure>
+<p>에서<span> </span>solute-free basis로 다음과 같이 나타낼 수 있다.</p>
+<figure class="figure"><img alt="" height="112" src="../images/284/13.png" width="117"/></figure>
+<p>이렇게 보면, Y는 용질 mol/용질 아닌 기체 mol, X는 용질 mol/용질 아닌 액체로 볼 수 있다. 따라서</p>
+<figure class="figure"><img alt="" height="64" src="../images/284/14.png" width="180"/></figure>
+<p>이렇게 볼 수 있으며 이는<span> </span>solute-free basis로 보면 된다.</p>
+<figure class="figure"><img alt="" height="62" src="../images/284/15.png" width="235"/></figure>
+<figure class="figure"><img alt="" height="70" src="../images/284/16.png" width="219"/></figure>
+</div>
+</div>
+<p><figure class="figure"><img alt="" height="70" src="../images/284/11.png" width="230"/></figure>
+</p>
+<p>위 식을 XN에 대해서 풀고, 식 6-7에 대입하면 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="60" src="../images/284/17.png" width="421"/></figure>
+</p>
+<p>이건 외우기 힘든데, 대신 희석액체이고 들어오는 액체의 용질 몰수가 0에 가까운 순수액이라고 가정하면 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="43" src="../images/284/18.png" width="368"/></figure>
+</p>
+<p> </p>
+
+<p>이것과 비슷한 논의가 V'min에도 존재한다.</p>
+<p><figure class="figure"><img alt="" height="60" src="../images/284/19.png" width="366"/></figure>
+</p>
+<p> </p>
+<p><b>4 Number of Equilibrium Stages</b></p>
+<p>원하는 흡수/탈거를 하려면 <b>이론적으로 완벽한 tray가 몇 개 필요하냐</b>를 구하는 부분</p>
+<p><figure class="figure"><img alt="" height="286" src="../images/284/20.png" width="529"/></figure>
+</p>
+<p>그림 6.10a에서 볼 수 있듯이, 작동선은 두 단계 사이를 위로 통과하는 증기 내 용질 농도와 동일한 두 단계 사이를 아래로 통과 하는 액체 내 용질 농도 사이의 관계를 나타낸다. 그림 6.10b는 평형 곡선이 평형 단계를 떠나는 증기 내 용질 농도와 동일한 단계를 떠나는 액체 내 용질 농도 사이의 관계를 나타낸다는 것을 보여준다. </p>
+<p> </p>
+<p>이는 탑 타워에서 시작하여 타워의 바텀으로 계단을 형성하는 방식이다. 평형선은 “한 tray에서 나가는 기체와 액체의 평형 관계”<br/>조작선은 “tray 사이를 지나가는 기체와 액체의 물질수지 관계” . 이 둘 사이를 계단식으로 이동하면 이론단수를 셀 수 있다.</p>
+<p> </p>
+<p data-end="4049" data-start="4038">흡수탑 계단 작도는: <span><span><span>(X0,Y1)→평형선→조작선→평형선→조작선→⋯→(XN,YN+1) 이때 평형선에 한번 닿으면 그것이 1 이론단이다.</span></span></span></p>
+<p data-end="4049" data-start="4038"> </p>
+<p data-end="4049" data-start="4038"><b>ALGEBRAIC METHOD FOR DETERMINING N</b></p>
+<p data-end="4049" data-start="4038">위까지는 그래프를 이용한 작도였다. 이제 그래프 계단 작도 없이, Kremser 식으로 흡수탑/탈거탑의 이론단수 N 를 계산하는 방법을 알아보자.</p>
+<p data-end="4049" data-start="4038"> </p>
+<p><figure class="figure"><img alt="" height="214" src="../images/284/21.png" width="393"/></figure>
+</p>
+<p data-end="4049" data-start="4038"> </p>
+<p><figure class="figure"><img alt="" height="80" src="../images/284/22.png" width="314"/></figure>
+</p>
+<p data-end="4049" data-start="4038"> </p>
+<p><figure class="figure"><img alt="" height="75" src="../images/284/23.png" width="297"/></figure>
+</p>
+<p data-end="4049" data-start="4038">일단 크렘저 식이 이렇게 된다는 것을 알고 있을 것이다( 알아야 한다...) 여기서 N은 단수이므로, 그냥 바로 흡수 비율을 넣고 풀어버리면 된다.</p>
+<p><figure class="figure"><img alt="" height="90" src="../images/284/24.png" width="224"/></figure>
+</p>
+<p data-end="4049" data-start="4038"> </p>
+<p data-end="4049" data-start="4038">여기서 RA는 흡수에서 흡수안된 비율이며 탈거면 마찬가지로 탈거에서 흡수 안된 비율이다. 예를 들어 97% 흡수라면 0.03을 쓰면 된다. 하지만 여기서 한가지 아쉬운 것은, LN이 들어가기 때문에 A=1, S=1일 때 바로 못 쓴다. 따라서 이 경우는 극한을 사용한다.</p>
+<p><figure class="figure"><img alt="" height="73" src="../images/284/25.png" width="162"/></figure>
+<figure class="figure"><img alt="" height="66" src="../images/284/26.png" width="151"/></figure>
+</p>
+<p data-end="4049" data-start="4038"> </p>
+<p><figure class="figure"><img alt="" height="63" src="../images/284/27.png" width="129"/></figure>
+</p>
+<p data-end="936" data-start="898"><span><span aria-hidden="true"><span><span>A</span><span>=</span></span><span><span>1</span></span></span></span>일 때는 이론단수 <span><span>N</span></span>개로 제거 가능한 비율이 위와 같다.</p>
+<p><figure class="figure"><img alt="" height="336" src="../images/284/28.png" width="360"/></figure>
+</p>
+<p data-end="4049" data-start="4038"> </p>
+
+
+<p data-end="4049" data-start="4038"><span><span><span>예제를 통해 풀어보자.</span></span></span></p>
+<p><figure class="figure"><img alt="" height="277" src="../images/284/29.png" width="479"/></figure>
+</p>
+<p>CO₂-rich gas 안에 들어 있는 <b>ethyl alcohol</b>을 물로 흡수한다. 에탄올 97%를 회수하려면 <b>이론 평형단수 <span><span aria-hidden="true"><span><span>N</span></span></span></span></b> 가 몇 단 필요한가?</p>
+<p>이 문제를 <b>그래프법</b>, 즉 <span><span>Y−X </span></span>diagram에서 <b>평형선 + 조작선 + 계단 작도</b>로 풀어볼 것이다. 조건은 기체 180 kmol/h, 조성 98 mol% CO₂ + 2 mol% ethanol, 흡수제는 순수 물, 30°C, 110 kPa, ethanol 회수율 97%이다. 수식 입력을 위해 워드로 풀어보았다.</p>
+<p><figure class="figure"><img alt="" height="432" src="../images/284/30.png" width="562"/></figure>
+<figure class="figure"><img alt="" height="93" src="../images/284/31.png" width="263"/></figure>
+</p>
+<p>여기서 V'는 에탄올을 제외한 기체 유량, 즉 CO₂ 유량이다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="497" src="../images/284/32.png" width="635"/></figure>
+</p>
+<p><span>들어온 에탄올<span> 3.60 </span>중에서<span> 3.49</span>는 물로 가고<span>, 0.11</span>은 기체로 빠져나간다.</span></p>
+<p><figure class="figure"><img alt="" height="634" src="../images/284/33.png" width="652"/></figure>
+</p>
+<p>여기서 K는 에탄올이 기체로 얼마나 남아있는지를 나타낸다.</p>
+<p> </p>
+<p><b><span>4. </span>최소 흡수제 유량 </b><span></span></p>
+<p>희박용액이고 들어오는 흡수제가 순수 물일 경우 다음식이 성립함을 위에서 배웠다.</p>
+<p><figure class="figure"><img alt="" height="54" src="../images/284/34.png" width="296"/></figure>
+</p>
+<p>따라서 대입을 해보면</p>
+<p><figure class="figure"><img alt="" height="72" src="../images/284/35.png" width="253"/></figure>
+</p>
+<p>이때 이건 말그대로 최소값이기에 실제 흡수제 유량을 1.5배를 해서 잡도록 하자.</p>
+<p><figure class="figure"><img alt="" height="98" src="../images/284/36.png" width="213"/></figure>
+<figure class="figure"><img alt="" height="237" src="../images/284/37.png" width="638"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="216" src="../images/284/38.png" width="556"/></figure>
+</p>
+<p><b><span>5.2 Bottom gas </span>조성 YN+1</b><span></span></p>
+<p><figure class="figure"><img alt="" height="300" src="../images/284/39.png" width="244"/></figure>
+</p>
+<p><b><span>5.3 Top liquid </span><span>조성 X0=0(순수 물)</span></b></p>
+<p> </p>
+<p><b><span>5.4 Bottom liquid </span><span>조성 XN</span></b></p>
+<p><figure class="figure"><img alt="" height="92" src="../images/284/40.png" width="139"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="349" src="../images/284/41.png" width="690"/></figure>
+<figure class="figure"><img alt="" height="556" src="../images/284/42.png" width="810"/></figure>
+</p>
+<p>7.평형선 구하기</p>
+<p><figure class="figure"><img alt="" height="412" src="../images/284/43.png" width="171"/></figure>
+</p>
+<p>여기에 K=0.57을 넣는다. 이후 Y에 대해서 정리하면</p>
+<p><figure class="figure"><img alt="" height="63" src="../images/284/44.png" width="146"/></figure>
+</p>
+<p>근데 여기서 희박 용액에서는 X가 작으므로 1+0.43X≈1로 볼 수 있다. Y≈0.57X을 써도 되긴한데 위험하긴하다.</p>
+<p> </p>
+<p>8. 그래프에서 해야 하는 일</p>
+<p>이제 Y-X그래프에 두 선을 그린다. 조작선 Y=0.829X+0.0006<br/>평형선 Y=0.57X/(1+0.43X)<br/>흡수탑에서는 조작선이 평형선 위에 있어야 한다.<br/>왜냐하면 흡수가 일어나려면 실제 기체 농도 Y가 평형 기체 농도 Y^*보다 커야 하기 때문<br/>Y&gt;Y^* 그래야 기체 속 에탄올이 액체로 넘어감.</p>
+<p><figure class="figure"><img alt="" height="679" src="../images/284/45.png" width="918"/></figure>
+<figure class="figure"><img alt="" height="484" src="../images/284/46.png" width="596"/></figure>
+<figure class="figure"><img alt="" height="349" src="../images/284/47.png" width="587"/></figure>
+<figure class="figure">
+<div><img alt="" height="679" src="../images/284/45.png" width="918"/><img alt="" height="420" src="../images/284/48.png" width="542"/></div>
+</figure>
+</p>
+<p>위 표는 숫자로 그래프를 찍어본 것이다.</p>
+<p> </p>
+<p>목표 bottom gas는: YN+1=0.0204이고  6단 후에는: Y≈0.01715 으로 아직 부족하다. 7단 전체를 쓰면: Y≈0.02587 으로 목표를 넘어선다. 따라서 필요한 이론단수는: 6&lt;N&lt;7이다.<br/>교재 그래프에서는 “6단보다 조금 큼”으로 읽고, 설계상 올림해서 7 theoretical stages를 제시하는데, 이것과 비슷한 논리라고 보면된다.</p>
+<p> </p>
+<p>마지막으로 크렘저 식으로 검사해보면 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="600" src="../images/284/49.png" width="250"/></figure>
+</p>
+<p>정리하면, 이 문제는 <span><span>K</span></span>로 평형선을 만들고, 물질수지로 조작선을 만든 다음, <span><span>Y−X</span></span> 그래프에서 계단을 그려 <span><span>N</span></span>을 세는 문제이다. 계산하면 6단보다 조금 더 필요하므로 최종 답은 <b>7 theoretical stages</b></p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/283.html"><span>← 이전 글</span><strong>Absorption and Stripping of Dilute Mixtures - intro</strong></a>
+    <a class="next" href="../posts/285.html"><span>다음 글 →</span><strong>6.2 Murphree Efficiencies &amp; 6.3 Rate-Based Method for Packed Columns</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공정의 동특성 · 화학공학 노트</title>
+<meta name="description" content="먼저 공정 모델들을 살펴보면 다음과 같았다. 왜 각각이 이렇게 나오는지 궁금하다면? 접은글 참조더보기1. 저장탱크 가열 시스템 2.저장탱크의 액체 높이 3.저장탱크의 출구농도즉 대부분의 1차 공정은 다음과 같은 모델을 따름을 알 수 있다. 1차 미분방정식으로 위와같이 주어진 1차 공정에 대하여 dy/dt = sY(s) – y(0) 를 이용하여 라플라스 변환을 하면, τsY(s) + Y(s) = KX(s), ( τ s + 1 ) Y(s) = KX(s) 가 얻어지며 결국 다음의 전달함수가 구해진다. 이제 공정의 동특성에 대해서 연구한다">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html" aria-current="page">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/process-control.html">공정제어</a></nav>
+  <header class="post-head">
+    <h1>공정의 동특성</h1>
+    <p class="meta">
+      <time datetime="2025-06-29">2025.06.29</time>
+    </p>
+  </header>
+
+
+  <div class="body">
+    <p>먼저 공정 모델들을 살펴보면 다음과 같았다.</p>
+<p><figure class="figure"><img alt="" height="624" src="../images/121/01.png" width="1107"/></figure>
+</p>
+<p> </p>
+<p>왜 각각이 이렇게 나오는지 궁금하다면? 접은글 참조</p>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+<p>1. 저장탱크 가열 시스템</p>
+<figure class="figure"><img alt="" height="748" src="../images/121/02.png" width="1263"/></figure>
+<p> </p>
+<p>2.저장탱크의 액체 높이</p>
+<figure class="figure"><img alt="" height="685" src="../images/121/03.png" width="807"/></figure>
+<p> </p>
+<p>3.저장탱크의 출구농도</p>
+<figure class="figure"><img alt="" height="616" src="../images/121/04.png" width="811"/></figure>
+</div>
+</div>
+<p>즉 대부분의 1차 공정은 다음과 같은 모델을 따름을 알 수 있다.</p>
+<p><figure class="figure"><img alt="" height="148" src="../images/121/05.png" width="875"/></figure>
+</p>
+<p> </p>
+<p>1차 미분방정식으로 위와같이 주어진 1차 공정에 대하여 dy/dt = sY(s) – y(0) 를 이용하여 라플라스 변환을 하면, <span> </span></p>
+<p>τsY(s) + Y(s) = KX(s), ( τ s + 1 ) Y(s) = KX(s) 가 얻어지며 결국 다음의 전달함수가 구해진다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="145" src="../images/121/06.png" width="1035"/></figure>
+</p>
+<p> </p>
+<p>이제 공정의 동특성에 대해서 연구한다는 것은, 그 공정에 다양한 입력(계단응답, 임펄스 응답, 경사응답 등)을 넣었을 때, 그 결과인 <b>출력함수가 어떻게 얻어지냐</b>를 분석하는 것이다.</p>
+<p> </p>
+<p>먼저 1차 공정에 계단 응답을 가하는 경우를 알아보자.</p>
+<p><figure class="figure"><img alt="" height="798" src="../images/121/07.png" width="1386"/></figure>
+</p>
+<p>입력함수를 주고, 이것을 통해 출력함수(변수:시간)을 구했다. 이를 살펴보면 시간이 흐름에 따라 출력값은 증가하며 시간이 τ(시간상수)일때 전체값의 63.2%에 도달하게 된다. 옆의 표에 τ값에 따른 출력값을 나타내었다.</p>
+<p> </p>
+<p>예를 들어 어떤 공정의 전달함수가 1/2s+1 이라면, 95%(0.95)만큼 도달하는데 걸리는 시간은 3τ이고 이는 6초이다. 이때 시간상수 τ는 그 공정의 고유함수이다. </p>
+<p><figure class="figure"><img alt="" height="776" src="../images/121/08.png" width="1389"/></figure>
+</p>
+<p>여기서 τ는 체류시간을 나타내기도 하므로 시간상수라고 불린다. τ가 클 수록 정상상태에 늦게 도달한다.</p>
+<p> </p>
+<p>이제 1차 공정에 단위 임펄스 함수를 가하는 경우를 알아보자.</p>
+<p><figure class="figure"><img alt="" height="790" src="../images/121/09.png" width="1403"/></figure>
+</p>
+<p>임펄스응답을 주면, 처음에는 최고값이 나오고, 점차 출력이 줄어드는 거동을 보인다. 이때 t= τ 에서 출력은 처음값의 36.8%로 줄어든다.</p>
+<p> </p>
+<p>단위 경사 응답을 주는 경우도 살펴보자.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="789" src="../images/121/10.png" width="1398"/></figure>
+</p>
+<p>여기서는 기울기가 곧 K가 된다.</p>
+<p> </p>
+<p>이제 시간지연이 있는 1차 공정의 단위 계단 응답에 대한 출력함수를 살펴보자. 시간지연이 있다는 것은 입력을 주고 나서 지연시간 후 반응이 나타나는 것을 의미한다.</p>
+<p><figure class="figure"><img alt="" height="786" src="../images/121/11.png" width="1385"/></figure>
+</p>
+<p> </p>
+<p>말그대로 그냥 d시간 후 원래 계단 함수의 특성이 나타난다.</p>
+<p> </p>
+<p>여기까지가 1차공정에 대한 동특성을 알아보았다. 이제 공정 중에, 적분공정이라는 것도 알아보자. 적분공정은 보통 정상상태가 아니라 축적이 있는 경우에 동특성이 미분방정식의 형태로 나타나는 게 아니라 시간에 따라 증가하는 공정을 의미한다.</p>
+<p><figure class="figure"><img alt="" height="773" src="../images/121/12.png" width="1378"/></figure>
+</p>
+<p>여기서의 각 응답에 대한 출력을 알아보자.</p>
+<p><figure class="figure"><img alt="" height="801" src="../images/121/13.png" width="1378"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="794" src="../images/121/14.png" width="1355"/></figure>
+</p>
+<p> </p>
+<p>마지막으로, 사각펄스를 1차공정에 적용했을 때 결과도 알아보자.</p>
+<p><figure class="figure"><img alt="" height="776" src="../images/121/15.png" width="1371"/></figure>
+</p>
+<p> </p>
+<p>이때 출력면적/입력면적의 비는 K이다.</p>
+<p> </p>
+
+<p>*사용 자료의 저작권은 켐탑에 있습니다.</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/112.html"><span>← 이전 글</span><strong>3. 블록선도와 총괄전달함수</strong></a>
+    <a class="next" href="../posts/134.html"><span>다음 글 →</span><strong>진동응답/주파수 응답</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>single-section extraction cascade · 화학공학 노트</title>
+<meta name="description" content="같은 용매량, 같은 단수라면 cocurrent 먼저 상황부터 잡으면, feed가 공급되며 A와 B로 구성되어있다. A는 안녹는 액체이고 B는 우리가 뽑으려는 액체이다. 이를 추출하려 용매 C를 넣는다. 이때 분배계수 KDB는 YB/XB로 구할 수 있으며 이때 XB는 잔류물질에서 B질량/A질량, YB는 추출물에서 B질량/C질량이다. 이때 추출인자 E를 다음처럼 정의한다.KDB는 B가 용매쪽을 얼마나 더 좋아하는지 (B/C / B/A)이고 S는 용매 유량이며 FA는 피드에서 A유량이다. A가 많을 수록 추출인자는 줄고, 반면에 용매가 ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html" aria-current="page">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/separation.html">분리공정</a></nav>
+  <header class="post-head">
+    <h1>single-section extraction cascade</h1>
+    <p class="meta">
+      <time datetime="2026-04-03">2026.04.03</time>
+ · 수정 2026.04.17    </p>
+  </header>
+
+
+  <div class="body">
+    <p>같은 용매량, 같은 단수라면 cocurrent &lt; crosscurrent &lt; countercurrent 순으로 잘 뽑힌다. 이를 확인하는 파트이다. </p>
+<p> </p>
+<p>먼저 상황부터 잡으면, feed가 공급되며 A와 B로 구성되어있다. A는 안녹는 액체이고 B는 우리가 뽑으려는 액체이다. 이를 추출하려 용매 C를 넣는다. 이때 분배계수 KDB는 YB/XB로 구할 수 있으며 이때 XB는 잔류물질에서 B질량/A질량, YB는 추출물에서 B질량/C질량이다.</p>
+<p> </p>
+<p>이때 추출인자 E를 다음처럼 정의한다.</p>
+<p><figure class="figure"><img alt="" height="69" src="../images/273/01.png" width="150"/></figure>
+</p>
+<p>KDB는 B가 용매쪽을 얼마나 더 좋아하는지 (B/C / B/A)이고 S는 용매 유량이며 FA는 피드에서 A유량이다. A가 많을 수록 추출인자는 줄고, 반면에 용매가 많거나 분배계수가 높으면 E는 높아진다. 이는 추출이 얼마나 잘되는지를 보여주는 숫자이다.</p>
+<p> </p>
+<p>이제 각각 캐스케이드 방식 별로 N단에서 XBR/XBF를 비교하면서 유리함을 비교하려고 한다. 이는 n단 후에 라피네이트에 남은 B양을 처음 피드에 있던 B의 농도비로 나눈것으로, 처음에 비해 B가 얼마나 남았나를 보는 값이다.</p>
+<p> </p>
+<p>이게 1이면 하나도 안뽑힌거고 0.1이면 90% 추출된 것이며 0에 가까울 수록 좋은 것이다.</p>
+<p> </p>
+<p>1)cocurrent :1단이든 무한단이든 효과 차이 없음</p>
+<p><figure class="figure"><img alt="" height="96" src="../images/273/02.png" width="167"/></figure>
+</p>
+<p>2)crosscurrent: 단수가 늘 수록 추출이 잘됨.</p>
+<p><figure class="figure"><img alt="" height="87" src="../images/273/03.png" width="249"/></figure>
+</p>
+<p>무한단으로 가게 되면</p>
+<p><figure class="figure"><img alt="" height="94" src="../images/273/04.png" width="120"/></figure>
+</p>
+<p>3) countercurrent</p>
+<p><figure class="figure"><img alt="" height="85" src="../images/273/05.png" width="326"/></figure>
+</p>
+<p>2단일때 예시</p>
+<p><figure class="figure"><img alt="" height="92" src="../images/273/06.png" width="218"/></figure>
+</p>
+<p>따라서 카운터 커런트 방식이 가장 효과적임을 알 수 있다. 이때, 완전한 추출을 원한다면 E&gt;1이어야 한다. 그렇지 않다면 완전 추출은 불가ㅡㅇ하다..</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/272.html"><span>← 이전 글</span><strong>SOLID–LIQUID CASCADES</strong></a>
+    <a class="next" href="../posts/277.html"><span>다음 글 →</span><strong>분리공정 중간고사 대비 문제풀이 (30문제)</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

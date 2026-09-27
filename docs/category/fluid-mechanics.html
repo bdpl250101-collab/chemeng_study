@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>화공유체역학 · 화학공학 노트</title>
+<meta name="description" content="화공유체역학 관련 글 2편">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html" aria-current="page">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<nav class="crumb"><a href="../index.html">홈</a> › 화공유체역학</nav>
+<h1>화공유체역학 <span class="h-count">2편</span></h1>
+
+<div class="list-tools">
+  <button type="button" class="sort" data-sort="desc" aria-pressed="true">최신순</button>
+  <button type="button" class="sort" data-sort="asc" aria-pressed="false">오래된순 (진도순)</button>
+</div>
+
+<ol class="post-list detailed" id="cat-posts">
+  <li data-date="2024-03-10">
+    <a class="title" href="../posts/48.html">화학공학 유체역학 2.파이프에서의 유체 마찰</a>
+    <span class="meta">2024.03.10</span>
+    <p class="excerpt">저번시간 요약:화학공정 조작에서 유체는 주로 파이프를 통해 운반되는데, 파이프 내에서 점성 작용으로 인해 마찰이 발생하여 일이 열로 소실될 수 있다. 이러한 마찰은 펌프로 압력을 높이거나 중력장 내에서 높은 곳에서 낮은 곳으로 낙하시킴으로써 줄일 수 있다. 두 경우 모두 주어진 구동력(펌프 또는 중력장)하에서 유속 및 속도를 아는 것이 필요하다.  1. 먼저 펌프로 압력을 높여서 마찰을 극복하는 경우를 살펴보자.수평인 파이프라 중력 효과를 배제할 수 있다.이때, 실험을 통해 압력차는 길이에 정비례한다는 것이 밝혀졌다. 따라서 부피 </p>
+  </li>
+  <li data-date="2024-03-09">
+    <a class="title" href="../posts/46.html">화학공학 유체역학 1. 유체역학 입문 및 보존 법칙</a>
+    <span class="meta">2024.03.09</span>
+    <p class="excerpt">유체는 기체, 액체를 일컫는 말이다. 이때 점도가 일정한 유체를 뉴턴성 유체라고 하며 일반적으로 대부분의 유체는 뉴턴성 유체이다. 유체의 한 가지 특징은 압력이다. 물에 깊게 잠수할 수록 압력이 증가하는 데서 알 수 있듯이, 유체는 위치에 따라 압력이 달라지는 특성을 가지고 있다. 액체의 경우 특정 지점에서 압력은 다음과 같음이 알려져있다. 그러나 액체가 아닌 기체의 경우에는, 고도 변화가 클 때 밀도가 일정하지 않으므로 다음 식을 쓰곤 한다. 어쨋든 압력이라는 특징이 있는 것이 중요하므로, 굳이 신경 쓸 것은 없다. 유체에 관한 </p>
+  </li>
+</ol>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

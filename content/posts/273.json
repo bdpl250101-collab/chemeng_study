@@ -1,0 +1,14 @@
+{
+ "id": 273,
+ "title": "single-section extraction cascade",
+ "date": "2026-04-03",
+ "modified": "2026-04-17",
+ "category": "화학공학 일지/분리공정",
+ "tags": [],
+ "summary": "같은 용매량, 같은 단수라면 cocurrent 먼저 상황부터 잡으면, feed가 공급되며 A와 B로 구성되어있다. A는 안녹는 액체이고 B는 우리가 뽑으려는 액체이다. 이를 추출하려 용매 C를 넣는다. 이때 분배계수 KDB는 YB/XB로 구할 수 있으며 이때 XB는 잔류물질에서 B질량/A질량, YB는 추출물에서 B질량/C질량이다. 이때 추출인자 E를 다음처럼 정의한다.KDB는 B가 용매쪽을 얼마나 더 좋아하는지 (B/C / B/A)이고 S는 용매 유량이며 FA는 피드에서 A유량이다. A가 많을 수록 추출인자는 줄고, 반면에 용매가 ",
+ "source_url": "https://audio268.tistory.com/273",
+ "images_ok": 6,
+ "images_failed": 0,
+ "chars": 778,
+ "html": "<p>같은 용매량, 같은 단수라면 cocurrent &lt; crosscurrent &lt; countercurrent 순으로 잘 뽑힌다. 이를 확인하는 파트이다. </p>\n<p> </p>\n<p>먼저 상황부터 잡으면, feed가 공급되며 A와 B로 구성되어있다. A는 안녹는 액체이고 B는 우리가 뽑으려는 액체이다. 이를 추출하려 용매 C를 넣는다. 이때 분배계수 KDB는 YB/XB로 구할 수 있으며 이때 XB는 잔류물질에서 B질량/A질량, YB는 추출물에서 B질량/C질량이다.</p>\n<p> </p>\n<p>이때 추출인자 E를 다음처럼 정의한다.</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"69\" src=\"../images/273/01.png\" width=\"150\"/></figure>\n</p>\n<p>KDB는 B가 용매쪽을 얼마나 더 좋아하는지 (B/C / B/A)이고 S는 용매 유량이며 FA는 피드에서 A유량이다. A가 많을 수록 추출인자는 줄고, 반면에 용매가 많거나 분배계수가 높으면 E는 높아진다. 이는 추출이 얼마나 잘되는지를 보여주는 숫자이다.</p>\n<p> </p>\n<p>이제 각각 캐스케이드 방식 별로 N단에서 XBR/XBF를 비교하면서 유리함을 비교하려고 한다. 이는 n단 후에 라피네이트에 남은 B양을 처음 피드에 있던 B의 농도비로 나눈것으로, 처음에 비해 B가 얼마나 남았나를 보는 값이다.</p>\n<p> </p>\n<p>이게 1이면 하나도 안뽑힌거고 0.1이면 90% 추출된 것이며 0에 가까울 수록 좋은 것이다.</p>\n<p> </p>\n<p>1)cocurrent :1단이든 무한단이든 효과 차이 없음</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"96\" src=\"../images/273/02.png\" width=\"167\"/></figure>\n</p>\n<p>2)crosscurrent: 단수가 늘 수록 추출이 잘됨.</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"87\" src=\"../images/273/03.png\" width=\"249\"/></figure>\n</p>\n<p>무한단으로 가게 되면</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"94\" src=\"../images/273/04.png\" width=\"120\"/></figure>\n</p>\n<p>3) countercurrent</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"85\" src=\"../images/273/05.png\" width=\"326\"/></figure>\n</p>\n<p>2단일때 예시</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"92\" src=\"../images/273/06.png\" width=\"218\"/></figure>\n</p>\n<p>따라서 카운터 커런트 방식이 가장 효과적임을 알 수 있다. 이때, 완전한 추출을 원한다면 E&gt;1이어야 한다. 그렇지 않다면 완전 추출은 불가ㅡㅇ하다..</p>"
+}

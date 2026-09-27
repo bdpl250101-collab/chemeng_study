@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>대류 · 화학공학 노트</title>
+<meta name="description" content="대류는 고온의 유체 분자가 직접 이동하거나 밀도 차에 따른 혼합에 의하여 열전달이 일어나는 현상이다. 보통 강제대류와 자연대류로 구분된다. 대류는 뉴턴의 냉각법칙으로 설명이 된다.이때 열전달계수 h는 실험적으로 측정한다. 전도에는 kst(또는 KAT/L)가 있었다면 대류에는 hAT가 있다. 하트라고 외운다. 이제 고체벽을 사이에 두고 두 유체사이에 열전달이을 알아보자. 이때는 대류와 전도가 동시에 일어나게 된다.유체2는 오타이고, 고체2이다. 즉 유체1에서 고체2를 거쳐 유체3으로 가는 상황인 것이다. 다음으로 실린더 내부의 대류 ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html" aria-current="page">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/heat-transfer.html">열전달</a></nav>
+  <header class="post-head">
+    <h1>대류</h1>
+    <p class="meta">
+      <time datetime="2025-07-27">2025.07.27</time>
+    </p>
+  </header>
+
+
+  <div class="body">
+    <p>대류는 고온의 유체 분자가 직접 이동하거나 밀도 차에 따른 혼합에 의하여 열전달이 일어나는 현상이다. 보통 강제대류와 자연대류로 구분된다. </p>
+<p> </p>
+<p>대류는 뉴턴의 냉각법칙으로 설명이 된다.</p>
+<p><figure class="figure"><img alt="" height="414" src="../images/139/01.png" width="727"/></figure>
+</p>
+<p>이때 열전달계수 h는 실험적으로 측정한다. 전도에는 kst(또는 KAT/L)가 있었다면 대류에는 hAT가 있다. 하트라고 외운다.</p>
+<p> </p>
+<p>이제 고체벽을 사이에 두고 두 유체사이에 열전달이을 알아보자. 이때는 대류와 전도가 동시에 일어나게 된다.</p>
+<p><figure class="figure"><img alt="" height="802" src="../images/139/02.png" width="623"/></figure>
+</p>
+<p>유체2는 오타이고, 고체2이다. 즉 유체1에서 고체2를 거쳐 유체3으로 가는 상황인 것이다.</p>
+<p> </p>
+<p>다음으로 실린더 내부의 대류 상황을 살펴보며 총괄전열계수라는 개념을 알아보도록 하자.</p>
+<p><figure class="figure"><img alt="" height="658" src="../images/139/03.png" width="589"/></figure>
+</p>
+<p>실린더 외부 유체의 대류 -&gt; 실린더의 전도 -&gt; 내부 유체의 대류 사이의 열전달 식을 유도하면 q는 위와 같이 유도된다. 이때 전도와 대류를 모두 합쳐 uA△T의 형태로 나타낼 수 있으므로, 이 형태로 바꿔보도록 하자.</p>
+<p> </p>
+<p>전도: (K/L) A<span> </span>△T</p>
+<p>대류: h A<span> </span>△T</p>
+<p>전도+대류: u A △T</p>
+<p> </p>
+<p>이때 u를 대류와 전도를 묶어 나타낼 수 있다고 해서 총괄전열계수라고 한다.</p>
+<p><figure class="figure"><img alt="" height="93" src="../images/139/04.png" width="500"/></figure>
+</p>
+<p>이때 A에는 내부 면적 Ai가 있고 외부면적 Ao가 있다보니, 무엇을 기준으로 하냐에 따라 총괄전열계수 u도 미세하게 변한다.</p>
+<p><figure class="figure"><img alt="" height="231" src="../images/139/05.png" width="718"/></figure>
+</p>
+<p>그러나 이 값은 이상적인 청결한 파이프인 경우 총괄전열 계수이고 실제로는 다음처럼 파란색 보정항이 추가되어 나타나게 된다.</p>
+<p><figure class="figure"><img alt="" height="219" src="../images/139/06.png" width="684"/></figure>
+</p>
+<p> </p>
+<p>마지막으로, 대류의 경막계수 h를 계산하는데 필요한, 열전달에 자주 쓰이는 무차원수 몇가지를 보도록 하자.</p>
+<p><figure class="figure"><img alt="" height="382" src="../images/139/07.png" width="589"/></figure>
+</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/138.html"><span>← 이전 글</span><strong>열전달의 기초 메커니즘과 전도</strong></a>
+    <a class="next" href="../posts/140.html"><span>다음 글 →</span><strong>복사</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

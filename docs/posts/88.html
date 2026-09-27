@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AlChE 전국 경시대회 문제: DBP와 MBP · 화학공학 노트</title>
+<meta name="description" content="가소제인 dibutyl phthalate(DBP)는 N-부탄올과 monobutyl phthalate(mbp)를 반응시켜 생산하며 이는 1200만 lb/yr의 잠재시장을 가지고 있다. 반응은 기초속도법칙을 따르며 촉매로는 H2SO4를 사용한다. 반응기에 들어가는 흐름에서 MBP농도는 0.2lbmol/ft^3이고 부탄올의 몰 유량은 5배이다. 100F에서 비반응속도는 1.2ft^3/lbmol hr이다. 이 프로젝트를 1년에 30일 동안 수행할 수 있는 크기가 1000gal인 CSTR과 관련 주변장치들이 있다(24h/day 운전)  a)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html" aria-current="page">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/reaction.html">화학반응공학</a></nav>
+  <header class="post-head">
+    <h1>AlChE 전국 경시대회 문제: DBP와 MBP</h1>
+    <p class="meta">
+      <time datetime="2024-11-11">2024.11.11</time>
+ · 수정 2024.11.12 · 오블완, 티스토리챌린지    </p>
+  </header>
+
+
+  <div class="body">
+    <p>가소제인 dibutyl phthalate(DBP)는 N-부탄올과 monobutyl phthalate(mbp)를 반응시켜 생산하며 이는 1200만 lb/yr의 잠재시장을 가지고 있다. 반응은 기초속도법칙을 따르며 촉매로는 H2SO4를 사용한다. </p>
+<p><figure class="figure"><img alt="" height="333" src="../images/88/01.png" width="586"/></figure>
+</p>
+<p>반응기에 들어가는 흐름에서 MBP농도는 0.2lbmol/ft^3이고 부탄올의 몰 유량은 5배이다. 100F에서 비반응속도는 1.2ft^3/lbmol hr이다. 이 프로젝트를 1년에 30일 동안 수행할 수 있는 크기가 1000gal인 CSTR과 관련 주변장치들이 있다(24h/day 운전) </p>
+<p> </p>
+<p><b>a)예측된 시장의 33%를 생산 (즉 400만 lb/yr)하고자 하는 경우에 1000gal 반응기 출구에서의 전화율을 구하여라.</b></p>
+<p> </p>
+<p><span>일단 문제상황 요약을 먼저 시도해보자.</span></p>
+<p><span>1. A+B -&gt; C + D 이고 목표 생산물은 C이다. </span></p>
+<p><span>2.속도법칙은 -ra=kCACB</span></p>
+<p><span>3.A 농도 CA0= 0.2lbmol/ft^3 / CB0= 1 lbmol/ft^3</span></p>
+<p><span>4. 100F에서 반응하고 k= 1.2ft^3/lbmol hr </span></p>
+<p><span>5.반응기 크기는 1000gal인 CSTR이고 연간 24시간씩 30일 운전할 수 있다.</span></p>
+<p><span>6. 1200만 lb/yr가 잠재시장</span></p>
+<p> </p>
+
+<p>전화율에 관한 문제는 설계식,속도식, 화학양론을 이용하여 풀어야 한다.</p>
+<p>먼저 설계식은 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="86" src="../images/88/02.png" width="218"/></figure>
+</p>
+<p><b>이때 </b>V=1000gal= 약 133.7 ft³이다. </p>
+<p>Xin=0이고 Xout은 미지수, FA0= 모름(농도만 주어짐)</p>
+<p> </p>
+<p>DBP 생산하는 반응의 반응속도는 다음과 같다.</p>
+<p>-ra=kC(mbp)C(butanol)</p>
+<p> </p>
+<p>이제 화학양론을 써보자. CA CB이므로</p>
+<p><figure class="figure"><img alt="" height="120" src="../images/88/03.png" width="349"/></figure>
+</p>
+<p>CA=CA0(1-X)</p>
+<p>CB=CA0(5-X)</p>
+<p> </p>
+<p>이를 결합하면</p>
+<p>-ra=kCA0^2(1-X)(5-X)</p>
+<p> </p>
+<p>설계식에 넣으면</p>
+<p><figure class="figure"><img alt="" height="152" src="../images/88/04.png" width="666"/><figcaption>FC=DBP의 생성유량</figcaption>
+</figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="172" src="../images/88/05.png" width="1003"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="238" src="../images/88/06.png" width="988"/></figure>
+<figure class="figure"><img alt="" height="180" src="../images/88/07.png" width="368"/></figure>
+</p>
+<p><b>(b) FA0가 동일한 경우에 전화율을 증가시킬 수 있는 방법은? 예컨데 1000gal CSTR하나를 직렬 또는 병렬로 연결한다면 전화율은 얼마가 얻어지는가?</b></p>
+<p> </p>
+<p>일단 병렬부터 생각해보자. CSTR 병렬 연결시 부피가 2배가 되는 효과가 발생한다.</p>
+<p> </p>
+<p>따라서 </p>
+<p><figure class="figure"><img alt="" height="173" src="../images/88/08.png" width="733"/></figure>
+<figure class="figure"><img alt="" height="172" src="../images/88/05.png" width="1003"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="260" src="../images/88/09.png" width="953"/></figure>
+</p>
+<p><br/>풀면 x=0.642정도 값이 나온다. 거의 전화율이 2배가 되었다고 봐도 되는데, 이는 반응기 부피가 2배가 되었기 때문에 체류시간이 늘어나면서 생기는 결과라고 보면 된다.</p>
+<p> </p>
+<p>이제 직렬연결을 생각해보자.</p>
+<p>첫번째 반응기에서</p>
+<p><figure class="figure"><img alt="" height="86" src="../images/88/02.png" width="218"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="152" src="../images/88/04.png" width="666"/><figcaption>FC=DBP의 생성유량</figcaption>
+</figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="180" src="../images/88/07.png" width="368"/></figure>
+</p>
+<p>일단 첫번째 반응기에서 나오는 전화율은 위에서 푼 것과 같다.</p>
+<p> </p>
+
+
+<p>이제 두 번째 반응기를 생각해보자.</p>
+<p><figure class="figure"><img alt="" height="449" src="../images/88/10.png" width="1144"/></figure>
+<figure class="figure"><img alt="" height="99" src="../images/88/11.png" width="239"/></figure>
+</p>
+<p>V=1000gal =133.7 ft^3이고 FA1은 첫번째 반응기에서 반응하고 나온 A의 유량이다.</p>
+<p> </p>
+<p>X2는 미지수이고 X1=0.33이다. </p>
+<p> </p>
+<p>속도식은 -ra=kCACB에서</p>
+<p>-ra=kCACB= </p>
+<p><figure class="figure"><img alt="" height="108" src="../images/88/12.png" width="547"/></figure>
+</p>
+<p>이걸 풀면 두번째 반응기에서 전화율은 0.99가 된다.</p>
+<p> </p>
+<p>따라서 <b>FA0가 동일한 경우에 전화율을 증가시킬 수 있는 방법은?</b>에 대한 답변은 <b>반응기를 추가로 연결하는 것이다.</b></p>
+<p> </p>
+<p>(C) 항 (a)와 온도가 동일하고 MBP의 몰 유량이 1lbmol/min인 경우에 85%의 전화율을 얻는데 필요한 cstr의 부피는 얼마인가?</p>
+<p> </p>
+<p><span>1. A+B -&gt; C + D 이고 목표 생산물은 C이다. </span></p>
+<p><span>2.속도법칙은 -ra=kCACB</span></p>
+<p><span>3.</span></p>
+<p><span>4. 100F에서 반응하고 k= 1.2ft^3/lbmol hr</span></p>
+<p><span>5.<s>반응기 크기는 1000gal인 CSTR</s>이고 연간 24시간씩 30일 운전할 수 있다.</span></p>
+<p><span>6. 1200만 lb/yr가 잠재시장</span></p>
+<p> </p>
+<p>일단 조건이 이렇게 수정되었다.</p>
+<p> </p>
+<p>식을 세워보면</p>
+<p><figure class="figure"><img alt="" height="152" src="../images/88/04.png" width="666"/><figcaption>FC=DBP의 생성유량</figcaption>
+</figure>
+</p>
+<p>여기까진 동일하겠지?</p>
+<p> </p>
+<p>이제 식을 대입해본다.</p>
+<p>FA0=</p>
+<p><figure class="figure"><img alt="" height="146" src="../images/88/13.png" width="480"/><figcaption>d</figcaption>
+</figure>
+</p>
+<p>위에서는 농도만 주고 부피유량을 주지 않아 몰 유량을 임의로 잠재시장의 기준치로 정하였는데 이번엔 몰 유량을 주었다. 대입해보자.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="192" src="../images/88/14.png" width="794"/></figure>
+</p>
+<p>=1706.827 ft^3</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+<span></span>    <a class="next" href="../posts/92.html"><span>다음 글 →</span><strong>화학반응공학 몰수지 속도식 화학양론 결합문제</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

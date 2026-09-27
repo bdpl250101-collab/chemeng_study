@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="{{ site.language }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page_title %}{{ page_title }} · {% endif %}{{ site.title }}</title>
+<meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="{{ root }}assets/style.css">
+{% block head %}{% endblock %}
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="{{ root }}index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">{{ site.title }}</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="{{ root }}index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      {% for c in cats %}
+      <li><a href="{{ root }}{{ c.url }}"{% if cat is defined and cat.slug == c.slug or (post is defined and post.category_slug == c.slug) %} aria-current="page"{% endif %}>
+        <span>{{ c.name }}</span><span class="count">{{ c.count }}</span></a></li>
+      {% endfor %}
+    </ul>
+    <p class="side-meta">글 {{ total }}편 · {{ built|kdate }} 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+    {% block content %}{% endblock %}
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© {{ built[:4] }} {{ site.author }} · {{ site.title }}</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "{{ root }}";</script>
+<script src="{{ root }}assets/app.js" defer></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

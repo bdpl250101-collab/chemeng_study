@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>안정성 2 · 화학공학 노트</title>
+<meta name="description" content="1)라우스 안정성 판별법특성방정식의 근을 구하지 않고, 특성방정식의 각 항의 부호를 통해서 안정성을 조사하는 방법라우스 식 배열 후 첫 번째 열의 모든 부호가 같으면 특성 방정식의 근이 음의 실수부를 가져 시스템은 안정하다. 만약 3차가 주어진다면 라우스 허쯔 판별법을 써서 bc-a(1+k)&gt;0 이면 안정한 것이다. 이제 근궤적도를 이용한 안정성 판별법을 살펴보자. 이는 요즘에는 잘 안쓰인다.특성방정식이 0이 되는 근들을 직접 구할 것인데, 이때 비례제어에서 K값이 변함에 따라 근의 값이 바뀐다. 따라서 제어기 이득을 변화시켜가면서">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html" aria-current="page">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/process-control.html">공정제어</a></nav>
+  <header class="post-head">
+    <h1>안정성 2</h1>
+    <p class="meta">
+      <time datetime="2025-07-22">2025.07.22</time>
+    </p>
+  </header>
+
+
+  <div class="body">
+    <p>1)라우스 안정성 판별법</p>
+<p><figure class="figure"><img alt="" height="564" src="../images/136/01.png" width="980"/></figure>
+</p>
+<p>특성방정식의 근을 구하지 않고, 특성방정식의 각 항의 부호를 통해서 안정성을 조사하는 방법</p>
+<p>라우스 식 배열 후 첫 번째 열의 모든 부호가 같으면 특성 방정식의 근이 음의 실수부를 가져 시스템은 안정하다.</p>
+<p><figure class="figure"><img alt="" height="527" src="../images/136/02.png" width="948"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="706" src="../images/136/03.png" width="1227"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="705" src="../images/136/04.png" width="1228"/></figure>
+</p>
+<p>만약 3차가 주어진다면 라우스 허쯔 판별법을 써서 bc-a(1+k)&gt;0 이면 안정한 것이다.</p>
+<p> </p>
+<p>이제 근궤적도를 이용한 안정성 판별법을 살펴보자. 이는 요즘에는 잘 안쓰인다.</p>
+<p><figure class="figure"><img alt="" height="710" src="../images/136/05.png" width="1251"/></figure>
+</p>
+<p>특성방정식이 0이 되는 근들을 직접 구할 것인데, 이때 비례제어에서 K값이 변함에 따라 근의 값이 바뀐다. 따라서 제어기 이득을 변화시켜가면서 근이 어떻게 움직이는 가를 한눈에 알아볼 수 있게 그린 그래프가 근궤적도이다. </p>
+<p> </p>
+<p>즉 이득값의 변화에 따른 특성방정식의 근의 변화를 알아보자는 것이다. K=0에서부터 점점 무한대로 늘어가는데, K가 0일때 근은 전달함수의 극점이고, K가 무한대일 때 근은 전달함수의 영점이다. 즉 근 궤적은 처음에 극점에서 시작하여 영점을 향해 나아간다. 이 사이의 궤적을 근궤적이라고 한다. </p>
+<p> </p>
+<p>이 방식은 시간지연이 존재하거나 K이외 변수 존재시 계산이 매우 복잡해지는 단점이 있다. 따라서 근을 굳이 구하지 않고도 안정성을 판정할 수 있는 방법이 필요하다.</p>
+<p> </p>
+<p>이에 따라 보데 안정성 기준이 가장 많이 채택되고 있으며 가장 널리 쓰인다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="708" src="../images/136/06.png" width="1267"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="697" src="../images/136/07.png" width="1259"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="708" src="../images/136/08.png" width="1258"/></figure>
+</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/135.html"><span>← 이전 글</span><strong>안정성</strong></a>
+    <a class="next" href="../posts/137.html"><span>다음 글 →</span><strong>잔류편차계산</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

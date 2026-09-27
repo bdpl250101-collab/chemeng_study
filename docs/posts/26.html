@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>화학공정계산 (murphy) 1~3장 · 화학공학 노트</title>
+<meta name="description" content="화학공정계산은 Felder의 책이 유명하지만 내용적으로 보았을 때, 개인적으로 murphy의 책을 추천한다. murphy의 책은 고학년에 배우는 내용까지도 담고 있어 여러번 보기 좋은 느낌이다. 1장: 유용한 생산물을 만들기 위한 자원의 전환 모든 책의 서장이 그러하듯 별 내용은 없다. 화학반응 계수 맞추기: 쉽다. 원자경제성: 반응물의 질량대비 생성물의 질량 공정경제성: 생성물의 가격-반응물의 가격 2장:공정 흐름- 변수, 공정도, 수지식, 규격, 자유도, 간편추론법, 근사 이 장에서는 공정변수, 공정흐름도, 물질 수지식, bas">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html" aria-current="page">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/process-calc.html">화학공정계산</a></nav>
+  <header class="post-head">
+    <h1>화학공정계산 (murphy) 1~3장</h1>
+    <p class="meta">
+      <time datetime="2024-01-14">2024.01.14</time>
+ · 수정 2024.04.30    </p>
+  </header>
+
+
+  <div class="body">
+    <p>화학공정계산은 Felder의 책이 유명하지만 내용적으로 보았을 때, 개인적으로 murphy의 책을 추천한다. murphy의 책은 고학년에 배우는 내용까지도 담고 있어 여러번 보기 좋은 느낌이다.</p>
+<p> </p>
+<p><b>1장: 유용한 생산물을 만들기 위한 자원의 전환</b></p>
+<p>모든 책의 서장이 그러하듯 별 내용은 없다.</p>
+<p> </p>
+<p>화학반응 계수 맞추기: 쉽다.</p>
+<p>원자경제성: 반응물의 질량대비 생성물의 질량</p>
+<p><figure class="figure"><img alt="" height="108" src="../images/26/01.png" width="160"/></figure>
+</p>
+<p>공정경제성: 생성물의 가격-반응물의 가격</p>
+<p> </p>
+
+<p><b>2장:공정 흐름- 변수, 공정도, 수지식, 규격, 자유도, 간편추론법, 근사</b><b></b></p>
+<p>이 장에서는 공정변수, 공정흐름도, 물질 수지식, basis, stream composition specification, system performance specification, Degree of freedom에 대해 알아본다.</p>
+<p> </p>
+<p><b>공정변수</b>:몰 유량, 질량, 조성, 농도, 압력, 온도, 부피, 밀도 등 컨트롤할 수 있는 것들</p>
+<p><b>공정흐름도</b>: 보통 PFD가 많이 쓰인다.</p>
+<p><figure class="figure"><img alt="" height="316" src="../images/26/02.png" width="527"/></figure>
+</p>
+<p><b>물질수지식</b>:유입량-유출량+생성량-소비량=축적량</p>
+<p><b>basis</b>:하나의 흐름의 유량. 이걸 정하면 나머지는 balance로 구할 수 있으므로 이걸 기준이라고 부른다.</p>
+<p> </p>
+<p><b>규격</b>: 매우 중요한 두 종류의 규격이 있다.</p>
+<p>stream composition specification: 흐름의 조성, 유량을 나타내는 정보</p>
+<p><span>system performance specification: 시스템에서 일어나는 변화에 대한 정보</span></p>
+<p><figure class="figure"><img alt="" height="261" src="../images/26/03.png" width="640"/></figure>
+</p>
+<p> </p>
+<p><span>자유도 분석: 문제를 풀 때 적절한 정보가 주어지지 않으면 문제를 풀 수 없다. 따라서 규정이 되어야 한다.</span></p>
+<p>자유도=독립변수-독립방정식, 이것이 0이 되어야 문제가 규정된 것이다.</p>
+<p> </p>
+<p><b>블록흐름선도의 합성</b>:</p>
+<p>간편추론법</p>
+<p>1.각 화학반응마다 반응기를 하나씩 그린다.</p>
+<p>2.반응기 앞에 mixer를 설치한다.</p>
+<p>3.반응기를 거친 후에는 분리기를 거친다. 경우에 따라 믹서 전에도 분리기를 설치할 수 있다.</p>
+<p>4.흐름의 양이 너무 많으면 분할기로 나눠준다.</p>
+<p>5.가능하면 분리보단 분할이 좋다.</p>
+<p>6.부산물, 폐기물은 즉시 제거한다.</p>
+<p>7.반응기 유입 전에 원료물질을 혼합한다.</p>
+<p> </p>
+<p><b>근사</b>: 반응에서 복잡함을 줄이기 위해 3가지 근사를 쓴다.</p>
+<p>흐름 조성 근사</p>
+<p>계 성능 근사</p>
+<p>물성 근사</p>
+<p> </p>
+<p><b>3장:물질 수지식의 수학적 분석 및 공정흐름도-</b></p>
+<p>2장에서 배운 내용을 조금 더 자세하게 배우는 것이다.</p>
+<p> </p>
+<p><b>질량보존법칙과 물질수지식의 관계</b></p>
+<p><b>물질수지식</b>:유입량-유출량+생성량-소비량=축적량</p>
+<p>질량에 관한 수지식</p>
+<p><figure class="figure"><img alt="" height="104" src="../images/26/04.png" width="235"/><figcaption>전체 시스템의 수지식</figcaption>
+</figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="132" src="../images/26/05.png" width="309"/></figure>
+</p>
+<p>몰수에 관한 수지식</p>
+<p><figure class="figure"><img alt="" height="84" src="../images/26/06.png" width="308"/></figure>
+<figure class="figure"><img alt="" height="138" src="../images/26/07.png" width="285"/></figure>
+</p>
+<p>일반적인 형태</p>
+<p><figure class="figure"><img alt="" height="96" src="../images/26/08.png" width="425"/></figure>
+<figure class="figure"><img alt="" height="163" src="../images/26/09.png" width="462"/></figure>
+</p>
+<p> </p>
+
+
+<p>여기까진 그냥 수지식에 관한 내용이라.. 계산만 잘한다면 쉬운 부분이다.</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+<span></span>    <a class="next" href="../posts/28.html"><span>다음 글 →</span><strong>화학공정계산 (murphy) 4장:반응기</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>경제성 분석 · 화학공학 노트</title>
+<meta name="description" content="다음 경제성 분석이 타당한지 평가해보았다. 1) Cost estimation basis본 원가 산정은 제안된 2액형 h-BN/DFBPA-EP/CA vitrimer thermally conductive adhesive, 즉 TCA를 대상으로 수행하였다. 생산 기준은 최종 TCA 제품 1 kg이며, 파일럿 생산 규모는 연간 500 kg으로 설정하였다. 최종 경화 접착층은 h-BN 50 vol%를 포함하며, 이 조성은 목표 열전도도 6 W/m·K 이상을 만족하기 위해 Lewis–Nielsen model로부터 선정되었다.단위 제조원가는 다">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html" aria-current="page">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/process-design.html">화학공정설계</a></nav>
+  <header class="post-head">
+    <h1>경제성 분석</h1>
+    <p class="meta">
+      <time datetime="2026-06-04">2026.06.04</time>
+ · 수정 2026.07.24    </p>
+  </header>
+
+
+  <div class="body">
+    <p>다음 경제성 분석이 타당한지 평가해보았다.</p>
+<p> </p>
+<p>1) Cost estimation basis</p>
+<p data-end="797" data-start="555">본 원가 산정은 제안된 2액형 h-BN/DFBPA-EP/CA vitrimer thermally conductive adhesive, 즉 TCA를 대상으로 수행하였다. 생산 기준은 최종 TCA 제품 1 kg이며, 파일럿 생산 규모는 연간 500 kg으로 설정하였다. 최종 경화 접착층은 h-BN 50 vol%를 포함하며, 이 조성은 목표 열전도도 6 W/m·K 이상을 만족하기 위해 Lewis–Nielsen model로부터 선정되었다.</p>
+<p data-end="821" data-start="799">단위 제조원가는 다음과 같이 정의하였다.</p>
+<p data-end="862" data-start="823"><b>단위 제조원가 = 원재료비 + 공정비 + 감가상각비/연간 생산량</b></p>
+<p data-end="942" data-start="864">여기서<br/>C_UMC는 단위 제조원가,<br/>C_RM은 원재료비,<br/>C_PC는 공정비,<br/>D는 연간 감가상각비,<br/>d는 연간 생산량이다.</p>
+<p data-end="1099" data-start="944">장비 총투자비는 322,000 USD이고, 감가상각 기간을 10년으로 두면 연간 감가상각비는 32,200 USD/yr이다. 연간 생산량이 500 kg/yr이면 감가상각비는 kg당 64.40 USD/kg이 된다.</p>
+<p data-end="1099" data-start="944"> </p>
+<p data-end="1099" data-start="944"><span>-&gt;우리가 이 접착제를 1 kg 만들 때, 원료값 + 만드는 비용 + 장비값을 10년으로 나눠서 kg당 얼마인지 계산하겠다는 뜻이다.</span></p>
+<p data-end="1099" data-start="944"> </p>
+<p data-end="1099" data-start="944">2) Raw material balance and cost list<br/>최종 TCA 1 kg을 만들기 위한 원료비는 다음과 같이 계산되었다.</p>
+<p data-end="1298" data-start="1260"> </p>
+<div>
+<div>원료/투입량/단가/비용 순서대로
+
+<table border="1" data-end="1623" data-start="1300">
+<tbody data-end="1623" data-start="1344">
+<tr data-end="1399" data-start="1344">
+<td data-col-size="sm" data-end="1367" data-start="1344">h-BN platelet filler</td>
+<td data-col-size="sm" data-end="1378" data-start="1367">0.636 kg</td>
+<td data-col-size="sm" data-end="1388" data-start="1378">$300/kg</td>
+<td data-col-size="sm" data-end="1399" data-start="1388">$190.80</td>
+</tr>
+<tr data-end="1459" data-start="1400">
+<td data-col-size="sm" data-end="1428" data-start="1400">Cystamine dihydrochloride</td>
+<td data-col-size="sm" data-end="1439" data-start="1428">0.165 kg</td>
+<td data-col-size="sm" data-end="1449" data-start="1439">$200/kg</td>
+<td data-col-size="sm" data-end="1459" data-start="1449">$33.00</td>
+</tr>
+<tr data-end="1506" data-start="1460">
+<td data-col-size="sm" data-end="1476" data-start="1460">DPA precursor</td>
+<td data-col-size="sm" data-end="1487" data-start="1476">0.280 kg</td>
+<td data-col-size="sm" data-end="1496" data-start="1487">$60/kg</td>
+<td data-col-size="sm" data-end="1506" data-start="1496">$16.80</td>
+</tr>
+<tr data-end="1553" data-start="1507">
+<td data-col-size="sm" data-end="1525" data-start="1507">Epichlorohydrin</td>
+<td data-col-size="sm" data-end="1536" data-start="1525">0.250 kg</td>
+<td data-col-size="sm" data-end="1544" data-start="1536">$4/kg</td>
+<td data-col-size="sm" data-end="1553" data-start="1544">$1.00</td>
+</tr>
+<tr data-end="1583" data-start="1554">
+<td data-col-size="sm" data-end="1566" data-start="1554">용매 및 보조물질</td>
+<td data-col-size="sm" data-end="1570" data-start="1566">-</td>
+<td data-col-size="sm" data-end="1574" data-start="1570">-</td>
+<td data-col-size="sm" data-end="1583" data-start="1574">$5.60</td>
+</tr>
+<tr data-end="1623" data-start="1584">
+<td data-col-size="sm" data-end="1597" data-start="1584"><b>총 원재료비</b></td>
+<td data-col-size="sm" data-end="1601" data-start="1597">-</td>
+<td data-col-size="sm" data-end="1605" data-start="1601">-</td>
+<td data-col-size="sm" data-end="1623" data-start="1605"><b>$247.20/kg</b></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p data-end="1712" data-start="1625">여기서 가장 큰 비용은 h-BN filler이며, 전체 원재료비의 77.2%를 차지한다.</p>
+<p data-end="1712" data-start="1625"> </p>
+<p data-end="1712" data-start="1625"><span>-&gt; 비싼 이유의 대부분은 h-BN 때문이다. 이 제품은 filler를 50 vol%나 넣기 때문에, 원가 구조가 거의 h-BN 가격에 의해 정해진다.</span></p>
+<p data-end="1712" data-start="1625"> </p>
+<p data-end="1712" data-start="1625">3) Equipment list and capital cost</p>
+<p data-end="1712" data-start="1625">파일럿 규모 생산에 필요한 장비는 다음과 같이 산정되었다.</p>
+<p>장비 시스템/역할/예상 비용</p>
+<table border="1">
+<tbody>
+<tr>
+<td>반응 시스템</td>
+<td>DFBPA, DFBPA-EP, CA hardener 합성</td>
+<td>$122,000</td>
+</tr>
+<tr>
+<td>분리 및 건조 시스템</td>
+<td>용매 제거, 여과, 추출, 진공 건조</td>
+<td>$70,000</td>
+</tr>
+<tr>
+<td>분산 및 탈포 시스템</td>
+<td>h-BN 분산, 초음파 처리, 진공 탈포</td>
+<td>$62,000</td>
+</tr>
+<tr>
+<td>듀얼 카트리지 충전/실링 라인</td>
+<td>Part A/B 분리 충전 및 카트리지 조립</td>
+<td>$60,000</td>
+</tr>
+<tr>
+<td>QC 시스템</td>
+<td>점도 및 기본 품질관리</td>
+<td>$8,000</td>
+</tr>
+<tr>
+<td><b>총 장비 투자비</b></td>
+<td>-</td>
+<td><b>$322,000</b></td>
+</tr>
+</tbody>
+</table>
+<p data-end="1712" data-start="1625"><span> 이 제품을 만들려면 실험실 수준이 아니라 파일럿 장비가 필요하고, 장비값은 약 32.2만 달러로 잡았다고 한다.</span></p>
+<p data-end="2354" data-section-id="evjdi" data-start="2322"> </p>
+<p data-end="2354" data-section-id="evjdi" data-start="2322">4) Unit manufacturing cost</p>
+<p>비용 항목/계산 기준/값</p>
+<table border="1">
+<tbody>
+<tr>
+<td>원재료비</td>
+<td>앞 표 기준</td>
+<td>$247.20/kg</td>
+</tr>
+<tr>
+<td>공정비</td>
+<td>혼합, 분산, 탈포, 충전, 유틸리티</td>
+<td>$25.00/kg</td>
+</tr>
+<tr>
+<td>감가상각비</td>
+<td>$322,000 / 10년 / 500 kg·yr⁻¹</td>
+<td>$64.40/kg</td>
+</tr>
+<tr>
+<td><b>손익분기 제조원가</b></td>
+<td>원재료비 + 공정비 + 감가상각비</td>
+<td><b>$336.60/kg</b></td>
+</tr>
+<tr>
+<td><b>목표 판매가</b></td>
+<td>제조원가에 10% markup</td>
+<td><b>$370/kg</b></td>
+</tr>
+</tbody>
+</table>
+<p>연간 500 kg 생산 기준으로 손익분기 제조원가는 $336.60/kg이다. 여기에 10% 이윤을 붙이면 제안된 파일럿 규모 판매가격은 약 $370/kg이다. 이 가격은 일반 열전도 계면재료와 단순히 kg당 가격으로 경쟁하려는 것이 아니라, 더 높은 열전도도와 repairability 가치를 통해 정당화되어야 한다.</p>
+<p> </p>
+<p><span>-&gt;이 제품은 kg당 370달러 정도에 팔아야 겨우 사업성이 나온다. 근데 일반 TIM보다 훨씬 비싸다. 그래서 단순 접착제가 아니라 ‘고열전도 + 수리 가능성’이라는 고부가가치 제품으로 팔아야 한다.</span><span></span></p>
+<p> </p>
+<p>Economic Analysis:</p>
+<p>1) Economic model used</p>
+<p data-end="3093" data-start="3069">경제성 분석은 두 가지 관점으로 수행하였다.</p>
+<p data-end="3185" data-start="3095">첫째, <b>제조사 관점</b>의 cost-plus/PBT/payback model이다. 이 모델은 TCA 제조사가 파일럿 장비 투자비를 회수할 수 있는지를 평가한다.</p>
+<p data-end="3335" data-start="3187">둘째, <b>고객 관점</b>의 repair-and-thermal-value discounted cash flow, 즉 DCF model이다. 이 모델은 더 비싼 접착제 가격이 배터리 팩 교체비 절감과 6 W/m·K 접착제의 열관리 가치로 정당화될 수 있는지를 평가한다.</p>
+<p data-end="3351" data-start="3337">사용한 식은 다음과 같다.</p>
+<ul data-end="3689" data-start="3353">
+<li data-end="3421" data-section-id="17lk2we" data-start="3353"><b>PBT = Sales Revenue - Operating Expenses</b><br/>→ 세전이익 = 매출 - 운영비</li>
+<li data-end="3518" data-section-id="9qbacf" data-start="3423"><b>Manufacturer Payback = Equipment Capital / Annual PBT</b><br/>→ 제조사 투자회수기간 = 장비 투자비 / 연간 세전이익</li>
+<li data-end="3689" data-section-id="t4l31t" data-start="3520"><b>Customer NPV = (Annual Repair Savings + Annual Thermal Value) × PVIFA(i,n) - Initial Adhesive Premium</b><br/>→ 고객 순현재가치 = 매년 절감되는 수리비와 열관리 가치의 현재가치 - 초기에 더 지불한 접착제 비용</li>
+</ul>
+<p> </p>
+<p data-end="3773" data-start="3742"><span>여기서는 파는 회사와 사는 고객을 나눠서 본다.</span></p>
+<p data-end="3773" data-start="3742"><span>회사 입장: 이거 팔아서 장비값 회수 가능?</span></p>
+<p data-end="3773" data-start="3742"><span>고객 입장: 비싼 접착제를 써도 나중에 배터리 수리비 줄어서 이득인가?</span></p>
+<p data-end="3858" data-start="3845"><span>이렇게 보는 구조라고 보면 된다.</span></p>
+<p data-end="3858" data-start="3845"> </p>
+<p data-end="3858" data-start="3845">2) Market price, demand, and supply</p>
+<p>항목// 가정/계산//결과</p>
+<table border="1">
+<tbody>
+<tr>
+<td>목표 판매가</td>
+<td>$336.60/kg × 1.10 markup</td>
+<td>$370/kg</td>
+</tr>
+<tr>
+<td>기존 TIM 가격 기준</td>
+<td>Atlas Copco EV battery TIM/gap-filler 기준</td>
+<td>$10/kg</td>
+</tr>
+<tr>
+<td>기존 상용 TCA 성능 기준</td>
+<td>LOCTITE TLB 9300 APSi</td>
+<td>3 W/m·K</td>
+</tr>
+<tr>
+<td>제안 제품 포지셔닝</td>
+<td>6 W/m·K + 열 유도 reworkability</td>
+<td>specialty reworkable TCA</td>
+</tr>
+<tr>
+<td>시범 수요</td>
+<td>1,000 packs/yr × 2.0 kg/pack</td>
+<td>2,000 kg/yr</td>
+</tr>
+<tr>
+<td>파일럿 공급</td>
+<td>500 kg/yr ÷ 2.0 kg/pack</td>
+<td>250 packs/yr</td>
+</tr>
+<tr>
+<td>열관리 가치 가정</td>
+<td>6 W/m·K가 3 W/m·K 대비 접착층 열저항을 약 50% 감소</td>
+<td>$50/pack·yr</td>
+</tr>
+</tbody>
+</table>
+<p>제안 제품은 단순 kg당 가격 기준으로는 일반 TIM과 경쟁력이 없다. 그러나 cell-level repair, 폐기 감소, serviceability 향상, <b>thermal-management benefit</b>을 함께 고려하면 고가 CTP pack에서는 경쟁력을 가질 수 있다.</p>
+<p> </p>
+<p><span>-&gt; 기존 제품은 kg당 10달러인데 우리는 370달러다. 그냥 가격만 보면 비빌 수가 없다. 그래서 우리는 일반 접착제가 아니라, 고급 CTP 배터리팩용 ‘수리 가능한 고열전도 접착제’로 포지셔닝해야 한다는 뜻이다.</span></p>
+<p> </p>
+<p>3) PBT and manufacturer payback</p>
+<p>Case//매출//운영비//PBT//Payback</p>
+<table border="1">
+<tbody>
+<tr>
+<td>500 kg/yr pilot</td>
+<td>500 × $370 = $185,000/yr</td>
+<td>$168,300/yr</td>
+<td>$16,700/yr</td>
+<td>19.3 yr</td>
+</tr>
+<tr>
+<td>1,000 kg/yr scale-up</td>
+<td>1,000 × $335 = $335,000/yr</td>
+<td>$304,400/yr</td>
+<td>$30,600/yr</td>
+<td>10.5 yr</td>
+</tr>
+</tbody>
+</table>
+<p>파일럿 공정은 세전 기준으로 이익은 나지만, 10% markup이 낮기 때문에 제조사 입장 투자회수기간은 19.3년으로 길다. 생산량을 1,000 kg/yr로 늘리면 고정 감가상각비가 더 많은 생산량에 분산되기 때문에 회수기간은 10.5년으로 줄어든다.</p>
+<p> </p>
+<p>-&gt;제조사 입장에서는 솔직히 엄청 매력적이지 않다.</p>
+<p>500 kg/yr 생산하면 장비값 회수까지 <b>19.3년</b></p>
+<p>1,000 kg/yr로 키워도 <b>10.5년</b></p>
+<p data-end="5343" data-start="5300">즉, 제품은 되는데 파일럿 규모에서는 제조사 수익성이 약하다는 결론이 나왔다.</p>
+<p data-end="5343" data-start="5300"> </p>
+<p data-end="5343" data-start="5300">4) Customer-side repair and thermal-value model</p>
+<p data-end="5725" data-start="5433">6 W/m·K TCA는 기존 3 W/m·K TCA와 비교했을 때, 식 R = t/(kA)에 따라 접착층 열저항을 약 50% 줄이는 것으로 가정하였다. 다만 접착층은 전체 배터리 팩 열전달 경로의 일부이므로, 이를 곧바로 2배 경제적 이익으로 환산하지 않았다. 대신 hotspot 감소, 열노화 위험 감소, 냉각 부담 감소, warranty risk 감소를 대표하는 보수적 thermal-performance value로 $50/pack·yr를 적용하였다.</p>
+<p data-end="5343" data-start="5300"> </p>
+<p>항목/// 값/계산</p>
+<table border="1">
+<tbody>
+<tr>
+<td>배터리 팩 가격</td>
+<td>75 kWh × $108/kWh = $8,100/pack</td>
+</tr>
+<tr>
+<td>접착제 추가비용</td>
+<td>($370/kg - $10/kg) × 2.0 kg/pack × 1,000 packs = $720,000</td>
+</tr>
+<tr>
+<td>1회 서비스 이벤트 회피 비용</td>
+<td>$8,100 pack replacement - $150 cell-level repair = $7,950/event</td>
+</tr>
+<tr>
+<td>기본 서비스 이벤트 시나리오</td>
+<td>1,000 packs × 2%/yr = 20 events/yr</td>
+</tr>
+<tr>
+<td>연간 수리비 절감</td>
+<td>20 × $7,950 = $159,000/yr</td>
+</tr>
+<tr>
+<td>열성능 가치</td>
+<td>$50/pack·yr × 1,000 packs = $50,000/yr</td>
+</tr>
+<tr>
+<td>총 연간 고객 가치</td>
+<td>$159,000 + $50,000 = $209,000/yr</td>
+</tr>
+<tr>
+<td>고객 payback</td>
+<td>$720,000 / $209,000 = 3.44 yr</td>
+</tr>
+<tr>
+<td>10년 NPV, 할인율 10%</td>
+<td>$209,000 × 6.145 - $720,000 ≈ $564,000</td>
+</tr>
+</tbody>
+</table>
+<p>2%/yr의 고사용 fleet 시나리오에서, 수리비 절감만 고려하면 payback은 4.5년이다. 여기에 보수적 열성능 가치 $50/pack·yr를 포함하면 추가 접착제 비용은 약 3.4년 만에 회수되며, 10년 NPV는 약 $564,000까지 증가한다. 따라서 제안 TCA는 repairability와 thermal-management value를 함께 포함할 때 경제적으로 더 의미 있는 제품이 된다.</p>
+<p> </p>
+<p data-end="6566" data-start="6548"><span>고객 입장 논리:</span></p>
+<p data-end="6749" data-start="6568"><span>기존 접착제는 싸지만 배터리 셀을 떼기 어려움.</span><br/><span>그래서 고장 나면 pack 전체를 갈아야 할 수 있음.</span><br/><span>우리 접착제는 비싸지만 나중에 cell-level repair가 가능해질 수 있음.</span><br/><span>그러면 pack 전체 교체비를 아낄 수 있음.</span><br/><span>또 열전도도가 높아서 배터리 열관리에도 약간의 경제적 가치가 있다고 가정함.</span></p>
+<p data-end="6801" data-start="6751"><span>즉, 비싸지만 수리비와 열관리 비용을 줄여서 장기적으로는 이득</span></p>
+<p data-end="6801" data-start="6751"> </p>
+<p data-end="6801" data-start="6751">5) Final economic conclusion</p>
+<p data-end="6801" data-start="6751">제안된 vitrimer TCA는 단순 kg당 가격 기준으로는 일반 thermal interface material과 경쟁력이 없다. 그러나 cell-level repair, pack replacement 회피, improved thermal management의 가치를 포함하면 경제적으로 의미 있는 제품이 된다. 10% markup, 연간 2% service-event 시나리오, 보수적인 $50/pack·yr thermal-performance value를 적용할 경우, 본 제품은 고가, 고사용률, 또는 warranty-sensitive CTP battery pack을 위한 specialty reworkable TCA로 포지셔닝하는 것이 적절하다.</p>
+<p data-end="6801" data-start="6751"> </p>
+
+<p data-end="6801" data-start="6751">평가: </p>
+<p data-end="6801" data-start="6751">다음과 같은 문제가 있다.</p>
+<table border="1">
+<tbody>
+<tr>
+<td>제조사 입장 수익성 약함</td>
+<td>500 kg/yr 기준 payback 19.3년이면 제조사 입장에서는 투자 매력이 약함.</td>
+</tr>
+<tr>
+<td>고객가치 가정이 강함</td>
+<td>cell-level repair가 실제로 가능하다는 실험 근거가 아직 약하면, 수리비 절감 모델이 과장처럼 보일 수 있다.</td>
+</tr>
+<tr>
+<td>thermal value $50/pack·yr</td>
+<td>보수적 가정이라고 쓰긴 했지만, 왜 $50인지 근거가 약하다.</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/132.html"><span>← 이전 글</span><strong>공정설계입문 독서노트</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

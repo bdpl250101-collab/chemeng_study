@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CH8. 정상상태 비등온 반응기 설계 · 화학공학 노트</title>
+<meta name="description" content="대부분의 반응은 등온으로 진행되지 않는다. 그 이유는 발열 또는 흡열이 일어나지 않는 반응이 거의 없기 때문이다. 따라서 지금부터 관점을 화학반응기의 열효과로 바꿔보도록 하자. 이때 4장에서 논의한 등온 상태에서 설계식은 여기서도 여전히 유효하다. 일단 먼저 예제를 통해 비등온 반응기의 특성을 알아보자.Q: 다음과 같은 액상 비가역 기초반응에서 70%의 전화율을 얻는데 필요한 PFR 반응기의 부피를 계산하여라.이제까지 만났던 문제와 다른 게 없다. 당연히 몰 수지, 속도식, 화학양론을 써야한다.결합시 다음과 같다.이때, 원래라면 등">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html" aria-current="page">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/reaction.html">화학반응공학</a></nav>
+  <header class="post-head">
+    <h1>CH8. 정상상태 비등온 반응기 설계</h1>
+    <p class="meta">
+      <time datetime="2025-05-24">2025.05.24</time>
+ · 오블완, 티스토리챌린지    </p>
+  </header>
+
+
+  <div class="body">
+    <p>대부분의 반응은 등온으로 진행되지 않는다. 그 이유는 발열 또는 흡열이 일어나지 않는 반응이 거의 없기 때문이다. 따라서 지금부터 관점을 화학반응기의 열효과로 바꿔보도록 하자. </p>
+<p> </p>
+<p>이때 4장에서 논의한 등온 상태에서 설계식은 여기서도 여전히 유효하다.</p>
+<p> </p>
+<p><span>일단 먼저 예제를 통해 비등온 반응기의 특성을 알아보자.</span></p>
+<hr/>
+<table border="1">
+<tbody>
+<tr>
+<td><span><span>Q: 다음과 같은 액상 비가역 기초반응에서 70%의 전화율을 얻는데 필요한 PFR 반응기의 부피를 계산하여라.</span></span><br/><figure class="figure"><img alt="" height="57" src="../images/87/01.bin" width="182"/></figure>
+<span><br/></span><br/><span><span>이제까지 만났던 문제와 다른 게 없다. 당연히 몰 수지, 속도식, 화학양론을 써야한다.</span></span><br/><figure class="figure"><img alt="" height="85" src="../images/87/02.bin" width="149"/></figure>
+<span><br/></span><br/><figure class="figure"><img alt="" height="57" src="../images/87/03.bin" width="171"/><figcaption>속도식</figcaption>
+</figure>
+<span><br/></span><br/><figure class="figure"><img alt="" height="95" src="../images/87/04.bin" width="257"/><figcaption>속도상수 k</figcaption>
+</figure>
+<span><br/></span><br/><figure class="figure"><img alt="" height="91" src="../images/87/05.bin" width="305"/><figcaption>화학양론</figcaption>
+</figure>
+<span><br/></span><br/><span><span>결합시 다음과 같다.</span></span><br/><figure class="figure"><img alt="" height="109" src="../images/87/06.bin" width="255"/></figure>
+<span><span>이때, 원래라면 등온 반응에서 k는 상수이므로 적분이 가능하다. 그러나 대부분의 반응은 등온에서 진행되지 않으므로 온도의 영향을 살펴보자.</span></span><br/><span><br/></span><br/><span><span>-먼저 액상이므로 부피는 온도에 의해 변하지 않는다.</span></span><br/><span><span>-그러나 속도상수 k는 온도의 함수이다.</span></span><br/><span><br/></span><br/><span><span>아레니우스 식을 대입하면</span></span><br/><figure class="figure"><img alt="" height="149" src="../images/87/07.bin" width="507"/></figure>
+<span><span>이 식에서 적분변수는 X,V이므로 T와 X 또는 V사이 관계를 나타내야한다. 에너지수지식은 이러한 상관관계를 만드는데 쓰일 것이다. 마치 압력변화가 있을 때, 에르군 식을 썼던 것과 유사하다.</span></span><br/><span><br/></span><br/><span><span>위 케이스에 에너지 수지식을 적용시 다음과 같은 T-X사이 관계식이 나온다. 이는 곧 유도될 것이다.</span></span><br/><figure class="figure"><img alt="" height="126" src="../images/87/08.bin" width="301"/></figure>
+<span><br/></span></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p> </p>
+<p>8.2 에너지 수지</p>
+<p>열역학 제 1법칙을 폐쇄계, 다음으로 개방계에 적용해보자. </p>
+<p> </p>
+<p>먼저 폐쇄계는 물질의 이동이 없으므로 계의 에너지 변화는 열과 일의 차이와 같다.</p>
+<p><figure class="figure"><img alt="" height="60" src="../images/87/09.bin" width="233"/></figure>
+</p>
+<p><span>U=Q+W와 U=Q-W의 차이: </span></p>
+<p><span> U=Q+W : <span aria-hidden="true">W</span>는 <b>외부에서 시스템으로 전달된 일</b>  <b>시스템이</b> <b>100만큼 일할 시 W=-100</b></span></p>
+<p><span><span aria-hidden="true"> U=Q-W : W</span>는 <b>시스템이 외부에 수행한 일, 시스템이 100만큼 일할 시 W=100</b></span></p>
+<p> </p>
+<p><span> 이 두 표현의 차이는 <b>일의 방향성</b>에 따라 달라집니다. 어떤 책이나 교수님은 두 표현 중 하나를 사용할 수 있으니, 학습 시 사용된 표현에 맞춰 이해하는 것이 좋습니다.</span></p>
+<p> </p>
+<p><span><span>이제 개방계를 살펴보자. 이때는 다음과 같다.</span></span></p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="168" src="../images/87/10.bin" width="637"/></figure>
+</p>
+<p>질량이 들어올 수 있으므로, 들어오는 애가 가지고 오는 에너지-나가는 애가 가지고 나가는 에너지</p>
+<p>이런 텀이 추가가 된다.</p>
+<p> </p>
+
+<p>이걸 정리하는 것은 화공열역학에서 공부했을 것이다.</p>
+<p><figure class="figure"><img alt="" height="209" src="../images/87/11.bin" width="902"/><figcaption>식 8.9</figcaption>
+</figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="134" src="../images/87/12.bin" width="811"/></figure>
+</p>
+<p>위와 아래는 부호나 기호만 다를 뿐이지 똑같은 식이다.</p>
+<p>즉 <b>내부에너지의 변화</b>는 <b>흘러오는 플로우가 가져오는 엔탈피의 변화 + 열 + 축일</b>로 기술할 수 있다.</p>
+<p> </p>
+<p>이제 위의 식 8.9를  각 반응기에 적용해보자. 먼저 결과만을 보고, 다음에 이 식을 유도하는 방법에 대해 알아보도록 하자.</p>
+<p> </p>
+<p>기호는 다음과 같다.</p>
+<hr/>
+<p>U=열전달이 얼마나 잘되는 지 나타내는 총괄전열계수</p>
+<p>A=CSTR의 열교환이 일어나는 면적</p>
+<p>a=pfr에서 단위 볼륨당(반응기 부피당) 열교환이 일어나는 면적</p>
+<p>Cpi=i의 평균 열용량 J/mol/K</p>
+<p>Cpc=냉매의 열용량 j/kg/K</p>
+<p>△Hrx=반응열</p>
+<p>△Hºrx=</p>
+<p><figure class="figure"><img alt="" height="97" src="../images/87/13.bin" width="473"/></figure>
+<figure class="figure"><img alt="" height="57" src="../images/87/14.bin" width="424"/><figcaption>반응 i에서 성분 j의 반응 열</figcaption>
+</figure>
+</p>
+<p> </p>
+<p>Q닷: 반응기에 가해진 열</p>
+<p><figure class="figure"><img alt="" height="93" src="../images/87/15.bin" width="462"/></figure>
+</p>
+<hr/>
+<p><figure class="figure"><img alt="" height="1423" src="../images/87/16.bin" width="1148"/></figure>
+<figure class="figure"><img alt="" height="1426" src="../images/87/17.bin" width="804"/></figure>
+<figure class="figure"><img alt="" height="732" src="../images/87/18.bin" width="1363"/></figure>
+</p>
+<table border="1">
+<tbody>
+<tr>
+<td>
+<h3 id="s1"><span><b>참고: 표 8.1만으로 충분할까?</b></span></h3>
+<span><span>표 8.1은<span> </span><b>비등온 반응기 설계</b>에서 에너지 수지식을 요약한 것으로, 다양한 반응기에 대해 필요한 수식을 간략히 정리해 두었기 때문에 실무적인 설계나 문제 풀이에 매우 유용합니다.<span> </span><b>하지만, 몇 가지 고려사항이 있습니다.</b></span></span><br/>
+<h4><span>표 8.1만으로 충분한 경우</span></h4>
+<ul>
+<li><span><b>설계 문제를 풀 때 필요한 수식을 빠르게 참고</b>하려는 경우: 표 8.1에 정리된 수식은 이미 필요한 에너지 및 물질 수지 방정식이 포함되어 있어 빠르게 설계 계산을 시작할 수 있습니다.</span></li>
+<li><span><b>에너지와 물질 수지의 기본 개념을 잘 이해하고 있는 경우</b>: 이미 수식의 물리적 의미와 변수가 무엇을 나타내는지 숙지하고 있다면, 표를 참조하면서 빠르게 접근할 수 있습니다.</span></li>
+</ul>
+<h4><span>표 8.1로 부족할 수 있는 경우</span></h4>
+<ul>
+<ul>
+<li><span><b>복잡한 상황을 고려해야 하는 경우</b>: 예를 들어, 열손실, 외부 열교환기, 촉매층 내 온도 구배 등 비등온 반응기에서 복잡한 열역학적 상황이 발생할 경우, 단순히 표를 참조하는 것만으로는 부족할 수 있습니다.</span></li>
+<li><span><b>수식의 유도 과정을 이해하고 싶은 경우</b>: 비등온 반응기 설계에서 중요한 것은 에너지 수지와 물질 수지를 통합적으로 이해하는 것입니다. 표 8.1은 결과만 제시하기 때문에, 유도 과정을 무시하면 응용 문제나 새로운 상황에 맞게 수식을 변형하는 데 어려움이 생길 수 있습니다.</span></li>
+<li><span><b>시험이나 연구 목적</b>으로 이론을 깊이 이해해야 하는 경우: Fogler는 개념을 확실히 이해하고 적용하도록 돕기 위해 수식 유도 과정을 자세히 설명하고 있으므로, 시험 대비나 연구를 위해서는 유도 과정을 살펴보는 것이 좋습니다.<br/><br/></span></li>
+</ul>
+</ul>
+<h3 id="s2">어떻게 접근하는 것이 좋을까?</h3>
+<ul>
+<li>
+<ul>
+<li><b>표 8.1을 우선적으로 활용</b>: 빠르게 문제를 풀거나 설계에 활용하려면 표를 참고하세요.</li>
+<li><b>필요시 유도 과정을 확인</b>: 변수들의 의미와 유도 과정이 헷갈리거나 특정 상황에서 추가적인 고려사항이 필요할 경우, 뒷부분의 설명을 보며 수식을 다시 검토하세요.</li>
+<li><b>중요한 개념 복습</b>: 특히 에너지 수지에서 열발생(반응열)과 열손실, 외부 열공급(가열재/냉각재 등) 간의 관계를 정확히 이해하세요.<br/><br/><br/><span><b>결론</b> <b>표 8.1</b>은 비등온 반응기 설계 문제를 풀기 위한 <b>핵심적인 요약</b>으로 충분히 활용 가능하지만, 수식의 물리적 의미를 정확히 이해하지 못한 상태에서 의존하면 새로운 상황에 응용하기 어렵습니다. 따라서 실습 단계에서는 표를 적극 활용하되, 시간이 있을 때 유도 과정을 읽어 개념을 보완하는 것이 좋습니다.</span></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/84.html"><span>← 이전 글</span><strong>화학반응공학 ch4: 등온반응기의 설계 (2)</strong></a>
+    <a class="next" href="../posts/90.html"><span>다음 글 →</span><strong>CH8. 정상상태 비등온 반응기 설계2</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

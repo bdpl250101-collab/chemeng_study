@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>체계적인 화학공정 설계 (상) 독서노트 2 · 화학공학 노트</title>
+<meta name="description" content="요약: 엔지니어의 목표는 인류에게 유용한 물품을 설계하고 생산하는 일이다. 화공 엔지니어인 우리는 화학 물품의 제조 공정을 창조하는 역할을 맡는다. 이 공정에서 가장 중요한 것은 예비 설계이다. 모든 공정 설계 문제는 개괄적 목표를 정교한 서술로 바꾸는 것으로 치환할 수 있으며, 이를 예비 설계라고 한다. 예를 들어 개괄적 목표가 과잉의 에틸렌을 에탄올로 정제하는 것이라면, 정교한 서술은 에탄올 생산 공정이며 이 설계를 제작하는 단계가 예비 설계이다. 예비설계가 중요한 이유는 무엇인가? 예비 설계 이후 모든 단계는 예비 설계를 실현">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html" aria-current="page">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/process-design.html">화학공정설계</a></nav>
+  <header class="post-head">
+    <h1>체계적인 화학공정 설계 (상) 독서노트 2</h1>
+    <p class="meta">
+      <time datetime="2023-10-28">2023.10.28</time>
+ · 수정 2024.04.30    </p>
+  </header>
+
+
+  <div class="body">
+    <p><span>요약: 엔지니어의 목표는 인류에게 유용한 물품을 설계하고 생산하는 일이다. 화공 엔지니어인 우리는 화학 물품의 제조 공정을 창조하는 역할을 맡는다.</span></p>
+<p> </p>
+<p><span>이 공정에서 가장 중요한 것은 <b>예비 설계</b>이다. 모든 공정 설계 문제는 <b>개괄적 목표</b>를 <b>정교한 서술</b>로 바꾸는 것으로 치환할 수 있으며, 이를 예비 설계라고 한다. 예를 들어 개괄적 목표가 과잉의 에틸렌을 에탄올로 정제하는 것이라면, 정교한 서술은 에탄올 생산 공정이며 이 설계를 제작하는 단계가 예비 설계이다. 예비설계가 중요한 이유는 무엇인가? 예비 설계 이후 모든 단계는 예비 설계를 실현하는 것에 불과하므로, 예비 설계가 잘못되면 이후 모든 단계도 잘못되기 때문이다.</span></p>
+<p> </p>
+<p><span>대부분의 화학공정문제는 시작이 막막할 것이다. 이는 문제가 제대로 정의되지 않았기 때문이다. 따라서 다음 단계를 시도해볼 수 있다.</span></p>
+<p><span>1.문제 정의: 이익, 안전성, 환경 등등을 고려하여 무엇을 할 것인지를 정확하게 정한다.</span></p>
+<p><span>2.정보수집: 완전히 새로운 화학공학 문제는 없다.</span></p>
+<p><span>3.대안 표현: 기본 case를 하나 개발하여 이를 기준점으로 잡고 대안을 만든다.</span></p>
+<p>4.대안평가:</p>
+<p> </p>
+<p><span>이후 하나의 기본 case에서 예비 설계를 시작하게 된다. 예비 설계는 대안제시, 가치분석, 대안창조 등으로 이루어진다. 여러가지 PFD 대안을 제시한 후 각각의 가치를 분석하여 최고의 공정도를 뽑거나, 나아가서 새로운 대안을 만들어낼 수도 있다.</span></p>
+<p> </p>
+<p><span>이 예비 설계를 위해서는 다음 기초 단계가 있다.</span></p>
+<ol>
+<li><span>정보수집: 완전히 새로운 설계 문제는 없다. 대부분의 설계 문제는 선례를 찾아봄으로써 쉽게 해결할 수 있다.</span></li>
+<li><span>대안 표현: 대안을 공정도나 작업 단위 등으로 표현한다. McCabe-Thiele 선도 등 다양한 표현 방법이 있다.</span></li>
+<li><span>예비 설계를 평가하는 기준을 제시한다. (5장)</span></li>
+</ol>
+<p> </p>
+<p><span>문제는 <b>엄청난 수의 대안</b>이 존재하는 것이다. 따라서 대안을 줄이기 위한 더글라스 결정 계층구조가 제시되었다. 이 단계를 따라 각각의 사항을 결정하면 대안을 쉽게 생성할 수 있다.</span></p>
+<p> </p>
+<p><span>1단계: 회분 or 연속 공정 중 무엇을 택할 것인가?</span></p>
+<p><span>2단계: 공정도의 입출력 구조를 정의하라</span></p>
+<p><span>3단계: 공정도의 재순환 구조를 정의하라</span></p>
+<p><span>4단계: 분리 체계 합성</span></p>
+<p><span>4a:기체 회수</span></p>
+<p><span>4b:액체 회수</span></p>
+<p><span>5단계:열교환망 합성</span></p>
+<p> </p>
+<p><span>1단계: 회분 or 연속 공정</span></p>
+<p><span>:왠만하면 <b>연속공정</b>을 사용하지만, 다음에 한해서 회분공정을 고려해본다.</span></p>
+<p><span>-몇 달 내로 제조 공정이 완성되어야 한다.</span></p>
+<p><span>-연간 공급량이 단지 며칠간의 생성으로 만족</span></p>
+<p><span>-설계 정보가 거의 없다</span></p>
+<p><span>-총 수명 주기가 짧다</span></p>
+<p><span>-생산물 가격이 제조가격을 압도한다.</span></p>
+<p> </p>
+<p><span>2단계: 공정도의 입출력 구조</span></p>
+<p><span>:원료물질의 수와 생산물 흐름, 공정과의 모든 관계를 고려한다. <b>부산물, 불순물의 존재여부와 이들이 반응에 어떻게 참여하는 지</b>.</span></p>
+<p> </p>
+<p><span>3단계: 공정도의 재순환 구조</span></p>
+<p><span>:반응기 자체를 더 상세히 살펴본다. 공정도에서 <b>반응기의 수와 재순환을 통한 반응기들간의 관계</b>를 고려한다. 또한 공정도의 나머지에 대한 반응기 조건의 영향을 고려한다. (13장과 19장)</span></p>
+<p> </p>
+<p><span>4단계: <b>분리 체계</b> 합성</span></p>
+<p><span>4a:기체 회수</span></p>
+<p><span>4b:액체 회수</span></p>
+<p><span>:원료물질은 더 순환되고, 제품 물질은 더 처리되고 부산물질은 제거되어야 한다. 따라서 분리 장치의 배치와 선택에 관심을 기울여야 한다. 기체 회수는 값이 더 비싼 단계이고 퍼지 흐름의 영향을 고려해야 한다. (11장과 14장)</span></p>
+<p> </p>
+<p><span>5단계:열교환망 합성, 이는 3부에서 다루며 대학원 수준이다.</span></p>
+<p> </p>
+<p><span>더글라스 계층 구조는 후보 공정도를 생산하는 좋은 방법이다.</span></p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/14.html"><span>← 이전 글</span><strong>체계적인 화학공정 설계 (상) 독서노트 1</strong></a>
+    <a class="next" href="../posts/17.html"><span>다음 글 →</span><strong>체계적인 화학공정 설계 (상) 독서노트 3</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

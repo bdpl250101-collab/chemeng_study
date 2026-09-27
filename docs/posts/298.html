@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>증류에 있어서 Multiple Feeds, Sidestreams,and Open Steam · 화학공학 노트</title>
+<meta name="description" content="Multiple Feeds, Sidestreams,and Open Steam은 외부에서 뭔가 들어오거나 빠지는 상황을 뜻한다. 그 지점 기준으로 L,V가 바뀌고, 그래서 조작선이 하나 더 생긴다. 기본적인 상황을 먼저 잡아보자.일반적인 binary distillation에서 라이트키 몰분율을 다음과 같이 둔다.그리고 일반적인 메카베-띨레 방법에서는 다음 5선이 존재한다.단수 계산은 평형선과 조작선을 왔다 갔다 하면서 계단식으로 한다. 이때 그림처럼 중간 단에서 제품을 하나 더 빼는 사이드 스트림이 있는 경우 물질수지는 다음처럼 된다">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html" aria-current="page">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/separation.html">분리공정</a></nav>
+  <header class="post-head">
+    <h1>증류에 있어서 Multiple Feeds, Sidestreams,and Open Steam</h1>
+    <p class="meta">
+      <time datetime="2026-06-13">2026.06.13</time>
+ · 수정 2026.06.14    </p>
+  </header>
+
+
+  <div class="body">
+    <p>Multiple Feeds, Sidestreams,and Open Steam은 외부에서 뭔가 들어오거나 빠지는 상황을 뜻한다. 그 지점 기준으로 <span><span>L,V</span></span>가 바뀌고, 그래서 조작선이 하나 더 생긴다.</p>
+<p> </p>
+<p>기본적인 상황을 먼저 잡아보자.</p>
+<p>일반적인 binary distillation에서 라이트키 몰분율을 다음과 같이 둔다.</p>
+<p><figure class="figure"><img alt="" height="71" src="../images/298/01.png" width="328"/></figure>
+</p>
+<p>그리고 일반적인 메카베-띨레 방법에서는 다음 5선이 존재한다.</p>
+<p><figure class="figure"><img alt="" height="207" src="../images/298/02.png" width="188"/></figure>
+</p>
+<p>단수 계산은 평형선과 조작선을 왔다 갔다 하면서 계단식으로 한다.</p>
+<p><figure class="figure"><img alt="" height="482" src="../images/298/03.png" width="398"/></figure>
+</p>
+<p> </p>
+<p>이때 그림처럼 중간 단에서 제품을 하나 더 빼는 사이드 스트림이 있는 경우 물질수지는 다음처럼 된다.</p>
+<p><figure class="figure"><img alt="" height="42" src="../images/298/04.png" width="147"/></figure>
+<figure class="figure"><img alt="" height="36" src="../images/298/05.png" width="228"/></figure>
+</p>
+<p>이때 중요한 것은, 일반 feed 하나짜리 증류탑은 보통 조작선이 2개이다.</p>
+<p><figure class="figure"><img alt="" height="106" src="../images/298/06.png" width="261"/></figure>
+</p>
+<p>그런데 중간에서 액체를 빼면, 그 지점 아래에서는 내려가는 액체 유량이 줄어든다. </p>
+<p> </p>
+<p data-end="1698" data-start="1676">즉 사이드 스트림 위쪽에서는 액체 유량이 <span><span><span>L </span></span></span>인데, 액체 사이드 스트림 <span><span>LS</span></span>를 빼고 나면 아래쪽 액체 유량은 <span><span><span>L′=L−LS</span></span></span>가 된다. 반면 saturated liquid sidestream이면 기상 유량은 그대로라고 두므로 <span><span><span>V′=V</span></span></span>이다.</p>
+<p data-end="1698" data-start="1676"> </p>
+<p data-end="1698" data-start="1676">따라서 원래 조작선 기울기가 L/V였다가 사이드 스트림 아래에서는 L-LS/V로 바뀐다.</p>
+<p data-end="1698" data-start="1676"> </p>
+<p data-end="1698" data-start="1676">그래서 조작선을 다음처럼 구분한다.</p>
+<p><figure class="figure"><img alt="" height="106" src="../images/298/07.png" width="230"/></figure>
+<figure class="figure"><img alt="" height="155" src="../images/298/08.png" width="360"/></figure>
+</p>
+<p>이거 두개는 그냥 그리다보면 만나게 되어있다. 이때 만나는 점의 x좌표는 xs이다.</p>
+<p> </p>
+<p>다음 4 식을 알아두도록 하자. 이는 사이드 위쪽, 사이드 아래쪽 조작선에 해당한다.</p>
+<p><figure class="figure"><img alt="" height="187" src="../images/298/09.png" width="227"/></figure>
+</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/297.html"><span>← 이전 글</span><strong>증류탑에서 Condenser and Reboiler Heat Duties</strong></a>
+    <a class="next" href="../posts/300.html"><span>다음 글 →</span><strong>Residue curve map(잔류곡선도)에 대하여</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

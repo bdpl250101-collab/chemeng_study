@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data-driven modeling of cell cultures 강의노트 · 화학공학 노트</title>
+<meta name="description" content="수학적으로 우리 세포 시스템을 이해하고 설명하는, 즉 물질수지 분석과 MFA에 대한 내용이다. 예전에 엑셀 solver를 활용해 대사과정을 모델링한 활동의 연장선이다. 1. 교수님은 먼저 모델링의 개념부터 출발했다. 다양한 종류의 모델이 있고 다양한 접근이 존재한다. 모델링이란 우리가 관심을 갖는 물리적,생물학적 시스템의 동작을 이해하고, 설명하고, 예측하기 위해 입력 변수와 출력 변수를 관계식으로 연결하는 과정이다. 이를 위해 첫 단계는 항상 “무엇을 알고 싶은가?” 즉 출력 변수를 명확히 정의하는 것이다. 예를 들어 실내 온도의">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html" aria-current="page">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/biochemistry.html">Biochemistry</a></nav>
+  <header class="post-head">
+    <h1>Data-driven modeling of cell cultures 강의노트</h1>
+    <p class="meta">
+      <time datetime="2025-11-14">2025.11.14</time>
+    </p>
+  </header>
+
+
+  <div class="body">
+    <p data-end="314" data-start="0">수학적으로 우리 세포 시스템을 이해하고 설명하는, 즉 물질수지 분석과 MFA에 대한 내용이다. 예전에 엑셀 solver를 활용해 대사과정을 모델링한 활동의 연장선이다.</p>
+<p data-end="552" data-start="316"> </p>
+<p data-end="552" data-start="316">1. 교수님은 먼저 모델링의 개념부터 출발했다. 다양한 종류의 모델이 있고 다양한 접근이 존재한다. 모델링이란 우리가 관심을 갖는 물리적,생물학적 시스템의 동작을 이해하고, 설명하고, 예측하기 위해 입력 변수와 출력 변수를 관계식으로 연결하는 과정이다. 이를 위해 첫 단계는 항상 “무엇을 알고 싶은가?” 즉 출력 변수를 명확히 정의하는 것이다. 예를 들어 실내 온도의 변화를 알고 싶다면, 실내 온도가 출력 변수가 되고, 외부 공기 흐름, 외부 온도, 학생 수와 같은 요소들이 입력 변수가 된다. 반면 의자의 개수처럼 영향을 거의 주지 않는 변수는 ‘매개변수’가 된다. 이렇게 변수를 구분하는 것이 모델링의 시작이다.</p>
+<p data-end="552" data-start="316"> </p>
+<p data-end="1378" data-start="1077">2."<span> 그렇다면 어떻게 관계를 만들까요? 근거가 필요하겠죠. 그 관계를 만드는 방법은 여러 가지가 있습니다."</span></p>
+<p data-end="1378" data-start="1077"><br/>모델은 크게 세 가지 종류로 나뉜다. 첫째, 1원칙(First Principle)에 기반한 기계론적 모델이다. 이는 질량수지, 에너지수지, 반응속도론 등 물리법칙을 바탕으로 시스템을 미분방정식으로 설명한다. 둘째, 경험적 모델이다. 이 모델은 데이터를 수집하고 회귀 등을 통해 입력–출력 관계를 찾는다. 예를 들어 유량이 증가할 때 온도가 어떤 식으로 변화하는지 실험하여 y = ax + b 형태의 식을 얻는 방식이다. 셋째, 현대 산업과 학계에서 핵심이 된 머신러닝 기반 모델이다. 머신러닝은 복잡하고 비선형적이며 입력 변수가 많고 상호작용이 복잡한 시스템에서 특히 유용하며, 가능한 많은 데이터를 필요로 한다. <br/><br/><span>우리는 수많은 데이터를 수집할 수 있고, 단순 모델로는 정확하게 설명하기 어렵습니다.</span><br/><span>그래서 다변량 통계분석, 머신러닝, AI 같은 방법을 고려하게 됩니다. 이런 방법들이 제가 앞으로 여러분에게 소개할 내용입니다.</span><br/><br/></p>
+<p data-end="2329" data-start="2103"><span>그리고 이러한 데이터 모델링은 우리가 관심 있는 세포 배양 시스템에 적용될 것입니다.</span></p>
+<p data-end="2329" data-start="2103"><span>바이오리액터에 대한 내용으로 이어지기 전에, 그 전에 꼭 이야기하고 싶은 것이 있습니다.</span></p>
+<p data-end="2329" data-start="2103"> </p>
+<p data-end="2329" data-start="2103">3. 이 지점에서 교수님은 빅데이터 개념을 강조했다. 빅데이터는 단순히 “양이 많다”는 차원이 아니라, 생성 속도가 빠르고(velocity), 형태가 다양하며(variety), 이질적이고(noisy), 오류도 포함하고(erratic), 차원도 높다(high-dimensional). 과거에는 이런 데이터에서 노이즈나 오류를 제거하려고 했지만, 이제는 머신러닝이 오히려 그런 데이터까지 모두 활용할 수 있게 되어 새로운 통찰을 얻는 계기가 되었다. 이것이 AI 시대가 기존 발상과 완전히 달라진 이유이며, 교수님은 이것을 “게임 체인저”라고 표현했다. </p>
+<p data-end="2329" data-start="2103"> </p>
+<p data-end="459" data-start="181">또한 4차 산업혁명, IoT, 로보틱스, AI, 빅데이터 같은 기술이 우리의 진로와 얼마나 가까운 문제인지 질문하며, 많은 사람들이 이를 “아직은 내 시대가 아니고 다음 세대의 이야기”처럼 느끼지만 실제로는 이미 우리 삶 가까이에 와 있다는 점을 강조했다. 배양육 같은 기술도 즉시 산업화되기보다는 R&amp;D 단계가 길고, 연구가 활발할 때가 바로 연구자에게 가장 많은 기회가 주어지는 시기라고 설명했다. R&amp;D가 충분히 성숙하면 결국 산업화되어 연구 여지는 오히려 줄어든다는 점도 덧붙였다.</p>
+<p data-end="459" data-start="181"> </p>
+<p data-end="755" data-start="461">교수님은 기술 변화 속도가 점점 빨라지고 있고, 이런 변화가 진로 선택에도 직접적인 영향을 줄 수 있다고 말했다. 예를 들어 코딩이나 시뮬레이션을 싫다고 해도 기술 환경이 바뀌면 피하기 어려워진다는 것이다. 하지만 학생들은 엔지니어지 프로그래머가 아니므로 모든 기술을 잘할 필요는 없고, 대신 화학공학도의 강점이 무엇인지, 다른 전공자와 비교했을 때 왜 경쟁력이 있는지 스스로 정의하고 설명할 수 있어야 한다고 강조했다. 면접에서 “당신의 강점은 무엇인가?”라는 질문에 답하기 위해서라도 이러한 자기 이해는 필수적이라고 했다.</p>
+<p data-end="755" data-start="461"> </p>
+<p data-end="1601" data-start="1467"><span>면접관이 이렇게 묻겠죠.</span><br/><span>“당신의 강점은 무엇인가요?”</span><br/><span>이 질문에 답하는 연습을 하는 것이 중요합니다.</span></p>
+<p data-end="1690" data-start="1603"><span>“당신의 강점이 무엇인지 설명해 주세요. 그걸 잘 말하지 못하면 채용하고 싶지 않습니다.”</span><br/><span>“다른 경쟁자들과 비교했을 때 당신의 강점이 무엇인가요?”</span></p>
+<p data-end="755" data-start="461">...</p>
+<p data-end="1046" data-start="757">이어 교수님은 저장 아이콘이 왜 플로피디스크 모양인지, 전화 아이콘이 왜 옛날 수화기 모양인지 설명하며 기술 변화의 속도를 비유적으로 보여주었다. 실제로 플로피디스크는 학생 세대는 한 번도 본 적이 없는 물건이지만, 아이콘은 여전히 남아 있다. 스마트폰 역시 10~15년밖에 되지 않았음에도 삶 전체를 뒤바꾸었고, 기술 발전은 지수적으로 진행되기 때문에 다음 10년은 이전 10년보다 훨씬 큰 변화를 가져올 것이라고 말했다. 다만 모든 기술이 성공하는 것은 아니며, 100개 중 1~2개만 살아남는다는 점도 설명했다.</p>
+<p data-end="1233" data-start="1048">또한 AI는 이미 임계점을 넘어 폭발적 성장 구간에 들어갔고, 결국 이 환경에 적응하지 않으면 웹 브라우저를 익숙하게 사용하지 못하는 노년층처럼 필요한 서비스를 이용하지 못하게 되는 시대가 올 것이라고 예고했다. 병원, 제조업, 심지어 강의에서 사용하는 각종 도구와 시스템까지 모든 곳에서 데이터가 생성되고 활용되고 있기 때문이다.</p>
+<p data-end="1233" data-start="1048"> </p>
+<p data-end="1414" data-start="1235">마지막으로 교수님은 바이오리액터나 세포 배양에서도 데이터가 필수이며, 공정 중 세포가 어떻게 행동하는지 이해하고 생산성을 높이려면 데이터를 계속 측정·수집·분석해야 한다고 강조했다. 오늘 강의가 바로 그 “데이터를 어떻게 다루고, 어떤 문제가 있는지”를 설명하는 자리라고 말하며 본론으로 넘어가기 위한 서론을 마무리했다.</p>
+<p data-end="3403" data-is-last-node="" data-is-only-node="" data-start="3365"> </p>
+
+<p data-end="4310" data-start="4252">4. "데이터는 모든 곳에서 생성된다"</p>
+<p data-end="4310" data-start="4252"><span>지난 시간에는 바이오리액터를 배웠죠.<span> </span></span><span>세포의 행동을 이해하고, 세포를 이용해 무언가를 생산하기 위해서는<span> </span></span><span>배양 과정에서 무엇이 일어나는지 모니터링해야 합니다.<span> </span></span><span>즉, 데이터를 측정하고 수집하고 분석해야 합니다.</span><span>오늘 이야기할 내용이 바로 이것입니다.</span></p>
+<p data-end="4310" data-start="4252"> </p>
+<p data-end="4310" data-start="4252">데이터를 다루기 위해서는 “저장”과 “관리”의 차이를 반드시 이해해야 한다. 저장(storage)이란 단순히 파일을 어딘가에 넣어두는 것이다. 엑셀 파일을 한 폴더에 넣어두는 것이 그 예이다. 그러나 데이터 관리(data management)는 다르다. 데이터베이스 구조를 설계하고, 스키마(schema)를 만들고, 프라이머리키, 포린키 같은 구조적 정보를 사용해 데이터를 체계적으로 저장한다. 이는 도서관에서 책을 단순히 쌓아놓는 것이 아니라, 분야·저자·주제별로 배열하고, 분류 체계로 쉽게 검색할 수 있게 만드는 과정과 같다. 관리가 없으면 데이터는 ‘있지만 사용할 수 없는 상태’가 되기 때문에, 관리의 중요성이 매우 크다. <br/><br/></p>
+<p data-end="2068" data-start="1910"><span>여러분이 모두 이해할 필요는 없습니다. 하지만 결국 중요한 것은, 특정 데이터가 필요할 때 키워드를 이용해 데이터를 검색할 수 있다는 것입니다. 이것이 데이터베이스입니다. 그래서 우리는 데이터베이스 관리 시스템(DBMS)을 사용해야 합니다.</span></p>
+<p data-end="2068" data-start="1910"> </p>
+
+<p data-end="2424" data-start="2305">5. "그리고 마지막으로 우리는 데이터를 분석해야 합니다."<br/><span>데이터를 분석하는 이유는, 그 안에서 뭔가 흥미로운 인사이트나 정보를 얻기 위함입니다.</span><br/><span>데이터를 정보와 지식으로 바꾸기 위해서는 어떤 방법론이나 전략을 적용해야 합니다.</span></p>
+<p data-end="2424" data-start="2305"> </p>
+<p data-end="2424" data-start="2305">다음으로 교수님은 데이터 분석 방법론을 설명하며 데이터 마이닝과 머신러닝의 차이를 언급했다. 데이터 마이닝은 패턴, 상관관계, 유사 구조, 특이점 등을 찾아내는 방법이다. 반면 머신러닝은 사람이 규칙을 명시적으로 만들지 않아도 컴퓨터가 스스로 학습하며 패턴을 찾아내는 기술이다. 머신러닝은 크게 세 가지 종류로 나뉜다: 비지도학습(유사 패턴을 군집화하는 클러스터링), 지도학습(정답이 주어진 상태에서 분류·회귀를 학습), 강화학습(보상을 기반으로 최적 전략을 찾는 방식). </p>
+<p data-end="2424" data-start="2305"> </p>
+<p data-end="2424" data-start="2305"><span> AI는 가장 큰 범주이고, 그 안에 머신러닝과 딥러닝이 포함됩니다.</span><br/><span>그리고 딥러닝은 머신러닝보다 더 ‘깊은’ 방식입니다. </span></p>
+<p data-end="2424" data-start="2305"> </p>
+<p data-end="2424" data-start="2305">교수님은 건강한 사람과 암 환자의 데이터를 비교해 서로 다른 유전자나 대사체를 찾아내는 예를 제시하며, 이것이 바로 ‘바이오마커(classification)’의 대표적 사례라고 설명했다.</p>
+<p data-end="2424" data-start="2305"> </p>
+
+<p data-end="3430" data-start="3268">6. 데이터 마이닝은 과거 데이터를 분석해 패턴·상관관계·트렌드 같은 유용한 정보 탐색이 목표였다. 반면 머신러닝은 이를 넘어 미래를 예측하는 기능까지 갖춘 더 발전된 데이터 기반 접근이다. 경험적 모델은 단순히 입력–출력 관계를 데이터로 연결하고, 기계론적 모델은 1원칙을 기반으로 시스템을 설명하지만, 머신러닝·AI는 훨씬 많은 데이터를 활용해 더 복잡한 관계를 학습한다. 최근에는 과거 데이터뿐 아니라 실시간 데이터까지 처리해야 하므로, 이러한 기술이 필수적이며 동시에 큰 도전 과제가 되고 있다.</p>
+<p data-end="4047" data-start="3939"> </p>
+<p data-end="4125" data-start="4049">7. <span>하지만 우리가 관심 있는 데이터는 SNS 데이터가 아니라, 화학 산업 데이터도 아니며, 바이오리액터나 세포 배양 데이터입니다.</span></p>
+<p data-end="4182" data-start="4127"> </p>
+<p data-end="4182" data-start="4127">이후 교수님은 세포 배양(cell culture) 시스템에서 어떤 데이터들이 생성되는지 설명했다. 우리가 관심 있는 출력은 세포 생존 수(cell viability)나 세포 밀도이다. 이에 영향을 주는 것으로는 환경조건 데이터 (pH, 온도, DO, CO₂), 배지의 구성 성분들 (포도당, 글루타민, 아미노산, 암모니아, 인산), 세포 특성(세포 생존율, 세포 밀도, 세포 직경), 생산물(항체 농도, 글라이코실레이션 패턴) 등 매우 다양한 데이터가 포함된다. 이러한 데이터는 공정 상태를 알려주는 중요한 신호이며, 실시간 모니터링의 필요성이 강조된다.</p>
+<p data-end="4681" data-start="4615"> </p>
+<p data-end="4785" data-start="4683"><span>이렇게 데이터의 품질을 기반으로 입력과 출력을 연결하려고 합니다. 이것을 블랙박스 접근법이라고 합니다.</span><br/><span>기계론적 원리가 없이 데이터를 통해 관계를 찾는 방식이기 때문입니다.</span></p>
+<p data-end="4878" data-start="4787"> </p>
+
+
+<p data-end="4878" data-start="4787">8. 다음으로 세포 배양에서 얻은 데이터를 어떻게 분류하는지 알려주었다. 이때 전통적인 데이터마이닝 기법을 먼저 얘기해주셨다.<br/>전통적인 데이터마이닝에는 클러스터링, 분류(classification), 회귀(regression) 등의 기법이 존재했다.</p>
+<p data-end="4924" data-start="4880"> </p>
+<p data-end="4977" data-start="4926">클러스터링: <span>우리는 비슷한 패턴을 찾고 싶습니다. 데이터가 매우 많기 때문입니다. 그래서 어떤 데이터가 비슷한 패턴을 가지는지를 찾아서 함께 그룹화하는 것을 클러스터링이라고 합니다.</span></p>
+<p data-end="4977" data-start="4926"> </p>
+<p data-end="4977" data-start="4926">분류(classification): 분류는 서로 다른 <b>집단을 구분하는 작업</b>이다. 암 연구에서 건강한 사람과 암 환자의 유전자, 대사체 데이터를 비교해 차이가 나는 지점을 찾아내면 그것이 ‘바이오마커’가 되는 것이 대표적 예다.</p>
+<p data-end="4977" data-start="4926"><br/>뭔가 잘 안와닿았는데, 예시를 들어서 설명해주셨다. 세포 배양에서도 시간에 따라 변화하는 포도당,젖산,암모니아,아미노산 등의 데이터를 수집하면, 포도당은 세포가 소비하기 때문에 감소하다가 다시 공급되면서 올라가는 패턴을 보이며, 이러한 변화는 batch, <span>fed-batch</span>, continuous 배양 방식과도 연결된다. 이렇게 쌓인 타임시리즈 데이터를 분석하면 우리는 그 프로파일과 변화 양상을 관찰할 수 있다. 비슷한 패턴을 보이는 영양 성분이나 대사산물을 묶는 것이 클러스터링이고, 특정 영양 성분이 제품 농도,세포 성장,독성 물질(젖산, 암모니아)과 어떻게 상관관계를 가지는지 분석하는 것이 분류와 회귀의 영역이다. 이러한 과정이 세포 배양 데이터 분석에서 활용되는 전형적인 통계·데이터 마이닝 절차이다.</p>
+<p data-end="4977" data-start="4926"> </p>
+
+<p data-end="1451" data-start="1379">9. <span>하지만 이제 다시 말하자면,이것은 데이터 마이닝 기법을 사용해 수행된 것이고, 우리는 이제 머신러닝 시대에 있습니다.</span></p>
+<p data-end="1520" data-start="1453"> </p>
+<p data-end="1520" data-start="1453"><span>교수님은 휴식 후 머신러닝에 대한 본격적인 설명을 이어가면서, 먼저 머신러닝이 무엇인지 다시 정의했다. 머신러닝은 입력과 출력 간 관계를 명시적으로 규정하지 않아도 컴퓨터가 스스로 학습해 패턴을 찾고 예측까지 수행하는 기술로, 데이터 마이닝처럼 블랙박스 구조를 기반으로 하지만 더 복잡하고 더 많은 데이터를 필요로 한다. 특히 이미지 처리 분야에서 널리 사용되는데, 스마트폰이나 네이버 앱에 꽃이나 나무 사진을 올리면 자동으로 그 이름을 알려주는 기능이 대표적이다. 이는 방대한 이미지 데이터와 전문가의 라벨링 데이터를 기반으로 모델이 훈련되기 때문에 가능한 일이며, 한 번 일반화된 모델은 새로운 이미지가 들어오면 즉시 “강아지다”, “고양이다”처럼 분류할 수 있다. 이렇게 사람이 규칙을 직접 코딩하지 않아도 의미 있는 패턴을 스스로 학습하는 것이 머신러닝이다.</span></p>
+<p data-end="1520" data-start="1453"> </p>
+<p data-end="2563" data-start="2502"><span>처음에는 예측 품질이 좋지 않지만, 데이터가 쌓이면 더 좋아지고, 더 좋아지고, 또 좋아집니다. 그래서 머신러닝을 적용할 때 중요한 요구사항이 있습니다. 바로 데이터, 빅데이터입니다. 데이터가 부족하면 좋은 예측을 할 수 없습니다.</span></p>
+<p data-end="2563" data-start="2502"> </p>
+<p data-end="2733" data-start="2650"><span>그래서 저는 말했습니다. 여러분은 여전히 기계론적 모델을 사용할 수도 있고, 단순 경험적 모델을 사용할 수도 있습니다.</span><br/><span>문제 없습니다. 하지만 많은 데이터를 생성할 수 있는 환경이라면 제 선택은 머신러닝이 될 것입니다. 훨씬 효과적이기 때문입니다.</span></p>
+<p data-end="2828" data-start="2805"> </p>
+<p data-end="2828" data-start="2805">머신러닝은 많은 데이터를 요구하므로, 데이터가 풍부한 환경에서는 전통적 경험 모델이나 기계론적 모델보다 훨씬 효과적이다. 학습 방식은 크게 비지도학습, 지도학습, 강화학습으로 나눌 수 있다. 비지도학습은 클러스터링처럼 미리 정해진 정답 없이 비슷한 패턴을 가진 데이터끼리 묶는 방식이고, 지도학습은 암·정상처럼 클래스가 명확히 구분된 데이터를 학습해 분류하거나 예측하는 방식이다. 건강한 사람과 암 환자의 유전자 데이터를 비교해 차이가 나는 지점을 찾아내 바이오마커를 도출하는 것이 대표적이다. </p>
+<p data-end="2828" data-start="2805"> </p>
+<p data-end="3182" data-start="3118"><span>그리고 최근 아주 흥미로운 방식이 있습니다. 바로 강화학습(reinforcement learning)입니다. </span></p>
+<p data-end="2828" data-start="2805"> </p>
+<p data-end="2828" data-start="2805">강화학습은 에이전트와 환경이 상호작용하며 보상을 최적화하는 방식으로, 공정의 장기적인 동작을 최적화하는 데도 응용될 수 있다. 이러한 각각의 학습 방식에는 장단점이 있으며, PCA, 랜덤포레스트, SVM, 뉴럴네트워크처럼 다양한 알고리즘이 존재한다. </p>
+<p data-end="3116" data-start="2991"> </p>
+
+<p data-end="3116" data-start="2991">10. 이제 실제 세포 배양 공정에 머신러닝이 어떻게 적용되는지 설명이 이어졌다. 배양 공정에서는 포도당, 글루타민, 아미노산 같은 영양 성분과 pH, 온도, DO, CO₂ 같은 공정 변수를 계속 모니터링해야 하며, 생산량이나 항체 품질(글라이코실레이션)도 중요하다. <u>이를 측정하는 기술을 PAT(Process Analytical Technology)</u>라 하며, 오프라인,온라인,인라인 방식이 있다. 오프라인 방식은 샘플을 뽑아 실험실에서 측정하는 전통적인 방식이다. 그러나 샘플을 채취할 때 공정을 교란할 수 있어 가능하면 피하는 것이 좋다. 그래서 산업에서는 공정을 방해하지 않고 실시간으로 측정 가능한 온라인,인라인 측정 기술, 예를 들어 라만 분광을 적극 활용한다. 교수님 연구실도 라만 장비를 사용 중인데, 장비 가격이 약 40만 달러나 되는 고가 장비임에도 빅파마 기업들은 빠르고 비침습적이라는 장점 때문에 적극 도입하고 있다. </p>
+<p data-end="4222" data-start="4187"> </p>
+<p data-end="4318" data-start="4224"><span>기본 아이디어는 프로브(probe)가 신호를 감지하고, 라만 분광(Raman spectroscopy) 등을 통해 구성 성분의 농도를 실시간 측정하는 것입니다. 우리 연구실도 몇 년 전에 포유류 세포 배양을 위한 바이오리액터를 설치했고, 라만 장비도 구매했습니다.</span><br/><br/></p>
+<p data-end="710" data-start="558">11. 하지만 다른 방법도 있는데, 모든 성분을 측정할 수 있는 것은 아닙니다. 몇 가지 한계가 있습니다.</p>
+<p data-end="710" data-start="558"> </p>
+<p data-end="710" data-start="558">하지만 모든 성분을 센서로 정확하게 측정할 수 있는 것은 아니다. 측정을 했는데 검출 한계 이하이거나 측정 오차가 큰 경우도 많다. 이런 한계를 보완하기 위해 머신러닝 기반의 소프트 센서가 사용된다.</p>
+<p data-end="710" data-start="558"> </p>
+<p data-end="710" data-start="558"><span>그럴 때는 소프트 센서(soft sensor)를 적용할 수 있습니다. </span><span>이전 데이터를 기반으로, 머신러닝을 이용하여 상관관계를 만들어 </span><span>직접 측정할 수 없는 성분을 예측하는 것입니다. </span><span>즉, 일상적으로 측정 가능한 성분들을 이용하여 </span><span>측정할 수 없는 성분을 예측하는 알고리즘을 만드는 것이 소프트 센서 개념입니다.</span></p>
+<p data-end="710" data-start="558"> </p>
+<p data-end="710" data-start="558">소프트 센서는 과거 데이터를 기반으로 측정 가능한 성분으로부터 측정 불가능한 성분을 예측하는 모델이다. 교수님 연구실에서도 다양한 알고리즘과 파라미터 조정을 통해 고정확도 소프트 센서를 개발하여 실제 측정값과 거의 동일하게 예측하는 데 성공했다고 했다. 이러한 예측 모델을 활용하면 배양이 이상적 경로를 따라가는지 판단할 수 있고, 앞으로 며칠 후 생산량이 잘 나올지, 혹은 문제가 발생할지 미리 감지할 수 있다. 필요하다면 배양을 중단하거나 조건을 조정하는 조기 대응도 가능하다. </p>
+<p data-end="893" data-start="712"> </p>
+<p data-end="1497" data-start="1441">12. <span>하지만 여기에는 내재된 한계가 있습니다. 그 한계는 바로 "설명할 수 없다"는 것입니다.</span><br/>머신러닝 기반 모델은 “왜 그런 결과가 나오는지 설명하기 어렵다”는 근본적 한계가 있다. 설명력이 부족한 블랙박스 접근의 특성 때문이다. 그래서 실제 연구에서는 기계론적 모델과 데이터 기반 모델을 결합한 하이브리드 모델(그레이박스 모델)이 사용된다. 기계론적 모델은 바이오리액터의 물리 과정과 세포의 물질대사(FBA 등)를 설명하고, 데이터 기반 모델은 현실 데이터를 반영해 정밀도를 높인다. 이 조합을 통해 예측성과 설명력을 동시에 확보할 수 있다. <br/><br/></p>
+<p data-end="1764" data-start="1659">13. <span>센서를 이용해 데이터를 수집하고, 데이터가 모델로 들어가고, 모델이 예측에 사용될 수 있다는 것을 이야기했습니다. </span><span>이제 우리는 더 확장된 고급 단계로 갈 수 있습니다. 현재 우리는 바이오 제조를 위한 디지털 트윈 연구를 진행하고 있습니다.</span></p>
+<p data-end="2131" data-start="2116"> </p>
+<p data-end="2131" data-start="2116">이제 교수님은 더 고도화된 단계인 디지털 트윈(Digital Twin)을 소개했다. 디지털 트윈은 물리 시스템과 가상 시스템이 실시간 데이터로 연결되어 상호작용하는 기술로, 단순한 모델링을 넘어서 실시간 모니터링,예측,제어가 가능해지는 구조이다. 기계적으로는 물리 시스템에서 센서로 데이터를 수집해 디지털 트윈으로 보내고, 디지털 트윈은 그 데이터를 바탕으로 모델을 업데이트하고 예측한 뒤 다시 물리 시스템에 제어 신호를 보내는 구조이다. 교수님은 자동차 네비게이션이 실제 도로 상황(GPS·교통 데이터)을 반영해 최적 경로를 안내하는 것을 디지털 트윈의 초기 형태로 설명했다.</p>
+<p data-end="2623" data-start="2532"> </p>
+<p data-end="2669" data-start="2625"><span>14. 디지털 트윈은 더 발전된 AI 단계이며, 다음 세대 기술이 될 것입니다. 그렇다면 질문입니다. 바이오 제조 공정도 자율운전(Self-driving)이 가능할까요? 제가 하려는 연구 목표가 바로 이것입니다. 바이오리액터의 완전 자동 운전입니다.</span></p>
+<p data-end="3379" data-start="3309"> </p>
+<p data-end="3548" data-start="3458"><span>라만 센서뿐 아니라, </span><span>형광 센서, </span><span>정전용량(capacitance) 센서, </span><span>생세포 수 측정 센서 등 </span><span>여러 센서를 배양기에 설치합니다.</span><span>그리고 이 모든 데이터가 디지털 트윈으로 들어옵니다. </span><span>여기에서 우리는 모델을 사용해 실시간 시뮬레이션을 수행하고,</span><span>컨트롤러를 통해 공정을 조정합니다. </span><span>즉, 자동화가 가능합니다. </span><span>그리고 데이터 기반 모델뿐 아니라, </span><span>기계론적 모델도 함께 사용합니다. </span><span>기계론적 모델은 </span><span>바이오리액터의 동작, </span><span>세포의 물질대사(FBA 등)를 수학적으로 설명합니다. </span><span>이를 단독으로 사용할 수는 없기 때문에 </span><span>데이터 기반 모델과 결합해 </span><span>그레이박스 모델 또는 하이브리드 모델을 만듭니다. </span><span>이것이 우리가 현재 수행하고 있는 연구입니다.</span></p>
+<p data-end="3379" data-start="3309"> </p>
+<p data-end="3379" data-start="3309">교수님이 하시는 디지털 트윈의 궁극적 목표는 자동차 자율주행처럼 바이오 제조 공정의 완전 자율운전(Self-driving bioreactor)을 실현하는 것이다. 센서는 배양기 내부 데이터를 실시간 수집하고, 디지털 트윈은 시뮬레이션을 수행하여 feed 유량 조절, 교반 속도, 통기량, 온도 변화 같은 제어 전략을 자동으로 제안하거나 직접 실행한다. 예를 들어 세포 성장이 정지기로 들어가는 순간 생산성을 높이기 위해 온도를 37℃에서 32–33℃로 낮추는 전략은 예측 기반으로 자동 수행될 수 있다. <br/><br/>자동차의 자율주행처럼 공정 자동화에도 레벨 1부터 레벨 5까지 단계가 존재하며, 완전 자동화는 레벨 5이다. 현재 바이오 제조 공정은 대략 레벨 2 정도이고, 교수님 연구실은 레벨 4–5 수준을 향해 연구를 진행 중이다. 강의는 중국 햄스터 세포(CHO cell)에 대한 짧은 언급과 함께 마무리되었으며, 다음 주에는 합성생물학을 다룰 예정이라고 한다.</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/226.html"><span>← 이전 글</span><strong>실험 미생물학 정리</strong></a>
+    <a class="next" href="../posts/232.html"><span>다음 글 →</span><strong>합성생물학 강의노트</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

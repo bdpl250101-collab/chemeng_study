@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Absorption and Stripping of Dilute Mixtures - intro · 화학공학 노트</title>
+<meta name="description" content="이 장은 기체 또는 액체 혼합물에서 원하는 성분을 얼마나 제거하려면 흡수제, 탈거제의 유량과 단수, 탑높이, 탑 직경, 압력강하를 어떻게 정해야 하는지 알아보는 챕터이다. 자세한 학습에 앞서 이 장에서 다루는 지식을 나열하려고 한다. 이유를 뒤 포스팅에서 세세히 다룰 것이다. 1.흡수와 스트리핑먼저 기본용어를 잡자. Absorption은 기체 속 용질을 액체 흡수제로 이동시키는 것이고 Stripping은 반대로 액체 속 용질을 기체로 제거하는 것이다. A=L/KV와 S=KV/L=1/A 라는 각각의 인자가 존재한다. 흡수탑: 고압, ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html" aria-current="page">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/separation.html">분리공정</a></nav>
+  <header class="post-head">
+    <h1>Absorption and Stripping of Dilute Mixtures - intro</h1>
+    <p class="meta">
+      <time datetime="2026-05-19">2026.05.19</time>
+ · 수정 2026.06.12    </p>
+  </header>
+
+
+  <div class="body">
+    <p>이 장은 기체 또는 액체 혼합물에서 원하는 성분을 얼마나 제거하려면 흡수제, 탈거제의 유량과 단수, 탑높이, 탑 직경, 압력강하를 어떻게 정해야 하는지 알아보는 챕터이다. 자세한 학습에 앞서 이 장에서 다루는 지식을 나열하려고 한다. 이유를 뒤 포스팅에서 세세히 다룰 것이다.</p>
+<p> </p>
+<p>1.흡수와 스트리핑</p>
+<p>먼저 기본용어를 잡자. Absorption은 기체 속 용질을 액체 흡수제로 이동시키는 것이고 Stripping은 반대로 액체 속 용질을 기체로 제거하는 것이다. <span><span>A</span><span>=</span></span><span><span>L</span><span>/</span><span>K</span><span>V와 <span><span>S</span><span>=</span></span><span><span>K</span><span>V</span><span>/</span><span>L</span><span>=</span></span><span><span>1/</span><span>A 라는 각각의 인자가 존재한다.</span></span></span></span></p>
+<p> </p>
+<p>흡수탑: 고압, 저온이 유리<br/>탈거탑: 저압, 고온이 유리<span><span><span><span></span></span></span></span></p>
+<p>이유는 K 값 때문이다. 흡수는 K가 작을수록 유리하고, 탈거는 K가 클수록 유리하다.</p>
+<p> </p>
+<p>2.장치</p>
+<p>이 장에서는 장치를 두 개로 나눠서 본다. Tray column과 Packed column이다.</p>
+<p>Tray column = 단수 개념으로 계산하기 좋음 vs Packed column = 연속 접촉이라 HTU/NTU로 계산</p>
+<p>이때 HTU/NTU는 packed column에서 탑높이를 계산할 때 쓰는 개념이다. Tray column은 몇 단이 필요한지 계산할 수 있으나 packed column은 안에 충전물이 쭉 들어 있어서 단이 딱딱 나뉘어 있는게 아니다. 따라서 몇 단 대신에, 높이를 계산하며 다음과 같이 계산한다.</p>
+<p> </p>
+<p>충전층 높이 = 한 단위 전달에 필요한 높이 × 그런 전달 단위가 몇 개 필요한지</p>
+<p><span><span>Z</span><span>=</span></span><span><span>H</span><span>T</span><span>U</span><span>×</span></span><span><span>NT</span><span>U</span></span></p>
+<p> </p>
+<p>즉 여기에 해당하는 개념이 HTU/NTU이다. NTU = Number of Transfer Units으로 원하는 만큼 흡수/탈거하려면 물질전달을 몇 번 정도 반복해야 하는가?를 의미하는데, 간단히 NTU= 분리 난이도라고 보면 된다.</p>
+<p><figure class="figure"><img alt="" height="70" src="../images/283/01.png" width="179"/></figure>
+</p>
+<p><span><span>y−y∗</span></span>는 <b>mass transfer driving force</b>, 즉 실제 기체 농도와 평형 기체 농도의 차이를 뜻한다.</p>
+<p> </p>
+<p>HTU = Height of Transfer Unit으로 물질전달 1단위를 해내는 데 충전층 높이가 몇 m 필요한가를 나타낸다. HTU가 작을수록 좋은 packed column이라고 볼 수 있다. 이게 0.5m면 물질전달 잘돼서 높을 필요가 없다는 것이고, 15m면 물질전달이 너무 안된다는 뜻이다.</p>
+<table border="1">
+<tbody>
+<tr>
+<td>(V)</td>
+<td>기체 유량</td>
+</tr>
+<tr>
+<td>(K_ya)</td>
+<td>전체 기체 기준 부피당 물질전달계수</td>
+</tr>
+<tr>
+<td>(S)</td>
+<td>탑 단면적</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p>Kya가 크다 → 물질전달 잘 됨 → HTU 작아짐<br/>충전물이 좋다 → 접촉면적 큼 → HTU 작아짐<br/>유량이 너무 크다 → 접촉 시간 부족 → HTU 커질 수 있음</p>
+<p> </p>
+<p>따라서 최종 공식은 다음과 같다.  </p>
+<p><span><span><span>필요</span><span> </span><span>높이</span></span><span>=</span></span><span><span><span>장치</span><span> </span><span>성능</span><span> </span><span>단위</span><span> </span><span>높이</span></span><span>×</span></span><span><span><span>분리</span><span> </span><span>난이도</span></span></span></p>
+<p> </p>
+<p><span><span><span>3. 조작선과 평형선</span></span></span></p>
+<p>흡수냐 탈거냐에 따라서 탑 번호가 바뀌게되고, 이로 인해 물질수지식에 차이가 생긴다. 흡수탑 조작선을 외운뒤 인접한 X,Y끼리 첨자를 바꾼다고 생각하면 외우기 쉽다.</p>
+<p><span><span><span>일단 조작선의 경우, 식을 외우고 이를 토대로 그림을 그리게 된다. 이때 그림에서 흡수: 조작선이 평형선 <b>위</b>, 탈거: 조작선이 평형선 아래이며 평형선과 조작선 선이 가까워지면 driving force 감소하고, 핀치가 생기면 필요한 단수가 무한대가 된다.</span></span></span></p>
+<p> </p>
+<p><span><span><span>4. 최소 흡수제 유량 </span></span></span></p>
+<p>흡수탑에서는 최소 액체 유량 <span><span>Lmin⁡'</span></span>이 있다. 이때 희박 용액이고 유입 흡수제가 순수하다고 가정하면 다음 식이 성립한다.</p>
+<p>더 많이 흡수하려면 액체 유량이 늘어야 하고, K가 큰 성분은 액체로 잘 안 가니까 더 많은 흡수제가 필요하다는 뜻이다. 여기서 K는 용질이 기체로 가려고 하는 성질인 평형상수인데, K가 크다는 거는 흡수가 잘 안된다는 뜻이다. 흡수탑에서는 기체 속 용질을 액체가 받아먹는 것이다. </p>
+<table border="1" data-end="1031" data-start="925">
+<tbody data-end="1031" data-start="945">
+<tr data-end="970" data-start="945">
+<td data-col-size="sm" data-end="954" data-start="945"><span><span>V′</span></span></td>
+<td data-col-size="sm" data-end="970" data-start="954">처리해야 하는 기체 양</td>
+</tr>
+<tr data-end="998" data-start="971">
+<td data-col-size="sm" data-end="979" data-start="971"><span><span>K</span></span></td>
+<td data-col-size="sm" data-end="998" data-start="979">용질이 기체에 남으려는 정도</td>
+</tr>
+<tr data-end="1031" data-start="999">
+<td data-col-size="sm" data-end="1019" data-start="999">fraction absorbed</td>
+<td data-col-size="sm" data-end="1031" data-start="1019">제거하려는 비율</td>
+</tr>
+</tbody>
+</table>
+<p>이는 기체가 많으면 그만큼 처리제인 액체도 많이 필요하고, K가 크면 기체에 남으려고 하기 때문에 액체가 많이 있어야되고, 많이 제거하려할 수록 액체가 많이 필요함을 뜻한다.</p>
+<p> </p>
+<p>5. 이론단수 계산</p>
+<p>두 가지 방법이 있다: 그래프법과 Kremser 식</p>
+<p>Kremser식은 이 장에서 매우 중요하다.</p>
+<p><figure class="figure"><img alt="" height="192" src="../images/283/02.png" width="260"/></figure>
+</p>
+<p>크렘저식의 경우 남은 비율을 나타내는 식과, 이를 1에서 빼서 흡수된 비율을 나타내는 식 2개가 존재한다. 이때 N이 단수이다. 따라서 만약 A=1.5이고 흡수율이 97%를 달성하고 싶다면 다음과 같이 식을 작성 후 풀게된다.</p>
+<p><figure class="figure"><img alt="" height="76" src="../images/283/03.png" width="195"/></figure>
+</p>
+<p>따라서 단수를 다음처럼 구할 수 있다.</p>
+<p><figure class="figure"><img alt="" height="90" src="../images/283/04.png" width="219"/></figure>
+</p>
+<p>6.Tray efficiency</p>
+<p>이론단 수와 실제 단수는 다르다. 보통 실제 단수가 더 많은데, 이를 다음처럼 나타낸다.</p>
+<p>예를 들어 이론단수 6단이 필요하고 효율이 30%라면 실제 tray는 20개 필요하다.</p>
+<p>7. Flooding, weeping, entrainment</p>
+<table border="1">
+<tbody>
+<tr>
+<td>Flooding</td>
+<td>기체 속도가 너무 커서 액체가 위로 밀림</td>
+</tr>
+<tr>
+<td>Weeping</td>
+<td>기체 속도가 너무 작아서 액체가 tray 구멍으로 샘</td>
+</tr>
+<tr>
+<td>Entrainment</td>
+<td>액적이 기체에 실려 위로 넘어감</td>
+</tr>
+<tr>
+<td>Downcomer flooding</td>
+<td>downcomer가 액체를 못 내려보냄</td>
+</tr>
+</tbody>
+</table>
+<p>간단한 개념인데, 한번 보기만 하자.</p>
+<p> </p>
+<p>8. Packed column: HTU/NTU</p>
+<p>Packed column은 tray처럼 몇 단이라고 보기 어렵기에, 단수를 구해서 한단의 높이와 곱하는 방법으로 총 높이를 구하기 힘들다. 이때 최종 높이를 계산하기 위해 다음 식을 쓴다.</p>
+<p><figure class="figure"><img alt="" height="41" src="../images/283/05.png" width="140"/></figure>
+</p>
+<table border="1">
+<tbody>
+<tr>
+<td>Z 또는 l_T</td>
+<td>packed height</td>
+</tr>
+<tr>
+<td>H_{OG}</td>
+<td>height of overall gas transfer unit</td>
+</tr>
+<tr>
+<td>N_{OG}</td>
+<td>number of overall gas transfer units</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/278.html"><span>← 이전 글</span><strong>시험 대비 분리공정 열역학, 물질전달, 단일 단 분리, 여러 단 분리 총정리</strong></a>
+    <a class="next" href="../posts/284.html"><span>다음 글 →</span><strong>6.1- GRAPHICAL METHOD FOR TRAYED TOWERS &amp; ALGEBRAIC METHOD FOR DETERMINING N</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

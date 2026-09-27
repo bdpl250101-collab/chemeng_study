@@ -1,0 +1,14 @@
+{
+ "id": 115,
+ "title": "ch5: 열역학 제 2법칙",
+ "date": "2025-06-14",
+ "modified": "2025-06-14",
+ "category": "화학공학 일지/화공열역학",
+ "tags": [],
+ "summary": "1)열효율열기관이 받은 열을 일로 변환시키는 비율을 열 효율 η 이라고 정의한다.카르노 기관의 열효율은 다음과 같다.실제 기관이 할 수 있는 일은 다음과 같다.2) 열린계에 대한 엔트로피 수지3)이상일과 손실된 일이게 이상적인 일의 정의이다. 비가역성으로 인해 잃은 일은 위처럼 구할 수 있다. 이건 비흐름 시스템, 즉 고정된 폐쇄계에서 이상적인 가역 공정이 주는 최대 가역일이라 흐름계(터빈,펌프)등에는 적용되지 않는다.",
+ "source_url": "https://audio268.tistory.com/115",
+ "images_ok": 9,
+ "images_failed": 0,
+ "chars": 257,
+ "html": "<p><figure class=\"figure\"><img alt=\"\" height=\"1123\" src=\"../images/115/01.jpg\" width=\"793\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"1123\" src=\"../images/115/02.jpg\" width=\"793\"/></figure>\n</p>\n<p><b>1)열효율</b></p>\n<p><span><b>열기관이 받은 열을 일로 변환시키는 비율을 열 효율 η </b></span><span>이라고 정의한다.</span></p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"58\" src=\"../images/115/03.png\" width=\"92\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"73\" src=\"../images/115/04.png\" width=\"246\"/><figcaption>실제 열기관의 일 표현</figcaption>\n</figure>\n</p>\n<p>카르노 기관의 열효율은 다음과 같다.</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"75\" src=\"../images/115/05.png\" width=\"164\"/></figure>\n</p>\n<p>실제 기관이 할 수 있는 일은 다음과 같다.</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"76\" src=\"../images/115/06.png\" width=\"152\"/></figure>\n</p>\n<p>2) 열린계에 대한 엔트로피 수지</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"160\" src=\"../images/115/07.png\" width=\"687\"/></figure>\n</p>\n<p>3)이상일과 손실된 일</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"79\" src=\"../images/115/08.png\" width=\"334\"/></figure>\n</p>\n<p>이게 이상적인 일의 정의이다. </p>\n<p> </p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"72\" src=\"../images/115/09.png\" width=\"363\"/></figure>\n</p>\n<p>비가역성으로 인해 잃은 일은 위처럼 구할 수 있다. </p>\n<p> </p>\n<p>이건 <b>비흐름 시스템</b>, 즉 <b>고정된 폐쇄계에서</b> 이상적인 가역 공정이 주는 <b>최대 가역일</b>이라 흐름계(터빈,펌프)등에는 적용되지 않는다.</p>"
+}

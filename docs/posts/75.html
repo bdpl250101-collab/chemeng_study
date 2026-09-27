@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>화학반응공학 ch4: 등온반응기의 설계 (1) : 등온 등압조건에서 비가역 1차 2차 반응 · 화학공학 노트</title>
+<meta name="description" content="저번시간 요약---------------------------- 1장과 2장에서는 반응기에 대한 몰수지를 세우고, 이를 전화율의 함수로 표현하였다. 이후 3장에서 속도식과 화학양론을 통해 최종적으로 각 반응기에서 부피와 전화율 간의 관계를 세웠다. 이때 설계식에서 반응기의 부피는 전화율, 온도, 압력의 함수로 나타난다.v= f(X,P,T) 4장에서는 앞에서 했던 내용을 종합하여 실전 문제에 적용해보는 시간을 가지려고 한다. 먼저 batch, CSTR, PFR에서 전화율의 항으로 나타낸 몰 수지를 풀 것이다. 하지만 지금까지 해왔던 ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html" aria-current="page">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/reaction.html">화학반응공학</a></nav>
+  <header class="post-head">
+    <h1>화학반응공학 ch4: 등온반응기의 설계 (1) : 등온 등압조건에서 비가역 1차 2차 반응</h1>
+    <p class="meta">
+      <time datetime="2025-05-24">2025.05.24</time>
+    </p>
+  </header>
+
+  <nav class="toc" aria-label="목차">
+    <p class="toc-title">목차</p>
+    <ol>
+      <li class="lv3"><a href="#s1">1. 생성물 제거 :</a></li>
+      <li class="lv3"><a href="#s2">2. 반응 조건 변경 (온도, 압력 조절) :</a></li>
+      <li class="lv3"><a href="#s3">3. 촉매 사용 :</a></li>
+      <li class="lv3"><a href="#s4">4. 과량의 반응물 사용 :</a></li>
+      <li class="lv3"><a href="#s5">5. 압력 변화 :</a></li>
+      <li class="lv3"><a href="#s6">6. 특정 반응 경로 차단 :</a></li>
+      <li class="lv3"><a href="#s7">7. 압력과 온도 조절 + 생성물 제거 :</a></li>
+      <li class="lv3"><a href="#s8">담퀄러 수의 해석</a></li>
+    </ol>
+  </nav>
+
+  <div class="body">
+    <p><figure class="figure"><img alt="" height="748" src="../images/75/01.webp" width="900"/></figure>
+</p>
+<p>저번시간 요약</p>
+<p>----------------------------</p>
+<p> </p>
+<p>1장과 2장에서는 반응기에 대한 몰수지를 세우고, 이를 전화율의 함수로 표현하였다. 이후 3장에서 속도식과 화학양론을 통해 최종적으로 각 반응기에서 부피와 전화율 간의 관계를 세웠다. 이때 설계식에서 반응기의 부피는 <b>전화율, 온도, 압력</b>의 함수로 나타난다.</p>
+<p>v= f(X,P,T)</p>
+<p> </p>
+<p>4장에서는 앞에서 했던 내용을 종합하여 실전 문제에 적용해보는 시간을 가지려고 한다. 먼저 batch, CSTR, PFR에서 전화율의 항으로 나타낸 몰 수지를 풀 것이다. 하지만 지금까지 해왔던 몰 수지를 전화율의 항으로 표현하는 것은 복합반응에서는 쓸 수 없으며 이에 따라 전화율대신 CA, FA를 이용한 몰 수지를 사용하는 예제도 볼 것이다.</p>
+<p> </p>
+
+<p><figure class="figure"><img alt="" height="1344" src="../images/75/02.webp" width="918"/></figure>
+</p>
+<p>전화율을 이용하는 등온반응 설계 알고리즘은 위와 같다. 위 체계를 따르면 어떤 등온반응이든지 반응에 필요한 부피나 시간을 산정할 수 있다.</p>
+<p> </p>
+<p>일단 사실상 이제부터는 알고리즘을 적용하여 <b>기본적인 암기사항을 이끌어내는 것</b>이 주 목적이다.</p>
+<p> </p>
+<p>일단 사실하나 알고 가자. 화학공정의 대부분의 반응은<b> 1차, 2차 비가역 공정이다</b></p>
+<p>이유: 일단 경험적으로 1차, 2차 반응이 많은 것이 확인되었다. 근데 왜 비가역 공정이 흔할까? 화학 반응의 <b>자연적 성질</b>을 따져보면, 대부분의 반응은 <b>가역적이다</b>. 그러나 <b>공정</b>에서 다루는 경우는 조금 다르게 볼 수 있다.</p>
+<p> </p>
+<ul>
+<li><b>목표 제품 생산 극대화</b>: 산업적 공정에서는 반응이 완전히 진행되어 <b>생성물</b>이 더 이상 반응물로 되돌아가지 않도록 하는 것이 유리하다. 따라서 <u>비가역 반응이 더 효율적이다.</u> 특히, 연소, 산화, 중합과 같은 반응들은 비가역적으로 설계되며, 이러한 비가역성 덕분에 최대의 제품 수율을 얻을 수 있다.</li>
+<li><b>설계 및 제어 용이성</b>: 비가역 반응은 반응 조건이 간단하고, 평형 상태를 고려하지 않아도 되기 때문에 <u>공정 설계와 제어가 상대적으로 쉬울 수 있다</u>. 예를 들어, 연소 반응이나 산화 반응은 일방향으로 완전히 진행되어야 하므로 비가역 반응으로 처리된다.</li>
+<li><b><span>가역반응일 경우 비가역으로 만듦</span>:</b> 비가역 반응이 공정 설계나 반응기 운전에서 더 단순하고 효율적인 결과를 얻을 수 있기 때문이다. 가역 반응은 평형에 도달하면 더 이상 반응이 진행되지 않으므로, 평형 상태를 무너뜨려서 반응을 <b>비가역적</b>으로 만드는 방법들이 사용된다. </li>
+</ul>
+<p>추가: 가역반응을 비가역반응으로 만들기</p>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+<p>다음은 가역 반응을 비가역 반응처럼 만들기 위한 몇 가지 방법입니다:</p>
+<h3 id="s1">1. <b>생성물 제거</b>:</h3>
+<ul>
+<li>가역 반응에서는 생성물이 축적되면서 반응이 평형에 도달하게 됩니다. <b>Le Chatelier의 원리</b>에 따르면, 생성물을 반응기 내에서 <b>제거</b>하면 평형이 다시 반응물 쪽으로 이동하여 <b>더 많은 생성물</b>을 만들게 됩니다.</li>
+<li>이를 위해 <b>증류, 응축, 흡수</b> 등의 방법으로 생성물을 반응기 외부로 빼내면, 반응은 한 방향으로 계속 진행되어 마치 <b>비가역 반응</b>처럼 작동할 수 있습니다.</li>
+<li>예를 들어, 암모니아 합성 반응에서 암모니아를 반응 중에 제거하면, 더 많은 암모니아가 생성되도록 반응이 계속해서 진행됩니다.</li>
+</ul>
+<h3 id="s2">2. <b>반응 조건 변경 (온도, 압력 조절)</b>:</h3>
+<ul>
+<li>가역 반응은 온도나 압력에 매우 민감합니다. 평형 상수 <span><span>KK</span><span aria-hidden="true"><span><span>K</span></span></span></span>는 온도에 따라 변하고, <b>온도를 낮추거나 높이는 방법</b>으로 특정 반응 방향을 더 유리하게 만들 수 있습니다.</li>
+<li>예를 들어, <b>발열 반응</b>에서는 온도를 낮추면 생성물 쪽으로 평형이 이동합니다. 반대로 <b>흡열 반응</b>에서는 온도를 높이면 더 많은 생성물이 생깁니다. 이렇게 <b>적절한 온도와 압력 조건</b>을 선택하여 반응을 한 방향으로만 진행되게 할 수 있습니다.</li>
+</ul>
+<h3 id="s3">3. <b>촉매 사용</b>:</h3>
+<ul>
+<li>촉매는 가역 반응에서 <b>양방향</b> 반응 모두에 영향을 미치지만, 반응 경로를 선택적으로 촉진하는 특수 촉매를 사용하면 특정 방향으로만 반응을 유도할 수 있습니다.</li>
+<li>예를 들어, 특정 촉매는 <b>생성물의 분해</b>보다는 <b>반응물의 결합</b>을 더 촉진할 수 있으며, 이를 통해 가역성을 줄일 수 있습니다.</li>
+</ul>
+<h3 id="s4">4. <b>과량의 반응물 사용</b>:</h3>
+<ul>
+<li>반응물 중 하나를 <b>과량</b>으로 투입하면, 가역 반응이 비가역 반응처럼 진행될 수 있습니다. 과량의 반응물이 있으면 평형이 생성물 쪽으로 이동하여 반응이 계속해서 진행됩니다.</li>
+<li>예를 들어, 수소를 과량으로 사용하면 메탄과 같은 가역 반응이 비가역 반응처럼 작동할 수 있습니다.</li>
+</ul>
+<h3 id="s5">5. <b>압력 변화</b>:</h3>
+<ul>
+<li>기체 반응에서는 <b>압력</b>을 조절함으로써 반응을 비가역처럼 만들 수 있습니다. 반응의 기체 몰수 변화에 따라, <b>압력을 높이거나 낮추면</b> 평형이 이동해 한쪽 방향으로 더 많은 생성물을 만들 수 있습니다.</li>
+<li>예를 들어, <b>부피가 줄어드는 반응</b>(몰 수가 감소하는 반응)에서는 <b>고압</b>을 걸면 반응이 생성물 쪽으로 더 많이 진행됩니다.</li>
+</ul>
+<h3 id="s6">6. <b>특정 반응 경로 차단</b>:</h3>
+<ul>
+<li>반응 경로를 제한하거나 제어하여 가역성을 줄일 수 있습니다. 반응 메커니즘에서 특정 경로를 선택적으로 차단하거나 유도하여, 원하는 방향으로만 반응이 일어나도록 하는 방법입니다.</li>
+</ul>
+<h3 id="s7">7. <b>압력과 온도 조절</b> + <b>생성물 제거</b>:</h3>
+<ul>
+<li>반응 속도를 높이거나 평형을 생성물 쪽으로 강제 이동시키기 위해 <b>온도와 압력을 동시에 조절</b>하고, <b>생성물을 지속적으로 제거</b>하는 조합 방법도 흔히 사용됩니다. 이를 통해 가역 반응을 마치 비가역 반응처럼 처리할 수 있습니다.</li>
+</ul>
+<p>이 방법들은 실제 산업 공정에서 반응이 더 효율적으로 진행되도록 하기 위해 많이 사용되며, <b>평형 상태</b>에 도달하는 것을 막아 가역성을 제거하거나 줄이는 방식으로 가역 반응을 <b>비가역적</b>으로 처리할 수 있습니다.</p>
+</div>
+</div>
+<p> </p>
+<p><b>1차</b>와 <b>2차 비가역 반응</b>을 합치면 대략적으로 <b>전체 화학 공정의 70%~80%</b> 정도를 차지할 수 있다는 추정이 존재한다. 이는 산업 공정에서 비가역 반응이 차지하는 비중이 크기 때문이다.</p>
+<p> </p>
+<p>나머지 20%~30%는 주로 고차 반응(3차, 4차 등)이나 <b>가역 반응</b>이 차지한다. 고차 반응이나 가역 반응은 공정에서 다루기 더 복잡하고, 평형에 도달하는 반응들이 많기 때문에 상대적으로 그 비율이 낮다.</p>
+<p> </p>
+<p>또한 기상&gt;액상&gt;고체상 공정 순으로 또 흔하다. 따라서 <b>1차 2차 비가역 기체상에 대한 케이스 스터디를 해놓고 그 결과를 정리해두면 여러가지 공정에 적용할 수 있어 편리</b>하겠지? 그 밑작업을 하자는게 이번 챕터의 주요 요지다. </p>
+<p> </p>
+
+
+
+
+
+
+<p><b>1. batch에서 1차 2차 반응</b></p>
+<p>batch에서는 보통 액상반응이 진행되며 부피는 일정하다. 몰수지, 속도법칙, 화학양론을 결합하면 전화율의 미분항이 나오고, 이를 적분하여 특정 전화율을 얻기 위한 반응시간을 구할 수 있다.</p>
+<p> </p>
+<p>@batch에서 비가역 1차 반응</p>
+<p><figure class="figure"><img alt="" height="79" src="../images/75/03.png" width="173"/><figcaption>BATCH 설계식</figcaption>
+</figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="44" src="../images/75/04.png" width="136"/><figcaption>속도식</figcaption>
+</figure>
+<figure class="figure"><img alt="" height="273" src="../images/75/05.png" width="747"/><figcaption>화학양론표, 사실상 A만 필요하다.</figcaption>
+</figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="67" src="../images/75/06.png" width="160"/></figure>
+<figure class="figure"><img alt="" height="60" src="../images/75/07.png" width="144"/><figcaption>결합시</figcaption>
+</figure>
+</p>
+<p><span>이를 적분하면 회분식 반응기에서 특정 전화율을 달성하는데 필요한 시간을 구할 수 있다.</span></p>
+<p><figure class="figure"><img alt="" height="57" src="../images/75/08.png" width="155"/></figure>
+</p>
+<p> </p>
+
+<p><span>@ batch 비가역 2차반응에서의 반응시간은 추가로 다음과 같다.</span></p>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div><figure class="figure"><img alt="" height="886" src="../images/75/09.png" width="803"/></figure>
+</div>
+</div>
+<p><b>정리</b></p>
+<p><figure class="figure"><img alt="" height="390" src="../images/75/10.png" width="822"/></figure>
+</p>
+<p><b>batch에서 비가역 1 2차 액상반응</b></p>
+<p> </p>
+<p>추가적으로 실제에 유용한 정보인 운전시간을 알고 가자.</p>
+<p><figure class="figure"><img alt="" height="53" src="../images/75/11.png" width="219"/></figure>
+<figure class="figure"><img alt="" height="323" src="../images/75/12.png" width="618"/></figure>
+</p>
+<p>회분식 중합공정은 반응시간 뿐만 아니라 원료를 공급하고, 반응온도까지 가열하고, 청소하는 시간까지 포함된 후 반응시간이 더해져 총 운전시간이 결정된다. 따라서 반응을 제외한 총 시간은 표에서 보듯이 3~6시간 정도의 추가 시간이 소요된다.</p>
+<p> </p>
+<p>따라서 하루에 운전하는 회분의 수를 최대로 하려면 반응시간의 최적화가 필요하다.</p>
+<p> </p>
+
+<p><b>2.CSTR의 1차 2차 비가역 반응</b></p>
+<p>CSTR역시 액상반응에 주로 사용된다. 이때 CSTR의 주요 변수는 공간시간 <span>τ</span> 으로, 반응기 내에서 <b>반응물이 체류하는 평균 시간</b>이다.</p>
+<p><figure class="figure"><img alt="" height="85" src="../images/75/13.png" width="109"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="90" src="../images/75/14.png" width="176"/><figcaption>이게 원래 CSTR의 설계식이다.</figcaption>
+</figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="96" src="../images/75/15.png" width="166"/><figcaption>FA0를 이렇게 바꿀 수 있다.</figcaption>
+</figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="83" src="../images/75/16.png" width="169"/><figcaption>이항을 통해 바꿀 수 있다.</figcaption>
+</figure>
+</p>
+<p>위 식을 보통 CSTR에서는 많이 쓴다.</p>
+<p> </p>
+<p>만약 CSTR이 연결된 경우 두번쨰 CSTR에서는 τ 2= 초기농도* (X2-X1)/ 두번째 CSTR에서의 반응속도이다.</p>
+<p><figure class="figure"><img alt="" height="85" src="../images/75/17.png" width="256"/></figure>
+</p>
+<p> </p>
+<p>1차: 유도과정은 쉬우므로 생략한다.</p>
+<p>CSTR의 공식에서 담쾰러 수 Da라고 하는 새로운 항이 소개되므로 이에 대해 알고가자.</p>
+<p> </p>
+<p><b>담퀄러 수</b>(Damköhler number, <span><span>Da</span></span>)는 화학 반응 공학에서 중요한 무차원 수로, 반응 속도와 물질 이동 속도의 비율을 나타낸다. 이 수는 흐름 반응기가 반응을 잘 수행하고 있는지 평가하는 데 유용하다. 일반적으로 다음과 같은 형태로 정의된다:</p>
+<p><figure class="figure"><img alt="" height="88" src="../images/75/18.png" width="249"/></figure>
+</p>
+<p>담쾰러 수는  <span><span>τk 이거나(1차반응)   <span>τkCA0 (2차반응) 로 나타내질 수 있다. n차 반응일때 농도에 n-1차가 곱해진다고 보면 된다.</span></span></span></p>
+<p><figure class="figure"><img alt="" height="57" src="../images/75/19.png" width="204"/></figure>
+</p>
+<p> </p>
+<h3 id="s8">담퀄러 수의 해석</h3>
+<ul>
+<li><span><span>Da&lt;1</span></span>: 물질 전달이 반응 속도를 제어하고 있음을 나타냅니다. 이 경우 물질이 반응물로 변환되기 전에 시스템을 통해 확산되어야 하므로, 반응 속도는 느리게 진행됩니다.</li>
+<li><span><span>Da&gt;1</span></span>: 반응 속도가 물질 이동 속도를 초과하여 반응이 빠르게 진행됨을 나타냅니다. 이 경우 반응이 진행되는 동안 물질이 충분히 공급됩니다.</li>
+<li><span><span>Da=1</span></span>: 물질 이동과 반응 속도가 거의 비슷한 경우로, 이 경우 두 과정이 동등하게 기여합니다.</li>
+</ul>
+<p>일단 담쾰러 수가 크면 클 수록 좋다고 보면 된다.  반응 속도가 물질 이동 속도를 초과하여 반응이 매우 빠르게 진행되며, 반응물이 계속 공급되고 있는거다. 이 경우 물질이 반응 지점에 충분히 도달하고 있어 반응 속도는 물질 이동에 의해 제한되지 않는다.</p>
+<p> </p>
+<p><span><span aria-hidden="true"><span><span>D</span><span>a</span><span>&lt;</span></span><span><span>1</span></span></span></span>인 경우 배치 반응기를 사용하여 물질 이동을 개선할 수 있다.</p>
+<p> </p>
+<p>또 담쾰러 수는 전화율과 관련이 있다.</p>
+<p><figure class="figure">
+<div><img alt="" height="69" src="../images/75/20.png" width="122"/><img alt="" height="71" src="../images/75/21.png" width="257"/></div>
+</figure>
+</p>
+<p>위는 각각 1차반응, 2차반응일때 CSTR에서 전화율을 담쾰러 수로 나타낸 것이다. 이때 담쾰러 수가 높을 수록 전화율이 높아지며 경험법칙에 의하면 담쾰러수가 10을 넘어가면 전화율이 90%정도 나온다.</p>
+<p><figure class="figure"><img alt="" height="360" src="../images/75/22.png" width="681"/><figcaption>2차 반응에서 담쾰러수와 전화율 관계</figcaption>
+</figure>
+</p>
+<p> </p>
+<p>CSTR에서는 담쾰러 수와 전화율간의 관계식을 주로 쓴다.</p>
+<p><figure class="figure"><img alt="" height="100" src="../images/75/23.png" width="206"/></figure>
+</p>
+<p>이때, 만약 직렬로 2개가 연결되어있다면 </p>
+<p><figure class="figure"><img alt="" height="139" src="../images/75/24.png" width="666"/></figure>
+</p>
+<p>이렇게 되고, 두 반응기의 부피가 같고 같은 온도에서 운전되는 것을 가정하면 타우케이는 같다.</p>
+<p><figure class="figure"><img alt="" height="146" src="../images/75/25.png" width="519"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="143" src="../images/75/26.png" width="428"/></figure>
+<figure class="figure"><img alt="" height="150" src="../images/75/27.png" width="603"/></figure>
+</p>
+<p>최종 전화율은 이렇게 된다.</p>
+<p> </p>
+<p>그리고 CSTR에서 1차 2차 비가역 반응에서 설계식을 살펴보면 다음과 같이 나온다.</p>
+<p><figure class="figure"><img alt="" height="291" src="../images/75/28.png" width="574"/></figure>
+</p>
+<p> </p>
+
+<p>3.PFR</p>
+<p>PFR의 경우 2차반응이면 다음과 같은 부피와 전화율간 관계식이 존재한다.</p>
+<p><figure class="figure"><img alt="" height="104" src="../images/75/29.png" width="546"/></figure>
+</p>
+<p>유도과정</p>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+<p> </p>
+<figure class="figure"><img alt="" height="1632" src="../images/75/30.webp" width="918"/></figure>
+
+<figure class="figure"><img alt="" height="1632" src="../images/75/31.webp" width="918"/></figure>
+</div>
+</div>
+<p>또 1차는 다음과 같이 나온다. 유도는 생략한다.</p>
+<p><figure class="figure"><img alt="" height="155" src="../images/75/32.png" width="798"/></figure>
+</p>
+<p> </p>
+<p>지금까지 논의를 총 정리하면 다음과 같다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="981" src="../images/75/33.webp" width="1866"/></figure>
+</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/23.html"><span>← 이전 글</span><strong>화학반응공학 ch1~3. 몰 수지식과 설계방정식, 전화율, 속도법칙</strong></a>
+    <a class="next" href="../posts/77.html"><span>다음 글 →</span><strong>ch5. 속도자료의 수집과 분석</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

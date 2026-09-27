@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mccabe 단위조작 2 · 화학공학 노트</title>
+<meta name="description" content="챕터2: 유체역학 유체의 거동은 프로세스 공학에서 일반적으로 중요하며 단위조작의 기본 분야 중 하나이다. 유체를 잘 알아야 관과 펌프와 같은 프로세스 장치에서 유체 이동에 관한 문제를 제대로 다루고, 열흐름, 확산 및 물질 전달에 기초한 분리 조작을 공부할 수 있다. 유체의 거동을 다루는 분야는 유체역학이다. 유체+응력을 받는 고체까지 다루는 넓은 분야는 연속체역학이라 한다. 단위조작에서 필요한 것은 유체역학 중 전단응력이 존재하지 않는 평형 상태의 유체를 다루는 유체정역학과 일부가 상대적으로 움직이는 유체를 다루는 유체동역학의 두">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html" aria-current="page">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/study.html">화학공학 스터디</a></nav>
+  <header class="post-head">
+    <h1>mccabe 단위조작 2</h1>
+    <p class="meta">
+      <time datetime="2023-12-25">2023.12.25</time>
+ · 수정 2025.06.29    </p>
+  </header>
+
+
+  <div class="body">
+    <p>챕터2: 유체역학</p>
+<p> </p>
+<p>유체의 거동은 프로세스 공학에서 일반적으로 중요하며 단위조작의 기본 분야 중 하나이다. 유체를 잘 알아야 관과 펌프와 같은 <b>프로세스 장치에서 유체 이동에 관한 문제</b>를 제대로 다루고, 열흐름, 확산 및 물질 전달에 기초한 <b>분리 조작</b>을 공부할 수 있다.</p>
+<p> </p>
+<p>유체의 거동을 다루는 분야는 유체역학이다. 유체+응력을 받는 고체까지 다루는 넓은 분야는 연속체역학이라 한다. 단위조작에서 필요한 것은 유체역학 중 전단응력이 존재하지 않는 평형 상태의 유체를 다루는 유체정역학과 일부가 상대적으로 움직이는 유체를 다루는 유체동역학의 두 분야로 유체역학을 나눈다.</p>
+<p> </p>
+<p>섹션2는 9장까지 구성되어있는데, 각각은 다음과 같다.</p>
+<p> </p>
+<p>2장:유체 정역학과 기본 응용</p>
+<p>3장:유체 흐름에서 나타나는 중요 현상 검토</p>
+<p>4장:유체 흐름의 정량적 기본 법칙과 식을 다룸</p>
+<p>5장:관 속에 흐르는 비압축성 유체</p>
+<p>6장:압축성 유체</p>
+<p>7장:유체 속에 잠긴 고체를 지나는 흐름</p>
+<p>8장:유체 수송 장치와 유량의 측정 및 조절에 관한 공학적 과제</p>
+<p>9장:혼합, 교반, 분산 조작</p>
+<p> </p>
+<p><b> 2장:유체 정역학과 기본 응용</b></p>
+<p>유체는 변형에 저항하지 못하는 물질, 비압축성 VS 압축성</p>
+<p>유체 정역학적 평형 조건</p>
+<p><figure class="figure"><img alt="" height="69" src="../images/22/01.png" width="146"/></figure>
+</p>
+<p>3장:유동현상 (유체 흐름에서 나타나는 중요 현상 검토)</p>
+<p>흐르는 유체의 거동은 경계가 미치는 영향에 따라 달라진다. 벽의 영향이 적으면 전단응력이 없어져 비압축성이고 점도가 0인 이상유체의 거동과 비슷해진다. 이러한 이상유체의 흐름을 퍼텐셜 흐름이라고 한다. </p>
+<p> </p>
+<p>퍼텐셜 흐름에는 두 가지 중요한 특성이 있는데</p>
+<p>1)흐름 중에는 에디가 생기지 않으며 비회전흐름이다.</p>
+<p>2)마찰이 생기지 않는다. 따라서 기계적 에너지가 열로 손실되지 않는다.</p>
+<p> </p>
+<p>반면 벽에 인접한 유체는 경계의 영향을 받아 4가지 중요효과가 나타난다.</p>
+<p>1)속도 구배와 전단응력장의 결합</p>
+<p>2)난류의 발생</p>
+<p>3)경계층의 형성과 성장</p>
+<p>4)고체 경계와의 접촉면으로부터의 경계층의 분리</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/19.html"><span>← 이전 글</span><strong>mccabe 단위 조작 1</strong></a>
+    <a class="next" href="../posts/24.html"><span>다음 글 →</span><strong>흡수에 의한 분리</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

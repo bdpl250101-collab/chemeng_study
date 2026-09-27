@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>진동응답/주파수 응답 · 화학공학 노트</title>
+<meta name="description" content="진동응답은 공정의 입력변수가 사인함수일 때의 시스템의 정상상태 응답이다. 입력이 사인인 경우 나타나는 출력은 입력신호를 따라가는데, 이때 입력신호의 크기와 위상이 바뀌면서 안정된 시스템의 사인함수로 나타나게 되는 것이다. 1차 공정에 진폭A이고 진동수가 W인 사인변화가 도입되었을 때, 출력 Y는 어떻게 되겠는가? 먼저 x(t)는 다음과 같다.이걸 라플라스 변환하고, 1차에 넣어보도록 하자.이를 라플라스 역변환한다.앞의 항은 시간이 지나면 0에 가까워지므로, 시간이 쭉 지났을 때는 2번째항만이 남게 된다. 따라서 처음항은 초기에만 영">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html" aria-current="page">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/process-control.html">공정제어</a></nav>
+  <header class="post-head">
+    <h1>진동응답/주파수 응답</h1>
+    <p class="meta">
+      <time datetime="2025-07-21">2025.07.21</time>
+    </p>
+  </header>
+
+
+  <div class="body">
+    <p>진동응답은 공정의 입력변수가 사인함수일 때의 시스템의 정상상태 응답이다. 입력이 사인인 경우 나타나는 출력은 입력신호를 따라가는데, 이때 입력신호의 크기와 위상이 바뀌면서 안정된 시스템의 사인함수로 나타나게 되는 것이다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="257" src="../images/134/01.png" width="542"/></figure>
+</p>
+<p>1차 공정에 진폭A이고 진동수가 W인 사인변화가 도입되었을 때, 출력 Y는 어떻게 되겠는가? 먼저 x(t)는 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="50" src="../images/134/02.png" width="144"/></figure>
+</p>
+<p>이걸 라플라스 변환하고, 1차에 넣어보도록 하자.</p>
+<p><figure class="figure"><img alt="" height="93" src="../images/134/03.png" width="592"/></figure>
+<figure class="figure"><img alt="" height="78" src="../images/134/04.png" width="820"/></figure>
+</p>
+<p>이를 라플라스 역변환한다.</p>
+<p><figure class="figure"><img alt="" height="203" src="../images/134/05.png" width="1001"/></figure>
+</p>
+<p>앞의 항은 시간이 지나면 0에 가까워지므로, 시간이 쭉 지났을 때는 2번째항만이 남게 된다. 따라서 처음항은 초기에만 영향을 준다는 의미로 초기 과도응답이라고 한다. 지속되는 응답을 자세히보면 크기와 위상에서 차이가 발생함을 알 수 있다.</p>
+<p><figure class="figure"><img alt="" height="106" src="../images/134/06.png" width="772"/></figure>
+</p>
+<p> </p>
+
+
+
+
+<p>여기서 이제 위상각이 왜 저렇게 나오는 지 궁금할 수 있다. 이걸 이해하기 위해서는 복소수를 먼저 공부해야 한다.</p>
+<p> </p>
+<p>복소수는 a+bi꼴로 나타나는데, 이때 a를 실수부, b를 허수부라고 부르고, 좌표에서는 x축에 실수부, y축에 허수부를 찍는다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="296" src="../images/134/07.png" width="437"/></figure>
+</p>
+<p>여기서 r과 각도를 구할 수 있는데, 이 둘을 각각 크기와 위상각이라고 표현한다.</p>
+<p><figure class="figure"><img alt="" height="63" src="../images/134/08.png" width="460"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="117" src="../images/134/09.png" width="469"/></figure>
+</p>
+<p>그럼 특징적인 좌표의 위상각을 계산해보자.</p>
+<p><figure class="figure">
+<div><img alt="" height="283" src="../images/134/10.png" width="322"/><img alt="" height="256" src="../images/134/11.png" width="281"/></div>
+</figure>
+</p>
+<p>1=0도이고 i가 곱해질 때마다 90도씩 증가하는 것을 볼 수 있다.</p>
+<p> </p>
+<p>또 매우 중요한 다음 관계도 숙지해두자.</p>
+<p><figure class="figure"><img alt="" height="203" src="../images/134/12.png" width="985"/></figure>
+</p>
+<p>이제 1차공정의 진동응답을 쉽게 구하는 기술적인 방법을 알아보자.</p>
+<p><figure class="figure"><img alt="" height="749" src="../images/134/13.png" width="1344"/></figure>
+</p>
+<p>위는 복소수의 성질로 진동 응답을 구하는 방법이다. 원래는 전달함수에 사인응답을 넣어서 구해야 하지만, 그렇게 하지 않고 s대신 iw를 대입해도 구할 수 있다. 이를 직접치환법이라고 하며 증명은 생략한다.</p>
+<p> </p>
+<p>먼저 iw를 넣고 분모를 실수화한다. 이후 실수부R과 허수부I를 얻을 수 있다. 이제 진폭비는 G(iw)의 크기이고, 위상각은 아크탄젠트(I/R)이다.</p>
+<p> </p>
+<p>이 진동응답을 보기 쉽게 나타내는 방법이 보데선도인데, 그것도 공부해보자.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="765" src="../images/134/14.png" width="1351"/></figure>
+</p>
+<p>보데선도는 가로축은 LOG(W)이고 세로축은 데시벨 또는 위상각이다. 이때 데시벨은 진폭비의 실제값을 20log()에 대입한 것이다.</p>
+<p>직렬연결된 시스템들의 보데선도는 각 부시스템의 보데선도의 합이며 대수눈금을 쓰는 이유는 아주 넓은 주파수 범위를 나타내기 위함이다. 보데선도는 오픈루프 전달함수의 주파수 응답을 나타낸 것으로, 주파수영역에서 제어시스템을 설계하기에 좋다.</p>
+<p><figure class="figure"><img alt="" height="752" src="../images/134/15.png" width="1115"/></figure>
+</p>
+<p> </p>
+<p>로그로 나타내면 x축을 넓은 범위로 나타내기 편하다.</p>
+<p> </p>
+<p>이제 다른 전달함수들에 대하여 보데선도로 나타낸 것을 살펴보자.</p>
+<p><figure class="figure"><img alt="" height="761" src="../images/134/16.png" width="1319"/></figure>
+</p>
+<p>먼저 첫번째는 전달함수가 상수일때, 이 경우에는 사인응답을 넣어도 보데선도는 일정하게 나온다. 다음으로 시간지연의 경우 사인응답을 넣으면 보데선도에서 진폭비는 1나오고 위상은 -w⊙이다. 위상각이 -180밑으로 변하게 되면 피드백제어가 공정을 불안정하게 만드는 경향이 있으므로 시간지연은 공정을 불안정하게 만든다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="761" src="../images/134/17.png" width="1325"/></figure>
+</p>
+<p>진동수가 10배 증가하면 -20db이 감소한다.</p>
+<p> </p>
+<p>이제 하이라이트인 보데선도를 1차공정에 적용하는 것을 살펴보자.</p>
+<p><figure class="figure"><img alt="" height="745" src="../images/134/18.png" width="1358"/></figure>
+</p>
+<p>진동응답을 1차에 넣고 그걸 보데선도로 나타내면 위와같다.</p>
+<p> </p>
+<p>여기서 편의상 K를 나눠주어 Y값을 ARN으로 나타내준다. 즉 공정이득이 1인 경우를 볼 것이다. 이때는 주파수가 낮은 초기에는 데시벨이 1이고 위상각이 0이었다가 점점 데시벨은 낮아지고 위상각도 점점 -90도로 감소 수렴하게 된다. 이때 점근선과 점근선을 연결하여 만나는 점을 구석점 주파수라고 하고, 이때는 w*타우가 1인 지점이다. 이때의 진폭비는 1/root(2)=0.707이다. 이때 구석점주파수에서 위상각은 -45도이다.</p>
+<p> </p>
+<p>이제 2차공정을 살펴보자. 이때 2차공정은 과도감쇠나 과소감쇠냐에 따라 시스템의 응답이 달라지므로 나눠서 살펴보자.</p>
+<p><figure class="figure"><img alt="" height="765" src="../images/134/19.png" width="1322"/></figure>
+</p>
+<p>과도감쇠의 경우에는 이타가 크면 클 수록 진폭비가 줄어들게 된다. 진폭비가 준다는 것은 공정이 안정하다는 것이다. </p>
+<p><figure class="figure"><img alt="" height="759" src="../images/134/20.png" width="1325"/></figure>
+<figure class="figure"><img alt="" height="753" src="../images/134/21.png" width="1334"/></figure>
+</p>
+<p>과소감쇠의 경우에는 이타값에 따라 공진이 생긴다.</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/121.html"><span>← 이전 글</span><strong>공정의 동특성</strong></a>
+    <a class="next" href="../posts/135.html"><span>다음 글 →</span><strong>안정성</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

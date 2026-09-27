@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>화학반응공학 ch1~3. 몰 수지식과 설계방정식, 전화율, 속도법칙 · 화학공학 노트</title>
+<meta name="description" content="화학공정의 기본이 되는 3가지 공정은 원료의 조제-반응-분리 및 정제이다. 반응 공학은 이 중 반응에 대해 알아보는 학문이다. CH1:몰 수지와 설계방정식 임의의 화학종 j에 대한 반응기에서의 몰 수지식은 다음과 같다. 몰 수지식이란 j라는 어떤 특정 물질이 반응기에 들어오고 나가고 반응하여 최종적으로 축적되는 양을 나타낸 수지식이다. 보통 유입-유출+생성-소멸=축적량이라는 식으로 알려져 있다. 이는 자명한 식일 것이다. 반응기에 30만큼 들어오고 20만큼 나가고내부에서 생성,소멸된 량이 없다면 축적량은 10인 것이다.30-20+0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html" aria-current="page">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/reaction.html">화학반응공학</a></nav>
+  <header class="post-head">
+    <h1>화학반응공학 ch1~3. 몰 수지식과 설계방정식, 전화율, 속도법칙</h1>
+    <p class="meta">
+      <time datetime="2025-05-24">2025.05.24</time>
+    </p>
+  </header>
+
+  <nav class="toc" aria-label="목차">
+    <p class="toc-title">목차</p>
+    <ol>
+      <li class="lv3"><a href="#s1">1. 배치 반응기 (BR, Batch Reactor)</a></li>
+      <li class="lv3"><a href="#s2">2. 연속 교반탱크 반응기 (CSTR, Continuous Stirred Tank Reactor)</a></li>
+      <li class="lv3"><a href="#s3">3. 관형 반응기 (PFR, Plug Flow Reactor)</a></li>
+      <li class="lv3"><a href="#s4">4. 포장층 반응기 (PBR, Packed Bed Reactor)</a></li>
+      <li class="lv3"><a href="#s5">레벤스필 도표의 기본 개념 :</a></li>
+      <li class="lv3"><a href="#s6">레벤스필 도표를 사용하는 방법 :</a></li>
+      <li class="lv3"><a href="#s7">레벤스필 도표의 해석 :</a></li>
+      <li class="lv3"><a href="#s8">응용 :</a></li>
+      <li class="lv3"><a href="#s9">요약 :</a></li>
+    </ol>
+  </nav>
+
+  <div class="body">
+    <p>화학공정의 기본이 되는 3가지 공정은 원료의 조제-반응-분리 및 정제이다. 반응 공학은 이 중 <b>반응</b>에 대해 알아보는 학문이다.<br/> <br/><b><span>CH1:몰 수지와 설계방정식</span></b><br/> <br/>임의의 화학종 j에 대한 반응기에서의 몰 수지식은 다음과 같다. 몰 수지식이란 j라는 어떤 특정 물질이 반응기에 들어오고 나가고 반응하여 최종적으로 축적되는 양을 나타낸 수지식이다.<br/> <br/>보통 <b><span>유입-유출+생성-소멸=축적량</span></b><span>이라는 식으로 알려져 있다. 이는 자명한 식일 것이다. 반응기에 30만큼 들어오고 20만큼 나가고내부에서 생성,소멸된 량이 없다면 축적량은 10인 것이다.</span><br/><span>30-20+0-0=10(축적)</span><br/> <br/><span>이러한 </span><b><span>유입-유출+생성-소멸=축적량</span></b><span> 식을 수식으로 나타내면 다음과 같다.</span></p>
+<p><figure class="figure"><img alt="" height="91" src="../images/23/01.png" width="333"/><figcaption>모든 반응기에 공통 적용되는 몰 수지식</figcaption>
+</figure>
+</p>
+<p> <br/> 이를 4가지 유형의 반응기(BR,CSTR,PFR,PBR)에 적용 시 다음과 같은 식이 얻어진다.</p>
+<p><figure class="figure"><img alt="" height="512" src="../images/23/02.png" width="1149"/></figure>
+</p>
+<p> <br/>만약 반응기 각각이 궁금하다면?? 접은글</p>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+<h3 id="s1">1.<span> </span><b>배치 반응기 (BR, Batch Reactor)</b></h3>
+<h4><b>특징</b>:</h4>
+<ul>
+<li><b>일회성 공정</b>: 반응물이 반응기에 투입되고, 반응이 완료될 때까지 봉쇄된 상태에서 반응이 진행됩니다. 반응이 완료되면 제품을 꺼내고, 다음 공정을 준비합니다.</li>
+<li><b>시간 의존성</b>: 반응이 시간에 따라 변화하므로 시간에 따른 농도 변화, 온도 변화 등을 조절하며 반응을 진행합니다.</li>
+<li><b>완전 혼합</b>: 반응기 내부에서 반응물이 고르게 혼합된 상태로 반응이 일어납니다.</li>
+</ul>
+<h4><b>용도</b>:</h4>
+<ul>
+<li><b>소규모, 불규칙 생산</b>: 주로 소량의 제품을 만드는 데 적합하며, 제약, 화장품, 특수 화학 제품의 생산에 많이 사용됩니다.</li>
+<li><b>연구 및 개발</b>: 새로운 반응 경로를 개발하거나, 최적 반응 조건을 탐색할 때 실험적으로 자주 사용됩니다.</li>
+</ul>
+<hr/>
+<h3 id="s2">2.<span> </span><b>연속 교반탱크 반응기 (CSTR, Continuous Stirred Tank Reactor)</b></h3>
+<h4><b>특징</b>:</h4>
+<ul>
+<li><b>연속적인 반응</b>: 반응물이 일정하게 투입되고, 반응 후 생성물이 지속적으로 배출되는 방식입니다.</li>
+<li><b>균일한 혼합</b>: 내부에 교반기가 있어 반응물이 고르게 혼합되므로 반응기 내 농도가 일정합니다.</li>
+<li><b>반응속도 낮음</b>: 모든 위치에서 반응물 농도가 동일하여, 반응 속도가 상대적으로 낮습니다.</li>
+</ul>
+<h4><b>용도</b>:</h4>
+<ul>
+<li><b>대규모 생산</b>: 연속적으로 제품을 생산할 수 있기 때문에 대량 생산에 적합하며, 석유화학, 제약, 정유 산업에서 많이 사용됩니다.</li>
+<li><b>열에 민감한 반응</b>: 교반이 효율적이기 때문에, 열에 민감한 반응에서 온도 조절이 용이합니다.</li>
+</ul>
+<hr/>
+<h3 id="s3">3.<span> </span><b>관형 반응기 (PFR, Plug Flow Reactor)</b></h3>
+<h4><b>특징</b>:</h4>
+<ul>
+<li><b>관형 구조</b>: 반응기는 길고 좁은 튜브 형태로 되어 있으며, 반응물은 관을 따라 이동하면서 반응이 일어납니다.</li>
+<li><b>농도 차이 존재</b>: 반응물은 일정한 속도로 이동하며, 반응기 내부의 위치에 따라 반응물의 농도가 다릅니다. 입구에서 출구로 갈수록 반응물 농도가 감소하고, 생성물 농도는 증가합니다.</li>
+<li><b>높은 반응속도</b>: 반응물 농도가 위치에 따라 변동하므로, 초기 반응물 농도가 높은 곳에서 빠르게 반응이 진행됩니다.</li>
+</ul>
+<h4><b>용도</b>:</h4>
+<ul>
+<li><b>연속 대량 생산</b>: 대량 생산에 적합하며, 촉매 반응 및 기체-액체 반응에 주로 사용됩니다.</li>
+<li><b>고온 고압 반응</b>: 관형 반응기는 열 및 압력 분포가 일정하게 관리되므로 고온, 고압에서의 반응에 적합합니다.</li>
+<li><b>석유화학 산업</b>: 정유, 플라스틱 및 기타 석유 화학 제품의 대량 생산에서 주로 사용됩니다.</li>
+</ul>
+<hr/>
+<h3 id="s4">4.<span> </span><b>포장층 반응기 (PBR, Packed Bed Reactor)</b></h3>
+<h4><b>특징</b>:</h4>
+<ul>
+<li><b>고체 촉매 사용</b>: 반응기 내부에 고체 촉매가 채워져 있으며, 기체 또는 액체 반응물이 이 층을 통과하면서 촉매와 접촉해 반응합니다.</li>
+<li><b>비균일 반응</b>: 고체 촉매 표면에서만 반응이 일어나며, 반응물과 촉매 간의 접촉면적이 중요합니다.</li>
+<li><b>높은 선택성</b>: 촉매의 성질에 따라 원하는 제품을 선택적으로 생산할 수 있습니다.</li>
+</ul>
+<h4><b>용도</b>:</h4>
+<ul>
+<li><b>촉매 반응</b>: 고체 촉매가 필수인 반응에 사용되며, 석유 정제, 암모니아 합성, 메탄올 생산 등에서 널리 사용됩니다.</li>
+<li><b>대용량 기체 반응</b>: 대량의 기체가 필요한 반응, 특히 크래킹이나 수소화 반응 같은 공정에 적합합니다.</li>
+</ul>
+</div>
+</div>
+<p> <br/>이를 <b>예비적 형태의 설계방정식</b>이라고 한다. 이때 반응이 얼만큼 진행되었는지를 나타내는 전화율 X를 도입하면 더 <b>실용적인 식</b>을 얻을 수 있다.</p>
+<p><figure class="figure"><img alt="" height="62" src="../images/23/03.png" width="238"/></figure>
+</p>
+<p>위는 전화율의 정의이다.</p>
+<p><figure class="figure">
+<div><img alt="" height="66" src="../images/23/04.png" width="411"/><img alt="" height="68" src="../images/23/05.png" width="230"/></div>
+</figure>
+</p>
+<p>전화율을 이용해 NA, FA를 위와 같이 나타낼 수 있으며 이를 예비 설계식에 대입하면 다음과 같은 실용적인 형태의 설계식을 얻게된다.</p>
+<p><figure class="figure"><img alt="" height="364" src="../images/23/06.png" width="759"/></figure>
+</p>
+<p>전화율을 도입한 위 식을 설계식이라고 부르고, 전화율이 도입되지 않은 윗 윗 테이블의 식을 예비 설계식이라고 부르겠다. <br/> <br/>이제 반응기의 부피를 산정할 수 있을까? 아쉽게도 적분식에 반응속도 항을 X의 함수로 나타내지 않으면 적분이 불가능하다. 예를 들어 CSTR의 설계식을 가져와보자.</p>
+<p><figure class="figure"><img alt="" height="139" src="../images/23/07.png" width="298"/></figure>
+</p>
+<p>CSTR에서 특정 전화율을 달성하는데 필요한 부피를 산정하기 위해서는, 분자의 조건(초기 유입량, 원하는 전화율)은 알고 있는 상태지만 아래의 -ra(반응속도)는 아직 알지 못한다. <br/> <br/>따라서 챕터 3,4에서 반응속도를 전화율 X의 항으로 나타내는 법을 배우도록 한다.<br/> <br/><b>tip) 만약 -ra=f(X)가 주어졌다면, 크기를 산정할 수 있다.</b><br/>예시를 통해 알아보도록 하자. -ra=f(X) 를 주는 경우는 좀 드물긴 하다.</p>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+<p>A-&gt;B로 가는 등온 기상 이성질화반응이 있다. 이때 온도는 500K이고 전압은 830kPa이었으며 초기 공급량은 0.4mol이다.</p>
+<figure class="figure"><img alt="" height="116" src="../images/23/08.png" width="520"/></figure>
+<p>위와 같이 X와 반응속도간의 데이터가 주어지면<span> </span><b>특정 전화율을 달성하는데 필요한 V</b>를 구할 수 있다. CSTR또는 PFR이라고 가정시 적분식에는 -1/ra가 들어가므로 위 데이터를 잠시 수정한다.</p>
+<figure class="figure"><img alt="" height="329" src="../images/23/09.png" width="829"/></figure>
+<p>이제 레벤스필 플롯이라고 하는, 전화율 X와 (Fa0/-ra)를 도시하는 그래프를 그려본다.</p>
+<figure class="figure"><img alt="" height="442" src="../images/23/10.png" width="492"/></figure>
+<p>이 그래프의 장점은<span> </span><b>특정 전화율을 달성하는 데 필요한 반응기의 부피를 면적으로 보여준다</b>는 것이다. (<span> </span>그 이유는 V식을 자세히 보면 알 수 있다.이를 기하적으로 해석한 것이다.)</p>
+<p> </p>
+<p>1)CSTR의 경우 특정 전화율에 해당하는 직사각형 면적이 곧 V이다.</p>
+<p>2)PFR의 경우 특정 전화율까지의 곡선 밑의 면적이 V이다.</p>
+<p> </p>
+<p>예를 들어 0.8의 전화율을 달성하는 데 필요한 V를 구해야 한다면</p>
+<figure class="figure">
+<div><img alt="" height="378" src="../images/23/11.png" width="397"/><img alt="" height="435" src="../images/23/12.png" width="405"/></div>
+<figcaption>왼쪽: 필요한 CSTR의 부피, 오른쪽:필요한 PFR의 부피</figcaption>
+</figure>
+<p> CSTR의 경우 6.4m^3이고 PFR은 2.165m^3임을 알 수 있다.</p>
+<p> </p>
+<p>또는 그냥 반응속도 -ra를 X에 관한 함수로 만들어서 풀 수도 있다.<span> </span><span>X=0.8을 달성하기 위한 CSTR의 부피는</span></p>
+<figure class="figure"><img alt="" height="332" src="../images/23/13.png" width="442"/></figure>
+<p>이러면 반응속도 -ra는 -0.4909X+0.4188이다.</p>
+<figure class="figure"><img alt="" height="364" src="../images/23/06.png" width="759"/></figure>
+<p>설계식에 그냥 때려박아버리자. CSTR의 설계식에 그대로 넣으면 다음과 같다. X=0.8</p>
+<p> </p>
+<figure class="figure"><img alt="" height="198" src="../images/23/14.png" width="572"/></figure>
+<p>그럼 나오는 부피는 12<span>m^3 인데 위에서 구했던 부피랑 2배차이가 난다! 그 이유는?</span></p>
+<figure class="figure"><img alt="" height="332" src="../images/23/13.png" width="442"/></figure>
+<p>그래프를 보면 X=0.8에서 잘 안맞는다.. 대신 X=0.6에서는 똑같은 결과가 나올 것이다.</p>
+<p> </p>
+<figure class="figure"><img alt="" height="159" src="../images/23/15.png" width="559"/></figure>
+<p>CSTR의 X=0.6일때는 1.93m^3이 나온다. </p>
+<figure class="figure"><img alt="" height="542" src="../images/23/16.png" width="588"/></figure>
+<p> </p>
+<figure class="figure"><img alt="" height="329" src="../images/23/09.png" width="829"/></figure>
+<p><span>한 2.124쯤 나오므로 대충 맞다고 볼 수 있다.</span></p>
+</div>
+</div>
+<p> <br/> <br/>이제 2단원을 끝내기에 앞서 반응기의 연결을 살펴보자.<br/> <br/>많은 경우에 반응기를 하나만 사용하는 것이 아니라 여러개를 직렬로 연결시켜 사용한다. 그 이유는 작은 사이즈 반응기를 여러개 구비해두고 그때 그때 연결하는 것이 큰 반응기 하나를 매번 제조하는 것보다 간단하고 싸기 때문이다.<br/><br/><b>여러개의 반응기를 연결하는 경우</b></p>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+<p>먼저 Xi를 다음과 같이 정의한다.</p>
+<figure class="figure"><img alt="" height="84" src="../images/23/17.png" width="520"/></figure>
+<p>이제 CSTR을 직렬로 연결한 경우, PFR을 직렬로 연결한 경우, CSTR과 PFR을 혼합하는 경우를 각각 살펴보자.</p>
+<p> </p>
+<p>Q: 80%의 전화율을 달성하기 위해 2개의 반응기를 연결하려고 한다. 이때 각각의 반응기의 부피는 얼마가 필요한가?</p>
+<p> </p>
+<p>1)CSTR의 직렬연결</p>
+<figure class="figure"><img alt="" height="410" src="../images/23/18.png" width="711"/></figure>
+<figure class="figure">
+<div><img alt="" height="310" src="../images/23/19.png" width="654"/><img alt="" height="396" src="../images/23/20.png" width="744"/></div>
+<figcaption>그냥 레벤스필의 정사각형 식 유도과정이다.</figcaption>
+</figure>
+<p> </p>
+<figure class="figure"><img alt="" height="443" src="../images/23/21.png" width="565"/></figure>
+<p>2개를 연결했더니 부피가 줄어든다!</p>
+<p> </p>
+<p>2)PFR의 직렬연결</p>
+<figure class="figure"><img alt="" height="248" src="../images/23/22.png" width="843"/></figure>
+<figure class="figure"><img alt="" height="353" src="../images/23/23.png" width="437"/></figure>
+<p>PFR은 딱히 크기가 줄어들진 않는다.</p>
+<p> </p>
+<p>3)CSTR과 PFR을 혼합하면?</p>
+<figure class="figure"><img alt="" height="285" src="../images/23/24.png" width="671"/></figure>
+<figure class="figure"><img alt="" height="394" src="../images/23/25.png" width="450"/></figure>
+<p> </p>
+<p>3번째 영역에서 PFR의 하드캐리로 영역이 확 준것을 볼 수 있다! 그냥 CSTR하나 쓰는 것보다 훨씬 작은 부피가 소모된다.</p>
+<p> </p>
+
+
+<p>가끔 레벤스필 플롯이 다음처럼 그려질 수도 있다.</p>
+<figure class="figure"><img alt="" height="401" src="../images/23/26.png" width="617"/></figure>
+<p>이 경우에는 1번 영역에서 CSTR이 더 경제적이다.</p>
+<p> </p>
+<p><b>따라서 화공학도는 상황에 따라 반응기의 배치를 결정해볼 수 있을 것이다.</b></p>
+</div>
+</div>
+<p> <br/>레벤스필도표에 관해서 궁금하다면? 접은글</p>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+<p>참고:레벤스필 도표</p>
+<p>**레벤스필 도표(Levenspiel Plot)**는 화학반응공학에서 반응기 설계와 성능 분석에 중요한 도구입니다. 이 도표는 주로 **평형 반응기(특히 플러그 흐름 반응기와 CSTR)**의 설계 및 비교에 사용되며, 반응 속도와 반응기의 크기를 시각적으로 분석하는 데 유용합니다.</p>
+<h3 id="s5"><b>레벤스필 도표의 기본 개념</b>:</h3>
+<p><span>레벤스필 도표는 반응률과 변환율<span><span> </span></span>간의 관계를 나타냅니다. 도표의 기본적인 축은 다음과 같습니다:</span></p>
+<ul>
+<li><b>X축</b>: 변환율<span> </span><span><span>X</span></span><span> </span>(0 ≤ X ≤ 1), 반응이 얼마나 진행되었는지를 나타냅니다.</li>
+<li><b>Y축</b>: 반응률의 역수<span><span> </span>FA0</span><span><span>/−rA</span></span>, 이는 반응 속도와 반응기 부피의 관계를 시각화하기 위함입니다.</li>
+</ul>
+<h3 id="s6"><b>레벤스필 도표를 사용하는 방법</b>:</h3>
+<ol>
+<li><span><b>CSTR(연속 교반 탱크 반응기)</b>:</span><br/>
+<ul>
+<li><b>CSTR의 부피 계산</b>: CSTR의 경우, 도표에서 특정 변환율<span> </span><span><span>X</span></span>에서의 반응률<span><span> </span>FA0</span><span><span>/−rA</span></span><span> </span>값을 읽어 반응기의 부피를 계산합니다.</li>
+<li><b>그래프에서 면적</b>: CSTR의 부피는 해당 변환율에서 직사각형 면적으로 표현됩니다.<span> </span></li>
+</ul>
+</li>
+<li><span><b>PFR(관형 반응기)</b>:</span><br/>
+<ul>
+<li><b>PFR의 부피 계산</b>: PFR의 경우, 반응이 진행되는 동안 반응물의 농도가 연속적으로 변하므로<span> </span><span><span>X</span></span>의 변화에 따라 그래프 아래 면적을 적분한 값이 반응기의 부피에 해당합니다.</li>
+<li><b>그래프에서 면적</b>: PFR의 부피는 곡선 아래의 면적으로 표현되며,<span> </span><span><span>∫FA0/−rAdX</span></span>로 나타낼 수 있습니다. 즉, 변환율에 따른 면적의 합이 반응기의 총 부피를 나타냅니다.</li>
+</ul>
+</li>
+</ol>
+<h3 id="s7"><b>레벤스필 도표의 해석</b>:</h3>
+<ul>
+<li><span><b>CSTR vs PFR</b>: 레벤스필 도표를 통해 CSTR과 PFR의 성능을 비교할 수 있습니다. 동일한 변환율을 얻기 위해, CSTR의 경우 PFR보다 더 큰 부피가 필요할 수 있습니다. 이는 CSTR이 반응기 전체에서 반응물 농도가 일정하기 때문에 반응 속도가 낮고, PFR은 반응이 진행될수록 반응물 농도가 낮아지면서 반응 속도가 유지되기 때문입니다.</span></li>
+<li><span><b>여러 CSTR 연결</b>: CSTR을 직렬로 연결하여 PFR처럼 작동하도록 설계할 수 있습니다. 이때 각 CSTR의 부피는 레벤스필 도표에서 해당 변환율 구간의 면적으로 나타납니다.</span></li>
+</ul>
+<h3 id="s8"><b>응용</b>:</h3>
+<p>레벤스필 도표는 반응기 설계에서 중요한 요소로, 특정 변환율을 달성하기 위해 필요한 반응기 부피를 쉽게 시각화할 수 있게 해줍니다. 반응기 설계자가 여러 반응기 형태와 조건을 비교하여 최적의 설계를 도출하는 데 매우 유용한 도구입니다.</p>
+<h3 id="s9"><b>요약</b>:</h3>
+<ul>
+<li><b>X축</b>: 변환율<span> </span><span><span>X</span></span></li>
+<li><b>Y축</b>: 반응률의 역수<span><span> </span>FA0</span><span><span>/−rA</span><span aria-hidden="true"><span><span><span><span><span><span>​</span></span></span></span></span></span></span></span></li>
+<li><b>CSTR</b>: 면적은 직사각형으로 나타나며, 일정한 반응 속도를 가집니다.</li>
+<li><b>PFR</b>: 면적은 곡선 아래의 적분값으로 나타나며, 반응 속도가 변환율에 따라 달라집니다.</li>
+</ul>
+<p><span>레벤스필 도표는<span> </span><b>화학반응기 크기</b>와<span> </span><b>성능을 예측</b>하는 데 필수적인 시각적 도구입니다.</span></p>
+</div>
+</div>
+<p><br/>이제 ch3으로 넘어가 반응속도를 X의 함수로 나타내보자. 먼저 반응속도는 실험을 통해 관찰된다. 이때 반응에따라 기초/비기초반응으로 구분된다. 비기초반응은 추후에 보고 기초반응을 고려해보자. 기초반응의 속도식은 멱수법칙모델이라고 불리는 다음식과 같이 주어진다. 비기초반응은 이에 벗어날 수도 있다.</p>
+<p><figure class="figure"><img alt="" height="120" src="../images/23/27.png" width="215"/></figure>
+</p>
+<p>반응속도상수 k는 다음과 같이 주어진다. 상수기는 하지만 온도에 의존하는 값이다.</p>
+<p><figure class="figure"><img alt="" height="44" src="../images/23/28.png" width="139"/></figure>
+</p>
+<p>만약 어떤 온도T0에서 k와 E를 알고 있다면 임의의 온도 T에서 속도상수 k를 구할 수 있다.</p>
+<p><figure class="figure"><img alt="" height="69" src="../images/23/29.png" width="304"/></figure>
+</p>
+<p>따라서 반응속도식에서 k는 특정온도에서 상수이므로 농도 (CA,CB)를 X의 함수로 나타낼 수 있다면 대입하여 반응속도를 X로 나타낼 수 있을 것이다. 이는 화학양론표로 구할 수 있다.<br/> <br/><b>농도를 X로 나타내기 step </b><br/>1)<b>한계반응물을 선정</b>한 후 계수로 반응식을 나눈다.<br/>2)화학양론표를 작성한다.</p>
+<p><figure class="figure"><img alt="" height="435" src="../images/23/30.png" width="719"/></figure>
+</p>
+<p>종, 반응 전 중 후, 토탈 몰 수가 표시된다. 또한 편의를 위해 다음 기호를 정의한다.</p>
+<p><figure class="figure"><img alt="" height="101" src="../images/23/31.png" width="234"/></figure>
+</p>
+<p>이제 잔존N을 부피V로 나누게 되면 C가 된다.</p>
+<p><figure class="figure"><img alt="" height="350" src="../images/23/32.png" width="336"/></figure>
+</p>
+<p>CSTR이면 N이 F로 바뀌고 V는 v로 바뀐다.</p>
+<p><figure class="figure"><img alt="" height="162" src="../images/23/33.png" width="673"/></figure>
+</p>
+<p>이제 BR과 CSTR에서의 <b>액상반응에서는 부피가 변하지 않으므로</b>, 다음과 같이 쓸 수 있다.</p>
+<p><figure class="figure"><img alt="" height="101" src="../images/23/34.png" width="335"/></figure>
+</p>
+<p> <br/>만약 CSTR의 기상반응이라면 V가 변하므로 이러한 접근이 불가능하다. 이때는 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="188" src="../images/23/35.png" width="566"/></figure>
+<figure class="figure"><img alt="" height="135" src="../images/23/36.png" width="559"/></figure>
+</p>
+<p>종합하자면 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="1470" src="../images/23/37.bin" width="1033"/></figure>
+</p>
+<p> <br/> <br/>이제 어떤 특정 반응기에서 설계식을 계산할 수 있게 되었다. <br/>---------------------------<br/>예제 1: 회분식 반응기에서 반응을 시킨다고 가정할 때, 1차, 2차 반응에서 각기 다른 반응속도상수 k값에 대한 회분식 반응시간을 계산하시오.<br/> <br/>먼저 BR의 설계식 표를 가져오자</p>
+<p><figure class="figure"><img alt="" height="332" src="../images/23/38.png" width="692"/></figure>
+</p>
+<p>BR의 미분형태를 가져와 정리하면 다음과 같다. (적분형태를 써도 상관은 없다.)</p>
+<p><figure class="figure"><img alt="" height="103" src="../images/23/39.png" width="164"/></figure>
+</p>
+<p>반응을 먼저 2차반응이라고 가정하면 반응식과 속도법칙은 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="51" src="../images/23/40.png" width="162"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="61" src="../images/23/41.png" width="160"/></figure>
+</p>
+<p>이때 농도 CA는</p>
+<p><figure class="figure"><img alt="" height="48" src="../images/23/42.png" width="185"/></figure>
+</p>
+<p>이므로 ra에 대입 후 미분 설계식에 대입 시</p>
+<p><figure class="figure"><img alt="" height="76" src="../images/23/43.png" width="232"/></figure>
+</p>
+<p>이항 후 적분하면 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="113" src="../images/23/44.png" width="305"/></figure>
+<figure class="figure"><img alt="" height="117" src="../images/23/45.png" width="288"/></figure>
+</p>
+<p>1차 반응도 비슷한 루트로 계산할 경우 반응시간은 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="95" src="../images/23/46.png" width="213"/></figure>
+</p>
+<p> <br/>예제를 풀면서 좀 더 알아보자.</p>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+<p>예제: 기상반응에 대한 Cj=h(X)구하기</p>
+<p> </p>
+<p>28%SO2와 72% 공기의 혼합물이 흐름 반응기에 주입되어 SO2가 산화된다. </p>
+<p><span><span>2</span><span>S</span><span><span>O</span><span><span><span><span><span><span><span>2</span></span></span></span><span></span></span><span></span></span></span></span><span>(</span><span>g</span><span>)</span><span>+</span></span><span><span><span>O</span><span><span><span><span><span><span><span>2</span></span></span></span><span></span></span><span></span></span></span></span><span>(</span><span>g</span><span>)</span><span>→</span></span><span><span>2</span><span>S</span><span><span>O</span><span><span><span><span><span><span><span>3</span></span></span></span><span></span></span><span></span></span></span></span><span>(</span><span>g</span><span>)</span></span></p>
+<p><span><span>전압이 1485kPa이고 온도가 500K로 일정할 때 화학양론표를 작성하라.</span></span></p>
+<p> </p>
+<figure class="figure"><img alt="" height="147" src="../images/23/47.png" width="586"/></figure>
+<p> 일단 이렇게 화학양론표를 만든다. 이후</p>
+<figure class="figure"><img alt="" height="122" src="../images/23/48.png" width="297"/></figure>
+<p>여기에 대입하여 농도를 구해본다.</p>
+<p> </p>
+<p>일단 CA0를 구해야 하는데, 여기에 대한 정보는 압력에서 알 수 있다. 압력이 1485kpa인데, 이상기체라고 가정해볼까? 그러면 PV=NRT에서 C=P/RT이다. 그러면 0.28 * 1485kpa / 500k * 8.314 pa*m^3 /mol*K = 0.1mol/dm^3</p>
+<p> </p>
+<p>그러면  </p>
+<p> </p>
+<figure class="figure"><img alt="" height="194" src="../images/23/49.png" width="136"/></figure>
+<p>CA0= 0.1</p>
+<p>e= 0.28 * (1-1-1/2) =-0.14 (기체 반응이라 yA0= CA0)</p>
+<p> </p>
+<p>이제 대입하면</p>
+<p><span>CA=0.1 (1-X)/(1-0.14X)</span>      * P/P0   * T0/T</p>
+<p><span> <span>CB=0.1 (0.54 - 1/2*X)/</span><span><span> </span></span><span>(1-0.14X) </span>  <span> </span><span>* P/P0   * T0/T  <span>(공기랑 O2는 다른거다! 공기중 21%만이 산소다)</span> </span></span></p>
+<p><span><span><span> <span>Cc=0.1 (X) /<span> </span></span><span>(1-0.14X)</span>  <span> </span></span></span></span><span><span><span>   <span>*<span> </span><span> P/P0   * T0/T</span></span></span></span></span></p>
+<p> </p>
+<p><span><span><span><span>이제 <span> </span><span><span> </span>P/P0   * T0/T 이거는 1이므로 (온도 압력 일정)</span></span></span></span></span></p>
+<p><span>CA=0.1 (1-X)/(1-0.14X)</span></p>
+<p><span>CB=0.1 (0.54 - 1/2*X)/</span><span><span> </span></span><span>(1-0.14X) </span></p>
+<p><span>Cc=0.1 (X) /<span> </span></span><span>(1-0.14X)</span></p>
+<p> </p>
+<figure class="figure"><img alt="" height="149" src="../images/23/50.png" width="472"/></figure>
+<p>전화율에 따른 농도는 이렇게 된다.</p>
+<p> </p>
+<p>이제 반응속도 -ra를 나타내볼까?</p>
+<p> </p>
+<p>실험적으로 밝혀진 <b>촉매하에서의 SO₂ 산화 반응의 속도 법칙</b>은 보통 아래와 같다:</p>
+<p><span><span><span>r=k[SO2][O2]^1/2</span></span></span></p>
+<p> </p>
+<p><span><span><span>따라서</span></span></span></p>
+<p>-r = k * 0.1 (1-X)/(1-0.14X) * [ <span>0.1 (0.54 - 1/2*X)/</span><span><span> </span></span><span>(1-0.14X) ]^1/2 </span></p>
+<p> </p>
+<p><span>이때 k값은 아레니우스 식으로 계산가능하다..</span></p>
+<figure class="figure"><img alt="" height="539" src="../images/23/51.png" width="893"/></figure>
+<p>그럼 대충 넣어버리면 </p>
+<p><span>-r = 35.7 * 0.1 (1-X)/(1-0.14X) * [<span> </span></span><span>0.1 (0.54 - 1/2*X)/</span><span><span> </span></span><span>(1-0.14X) ]^1/2   /s </span></p>
+<p><span>이다. 이 식을 통해 FA0/-ra 를 찾고 X에 대한 함수로 나타내어 (레벤스필 도표!)</span></p>
+<p><span>면적을 구하면 등온 반응기들의 크기를 구할 수 있다.</span></p>
+</div>
+</div>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+<p> 예제: 평형 전화율의 계산</p>
+<p>다음 사산화이질소의 이산화질소로의 가역 기상 분해반응이 등온 등압에서 수행된다.</p>
+<p><b> <span><span><span>N</span><span><span><span><span><span><span><span>2</span></span></span></span><span></span></span><span><span></span></span></span></span></span><span><span>O</span><span><span><span><span><span><span><span>4</span></span></span></span><span></span></span><span><span></span></span></span></span></span><span>(</span><span>g</span><span>)</span><span>⇌</span></span><span><span>2</span><span>N</span><span><span>O</span><span><span><span><span><span><span><span>2</span></span></span></span><span></span></span><span><span></span></span></span></span></span><span>(</span><span>g</span><span>)</span></span> </b></p>
+<p>원료는 340K, 202.6kpa의 순수한 N2O4이다. 340K에서 농도 평형 상수 Kc는 0.1mol/dm^3이다.</p>
+<p> </p>
+<p>a)정용회분식 반응기에서 N2O4의 평형 전화율을 구하여라</p>
+<p>b)흐름반응기에서 N2O4의 평형전화율을 구하여라</p>
+<p>c)기초반응이라 가정하고, 흐름계와 회분식계의 속도식을 각각 전화율만의 함수로 나타내어라.</p>
+<p>d)평형 전화율의 80%를 달성하는데 필요한 CSTR의 부피는?</p>
+<p> </p>
+<p>풀이</p>
+<p>a) <span>정용회분식 반응기에서 N2O4의 평형 전화율을 구하여라</span></p>
+<p> </p>
+<p>일단 가역반응이니까 당연히 평형 상수 Kc에 대한 식을 세운다. </p>
+<p>Kc=CB^2/CA (평형일 때)</p>
+<p> </p>
+<p>이제 표를 만들면 다음과 같다.</p>
+<figure class="figure"><img alt="" height="116" src="../images/23/52.png" width="637"/></figure>
+<p>이제 만약에 정용회분식이면 부피는 고정이므로</p>
+<p>CA=CA0-CA0X</p>
+<p>CB=2CA0X</p>
+<p> </p>
+<p>인거고 CA0만 구하면 된다. CA0는  이상기체 방정식 PV=NRT에서 P/RT=202.6kpa/8,314pa m^3/mol k * 340k</p>
+<p><span>CA0</span> = 0.07167 mol/dm³</p>
+<p> </p>
+<p>CA=CA0-CA0X</p>
+<p>CB=2CA0X</p>
+<p> </p>
+<p><span><span><span><span><span>C</span><span><span><span><span><span><span><span>A</span></span></span></span><span></span></span><span><span></span></span></span></span></span><span>=</span></span><span><span>0.07167</span><span>(</span><span>1</span><span>−</span></span><span><span>X</span><span>)</span></span></span></span></p>
+<p><span><span>CB=0.14334X</span></span></p>
+<figure class="figure"><img alt="" height="432" src="../images/23/53.png" width="713"/></figure>
+<p><span><span>대충 풀면 X= 0.441414가 나오고 이게 평형일때 전화율 X이다.</span></span></p>
+<p> </p>
+<p><span><span>b)<span>흐름반응기에서 N2O4의 평형전화율을 구하여라</span> </span></span></p>
+<p> </p>
+<p>이제 흐름 반응기면 V가 좀 복잡하다..</p>
+<figure class="figure"><img alt="" height="116" src="../images/23/54.png" width="637"/></figure>
+<figure class="figure"><img alt="" height="122" src="../images/23/48.png" width="297"/></figure>
+<p> </p>
+
+<p>CA=CA0(1-X) / 1+ex </p>
+<p><span>CB=2CA0X / 1+ex </span></p>
+<p> </p>
+<p>이제 평형식에 대입해보자.</p>
+<figure class="figure"><img alt="" height="108" src="../images/23/55.png" width="276"/></figure>
+<p> 0.1= 4* <span>0.07167* X^2 /((1-X)(1+X)) </span></p>
+<figure class="figure"><img alt="" height="194" src="../images/23/49.png" width="136"/></figure>
+<p>맨 첫줄 식에 의해 e값은 1나온다. 순수한 N2O4이므로 분율은1이고 이때 델타값은 (2-1)</p>
+<p> </p>
+<p><span>울프람 알파 돌리면 X= 0.508539 정도 나온다</span></p>
+<p> </p>
+<p><span>여기서 주의할 점은 평형전화율이 CSTR이 회분식보다 더 크다는 거다. 이건 이제 반응물이 제거가 되면서 발생하는 현상일거다. 회분식은 결과물이 그대로 남아있지만 CSTR은 결과물이 나가면서 제거되어 평형이 오른쪽으로 이동한다.</span><span></span></p>
+<p> </p>
+<p><span>c)기초반응이라 가정하고, 흐름계와 회분식계의 속도식을 각각 전화율만의 함수로 나타내어라.</span></p>
+<p> </p>
+<p><span>음 기초 반응이면 -ra= k(CA - CB^2/K ) 이렇게 된다! 그 이유는 소모도 되지만 역반응으로 생성도 되기 때문에.. 이 식에 이제 배치리액터에서의 농도, CSTR에서의 농도식을 대입만 하면 된다..</span></p>
+<p> </p>
+<p><span><span><span><span><span>(회분식에서 농도)</span></span></span></span></span></p>
+<p><span><span><span><span><span>C</span><span><span><span><span><span><span><span>A</span></span></span></span><span></span></span></span></span></span><span>=</span></span><span><span>0.07167</span><span>(</span><span>1</span><span>−</span></span><span><span>X</span><span>)</span></span></span></span></p>
+<p><span><span>CB=0.14334X</span></span></p>
+<p> </p>
+<p>(흐름식에서 농도)</p>
+<p>CA=CA0(1-X) / 1+ex </p>
+<p><span>CB=2CA0X / 1+ex </span></p>
+<figure class="figure"><img alt="" height="133" src="../images/23/56.png" width="666"/><figcaption>회분식</figcaption>
+</figure>
+<p> </p>
+<figure class="figure"><img alt="" height="124" src="../images/23/57.png" width="490"/><figcaption>흐름식</figcaption>
+</figure>
+
+<p>일단 이 두식은 당연히 다르다. 이제 CA0와 평형상수 KC, e=1등등을 대입하면 X에 대한 함수가 된다. 일단 흐름계 CSTR(밑의 식) 에만 대입해서 간단히 정리해보자.</p>
+<p> </p>
+<figure class="figure"><img alt="" height="239" src="../images/23/58.png" width="698"/><figcaption>CSTR의 반응속도</figcaption>
+</figure>
+
+<p>이제 반응기 부피 산정을 위해 레벤스필 도표를 그려보자. 역수를 취해서 그려내면 다음과 같다.</p>
+<figure class="figure"><img alt="" height="581" src="../images/23/59.png" width="846"/></figure>
+<p> </p>
+<p><span>d)평형 전화율의 80%를 달성하는데 필요한 CSTR의 부피는?</span></p>
+<p> </p>
+<p><span>일단 평형전화율의 80%는 X=0.4이다. </span></p>
+<figure class="figure"><img alt="" height="581" src="../images/23/60.png" width="846"/></figure>
+<p>한 1000쯤 된다치면... 1000*0.4*3=1200dm^3 정도 된다. 눈대중이라 제대로 계산하려면 수식을 써야된다.</p>
+<p> </p>
+<figure class="figure"><img alt="" height="390" src="../images/23/61.png" width="585"/></figure>
+<p>실제값은 1,714라고 한다. 대충 비슷하다고 치지 뭐~</p>
+</div>
+</div>
+<p>이제 여기까지 왔으면 당신은 속도법칙을 아레니우스 식(k)과 농도의 항으로 표현할 수 있다. 이어서 화학양론표를 만들어 농도항을 전화율의 함수로 나타낼 수 있고, 이를 대입하여 반응속도를 전화율의 함수로 표현할 수 있다. 이후 예비 설계식</p>
+<p><figure class="figure"><img alt="" height="364" src="../images/23/06.png" width="759"/></figure>
+</p>
+<p>에 대입하고 적분하거나 레벤스필 도표를 이용하여 특정 부피를 구할 수 있다.<br/> <br/>문제푸는데 필수적인 유용한 표를 첨부한다.</p>
+<p><figure class="figure"><img alt="" height="1036" src="../images/23/37.bin" width="728"/></figure>
+</p>
+<p> <br/><br/></p>
+<p>여기까지의 내용을 정리하면 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="1080" src="../images/23/62.bin" width="1299"/></figure>
+</p>
+<p>ch4는 다음 장에서 알아보도록 하자.</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/92.html"><span>← 이전 글</span><strong>화학반응공학 몰수지 속도식 화학양론 결합문제</strong></a>
+    <a class="next" href="../posts/75.html"><span>다음 글 →</span><strong>화학반응공학 ch4: 등온반응기의 설계 (1) : 등온 등압조건에서 비가역 1차 2차 반응</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

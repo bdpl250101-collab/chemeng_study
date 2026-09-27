@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>분리공정 예제풀이 · 화학공학 노트</title>
+<meta name="description" content="100kmol의 피드가 프로페인(3),부테인(4), 펜테인(5), 헥세인(6) 각각 10 20 30 40%씩으로 구성됨. 공급은 100프사이와 200F로 공급됨. 평형에서 피드의 조성은? 그리고 피드가 액체와 기체로 분리된다면 각각에서 조성은?(K₃ = 4.2 K₄ = 1.75 K₅ = 0.74 K₆ = 0.34) -------------------------------------지금 Example 4.1은 탑 전체를 푸는 문제가 아니라 입구에 들어가는 순간에 어떤 상태인지를 계산하는 문제이다. 일단 VLE에서 피드조성+온도 압력이">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html" aria-current="page">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/misc.html">카테고리 없음</a></nav>
+  <header class="post-head">
+    <h1>분리공정 예제풀이</h1>
+    <p class="meta">
+      <time datetime="2026-04-07">2026.04.07</time>
+ · 수정 2026.05.31    </p>
+  </header>
+
+
+  <div class="body">
+    <p><figure class="figure"><img alt="" height="234" src="../images/274/01.png" width="668"/></figure>
+</p>
+<p>100kmol의 피드가 프로페인(3),부테인(4), 펜테인(5), 헥세인(6) 각각 10 20 30 40%씩으로 구성됨. 공급은 100프사이와 200F로 공급됨. 평형에서 피드의 조성은? 그리고 피드가 액체와 기체로 분리된다면 각각에서 조성은?(K₃ = 4.2 K₄ = 1.75  K₅ = 0.74 K₆ = 0.34)</p>
+<p> </p>
+<p>-------------------------------------</p>
+<p>지금 Example 4.1은 <b>탑 전체를 푸는 문제</b>가 아니라 입구에 들어가는 순간에 어떤 상태인지를 계산하는 문제이다.</p>
+<p> </p>
+<p>일단 VLE에서 피드조성+온도 압력이 주어졌으므로 이건 풀 수 있다. 우선 K값을 구해야 하는데,</p>
+<p> </p>
+<ul>
+<li data-end="643" data-section-id="pkkyvp" data-start="633">K₃ = 4.2</li>
+<li data-end="655" data-section-id="1ly0o7" data-start="644">K₄ = 1.75</li>
+<li data-end="667" data-section-id="ohfg86" data-start="656">K₅ = 0.74</li>
+<li data-end="679" data-section-id="ckdngh" data-start="668">K₆ = 0.34</li>
+</ul>
+
+<p>이렇게 주어졌다. 일단 K값을 보면 기체쪽에는 3,4가 많이 갈 것 같고 액체쪽으로는 5,6이 많아보인다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="325" src="../images/274/02.png" width="420"/></figure>
+</p>
+<p>일단 리치폴드 라이스 식을 가져온다. 먼저 여기에 크사이 기호를 C = V/F라고 대체하겠다.</p>
+<p><br/>1)피드는 액체인가?</p>
+<p>일단 맨처음 할 것은 V=0일때, 즉 C=0일때를 볼 것이다. 이는 버블포인트 상태(순수 액체)를 의미한다. 그러면 식이 다음처럼 된다.</p>
+<p><figure class="figure"><img alt="" height="60" src="../images/274/03.png" width="226"/></figure>
+</p>
+<p>이를 계산하면</p>
+<p><figure class="figure"><img alt="" height="133" src="../images/274/04.png" width="317"/></figure>
+<figure class="figure"><img alt="" height="51" src="../images/274/05.png" width="455"/></figure>
+</p>
+<p>리치폴드 라이스가 0이 아니므로 완전 액체는 아니다. 그럼 기체던지 기+액 상태던지이다.</p>
+<p> </p>
+<p>2)피드는 기체인가?</p>
+<p>C=1을 넣어보자. 그러면 식은 다음처럼 된다.</p>
+<p><figure class="figure"><img alt="" height="82" src="../images/274/06.png" width="235"/></figure>
+<figure class="figure"><img alt="" height="129" src="../images/274/07.png" width="289"/></figure>
+<figure class="figure"><img alt="" height="40" src="../images/274/08.png" width="139"/></figure>
+</p>
+<p>완전히 기체도 아니다.</p>
+<p> </p>
+<p><b>3)피드는 기 액이다. 이때 각각의 조성은?</b></p>
+<p> </p>
+<p>이 경우에 C=V/F는 완전 미지수이다. 따라서 미지수로 두고 리치폴드 라이스를 전개하면</p>
+<p><figure class="figure"><img alt="" height="80" src="../images/274/09.png" width="746"/></figure>
+</p>
+<p>계산기를 통해서 풀어보면 C=V/F=0.1219이므로 피드중에서 12.19%는 기체, 나머지 87.81%는 액체이다. 즉 <span><span>V</span><span>=</span></span><span><span>FC</span><span>=</span></span><span><span>100</span><span>(</span><span>0.1219</span><span>)</span><span>=</span></span><span><span>12.19</span><span> </span><span><span>kmol/h</span></span></span></p>
+<p><span><span>L</span><span>=</span></span><span><span>F</span><span>−</span></span><span><span>V</span><span>=</span></span><span><span>100</span><span>−</span></span><span><span>12.19</span><span>=</span></span><span><span>87.81</span><span> </span><span><span>kmol/h</span></span></span></p>
+<p> </p>
+<p>그럼 들어갈때 기준으로, V와 L의 각각의 성분 조성은 얼마인가? 그걸 구하는 식을 도출해보자.</p>
+<p>어떤 성분 i가 있을 때, 물질수지는</p>
+<p><figure class="figure"><img alt="" height="44" src="../images/274/10.png" width="176"/></figure>
+</p>
+<p>이때, 평형이면 </p>
+<p><figure class="figure"><img alt="" height="41" src="../images/274/11.png" width="117"/></figure>
+</p>
+<p> </p>
+<p>이를 넣고 xi에 대해 정리하면</p>
+<p><figure class="figure"><img alt="" height="65" src="../images/274/12.png" width="152"/></figure>
+</p>
+<p>이걸 써도 되지만, C=V/F로 통일해서 쓰려고 다음처럼 바꾼다.</p>
+<p><figure class="figure"><img alt="" height="46" src="../images/274/13.png" width="241"/></figure>
+<figure class="figure"><img alt="" height="79" src="../images/274/14.png" width="413"/><figcaption>암기하기</figcaption>
+</figure>
+</p>
+<p>따라서 이 식을 통해 각 성분의 xi를 알 수 있다. 식의 암기법은 리치폴드 라이스에서 분자의 K-1만 없애면 된다.</p>
+<p><figure class="figure"><img alt="" height="160" src="../images/274/15.png" width="170"/></figure>
+<figure class="figure"><img alt="" height="323" src="../images/274/16.png" width="493"/></figure>
+</p>
+<p>이제 다음으로 기체 상태의 조성도 알아보자.</p>
+<p><figure class="figure"><img alt="" height="164" src="../images/274/17.png" width="220"/></figure>
+</p>
+<p>이건 간단히 xi를 알면 거기에 K값을 곱해서 알 수 있다.</p>
+<p><figure class="figure"><img alt="" height="325" src="../images/274/18.png" width="510"/></figure>
+</p>
+<table border="1">
+<tbody>
+<tr>
+<td> </td>
+<td>X</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>프로판</td>
+<td>0.0719</td>
+<td>0.3021</td>
+</tr>
+<tr>
+<td>부탄</td>
+<td>0.1833</td>
+<td>0.3207</td>
+</tr>
+<tr>
+<td>펜탄</td>
+<td>0.3098</td>
+<td>0.2293</td>
+</tr>
+<tr>
+<td>헥산</td>
+<td>0.4350</td>
+<td>0.1479</td>
+</tr>
+</tbody>
+</table>
+<p><br/>----------------------------------------------------</p>
+<p><figure class="figure"><img alt="" height="215" src="../images/274/19.png" width="726"/></figure>
+<figure class="figure"><img alt="" height="467" src="../images/274/20.png" width="525"/></figure>
+<figure class="figure"><img alt="" height="372" src="../images/274/21.png" width="1126"/></figure>
+</p>
+<p>C3 컬럼의 바닥 제품이 표의 7번과 같은 조성을 가지고 있다. 압력 100프사이일때 혼합물의 온도는?</p>
+<p>-----------------------------</p>
+<p><figure class="figure"><img alt="" height="130" src="../images/274/22.png" width="269"/></figure>
+</p>
+<p>일단 7번에 있는 성분의 조성을 계산하면 위와 같다. 이때 바텀프로덕트이므로 순수 액체이며 따라서 리치폴드 라이스 식은 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="325" src="../images/274/02.png" width="420"/></figure>
+<figure class="figure"><img alt="" height="60" src="../images/274/03.png" width="226"/></figure>
+</p>
+<p>또는 </p>
+<p><figure class="figure"><img alt="" height="56" src="../images/274/23.png" width="140"/></figure>
+</p>
+<p>근데 지금은 조성과 압력이 주어진 상태이므로, K값을 구하기 위해 필요한 온도가 없다. 그래서 온도를 찍어서 K값 계산하던지 해야한다. 예를 들어 온도를 하나로 찍으면 Ki값도 나오고, 그걸로 위 식을 계산해서 1이 안되면 수정 이런식이다.</p>
+<p>1) 150F 온도면?</p>
+<p><figure class="figure"><img alt="" height="45" src="../images/274/24.png" width="119"/></figure>
+<figure class="figure"><img alt="" height="98" src="../images/274/25.png" width="653"/></figure>
+</p>
+<p>bubble point보다 조금 덜 끓는 상태이므로 온도를 더 올려야 함. K값을 키워야하므로</p>
+<p> </p>
+<p>2)160F 온도면?</p>
+<p>1.01이 나오는데, 대충 159F로 때려 맞출 수 있다.</p>
+<p>---------------------------</p>
+<p><figure class="figure"><img alt="" height="549" src="../images/274/26.png" width="727"/></figure>
+</p>
+<p>25도에서 사이클로 펜테인과 사이클로헥세인을 메탄올로 액액추출한다. 이때 기화를 막기 위해 버블점 압력보다 이상으로 하려고 한다. 버블점 압력을 계산할 수 있는가?</p>
+<p> </p>
+<p>일단 2층으로 분리되어있고, 각 성분이 순수한 상태일 때 증기압이 주어져있다.  또 각 층에서 조성과 활동도계수가 주어져있다. 일단 이상용액이 아니므로 수정된 라울의 법칙을 꺼낸다.</p>
+<p><figure class="figure"><img alt="" height="50" src="../images/274/27.png" width="149"/></figure>
+</p>
+<p>얘는 액체 조성이 xi일 때, 그 성분의 기체에서의 부분압력이 얼마냐를 나타내주는 식이다. 이것만 가지고는 특정 점에서 기-액평형일 때 압력만 구할 수 있지 그 압력점이 버블점인지는 모른다.</p>
+<p> </p>
+<p>이때 버블점에서는 기포가 막 생기므로, 기체 조성의 합은 1이다</p>
+<p><figure class="figure"><img alt="" height="62" src="../images/274/28.png" width="117"/></figure>
+</p>
+<p> </p>
+<p>을 적용할 수 있다. 이러면 각 층에서 포화버블점을 구할 수 있다.</p>
+<p><figure class="figure"><img alt="" height="392" src="../images/274/29.png" width="189"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="61" src="../images/274/30.png" width="213"/></figure>
+</p>
+<p>---------------</p>
+<p><figure class="figure"><img alt="" height="236" src="../images/274/31.png" width="514"/></figure>
+</p>
+<p>프로필렌이 부탄으로부터 분리된다. 이때 증기는 90몰%의 프로필렌을 함유한다. 이때 부분응축기 출구온도가 화씨100도일 때, 컬럼의 압력을 구하라. 화씨 100도에서 압력에 따른 K밸류는 아래 그래프를 통해서 구할 수 있다.</p>
+<p><figure class="figure"><img alt="" height="786" src="../images/274/32.png" width="659"/></figure>
+</p>
+<p>이건 듀포인트 조건의 압력을 구하는 것과 같다. 이때, 리치폴드 라이스에서 듀포인트 조건은 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="71" src="../images/274/33.png" width="137"/></figure>
+</p>
+<p>따라서 압력 하나를 지정하고, 이때 리치폴드를 해본 다음에 그게 1이 아니면 압력을 바꾸는 식으로 찾다보면 186이 나온다. 이제 온도, 압력이 구해졌기 때문에, 그 상태에서 조성을 구할 수 있다.</p>
+<p> </p>
+<p>X조성은 리치폴드 라이스 원 식에서 분자에 K-1을 뺸 것이고, Y조성은 거기에 K값을 곱한 것이다.</p>
+<p><figure class="figure"><img alt="" height="325" src="../images/274/02.png" width="420"/></figure>
+</p>
+<p>-------------</p>
+<p><figure class="figure"><img alt="" height="205" src="../images/274/34.png" width="619"/></figure>
+</p>
+<p>이건 간단하게 물질수지식으로 풀 수 있다. 8%의 아세트산을 함유한 13500 kg/h의 물이 있다. 이때 메틸 아이소부틸 케톤으로 제거하려는데, 라피네이트에서 1%만 있으려면 얼마만큼의 용액을 써야하나? KD=0.657이다.</p>
+<p> </p>
+<p>일단 물에 8% 아세트산이 있으므로 1080의 아세트산 + 12420의 물인 상태이다. 이때 라피네이트는 물 12420이 있고, 여기에 1%가 아세트산이므로 125.45kg의 아세트산이 있다. 반대로 추출상에는 1080-125.45=954.55kg의 아세트산이 존재한다. 이때 KD=XE/XR이므로 계산해보면 용매는 144000kg이 필요하다.</p>
+<p> </p>
+<p>---------------------</p>
+<p><figure class="figure"><img alt="" height="214" src="../images/274/35.png" width="649"/></figure>
+</p>
+<p>일단 45% 글리콜과 55% 물이 있는데, 이거의 2배정도 되는 푸르푸랄이 들어온다. 25도, 101카파이다. 이때 추출상과 추잔상의 조성은?</p>
+<p><figure class="figure"><img alt="" height="381" src="../images/274/36.png" width="516"/></figure>
+</p>
+<p>일단 피드점 M을 먼저 찍는다.</p>
+<p><figure class="figure"><img alt="" height="744" src="../images/274/37.png" width="929"/></figure>
+</p>
+<p>피드점 M에서 타이라인을 따라가면 추잔상 추출상이 뜨는데, 그걸로 각각의 조성을 구할 수 있다.</p>
+<p><figure class="figure"><img alt="" height="275" src="../images/274/38.png" width="218"/></figure>
+</p>
+<p>----------</p>
+<p><figure class="figure"><img alt="" height="828" src="../images/274/39.png" width="600"/></figure>
+<figure class="figure"><img alt="" height="115" src="../images/274/40.png" width="590"/></figure>
+</p>
+<p>콩고형물은 아래로 가고, 기름+헥산 액체는 위/아래로 나뉘는데, 아래로 내려가는 고형물이 액체를 머금고 같이 나가서 기름 손실이 생긴다. 문제 조건에서 소이빈 플레이크가 100000인데, 여기에 19%는 오일이다. 이때 헥세인이 100000이 들어온다.</p>
+<p><figure class="figure"><img alt="" height="349" src="../images/274/41.png" width="424"/></figure>
+</p>
+<p>이건 전형적인 고-액추출의 예시이다. 고체에 19%의 기름 성분이 있는데, 그걸 S로 추출하려는 것이다. 이때 두 상으로 나뉘어 배출되는데, V에는 용매와 추출성분이, 언더플로우에는 고체성분과 추출성분과 용매가 같이 섞여 배출된다. 이때, 오버플로우의 B,C 비율과 언더플로우의 B,C 비율은 같다. 최종적으로는 flakes 안 oil은 0.5%까지 줄어든다.</p>
+<p> </p>
+<p>일단 액체 전체, 그러니까 S</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/228.html"><span>← 이전 글</span><strong>과도 열전도</strong></a>
+    <a class="next" href="../posts/294.html"><span>다음 글 →</span><strong>11. Enhanced Distillation and Supercritical Extraction 개요</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>화공양론 1: 단위환산 및 힘과 무게 · 화학공학 노트</title>
+<meta name="description" content="화공의 기본 뼈대가 되는 것이 화공양론으로, 화공양론을 마스터하면 화공의 50%는 배웠다고 보면 된다. 1) 차원(dimension) 과 단위차원이라고 하면 측정되는 값의 특성을 나타내는 것이다. 차원에는 길이, 시간, 질량, 온도 등등이 있고 기호로 L,t,m,T 등으로 나타낼 수 있다. 어떤 값을 측정했을 때, 차원이 같으면 비교가 가능하지만 차원이 다르면 비교할 수 없다. 단위는 차원을 나타내는 수단으로 기본단위인 m,s, kg, K등이 있고 이들을 연산하여 유도단위를 만들 수 있다. 2) 단위환산단위에서 가장 중요한 것은 환">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html" aria-current="page">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/study.html">화학공학 스터디</a></nav>
+  <header class="post-head">
+    <h1>화공양론 1: 단위환산 및 힘과 무게</h1>
+    <p class="meta">
+      <time datetime="2024-05-14">2024.05.14</time>
+ · 수정 2025.06.29    </p>
+  </header>
+
+
+  <div class="body">
+    <p>화공의 기본 뼈대가 되는 것이 화공양론으로, 화공양론을 마스터하면 화공의 50%는 배웠다고 보면 된다.</p>
+<p> </p>
+<p>1) 차원(dimension) 과 단위</p>
+<p>차원이라고 하면 측정되는 값의 특성을 나타내는 것이다. 차원에는 길이, 시간, 질량, 온도 등등이 있고 기호로 L,t,m,T 등으로 나타낼 수 있다. 어떤 값을 측정했을 때, 차원이 같으면 비교가 가능하지만 차원이 다르면 비교할 수 없다.</p>
+<p> </p>
+<p>단위는 차원을 나타내는 수단으로 기본단위인 m,s, kg, K등이 있고 이들을 연산하여 유도단위를 만들 수 있다.</p>
+<p> </p>
+<p>2) 단위환산</p>
+<p>단위에서 가장 중요한 것은 환산이다. 세상에는 많은 단위계가 존재하므로, 어떤 단위를 다른 단위로 바꿔야 할 수 있다.</p>
+<p>이때 환산하는 방법은 환산인자를 곱하는 것이다.</p>
+<p> </p>
+<p>다음은 단위 환산의 예시이다.</p>
+<p><figure class="figure"><img alt="" height="321" src="../images/57/01.png" width="517"/></figure>
+<figure class="figure"><img alt="" height="314" src="../images/57/02.png" width="735"/></figure>
+</p>
+<p> </p>
+<p>**단위계 환산</p>
+<p> </p>
+<p>현재 쓰이는 단위 중 표준은 절대<span> 단위(SI 단위) 이며 편의상 mks(m, kg, s)단위라고 부르기도 한다.(엄밀히는 mks 단위계가 발전한 것이 SI단위이다. MKS단위계에 몇가지 기본단위, 예를 들어 암페어 등이 포함되어서 SI 단위가 되었다.)  </span></p>
+<p> </p>
+<p><span>뉴턴<span>(N = kg·m/s²)</span> , 줄 <span>(J = N·m)</span> , 와트 <span>(W = J/s) 등은 mks 단위를 쓰며 SI 단위계에 해당한다.</span></span></p>
+<p><figure class="figure"><img alt="" height="418" src="../images/57/03.png" width="476"/><figcaption>SI단위계의 기본 단위</figcaption>
+</figure>
+</p>
+<p> </p>
+<p><span>대부분의 나라에서는 SI 단위계를 절대단위로 쓰지만 각 나라의 공학분야에서는 <b>공학단위</b>라는 것을 따로 지정해 공학분야에서 사용한다. 이는 계산의 편의를 위한 것인데, 대부분의 나라에서 공학단위로 <b>중력단위계</b>를 쓴다.</span></p>
+<p> </p>
+<p>SI단위계의 기본단위는 MLT지만 중력단위계의 기본단위는 FLT이다. (<span>힘(force), 길이(length), 시간(time)) 즉, 기본단위중에서 질량이 힘으로 바뀐 것이다. (F=ma 관계를 이용하면 남은 하나는 자동으로 도출된다)</span></p>
+<p> </p>
+<p>이때, 힘을 나타내는 단위는 단위계에 따라 달라진다 (<span>  kgf , <span>lbf )</span></span></p>
+<p> </p>
+<p>(왜 중력단위계가 공학에서 사용되어왔는가? </p>
+<p> </p>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+<p>&gt;<span>예를 들어 생각해보자.</span><span>일반적인 사람들,<span> </span></span><span>특히 과학, 공학 공부를 별로 하지 않은 사람들은<span> </span></span><span>질량과 무게의 개념을 잘 구분하지 않는다.</span></p>
+<p><span>사람들은 '질량' 80 kg의 포대는 '무겁고',</span><span>들어올리려면 '힘'이 필요하다고 생각한다.<span> </span></span><span>80 kg을 '질량'이 아닌 <span> </span></span><span>'무게', '힘'으로 인식한다.</span><span>'근력'측정기는 힘을 측정한는 것임에도</span><span>질량의 단위인 'kg'으로 결과물을 인식</span><span>한다.</span></p>
+<p><span>(물론 요즘 제품은 kgf로 표시하고 뉴턴 등도 선택 가능)</span></p>
+<p><span>왜냐하면 지구상에서는<span> </span></span><b><span>항상 kg이 kgf의 힘을 만들기 때문이다.</span></b></p>
+<p> </p>
+<div>
+<div>
+<div>
+<div>
+<p><span>이러한 이유로 과거의 일선 공학자들은</span></p>
+<p><span>간편함과 직관적인 이해의 용이함때문에</span></p>
+<p><span>모든 계산 결과물이 힘을 기준으로 나타나도록</span></p>
+<p><span>단위계를 재편성하였고,</span></p>
+<p><span>그것이 공학단위계이다.</span></p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div> </div>
+</div>
+</div>
+<p><span>(출처:<span> </span><a href="https://blog.naver.com/PostView.naver?blogId=elephantgrass&amp;logNo=221487134109&amp;redirect=Dlog&amp;widgetTypeCall=true&amp;topReferer=https%3A%2F%2Fwww.google.com%2F&amp;noTrackingCode=true&amp;directAccess=false">https://blog.naver.com/PostView.naver?blogId=elephantgrass&amp;logNo=221487134109&amp;redirect=Dlog&amp;widgetTypeCall=true&amp;topReferer=https%3A%2F%2Fwww.google.com%2F&amp;noTrackingCode=true&amp;directAccess=false</a>)</span></p>
+<p> </p>
+</div>
+</div>
+
+
+
+<p>결론적으로, 중력단위계와 절대단위계 사이에 서로 환산을 하는 경우가 많다. 이때 환산 방법은 다음과 같다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="252" src="../images/57/04.png" width="916"/></figure>
+</p>
+<p>kgf 중력단위계를 SI로 : 9.8N/1kgf</p>
+<p>lbf 중력단위계를 UK로 : 32.174 lbm*ft/s^2 // 1 lbf</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="260" src="../images/57/05.png" width="842"/></figure>
+</p>
+<p>침착하기만 하면 된다.</p>
+<p> </p>
+
+<p><b>힘과 무게</b></p>
+<p> </p>
+<p>힘의 단위는 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="131" src="../images/57/06.png" width="492"/></figure>
+<figure class="figure"><img alt="" height="101" src="../images/57/07.png" width="561"/></figure>
+</p>
+<p>gc는 힘과 kg 사이의 관계를 나타내주는 식이다. 즉 FLT를 MLT 단위계로 바꾸는데 쓰인다.</p>
+<p> </p>
+<p>무게는 힘의 일종이며 다음 식을 통해 쓸 수 있다.</p>
+<p><figure class="figure"><img alt="" height="68" src="../images/57/08.png" width="208"/></figure>
+<figure class="figure"><img alt="" height="298" src="../images/57/09.png" width="672"/></figure>
+</p>
+<p>W=mg로 표현하기도 하지만, 이 경우 w의 단위가 kg*m/s^2이 된다. 그런데 W는 힘이므로 힘의 단위로 나타내는 게 좋으며 이를 위해 gc로 나누어 준다.</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/35.html"><span>← 이전 글</span><strong>하시모토 겐지의 화학공학 개론 Ch1:화학공학이란 무엇인가?</strong></a>
+    <a class="next" href="../posts/146.html"><span>다음 글 →</span><strong>12. 친환경 에너지 생산을 위한 가스 하이드레이트 기반 연구 by 최원중 교수</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

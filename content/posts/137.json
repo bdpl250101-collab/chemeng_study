@@ -1,0 +1,14 @@
+{
+ "id": 137,
+ "title": "잔류편차계산",
+ "date": "2025-07-22",
+ "modified": "2025-07-22",
+ "category": "화학공학 일지/공정제어",
+ "tags": [],
+ "summary": "제어를 함에 있어서 비례제어를 쓰면 항상 잔류편차가 생기는데, 이게 얼마인가를 계산하는 것이다. 그럼으로서 이 잔류편차의 허용치를 설정하여 제어기를 설계할 수 있게 된다.",
+ "source_url": "https://audio268.tistory.com/137",
+ "images_ok": 8,
+ "images_failed": 0,
+ "chars": 95,
+ "html": "<p>제어를 함에 있어서 비례제어를 쓰면 항상 잔류편차가 생기는데, 이게 얼마인가를 계산하는 것이다. 그럼으로서 이 잔류편차의 허용치를 설정하여 제어기를 설계할 수 있게 된다.</p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"718\" src=\"../images/137/01.png\" width=\"1236\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"714\" src=\"../images/137/02.png\" width=\"1250\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"711\" src=\"../images/137/03.png\" width=\"1248\"/></figure>\n</p>\n<p> </p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"707\" src=\"../images/137/04.png\" width=\"1246\"/></figure>\n</p>\n<p> </p>\n<p><figure class=\"figure\"><img alt=\"\" height=\"718\" src=\"../images/137/05.png\" width=\"1264\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"711\" src=\"../images/137/06.png\" width=\"1261\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"719\" src=\"../images/137/07.png\" width=\"1268\"/></figure>\n<figure class=\"figure\"><img alt=\"\" height=\"702\" src=\"../images/137/08.png\" width=\"1262\"/></figure>\n</p>"
+}

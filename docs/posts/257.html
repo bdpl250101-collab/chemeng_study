@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>분리공정 문제 2 - 라울, EOS로 K 계산하기 · 화학공학 노트</title>
+<meta name="description" content="프로페인-아이소 펜테인 혼합. 167F=75도 에 147 psia=1013.529kpa 이때 프로페인 액상몰분율은 0.29이다(평형 상태) 또 액상에서는 0.6650이다. (a) 실험데이터로 K값을 구해라.일단 지금 주어진게 K=y/x이므로 C3는 0.6650/0.2900= 2.2931 이고 C5는 0.3350/0.7100 = 0.4718이다.(b)라울의 법칙을 이용해서 구해라.라울의 법칙은 K=Pisat/P 이므로 409.6/147 &amp; 58.6/147 각각 2.7864 &amp; 0.3986 이미 차이가 크게 남을 알 수 있다.실험 K-">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html" aria-current="page">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/separation.html">분리공정</a></nav>
+  <header class="post-head">
+    <h1>분리공정 문제 2 - 라울, EOS로 K 계산하기</h1>
+    <p class="meta">
+      <time datetime="2026-03-16">2026.03.16</time>
+ · 수정 2026.04.17    </p>
+  </header>
+
+
+  <div class="body">
+    <p><figure class="figure"><img alt="" height="388" src="../images/257/01.png" width="787"/></figure>
+</p>
+<p>프로페인-아이소 펜테인 혼합. 167F=75도 에 147 psia=1013.529kpa 이때 프로페인 액상몰분율은 0.29이다(평형 상태) 또 액상에서는 0.6650이다.</p>
+<p> </p>
+<p>(a) 실험데이터로 K값을 구해라.</p>
+<p>일단 지금 주어진게 K=y/x이므로 C3는 0.6650/0.2900= 2.2931 이고 C5는 0.3350/0.7100 = 0.4718이다.</p>
+<p>(b)라울의 법칙을 이용해서 구해라.</p>
+<p>라울의 법칙은 K=Pisat/P 이므로 409.6/147 &amp; 58.6/147 각각 2.7864 &amp; 0.3986</p>
+<p> </p>
+<p>이미 차이가 크게 남을 알 수 있다.</p>
+<p><figure class="figure"><img alt="" height="282" src="../images/257/02.png" width="455"/></figure>
+</p>
+<p>실험 K-value    vs       Raoult K-value비교</p>
+<table border="1">
+<tbody>
+<tr>
+<td>(C_3)</td>
+<td>2.2931</td>
+<td>2.7864</td>
+<td>Raoult가 더 크게 예측</td>
+</tr>
+<tr>
+<td>(iC_5)</td>
+<td>0.4718</td>
+<td>0.3986</td>
+<td>Raoult가 더 작게 예측</td>
+</tr>
+</tbody>
+</table>
+<p>왜 이런 차이가 나는가? 라울의 법칙에서는 이상기체+이상용액을 가정하고 있다. 그럴려면 압력이 낮아야하는데, 여기서 압력이 147psia로 되게 높다.</p>
+<p> </p>
+<p>보통 한 10 atm정도면 높은 압력이라고 보면 된다.</p>
+<p> </p>
+<p>더 낫게 추정하려면? 수정된 라울의 법칙을 쓰면 좋다. 이 경우에는</p>
+<p><figure class="figure"><img alt="" height="52" src="../images/257/03.png" width="182"/></figure>
+</p>
+<p>이걸로 K값 구해버리거나, 또는 EOS를 이용해 퓨가시티 계수를 이용해서 구해버려도 된다. 이때 혼합된 물질이 둘다 비극성 탄화수소이기 때문에, EOS를 써도 뭐 액상에서는 문제가 없는데, 기상에서 문제가 발생하는 듯하다.</p>
+<p> </p>
+
+<p><figure class="figure"><img alt="" height="592" src="../images/257/04.png" width="837"/></figure>
+</p>
+<p>문제 해석부터 하면 시뮬레이션 프로그램을 써서 K값을 계산하는 문제인데, 계산 절차는 PR /SRK 방정식을 쓰라고 한다. 등몰 믹스처고 부테인과 부텐을 쓰는데, 이때 각각 아이소머가 존재한다. 조건은 276.5 프사이에서 버블점 온도인 상태다. 계산된 K 값을 실제 실험 결과랑 비교해라.</p>
+<p> </p>
+<p>일단 켐셉을 썼다.</p>
+<p><figure class="figure"><img alt="" height="737" src="../images/257/05.png" width="943"/></figure>
+</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="760" src="../images/257/06.png" width="967"/></figure>
+<figure class="figure"><img alt="" height="130" src="../images/257/07.png" width="577"/></figure>
+</p>
+<p>이제 이걸로 계산해보면</p>
+<p><figure class="figure"><img alt="" height="332" src="../images/257/08.png" width="692"/></figure>
+</p>
+<p>이때 비교해보면 전체적으로 맞게 나왔는데, 아이소 부테인, 아이소 부텐, n-부테인, 1-부텐, cis 부텐은 좀 크게 나왔다.</p>
+<p> </p>
+<p>srk는 보면</p>
+<p><figure class="figure"><img alt="" height="331" src="../images/257/09.png" width="704"/></figure>
+</p>
+<p>이건 혼합물이 비극성이어서 EOS가 상당히 잘 맞기 떄문에 비슷한 결과가 나온다.</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/256.html"><span>← 이전 글</span><strong>분리공정 문제 (1) 마굴루스 방정식의 유도</strong></a>
+    <a class="next" href="../posts/258.html"><span>다음 글 →</span><strong>분리공정 문제 3 - 분리 효율 구하기</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6.2 Murphree Efficiencies &amp; 6.3 Rate-Based Method for Packed Columns · 화학공학 노트</title>
+<meta name="description" content="6.2 Murphree EfficienciesMurphree Efficiencies는 실제 tray가 평형에 100% 도달하지 못하니까, 한 tray가 평형에 얼마나 가까이 갔는가?를 물질전달속도식으로 계산하는 파트라고 볼 수 있다. 앞의 Eo=Nt/Na(즉 이론단수/실제단수)가 탑 전체 효율이라면,여기는 tray 하나에서 일어나는 물질전달을 보고 Murphree 효율을 정의하는 부분이다. Murphree vapor efficiency가 가장 오래되고 널리 쓰이는 tray efficiency 모델이다. 여기서 효율이 세가지가 나온다">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html" aria-current="page">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/separation.html">분리공정</a></nav>
+  <header class="post-head">
+    <h1>6.2 Murphree Efficiencies &amp; 6.3 Rate-Based Method for Packed Columns</h1>
+    <p class="meta">
+      <time datetime="2026-05-20">2026.05.20</time>
+ · 수정 2026.05.24    </p>
+  </header>
+
+  <nav class="toc" aria-label="목차">
+    <p class="toc-title">목차</p>
+    <ol>
+      <li class="lv2"><a href="#s1">6.2 Murphree Efficiencies</a></li>
+      <li class="lv2"><a href="#s2"></a></li>
+      <li class="lv2"><a href="#s3">---------------------------------</a></li>
+      <li class="lv2"><a href="#s4">6.3 RATE-BASED METHOD FOR PACKED COLUMNS</a></li>
+    </ol>
+  </nav>
+
+  <div class="body">
+    <h2 id="s1">6.2 Murphree Efficiencies</h2>
+<p>Murphree Efficiencies는 실제 tray가 평형에 100% 도달하지 못하니까, 한 tray가 평형에 얼마나 가까이 갔는가?를 물질전달속도식으로 계산하는 파트라고 볼 수 있다.</p>
+<p> </p>
+<p>앞의 <span><span>Eo=Nt/Na(즉 이론단수/실제단수)</span></span>가 <b>탑 전체 효율</b>이라면,여기는 tray 하나에서 일어나는 물질전달을 보고 <b>Murphree 효율</b>을 정의하는 부분이다. Murphree vapor efficiency가 가장 오래되고 널리 쓰이는 tray efficiency 모델이다.</p>
+<p> </p>
+<p>여기서 효율이 세가지가 나온다.</p>
+<table border="1">
+<tbody>
+<tr>
+<td>(E_o)</td>
+<td>overall stage efficiency</td>
+<td>column 전체 기준 효율</td>
+</tr>
+<tr>
+<td>(E_{MV})</td>
+<td>Murphree vapor-tray efficiency</td>
+<td>tray 하나 전체 기준 기상 Murphree 효율</td>
+</tr>
+<tr>
+<td>(E_{OV})</td>
+<td>Murphree vapor-point efficiency</td>
+<td>tray 위 특정 지점 기준 기상 Murphree 효율</td>
+</tr>
+</tbody>
+</table>
+<p>쉽게 설명하면 <span><span><span aria-hidden="true"><span><span><span>E</span><span><span><span><span><span><span><span>o</span></span></span></span></span><span><span></span></span></span></span></span><span>→</span></span><span><span><span>탑</span><span> </span><span>전체,</span></span></span></span></span></span>  <span><span><span>EMV→tray 하나 평균,  </span></span></span><span><span><span aria-hidden="true"><span><span><span>E</span><span><span><span><span><span><span><span><span>O</span><span>V</span></span></span></span></span></span><span><span></span></span></span></span></span><span>→</span></span><span><span><span>tray </span><span>위</span><span> </span><span>한</span><span> </span><span>위치</span></span></span></span></span></span></p>
+<p> </p>
+<p>Murphree vapor efficiency의 기본 가정:<br/>-tray로 들어오는 vapor와 liquid 조성이 균일하다.<br/>-tray 위 액체 조성은 완전 혼합되어 있고, 나가는 액체 조성과 같다.<br/>-vapor는 액체층을 통과하면서 plug flow처럼 위로 이동한다.<br/><br/>즉, 액체는 잘 섞여 있고, 기체는 아래에서 위로 지나가면서 점점 조성이 변한다고 보는 것이다.<span><span><span aria-hidden="true"><span><span><span></span></span></span></span></span></span></p>
+<p> </p>
+<p>이제 기호부터 잡도록 하자. <span>tray 번호를 </span><span>n</span><span>이라고 하면</span></p>
+<p><figure class="figure"><img alt="" height="363" src="../images/285/01.png" width="598"/></figure>
+</p>
+<p>기서 제일 중요한 건 이거다 yi,n+1 →y i,n →y i,n ∗<br/>즉 기체가 트레이를 통과하면서 yin+1에서 yin으로 가는데, 이때 이상적으로 완전 평형으로 도달하게 되면 yi*n이다. 근데 평형에 도달하지 못하고 나갈 수 도 있다.</p>
+<p> </p>
+<p>Murphree vapor efficiency 식</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="62" src="../images/285/02.png" width="177"/></figure>
+</p>
+<p>분자는 <b>실제로 제거된 정도, </b>분모는 <b>이론적으로 평형까지 갔으면 제거될 수 있었던 최대 정도다.</b> 예를 들어 다음과 같다.</p>
+<p><figure class="figure"><img alt="" height="139" src="../images/285/03.png" width="347"/></figure>
+</p>
+<p>즉 75%만큼 평형에 접근했다는 뜻이다. 근데 이거를 다르게 표현하는 방법이 있어서 알아볼 것이다.</p>
+<p><figure class="figure"><img alt="" height="145" src="../images/285/04.png" width="213"/></figure>
+</p>
+<p>EMV를 위처럼 새로운 인자를 도입하여 표현할 수 있다. 이때 NOG가 높으면 효율이 높음을 의미한다.</p>
+<p> </p>
+<p>약간 헷갈릴 수 있는게 EMV랑 EOV이다.</p>
+<p> </p>
+<p>EMV= tray 전체 평균 효율. 액체가 tray 전체에서 완전히 섞였다고 보면 EMV를 쓴다.<br/>EOV=tray 위의 한 지점에서의 국소 효율. 실제 tray에서는 액체가 왼쪽에서 오른쪽으로 흐르니까, 위치마다 액체 조성이 다를 수 있다. 그래서 어떤 한 지점에서의 효율을 EOV라고 한다.</p>
+<p> </p>
+<p>만약 액체가 완전 혼합이면 EMV=EOV이다. 하지만 플러그 플로우이면 다음 식이 성립한다.</p>
+<p><figure class="figure"><img alt="" height="159" src="../images/285/05.png" width="228"/></figure>
+</p>
+<p>이때 m은 평형선의 기울기이다. m=K로 봐도 되긴한다.</p>
+<p><figure class="figure"><img alt="" height="64" src="../images/285/06.png" width="156"/></figure>
+</p>
+<p>직관적으로 보면 액체가 tray 위에서 완전 섞이면, 기체는 tray 전체에서 거의 같은 액체를 만난다. 그런데 액체가 plug flow처럼 흐르면, 기체가 위치마다 다른 조성의 액체를 만난다. 이때 어떤 경우에는 평균 driving force가 커져서 EMV&gt;EOV 가 될 수 있다.</p>
+<p> </p>
+<p><span>정리:Murphree efficiency는 처음 보면 진짜 안 와닿는 파트이다. 이론단수 N만 구하다가 갑자기 실제 tray 내부의 거품층, 물질전달속도, EMV, EOV 이런거 나오니까 흐름이 끊긴다. Murphree 효율은 실제 tray 하나가 이론적으로 완벽한 tray의 몇 % 역할을 하느냐를 나타내는 값으로, 이를 배우는 이유는 이론단수를 실제 트레이 수로 바꾸기 위함이다. 앞에서 우리는 그래프법이나 Kremser 식으로 이론단수를 구했다. 예를 들어 이론단 수가 7이라고 해보자. 그러면 완벽한 평형 트레이가 7개 있으면 목표 흡수가 가능하다는 뜻이다. 하지만 실제 트레이는 완벽하지 않고, 잠깐 만나기 때문에 평형까지 100% 도달하지 않을 수 있다. 만약 트레이 효율이 35%라면 실제단은 20개가 필요하게 된다. 이때 효율은 그럼 어떻게 계산하는가? 이게 바로 <span>Murphree efficiency이다. tray 하나에서 기체 조성이 평형값까지 얼마나 가까워졌는가?를 산출하는 값으로 다음처럼 계산한다.</span></span></p>
+<p><figure class="figure"><img alt="" height="62" src="../images/285/07.png" width="177"/></figure>
+</p>
+<p><span>예를 들어 EMV가 0.75면  이 tray는 평형까지 갈 수 있었던 변화량의 75%만 실제로 달성했다는 뜻이다. 이를 가지고 효율 E0를 . 다음과 같은 흐름으로 구할 수 있게 된다.</span><span></span></p>
+<p><figure class="figure"><img alt="" height="44" src="../images/285/08.png" width="360"/></figure>
+</p>
+<p>예를 들어 이론단수가 7일때, Murphree efficiency를 계산해본다.</p>
+<p><figure class="figure"><img alt="" height="134" src="../images/285/09.png" width="179"/></figure>
+</p>
+<p>이를 가지고 다음 효율식을 써서 실제 효율을 구한다.</p>
+<p><figure class="figure"><img alt="" height="70" src="../images/285/10.png" width="216"/></figure>
+</p>
+<p>이후 실제 탑 개수를 구한다 .</p>
+<p><figure class="figure"><img alt="" height="162" src="../images/285/11.png" width="173"/></figure>
+</p>
+<p>정리하면</p>
+<p><figure class="figure"><img alt="" height="433" src="../images/285/12.png" width="657"/></figure>
+</p>
+<h2 id="s2"> </h2>
+<h2 id="s3">---------------------------------</h2>
+<h2 id="s4">6.3 RATE-BASED METHOD FOR PACKED COLUMNS</h2>
+<p> </p>
+<p>packed column은 tray처럼 단수로 자르기 애매하니까, 속도 기반으로 높이를 계산한다. 즉 앞의 TRAY 컬럼은 몇 단 필요한지? 였다면 이번 챕터는 충전층 높이가 몇m 필요한지?를 구하는 챕터이다. 다음 식을 쓴다.</p>
+<p><figure class="figure"><img alt="" height="44" src="../images/285/13.png" width="129"/></figure>
+</p>
+<p>먼저 HETP라는 개념을 알아보자. 이 충전물은 이론단 1개 효과를 내려면 높이가 몇 ft 필요한가?에 해당한다. 예를 들어 이론단이 6개 필요하고 HETP가 2면 <span><span><span>l</span><span><span><span><span><span><span><span>T</span></span></span></span></span><span><span></span></span></span></span></span><span>=</span></span><span><span>2.0</span><span>×</span></span><span><span>6</span><span>=</span></span><span><span>12</span><span> </span><span><span>ft라고 볼 수 있다. 근데 HETP는 그냥 엄밀한 건 아니라서, HETP도 쓰긴 하는데, 더 원리적인 방법은 HTU/NTU를 쓴다. 이는 후술하려한다.</span></span></span></p>
+<p><figure class="figure"><img alt="" height="382" src="../images/285/14.png" width="492"/></figure>
+<figure class="figure"><img alt="" height="215" src="../images/285/15.png" width="541"/></figure>
+</p>
+<p> </p>
+<p>packed absorber의 조작선을 먼저 알아보자. 똑같이 들어오고 나가는 것이 있다고 할 때, 유입=유출의 식을 세우면 위와 같은  조작선이 얻어진다. <span>조작선은</span><span> </span><span>물질수지에서</span><span> </span><span>나온다는 것을 기억해두자. packed column도 최소 흡수제 유량, 최소 stripping gas 유량 계산은 tray column이랑 같은 방식으로 한다.</span></p>
+<p> </p>
+<p><span>하지만 이때 매우 중요한 차이점이 있는데, 바로 two-film theory이다. Packed column에서 물질전달은 기체와 액체가 직접 섞이는 게 아니라, <b>계면을 사이에 두고 이동</b>한다. <span><span><span>bulk gas</span></span><span>→</span></span><span><span><span>gas film</span></span><span>→</span></span><span><span><span>interface</span></span><span>→</span></span><span><span><span>liquid film</span></span><span>→</span></span><span><span><span>bulk liquid 이런 순서로 이동한다. 따라서 중간에 필름 저항이 있으며 이를 합쳐서 전체 물질전달 저항을 본다. 하지만 계면 상태는 보기 힘들기 때문에 전체 저항식을 다음처럼 정의내린다.</span></span></span></span></p>
+<p><figure class="figure"><img alt="" height="192" src="../images/285/16.png" width="414"/></figure>
+</p>
+<p><span><span><span>기상</span><span> </span><span>기준</span><span> </span><span>전체</span><span> </span><span>저항</span></span><span>=</span></span><span><span><span>기체</span><span> film </span><span>저항</span></span><span>+</span></span><span><span><span>액체</span><span> film </span><span>저항을</span><span> </span><span>기상</span><span> </span><span>기준으로</span><span> </span><span>바꾼</span><span> </span><span>것</span></span></span></p>
+<p><span><span><span>액상</span><span> </span><span>기준</span><span> </span><span>전체</span><span> </span><span>저항</span></span><span>=</span></span><span><span><span>액체</span><span> film </span><span>저항</span></span><span>+</span></span><span><span><span>기체</span><span> film </span><span>저항을</span><span> </span><span>액상</span><span> </span><span>기준으로</span><span> </span><span>바꾼</span><span> </span><span>것</span></span></span></p>
+<p> </p>
+<p><span><span><span><span>이제 packed height는 다음과 같다. 유도는 생략한다.</span></span></span></span></p>
+<p><figure class="figure"><img alt="" height="77" src="../images/285/17.png" width="200"/></figure>
+</p>
+<p>이를 두 덩어리로 나누어서 다음처럼 표현한다.</p>
+<p><figure class="figure"><img alt="" height="249" src="../images/285/18.png" width="192"/></figure>
+</p>
+<p>이때 HOG는  <span><span><span>전달</span><span> 1</span><span>번</span><span> </span><span>하는</span><span> </span><span>데</span><span> </span><span>필요한</span><span> </span><span>높이라고 보면 된다.</span></span></span></p>
+<p> </p>
+<p data-end="6832" data-start="6810">실제 문제 풀 때는 보통 이렇게 간다.</p>
+<ol data-end="6970" data-start="6834">
+<li data-end="6850" data-section-id="16epmio" data-start="6834">입구/출구 조성 확인</li>
+<li data-end="6862" data-section-id="8xvqyo" data-start="6851">조작선 세움</li>
+<li data-end="6874" data-section-id="15x07z0" data-start="6863">평형선 세움</li>
+<li data-end="6902" data-section-id="1msu90b" data-start="6875"><span><span>y∗</span></span>를 <span><span>y</span></span>의 함수로 표현</li>
+<li data-end="6921" data-section-id="8mqi38" data-start="6903"><span><span>NOG </span></span>계산</li>
+<li data-end="6961" data-section-id="1m9c51e" data-start="6922"><span><span>HOG</span></span> 또는 <span><span>Kya</span></span>가 주어지면 높이 계산</li>
+<li data-end="6970" data-section-id="13u3cxw" data-start="6962">최종적으로 lT=HOGNOG</li>
+</ol>
+<p>이때 만약에 평형이면</p>
+<p><figure class="figure"><img alt="" height="101" src="../images/285/19.png" width="287"/></figure>
+</p>
+<p> </p>
+<p>이 성립한다. 이를 통해 탑의 갯수를 알 수 있다.</p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/284.html"><span>← 이전 글</span><strong>6.1- GRAPHICAL METHOD FOR TRAYED TOWERS &amp; ALGEBRAIC METHOD FOR DETERMINING N</strong></a>
+    <a class="next" href="../posts/286.html"><span>다음 글 →</span><strong>7. Distillation of Binary Mixtures</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

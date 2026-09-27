@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3. 블록선도와 총괄전달함수 · 화학공학 노트</title>
+<meta name="description" content="블록선도란 선형 공정변수들 사이의 관계를 블록으로 나타낸, PFD같은 그림이다. 이때 블록은 전달함수를 의미하며 입력변수에 전달함수를 곱하고, 그것들을 더하면 출력변수가 얻어진다. 블록선도의 표기법과 의미를 위 그림을 보면서 이해해보자. 이때 가끔 복잡한 공정선도는 다음처럼 그려진다.이들을 묶어 하나로 표현한 것을 총괄전달함수라고 부르며 밑 그림처럼 나타내진다.그런데 이것을 어떻게 구할 수 있을까? 이에는 요령이 필요하다. 그 요령을 학습해보자. 1)결과값에 도달하는 경로와 그 사이에 있는 루프를 찾는다.2)경로를 모두 더하고, 1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231f6f8b'/%3E%3Ctext x='16' y='21' font-size='15' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EChE%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">ChE</span>
+      <span class="brand-text">화학공학 노트</span>
+    </a>
+    <nav class="top-nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="cat-nav">과목</button>
+      <form class="search" role="search" action="../index.html#search">
+        <input id="q" type="search" placeholder="검색 (제목·본문)" autocomplete="off" aria-label="검색">
+      </form>
+    </nav>
+  </div>
+  <div id="search-results" class="wrap search-results" hidden></div>
+</header>
+
+<div class="wrap layout">
+  <aside id="cat-nav" class="side">
+    <p class="side-title">과목</p>
+    <ul class="cat-list">
+      <li><a href="../category/separation.html">
+        <span>분리공정</span><span class="count">22</span></a></li>
+      <li><a href="../category/reaction.html">
+        <span>화학반응공학</span><span class="count">14</span></a></li>
+      <li><a href="../category/heat-transfer.html">
+        <span>열전달</span><span class="count">14</span></a></li>
+      <li><a href="../category/thermodynamics.html">
+        <span>화공열역학</span><span class="count">8</span></a></li>
+      <li><a href="../category/fluid-mechanics.html">
+        <span>화공유체역학</span><span class="count">2</span></a></li>
+      <li><a href="../category/process-calc.html">
+        <span>화학공정계산</span><span class="count">5</span></a></li>
+      <li><a href="../category/process-control.html" aria-current="page">
+        <span>공정제어</span><span class="count">9</span></a></li>
+      <li><a href="../category/advanced-control.html">
+        <span>최신공정제어</span><span class="count">16</span></a></li>
+      <li><a href="../category/process-design.html">
+        <span>화학공정설계</span><span class="count">9</span></a></li>
+      <li><a href="../category/study.html">
+        <span>화학공학 스터디</span><span class="count">18</span></a></li>
+      <li><a href="../category/catalysis.html">
+        <span>촉매</span><span class="count">3</span></a></li>
+      <li><a href="../category/organic-chem.html">
+        <span>유기화학</span><span class="count">6</span></a></li>
+      <li><a href="../category/industrial-chem.html">
+        <span>공업화학</span><span class="count">4</span></a></li>
+      <li><a href="../category/biochemistry.html">
+        <span>Biochemistry</span><span class="count">12</span></a></li>
+      <li><a href="../category/digital-twin.html">
+        <span>디지털트윈</span><span class="count">8</span></a></li>
+      <li><a href="../category/lab-paper.html">
+        <span>Lab &amp; paper</span><span class="count">2</span></a></li>
+      <li><a href="../category/general.html">
+        <span>화학공학 일지</span><span class="count">2</span></a></li>
+      <li><a href="../category/misc.html">
+        <span>카테고리 없음</span><span class="count">4</span></a></li>
+      <li><a href="../category/english.html">
+        <span>영어일지</span><span class="count">3</span></a></li>
+      <li><a href="../category/daily.html">
+        <span>일상</span><span class="count">1</span></a></li>
+    </ul>
+    <p class="side-meta">글 162편 · 2026.09.27 빌드</p>
+  </aside>
+
+  <main id="main" class="main">
+<article class="post">
+  <nav class="crumb"><a href="../index.html">홈</a> › <a href="../category/process-control.html">공정제어</a></nav>
+  <header class="post-head">
+    <h1>3. 블록선도와 총괄전달함수</h1>
+    <p class="meta">
+      <time datetime="2025-06-05">2025.06.05</time>
+    </p>
+  </header>
+
+
+  <div class="body">
+    <p>블록선도란 선형 공정변수들 사이의 관계를 블록으로 나타낸, PFD같은 그림이다. 이때 블록은 전달함수를 의미하며 <b>입력변수에 전달함수를 곱하고, 그것들을 더하면 출력변수가 얻어진다.</b></p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="391" src="../images/112/01.png" width="1151"/></figure>
+</p>
+<p>블록선도의 표기법과 의미를 위 그림을 보면서 이해해보자.</p>
+<p> </p>
+<p>이때 가끔 복잡한 공정선도는 다음처럼 그려진다.</p>
+<p><figure class="figure"><img alt="" height="332" src="../images/112/02.png" width="728"/></figure>
+</p>
+<p>이들을 묶어 하나로 표현한 것을 총괄전달함수라고 부르며 밑 그림처럼 나타내진다.</p>
+<p><figure class="figure"><img alt="" height="91" src="../images/112/03.png" width="360"/></figure>
+<figure class="figure"><img alt="" height="92" src="../images/112/04.png" width="310"/></figure>
+</p>
+<p>그런데 이것을 어떻게 구할 수 있을까? 이에는 요령이 필요하다. 그 요령을 학습해보자.</p>
+<p> </p>
+<p>1)결과값에 도달하는 경로와 그 사이에 있는 루프를 찾는다.</p>
+<p>2)경로를 모두 더하고, 1+루프합으로 나눈다</p>
+<p> </p>
+<p>다음 예시로 알아보자.</p>
+<p><figure class="figure"><img alt="" height="300" src="../images/112/05.png" width="712"/></figure>
+</p>
+<p>1)결과값에 도달하는 경로와 그 사이에 있는 루프를 찾는다.</p>
+<p>일단 R(S)에서 C(S)로 가는 경로는 2개가 존재한다.</p>
+<p><figure class="figure"><img alt="" height="346" src="../images/112/06.png" width="792"/></figure>
+</p>
+<p>사이에 루프는 H(S)를 거치는 하나가 존재한다. 이 <b>루프안에 있는 전달함수를 모두 곱한다.</b></p>
+<p> </p>
+<p>2)경로를 모두 더하고, 1+루프들의 합으로 나눈다</p>
+<p><figure class="figure"><img alt="" height="141" src="../images/112/07.png" width="738"/></figure>
+</p>
+<p>이렇게 구할 수 있다.</p>
+<p> </p>
+<p>이제 설명은 끝났다. 예제를 풀어보며 마무리하자.</p>
+<p> </p>
+<p>예제1)</p>
+<p><figure class="figure"><img alt="" height="397" src="../images/112/08.png" width="1114"/></figure>
+</p>
+<p>예제 1 풀이)</p>
+<div data-text-less="닫기" data-text-more="더보기"><a class="btn-toggle-moreless">더보기</a>
+<div>
+<p> </p>
+<figure class="figure"><img alt="" height="397" src="../images/112/09.png" width="1114"/></figure>
+<p>먼저 경로는 하나만 존재한다.</p>
+<p> </p>
+<figure class="figure"><img alt="" height="397" src="../images/112/10.png" width="1114"/></figure>
+<p>루프는 두개가 존재한다.</p>
+<p> </p>
+<p>먼저 경로의 경우 G1(S)*G2(S)*G3(S)이고 1 루프(아래)는 <span>G1(S)*G2(S)*G4(S) , 2루프(위)는 <span>G2(S)*G3(S)이다. 중간에 루프로 유입되는 건 고려하지 않고, 루프 자체 내부에 있는 함수만 곱한다.</span></span></p>
+<p> </p>
+<p><span><span>따라서 정답은</span></span></p>
+<figure class="figure"><img alt="" height="100" src="../images/112/11.png" width="628"/></figure>
+</div>
+</div>
+<p> </p>
+
+<p>그런데 여기서 말하지 않은 주의점이 존재한다.</p>
+<p><figure class="figure"><img alt="" height="300" src="../images/112/12.png" width="712"/></figure>
+</p>
+<p>여기에 보면 동그라미 쳐진 곳에 +,-부호가 있는데, 이것이 존재하면 총괄전달함수의 부호에 영향을 준다.</p>
+<p> </p>
+<p><figure class="figure"><img alt="" height="566" src="../images/112/13.png" width="1156"/></figure>
+</p>
+<p>단순하게, ++-를 기억하면 된다. +가 2개 있다면 총괄식에는 -가 붙으며, +-가 있다면 총괄식에는 +로 들어간다.</p>
+<p> </p>
+  </div>
+
+  <nav class="pager" aria-label="같은 과목의 다른 글">
+    <a class="prev" href="../posts/111.html"><span>← 이전 글</span><strong>2. 전달함수와 라플라스변환</strong></a>
+    <a class="next" href="../posts/121.html"><span>다음 글 →</span><strong>공정의 동특성</strong></a>
+  </nav>
+</article>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 audio · 화학공학 노트</p>
+  </div>
+</footer>
+<script>window.__ROOT__ = "../";</script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
